@@ -67,13 +67,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\logo.png" />
+    <Content Include="styles\generales\Navbar.css" />
     <Content Include="Web.config" />
+    <Content Include="WebFormPrivate.aspx" />
+    <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SitePrivate.Master.cs">
+      <DependentUpon>SitePrivate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitePrivate.Master.designer.cs">
+      <DependentUpon>SitePrivate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SitePublic.Master.cs">
+      <DependentUpon>SitePublic.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitePublic.Master.designer.cs">
+      <DependentUpon>SitePublic.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormPrivate.aspx.cs">
+      <DependentUpon>WebFormPrivate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormPrivate.aspx.designer.cs">
+      <DependentUpon>WebFormPrivate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormPublic.aspx.cs">
+      <DependentUpon>WebFormPublic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormPublic.aspx.designer.cs">
+      <DependentUpon>WebFormPublic.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="SitePublic.Master" />
+    <Content Include="SitePrivate.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -90,6 +124,9 @@
       <Project>{c5706c47-55c2-4cd8-a180-731e40f70a23}</Project>
       <Name>Negocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
