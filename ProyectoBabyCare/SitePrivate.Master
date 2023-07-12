@@ -4,44 +4,46 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="styles/generales/Navbar.css" rel="stylesheet" />
     <title>
         <asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder>
     </title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
-     <! ––«Estilos del Navbar «––>
-    <link href="styles/generales/Navbar.css" rel="stylesheet" />
-     <! ––«Scripts Fontawesome «––>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
-    <nav>
-      <div class="logo">
-           <img src="..\..\images\logo.png" class="logoo" alt="Logo de la marca">
-        </div>
-    
-        <input type="checkbox" id="click">
-        <label for="click" class="menu-btn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li class="dropdown">
-                <a href="#">Dropdown</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Option 1</a></li>
-                    <li><a href="#">Option 2</a></li>
-                    <li><a href="#">Option 3</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
+     <nav>
+       <div class="logo">
+            <img src="..\..\Images\logo.png" class="logoo" alt="Logo de la marca">
+       </div>
+
+       <label for="btn" class="icon">
+         <span class="fa fa-bars"></span>
+       </label>
+
+       <input type="checkbox" id="btn" />
+
+       <ul>
+         <li><a href="#">Nombres & Significados</a></li>
+         <li><a href="#">Consejos</a></li>
+         <li><a href="#">Sobre nosotros</a></li>
+        <li>
+           <label for="btn-1" class="show">Features+</label>
+           <a href="#">Features</a>
+           <input type="checkbox" id="btn-1" />
+           <ul>
+             <li><a href="#">Feature 1</a></li>
+             <li><a href="#">Feature 2</a></li>
+             <li><a href="#">Feature 3</a></li>
+           </ul>
+           </li>
+       </ul>
+     </nav>
         <div class="content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

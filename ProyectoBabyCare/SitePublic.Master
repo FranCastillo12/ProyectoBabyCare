@@ -4,39 +4,40 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="styles/generales/Navbar.css" rel="stylesheet" />
     <title>
          <asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder>
     </title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     
     </asp:ContentPlaceHolder>
-     <! ––«Estilos del Navbar «––>
-    <link href="styles/generales/Navbar.css" rel="stylesheet" />
-    <! ––«Scripts Fontawesome «––>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
 </head>
 <body>
 
-    <nav>
+   <nav>
+       <div class="logo">
+            <img src="..\..\Images\logo.png" class="logoo" alt="Logo de la marca">
+       </div>
 
-        <div class="logo">
-           <img src="..\..\images\logo.png" class="logoo" alt="Logo de la marca">
-        </div>
-        <input type="checkbox" id="click">
-        <label for="click" class="menu-btn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <ul>
-            <li><a href="#">Nombres y significados</a></li>
-            <li><a href="#">Consejos</a></li>
-            <li><a href="#">Sobre nosotros</a></li>
-            <li><a href="#" class="rectangulo-fondo">Iniciar Sesión</a></li>
-            <li><a href="#" class="rectangulo-fondore">Registrarse</a></li>
+       <label for="btn" class="icon">
+         <span class="fa fa-bars"></span>
+       </label>
 
-        </ul>
-    </nav>
+       <input type="checkbox" id="btn" />
+
+       <ul>
+         <li><a href="#">Nombres & Significados</a></li>
+         <li><a href="#">Consejos</a></li>
+         <li><a href="#">Sobre nosotros</a></li>
+         <li><a class="rectangulo-fondoSesion" href="#">Iniciar Sesión</a></li>
+         <li><a class="rectangulo-fondoRegis" href="#">Registrarse</a></li>
+       </ul>
+     </nav>
         <div class="content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

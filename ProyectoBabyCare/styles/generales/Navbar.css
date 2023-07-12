@@ -1,41 +1,42 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+
 
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Baloo 2', sans-serif;
 }
 
 body {
-    background-color: #e7edfb;
-    min-height: 100vh;
-    position: relative;
+    background: white;
 }
 
 nav {
-    display: flex;
-    height: 5rem;
-    width: 100%;
     background: #F6E0ED;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 50px 0 100px;
-    flex-wrap: wrap;
-    box-shadow: 0 0 2rem rgba(97, 0, 255, 0.51);
 }
+
+    nav:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
 
     nav .logo {
         cursor: pointer;
-        margin-right: auto;
-        /*color: #fff;
-        font-size: 2rem;
-        font-weight: 600;
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.75);*/
+        margin-right: 10%;
+        float: left;
+        text-transform: uppercase;
+        line-height: 40px;
+        padding-left: 30px;
+        justify-content: center
     }
 
         nav .logo img {
-            height: 55px;
+            height: 60px;
             width: auto;
             transition: all 0.3s;
         }
@@ -44,194 +45,165 @@ nav {
     transform: scale(1.2);
 }
 
+
+
+
+
 nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-}
-
-.rectangulo-fondo {
-    color: white;
-    background-color: #3EB6B6; /* Color de fondo del rectángulo */
-    padding: 5px; /* Espacio interno del rectángulo */
-    display: inline-block; /* Para que el rectángulo ocupe solo el ancho del contenido */
-    border-radius: 5px;
-}
-
-.rectangulo-fondore {
-    color: white;
-    background-color: #AEB9CA; /* Color de fondo del rectángulo */
-    padding: 5px; /* Espacio interno del rectángulo */
-    display: inline-block; /* Para que el rectángulo ocupe solo el ancho del contenido */
-    border-radius: 5px;
-}
-
-nav ul li {
-    margin: 0 5px;
-}
-
-    nav ul li a {
-        position: relative;
-        margin: 0 7px;
-        padding: 5px 10px;
-        text-decoration: none;
-        color: #D281B2;
-        font-weight: 500;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-    }
-
-        nav ul li a:before {
-            content: "";
-            width: 50%;
-            margin: 30px 0 0 15%;
-            justify-content: center;
-            position: absolute;
-            height: 3px;
-            background: #fff;
-            transition: all .2s;
-            transform: scale(0);
-        }
-
-        nav ul li a:hover:before {
-            color: #fff;
-            transform: scale(1);
-        }
-
-nav .menu-btn i {
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-    display: none;
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-
-.dropdown {
+    float: right;
+    margin-right: 40px;
+    list-style: none;
     position: relative;
-    color: #D281B2;
-    background-color: #F6E0ED;
 }
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #F6E0ED;
-    min-width: 160px;
-    padding: 8px 0;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content li {
-    background-color: #F6E0ED;
-    padding: 8px;
-}
-
-    .dropdown-content li a {
-        color: #D281B2;
-        text-decoration: none;
-    }
-
-@media (max-width: 920px) {
-    nav .menu-btn i {
-        display: block;
-    }
-
-    #click:checked ~ .menu-btn i:before {
-        content: '\f00d';
-    }
-
-    nav ul {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        background: #F6E0ED;
-        height: 100vh;
-        width: 100%;
-        text-align: center;
-        z-index: 10;
-        display: block;
-        transition: all 0.3s ease;
-    }
-
-    .rectangulo-fondo {
-        width: 170px;
-    }
-
-    .rectangulo-fondore {
-        width: 170px;
-    }
-
-    #click:checked ~ ul {
-        left: 0px;
-    }
 
     nav ul li {
-        width: 100%;
-        margin: 40px 0;
+        float: left;
+        display: inline-block;
+        background: #F6E0ED;
+        margin: 0 5px;
     }
 
         nav ul li a {
-            width: 100%;
-            margin-left: -100%;
-            display: block;
+            color: #D281B2;
+            line-height: 70px;
+            text-decoration: none;
             font-size: 20px;
-            transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            padding: 8px 15px;
+            text-transform: uppercase;
+            font-weight: 600;
         }
 
-            nav ul li a:before {
-                width: 100%;
-                margin: 35px 0 0 0;
-                left: 0;
-                transition: all .4s;
+            nav ul li a:hover {
+                color: crimson;
             }
 
-    #click:checked ~ ul li a {
-        margin-left: 0;
+    nav ul ul {
+        position: absolute;
+        top: 90px;
+        opacity: 0;
+        visibility: hidden;
+        transition: top .3s;
+    }
+
+    nav ul li:hover > ul {
+        top: 70px;
         opacity: 1;
         visibility: visible;
     }
 
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #F6E0ED;
-        min-width: 160px;
-        max-height: 280px; /* Ajusta la altura máxima del menú desplegable móvil */
-        overflow-y: auto; /* Habilita el desplazamiento vertical si es necesario */
-        padding: 8px 0;
+    nav ul ul li {
+        position: relative;
+        margin: 0px;
+        width: 150px;
+        float: none;
+        display: list-item;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
     }
 
-    .dropdown:hover .dropdown-content {
-        display: none;
-    }
-
-    .dropdown-content li {
-        background-color: transparent;
-        padding: 0;
-        margin-bottom: 8px;
-    }
-
-        .dropdown-content li a {
-            color: #D281B2;
-            text-decoration: none;
-            padding: 8px;
-            display: block;
-            margin-top: -8px;
-        }
+.rectangulo-fondoSesion {
+    background-color: #3EB6B6;
+    color: #ffffff;
+    border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-    .content div {
-        font-size: 22px;
+.rectangulo-fondoRegis {
+    background-color: #AEB9CA;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+nav ul ul li a {
+    line-height: 50px;
+}
+
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 150px;
+}
+
+.show, .icon, input {
+    display: none;
+}
+
+.fa-plus {
+    font-size: 15px;
+    margin-left: 40px;
+}
+
+@media all and (max-width: 968px) {
+    nav ul {
+        margin-right: 0px;
+        float: left;
+    }
+
+    nav .logo {
+        padding-left: 30px;
+        width: 100%;
+    }
+
+    .show + a, ul {
+        display: none;
+    }
+
+    nav ul li, nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+
+    .show {
+        display: block;
+        color: white;
+        font-size: 18px;
+        text-transform: uppercase;
+        padding: 0 20px;
+        line-height: 70px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+        .show:hover {
+            color: crimson;
+        }
+
+    .icon {
+        display: block;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 40px;
+        line-height: 70px;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    nav ul ul {
+        top: 70px;
+        border-top: 0px;
+        float: none;
+        position: static;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+        nav ul ul a {
+            padding-left: 40px;
+        }
+
+        nav ul ul ul a {
+            padding-left: 80px;
+        }
+
+        nav ul ul ul li {
+            position: static;
+        }
+
+    [id^=btn]:checked + ul {
+        display: block;
+    }
+
+    nav ul ul li {
+        border-bottom: 0px;
     }
 }
