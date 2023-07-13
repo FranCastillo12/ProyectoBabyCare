@@ -53,7 +53,7 @@
    </div>
 
        <div class="form_container">
-     <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit1" type="submit" ID="Button1"/>
+     <asp:Button Text="Unirse" runat="server" CssClass="form_submit1" type="submit" ID="Button1"/>
 
            </div>
         
