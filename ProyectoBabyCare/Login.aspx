@@ -33,8 +33,8 @@
                     <label for="Contrasena" class="form_label">Contraseña</label>
                     <span class="form_line"></span>
                 </div>
-                 <asp:Button Text="Iniciar Sesión" runat="server" CssClass="form_submit" type="submit" ID="Button2"/>
-                 <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="Button3"/>
+                 <asp:Button Text="Iniciar Sesión" runat="server" CssClass="form_submit" type="submit" ID="btnIniciarSesion" OnClick="btnIniciarSesion_Click"/>
+                 <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="btnCrearCuenta" OnClick="btnCrearCuenta_Click"/>
             </div>    
     </form>
         <%-- IMAGEN QUE SE COLOCA A LA IZQUIERDA --%>

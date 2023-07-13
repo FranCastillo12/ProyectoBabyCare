@@ -42,7 +42,7 @@
                     <label for="fecha" class="form_label">fecha</label>
                     <span class="form_line"></span>
                 </div>
-                 <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="Button2"/>
+                 <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="btnCrearCuentabebe" OnClick="btnCrearCuentabebe_Click"/>
             </div>
         <hr style="border-top: 4px dashed red; margin-top: 50px;">
         <div class="contenedor" style="margin-top:20px;">
@@ -51,14 +51,10 @@
          <div class="form_group" style="margin-top:20px;">
             <asp:TextBox runat="server" ID="TextBox2" CssClass="normal_input" type="text"  placeholder="Ingrese un código" />
    </div>
-
        <div class="form_container">
-     <asp:Button Text="Unirse" runat="server" CssClass="form_submit1" type="submit" ID="Button1"/>
+     <asp:Button Text="Unirse" runat="server" CssClass="form_submit1" type="submit" ID="btnUnirseCodigo" OnClick="btnUnirseCodigo_Click"/>
 
            </div>
-        
-             
-        
     </form>
            <div class="image-containerRight">
             <div class="image-wrapper">

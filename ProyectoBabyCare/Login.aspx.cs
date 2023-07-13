@@ -13,5 +13,15 @@ namespace ProyectoBabyCare
         {
 
         }
+
+        protected void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCrearCuenta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

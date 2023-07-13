@@ -48,10 +48,9 @@
                     <label for="Contrasena" class="form_label">Contraseña</label>
                     <span class="form_line"></span>
                 </div>  
-                <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="Button2"/>
+                <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="btnCrearCuenta" OnClick="btnCrearCuenta_Click"/>
             </div>
     </form>
-
      <div class="image-containerRight">
             <div class="image-wrapper">
                 <img   src="../images/ImageRegistro1.png" alt="Imagen adicional" class="auto-style2">

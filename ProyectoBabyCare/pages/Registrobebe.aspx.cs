@@ -13,5 +13,15 @@ namespace ProyectoBabyCare.pages
         {
 
         }
+
+        protected void btnCrearCuentabebe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnUnirseCodigo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
