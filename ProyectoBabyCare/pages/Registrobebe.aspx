@@ -44,7 +44,7 @@
                 </div>
                  <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="btnCrearCuentabebe" OnClick="btnCrearCuentabebe_Click"/>
             </div>
-        <hr style="border-top: 4px dashed red; margin-top: 50px;">
+        <hr style="border-top: 4px dashed #DF599D; margin-top: 50px;color:">
         <div class="contenedor" style="margin-top:20px;">
           <label class="label-codigo">Unirse mediante un código</label>
      </div>

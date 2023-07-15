@@ -1,0 +1,281 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Baloo+2');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+.rowcambio {
+    background: #ffffff;
+    margin-right: 70px;
+    height: 200px;
+    width: 600px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    /*    display: flex;
+    flex-direction: column;
+    min-height: 100vh;*/
+    justify-content: flex-end;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.title {
+    font-weight: 600; /* Semibold */
+    font-size: 170%;
+    font-family: 'Comfortaa', sans-serif;
+    position: absolute;
+    top: 130px;
+    background-color: #FFC0CB;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+
+.container.rounded {
+    background: #ffffff;
+    margin-top: 900px;
+}
+
+.prueba {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 160px;
+}
+
+.profile-button {
+    display: block;
+    margin: 0 -35%; /* Valores negativos para extender hacia la izquierda y la derecha */
+    text-align: center;
+    justify-content: center;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700; /* Semibold */
+    font-size: 25px;
+    background: #09244B;
+    box-shadow: none;
+    border: none;
+    width: 180%;
+    border-radius: 30px;
+}
+
+.form-titulo {
+    background: deepskyblue;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 30px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 5px solid red;
+}
+
+.profile-button:focus {
+    background: #09244B;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #09244B;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #09244B;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 20px;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+.title-bebes {
+    font-weight: 600; /* Semibold */
+    font-size: 115%;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+.experience {
+    font-size: 20px;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.sub {
+    color: #A020F0;
+    font-weight: 600; /* Semibold */
+    font-size: 170%;
+    font-family: 'Baloo 2', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.form-controll {
+    color: #09244B;
+    font-weight: 100; /* Semibold */
+    font-size: 150%;
+    font-family: 'Comfortaa', sans-serif;
+    height: 85px;
+    border: 2px solid #A020F0; /* Color del borde deseado */
+    margin: 15px;
+    width: 90%;
+    margin: 15px auto;
+}
+
+.form-control {
+    color: #09244B;
+    font-weight: 100; /* Semibold */
+    font-size: 150%;
+    font-family: 'Comfortaa', sans-serif;
+    height: 85px;
+    border: 3px dashed #BA68C8; /* Color del borde deseado */
+    margin: 15px;
+    width: 90%;
+    margin: 15px auto;
+}
+
+    .form-control::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+        width: 1px;
+        height: 80%;
+        background-color: #000;
+    }
+
+.card {
+    width: 540px; /* Set width of cards */
+    display: flex; /* Children use Flexbox */
+    flex-direction: column; /* Rotate Axis */
+    border: 1px solid #09244B; /* Set up Border */
+    border-radius: 4px; /* Slightly Curve edges */
+    overflow: hidden; /* Fixes the corners */
+    margin: 5px auto; /* Add space between cards and center them horizontally */
+    margin-top: -130px;
+    margin-left: 130px;
+}
+
+
+.card-header {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700; /* Semibold */
+    font-size: 25px;
+    color: #09244B;
+    text-align: center;
+    border-bottom: 1px solid #09244B;
+    background-color: #FFEBEE;
+    padding: 10px 68px;
+}
+
+.card-main {
+    display: flex; /* Children use Flexbox */
+    flex-direction: column; /* Rotate Axis to Vertical */
+    justify-content: center; /* Group Children in Center */
+    align-items: center; /* Group Children in Center (on cross axis) */
+    padding: 15px 0; /* Add padding to the top/bottom */
+}
+
+/*.custom-div {
+    border: 3px dotted #09244B;*/ /* Color del borde deseado */
+/*height: 10%;
+    padding:0;
+    margin:0;
+}*/
+
+select.form-control {
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+}
+
+.hola {
+    margin: 10px;
+}
+
+#divContenedor {
+    height: 200px; /* Ajusta la altura según sea necesario */
+}
+
+.dino {
+    float: left; /* Colocar la imagen a la izquierda */
+    width: 130px; /* Cambiar el ancho a la medida deseada */
+    margin-top: -130px;
+    margin-left: -200px;
+}
+
+.estella {
+    float: right; /* Colocar la imagen a la izquierda */
+    width: 130px; /* Cambiar el ancho a la medida deseada */
+    margin-top: -120px;
+    margin-right: -100px;
+}
+
+@media (max-width : 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    .sub {
+        font-size: 140%;
+    }
+
+    .card {
+        width: 330px; /* Set width of cards */
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .profile-button {
+        display: block;
+        margin: 0 auto; /* Valores negativos para extender hacia la izquierda y la derecha */
+        text-align: center;
+        justify-content: center;
+        font-family: 'Baloo 2', sans-serif;
+        font-weight: 700; /* Semibold */
+        font-size: 25px;
+        background: #09244B;
+        box-shadow: none;
+        border: none;
+        width: 100%;
+        border-radius: 30px;
+    }
+}
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+
+    .container rounded {
+        margin-left: 0%;
+    }
+
+    .sub {
+        font-size: 140%;
+    }
+}

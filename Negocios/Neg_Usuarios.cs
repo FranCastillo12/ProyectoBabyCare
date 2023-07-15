@@ -79,5 +79,58 @@ namespace Negocios
             return iConexion.ExecuteSPWithDT(spName, lstParametros);
 
         }
+        public DataTable ObtenerUsuarioRelacionados(string idbebe)
+        {
+            try
+            {
+                string SpName = "SP_ObteneUsuariosRelacionados";
+                var lstParametros = new List<SqlParameter>()
+                {
+                     new SqlParameter("@idbebe", idbebe)
+                };
+                Datos.ConexionSQL Iconexion = new Datos.ConexionSQL();
+                return Iconexion.ExecuteSPWithDT(SpName, lstParametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable ObtenerRoles()
+        {
+            try
+            {
+                string SpName = "SP_ObtenerRoles";
+                var lstParametros = new List<SqlParameter>()
+                {
+                };
+                Datos.ConexionSQL Iconexion = new Datos.ConexionSQL();
+                return Iconexion.ExecuteSPWithDT(SpName, lstParametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void CambioRol(string idUsuario, string idrol)
+        {
+            try
+            {
+                string SpName = "SP_UpdateRol";
+                var lstParametros = new List<SqlParameter>()
+                {
+                    new SqlParameter("@idusuario", idUsuario),
+                    new SqlParameter("@idrol", idrol),
+
+                };
+                Datos.ConexionSQL Iconexion = new Datos.ConexionSQL();
+                Iconexion.ExecuteSP(SpName, lstParametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

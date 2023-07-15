@@ -73,11 +73,17 @@
     <Content Include="images\ImageRegistro2.png" />
     <Content Include="images\logo.png" />
     <Content Include="Login.aspx" />
+    <Content Include="pages\AdminFamiliares.aspx" />
+    <Content Include="pages\Etapas_Desarrollo.aspx" />
+    <Content Include="pages\Perfil.aspx" />
     <Content Include="pages\Registro.aspx" />
     <Content Include="pages\Registrobebe.aspx" />
     <Content Include="styles\generales\Login.css" />
     <Content Include="styles\generales\Navbar.css" />
     <Content Include="styles\generales\Registro.css" />
+    <Content Include="styles\PaginaUsuarios\AdminFamiliares.css" />
+    <Content Include="styles\PaginaUsuarios\Etapas_desarollo.css" />
+    <Content Include="styles\PaginaUsuarios\Perfil.css" />
     <Content Include="Web.config" />
     <Content Include="WebFormPrivate.aspx" />
     <Content Include="WebFormPublic.aspx" />
@@ -89,6 +95,27 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\AdminFamiliares.aspx.cs">
+      <DependentUpon>AdminFamiliares.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AdminFamiliares.aspx.designer.cs">
+      <DependentUpon>AdminFamiliares.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Etapas_Desarrollo.aspx.cs">
+      <DependentUpon>Etapas_Desarrollo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Etapas_Desarrollo.aspx.designer.cs">
+      <DependentUpon>Etapas_Desarrollo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>

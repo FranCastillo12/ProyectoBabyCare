@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 
 * {
@@ -91,7 +92,12 @@ body {
     outline: none;
     border-bottom: 3px solid var(--color);
 }
-
+.label-codigo {
+    font-weight: 700; /* Semibold */
+    font-size: 120%;
+    font-family: 'Comfortaa', sans-serif;
+    color: #DF599D;
+}
 .normal_input {
     width: 100%;
     background: none;
@@ -131,23 +137,23 @@ body {
 }
 
 .form_submit {
-    background: #8DCBE2;
+    background-color: #3399CC;
     color: #ffffff;
     font-family: 'Baloo 2', 'sans-serif';
     font-weight: 700; /* Semibold */
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: .8em 0;
     border: none;
     border-radius: .5em;
 }
 
 .form_submit1 {
-    background: #8DCBE2;
+    background: #3399CC;
     color: #ffffff;
     font-weight: 300;
     font-family: 'Baloo 2', 'sans-serif';
     font-weight: 700; /* Semibold */
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: .8em 0;
     border: none;
     border-radius: .5em;
@@ -173,5 +179,18 @@ body {
 @media (max-width:425px) {
     .form_title {
         font-size: 1.8rem
+    }
+    .image-containerleft {
+        display: none;
+    }
+
+    .image-containerRight {
+        display: none;
+    }
+    .label-codigo {
+        font-weight: 700; /* Semibold */
+        font-size: 100%;
+        font-family: 'Comfortaa', sans-serif;
+        color: #DF599D;
     }
 }
