@@ -33,11 +33,11 @@ namespace Negocios
 
         public Entidades.En_Usuarios VerificarCredenciales(string user, string pass)
         {
-            string spName = "SP_InsertarUsuarios";
+            string spName = "SP_IniciarSesion";
             var lstParametros = new List<SqlParameter>()
             {
-                new SqlParameter("@usuario", user),
-                new SqlParameter("@pass", pass)
+                new SqlParameter("@correo", user),
+                new SqlParameter("@contra", pass)
             };
             Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
             DataTable dtDatos = iConexion.ExecuteSPWithDT(spName, lstParametros);
@@ -132,5 +132,33 @@ namespace Negocios
                 throw ex;
             }
         }
+        public void CambioDatos(string correo, string nombre,string apellidos)
+        {
+            try
+            {
+                string SpName = "SP_ModificarDatosUsuario";
+                var lstParametros = new List<SqlParameter>()
+                {
+                    new SqlParameter("@correo", correo),
+                    new SqlParameter("@nombre", nombre),
+                     new SqlParameter("@apellidos", apellidos)
+                };
+                Datos.ConexionSQL Iconexion = new Datos.ConexionSQL();
+                Iconexion.ExecuteSP(SpName, lstParametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+
+
+
+
+
+
     }
 }

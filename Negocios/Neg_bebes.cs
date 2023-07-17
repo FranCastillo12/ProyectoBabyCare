@@ -13,12 +13,14 @@ namespace Negocios
         {
             try
             {
-                string spName = "";
+                string spName = "SP_InsertarBebe";
                 var lstParametros = new List<SqlParameter>()
             {
                 new SqlParameter("@nombre", nombre),
                 new SqlParameter("@apellidos", apellidos),
                 new SqlParameter("@fechanacimiento", fechanacimiento),
+                new SqlParameter("@correo", fechanacimiento)
+                
             };
                 Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
                 iConexion.ExecuteSP(spName, lstParametros);
@@ -28,5 +30,27 @@ namespace Negocios
                 throw ex;
             }
         }
+
+        public void IngresarXcodigo(string correo, string codigo)
+        {
+            try
+            {
+                string spName = "SP_unirseXcodigo";
+                var lstParametros = new List<SqlParameter>()
+            {
+                new SqlParameter("@codigo", codigo),
+                new SqlParameter("@codigo", correo)  
+            };
+                Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
+                iConexion.ExecuteSP(spName, lstParametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
     }
 }

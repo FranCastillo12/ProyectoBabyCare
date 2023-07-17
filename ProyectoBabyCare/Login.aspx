@@ -8,9 +8,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio Sesión</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="styles/generales/Login.css" rel="stylesheet" />
 </head>
 <body>
+            
+
             <div class="image-containerleft">
   <div class="image-wrapperleft">
     <img src="images/ImageLogin1.png" alt="Imagen adicional">
@@ -23,19 +26,21 @@
 
             <div class="form_container"> 
                 <div class="form_group">
-                    <asp:TextBox runat="server" type="type" name="Correo" class="form_input" placeholder=" "/>
+                    <asp:TextBox runat="server" type="type" name="Correo" ID="txtCorreo" class="form_input" placeholder=" "/>
                    
                     <label for="Correo" class="form_label">Correo</label>
                     <span class="form_line"></span>
                 </div>
                   <div class="form_group">
-                      <asp:TextBox runat="server"  type="type" name="Contrasena" class="form_input" placeholder=" "/>    
+                      <asp:TextBox runat="server"  type="type" name="Contrasena" ID="txtContra" class="form_input" placeholder=" "/>    
                     <label for="Contrasena" class="form_label">Contraseña</label>
                     <span class="form_line"></span>
                 </div>
                  <asp:Button Text="Iniciar Sesión" runat="server" CssClass="form_submit" type="submit" ID="btnIniciarSesion" OnClick="btnIniciarSesion_Click"/>
                  <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="btnCrearCuenta" OnClick="btnCrearCuenta_Click"/>
-            </div>    
+            </div>  
+       
+  
     </form>
         <%-- IMAGEN QUE SE COLOCA A LA IZQUIERDA --%>
             <div class="image-containerRight">

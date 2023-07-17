@@ -12,7 +12,7 @@
 
     <form runat="server">
 
-         <div class="title">Mi pzzzzzzzzzzzzzerfil</div>
+         <div class="title">Mi perfil</div>
         <div class="contendor" style="margin-top:200px"> 
 
 
@@ -48,8 +48,7 @@
 
 
                 <div class="mt-3 text-center">
-                    <button class="btn btn-primary profile-button" type="button">Modificar</button>
-
+                    <asp:Button Text="Modificar" runat="server" class="btn btn-primary profile-button" type="button" ID="btnModificarDatos" OnClick="btnModificarDatos_Click"/>
                 </div>
             </div>
         </div>

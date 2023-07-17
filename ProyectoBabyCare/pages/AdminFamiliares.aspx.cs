@@ -126,7 +126,34 @@ namespace ProyectoBabyCare.pages
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-         
+            cambiorol.Visible = true;
+            Button boton = (Button)sender;
+            string[] partes = boton.Text.Split(' ');
+            string idBoton = boton.ID;
+            lblnombre.Text = partes[0] + ' ' + partes[1];
+            lblnumerousuario.Text = idBoton;
+
+            Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios();
+
+            DataTable TableUsuarios = iUsuario.ObtenerRoles();
+
+            StringBuilder StrListaRoles = new StringBuilder();
+
+            ddlRoles.DataSource = TableUsuarios;
+            ddlRoles.DataTextField = "rol";
+            ddlRoles.DataValueField = "id_rol";
+            ddlRoles.DataBind();
+            ddlRoles.Items.Insert(0, new ListItem(partes[2], "0"));
+        }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            cambiorol.Visible = true;
+            string idUsuario = lblnumerousuario.Text;
+            string valorSeleccionado = ddlRoles.SelectedValue;
+
+            Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios;
+            iUsuario.CambioRol(idUsuario, valorSeleccionado);
         }
     }
 }

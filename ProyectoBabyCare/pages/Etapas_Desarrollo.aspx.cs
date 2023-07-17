@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocios;
 
 namespace ProyectoBabyCare.pages
 {
@@ -11,21 +13,26 @@ namespace ProyectoBabyCare.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+           Negocios.Neg_EtapasDesarrollo iEtapas = new Negocios.Neg_EtapasDesarrollo();
+
+            DataTable dtEtapas = iEtapas.Obtener_EtapasDesarrollo();
+
             System.Text.StringBuilder strListaProductos = new System.Text.StringBuilder();
             // List<Productos> productos = Neg_Productos.CargarProductos();
 
-            for (int i = 0; i < 10; i++)
+
+            foreach (DataRow drEtapas in dtEtapas.Rows)
             {
-
-
                 strListaProductos.Append("<div class=\"card\" style=\"--clr: #009688\">");
                 strListaProductos.Append("<div class=\"img-box\">");
-                strListaProductos.Append("<img src=\"").Append("https://i.postimg.cc/t4w95jsf/img-01.png").Append("\" />");
+                strListaProductos.Append("<img src=\"").Append(drEtapas["imagen"]).Append("\" />");
                 strListaProductos.Append("</div>");
                 strListaProductos.Append("<div class=\"content\">");
-                strListaProductos.Append("<h2>").Append("Leafs").Append("</h2>");
-                strListaProductos.Append("<p>").Append("Lorem ipsum, dolor sit amet consectetur adipisicing elit.\r\n                    Architecto, hic? Magnam eum error saepe doloribus corrupti\r\n                    repellat quisquam alias doloremque!").Append("</p>");
-                strListaProductos.Append("<a href=\"/Pages/frmMantenimiento.aspx?opcion=2&codigoProducto=").Append(i).Append("\">Read More</a>");
+                strListaProductos.Append("<h2>").Append(Convert.ToString(drEtapas["categoriaEtapa"])).Append("</h2>");//Edad de la etapa
+                strListaProductos.Append("<p>").Append(Convert.ToString(drEtapas["Descripcion"])).Append("</p>");//descipcion
+                strListaProductos.Append("<a href=\"/Pages/frmMantenimiento.aspx?opcion=2&codigoProducto=").Append("\">Read More</a>");//Link a una pagina para leer mas
                 strListaProductos.Append("</div>");
                 strListaProductos.Append("</div>");
             }

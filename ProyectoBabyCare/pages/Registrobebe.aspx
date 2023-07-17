@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro bebé</title>
     <link href="../styles/generales/Registro.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="image-containerleft">
@@ -27,18 +28,18 @@
 
             <div class="form_container"> 
                 <div class="form_group">
-                    <asp:TextBox runat="server" type="type" name="nombre" class="form_input" placeholder=" "/>
+                    <asp:TextBox runat="server" type="type" ID="txtNombre" name="nombre" class="form_input" placeholder=" "/>
                    
                     <label for="nombre" class="form_label">Nombre</label>
                     <span class="form_line"></span>
                 </div>
                   <div class="form_group">
-                      <asp:TextBox runat="server"  type="type" name="Apellidos" class="form_input" placeholder=" "/>    
+                      <asp:TextBox runat="server"  type="type" ID="TxtApellidos" name="Apellidos" class="form_input" placeholder=" "/>    
                     <label for="Apellidos" class="form_label">Apellidos</label>
                     <span class="form_line"></span>
                 </div>
                   <div class="form_group">
-                      <asp:TextBox runat="server" type="date" name="fecha" class="form_input" placeholder=" " />
+                      <asp:TextBox runat="server" type="date" name="fecha" ID="txtfechadenacimiento" class="form_input" placeholder=" " />
                     <label for="fecha" class="form_label">fecha</label>
                     <span class="form_line"></span>
                 </div>
@@ -49,7 +50,7 @@
           <label class="label-codigo">Unirse mediante un código</label>
      </div>
          <div class="form_group" style="margin-top:20px;">
-            <asp:TextBox runat="server" ID="TextBox2" CssClass="normal_input" type="text"  placeholder="Ingrese un código" />
+            <asp:TextBox runat="server" ID="txtCodigo" CssClass="normal_input" type="text"  placeholder="Ingrese un código" />
    </div>
        <div class="form_container">
      <asp:Button Text="Unirse" runat="server" CssClass="form_submit1" type="submit" ID="btnUnirseCodigo" OnClick="btnUnirseCodigo_Click"/>
