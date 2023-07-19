@@ -1,0 +1,167 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Baloo 2', sans-serif;
+    background-color: #8DCBE2;
+    opacity: 0.8;
+    background-image: radial-gradient(#1400ff 0.8500000000000001px, transparent 0.8500000000000001px), radial-gradient(#1400ff 0.8500000000000001px, #8DCBE2 0.8500000000000001px);
+    background-size: 34px 34px;
+    background-position: 0 0,17px 17px;
+    display: flex;
+    min-height: 100vh;
+}
+
+
+.image-containerRight {
+    float: right;
+}
+
+.image-wrapper {
+    margin-top: 100px;
+    margin-right: 140px;
+}
+
+    .image-wrapper img {
+        width: 280px; /* Ajusta el ancho según sea necesario */
+        height: auto; /* La altura se ajustará proporcionalmente según el ancho */
+    }
+
+
+.image-containerleft {
+    float: left;
+}
+
+.image-wrapperleft {
+    margin-top: 550px;
+    margin-left: 140px;
+}
+
+    .image-wrapperleft img {
+        width: 280px; /* Ajusta el ancho según sea necesario */
+        height: auto; /* La altura se ajustará proporcionalmente según el ancho */
+    }
+
+
+
+
+
+.form {
+    background-color: #ffffff;
+    margin: auto;
+    width: 95%;
+    max-width: 530px;
+    padding: 4.5em 3em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    text-align: center;
+}
+
+.logoo {
+    width: 100%;
+    height: auto;
+    margin-top: -20px;
+    margin: 0 auto;
+}
+
+.form_container {
+    overflow: hidden;
+    margin-top: 4em;
+    display: grid;
+    gap: 2.5em;
+}
+
+
+
+.form_group {
+    position: relative;
+    --color: #5757577e;
+}
+
+
+.form_input {
+    width: 100%;
+    background: none;
+    color: #706c6c;
+    font-size: 1rem;
+    padding: .6em .3em;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid var(--color);
+}
+
+    .form_input:not(:placeholder-shown) {
+        /* Color cuando se digita en el textbox*/
+        color: #000000;
+    }
+
+
+
+        .form_input:focus + .form_label,
+        .form_input:not(:placeholder-shown) + .form_label {
+            transform: translateY(-12px) scale(1.2);
+            transform-origin: left top;
+            /*Color del label cuando se toca el textbox*/
+            color: #0029ff
+        }
+
+
+.form_label {
+    font-family: 'Baloo 2', 'sans-serif';
+    color: var(--color);
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(12px);
+    transition: transform .5s, color .3s;
+}
+
+.form_submit {
+    background-color: #3399CC;
+    color: #ffffff;
+    font-family: 'Baloo 2', 'sans-serif';
+    font-weight: 800; /* Semibold */
+    font-size: 1.2rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+}
+
+
+
+.form_line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #444cf7;
+    transform: scale(1);
+    transform: left bottom;
+    transition: transform .4s;
+}
+
+
+.form_input:focus + .form_line,
+.form_input:not(:placeholder-shown) ~ .form_line {
+    transform: scale(1);
+}
+
+
+@media (max-width:425px) {
+    .image-containerleft {
+        display: none;
+    }
+
+    .image-containerRight {
+        display: none;
+    }
+
+    .form_title {
+        font-size: 1.8rem
+    }
+}
