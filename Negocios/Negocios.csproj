@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consejos.cs" />
     <Compile Include="Neg_bebes.cs" />
     <Compile Include="Neg_EtapasDesarrollo.cs" />
     <Compile Include="Neg_Usuarios.cs" />
+    <Compile Include="NombresSignificados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

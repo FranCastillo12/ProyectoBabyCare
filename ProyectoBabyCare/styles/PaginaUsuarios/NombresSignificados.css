@@ -1,0 +1,221 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Baloo+2');
+
+body {
+    background:#ffffff;
+    max-width: auto;
+    max-height: auto;
+    overflow-x:hidden;
+}
+.contenedor2 {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.title {
+    position: absolute;
+    top: 130px;
+    font-size: 24px;
+    background-color: #FFC0CB;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    z-index: -1;
+}
+.boton-con-imagen {
+    width: 200px; /* Ajusta el ancho del botón según tus necesidades */
+    height: 110px; /* Ajusta la altura del botón según tus necesidades */
+    background-image: url(../../images/bder.png); /* Reemplaza 'ruta-de-la-imagen.jpg' con la URL o la ruta a tu imagen */
+    background-size: cover; /* Cubre completamente el botón con la imagen */
+    border: none; /* Quita el borde del botón, si lo deseas */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón para indicar que es interactivo */
+}
+.boton-con-imagen2 {
+    width: 200px; /* Ajusta el ancho del botón según tus necesidades */
+    height: 110px; /* Ajusta la altura del botón según tus necesidades */
+    background-image: url(../../images/bizq.png); /* Reemplaza 'ruta-de-la-imagen.jpg' con la URL o la ruta a tu imagen */
+    background-size: cover; /* Cubre completamente el botón con la imagen */
+    border: none; /* Quita el borde del botón, si lo deseas */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón para indicar que es interactivo */
+}
+
+.container.rounded {
+    margin-top: 900px;
+}
+
+.container-con-borde {
+    border: 3.5px dashed #3399CC;
+    background: #ffffff;
+    margin-top: 900px;
+}
+.profile-buttonddl {
+    font-weight: 600; /* Semibold */
+    font-size: 115%;
+    font-family: 'Baloo 2', sans-serif;
+    background: rgba(160, 32, 240, 0.19); /* Cambia este valor según la opacidad deseada */
+    box-shadow: none;
+    border: none;
+    width: 90%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-left: 30%;
+    color: #A020F0;
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+}
+.profile-button {
+    font-weight: 600; /* Semibold */
+    font-size: 115%;
+    font-family: 'Baloo 2', sans-serif;
+    background: rgba(141, 203, 226, 0.4); /* Cambia el valor de opacidad según tus necesidades */
+    box-shadow: none;
+    border: none;
+    width: 143%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-left: 30%;
+    color: #0088CC;
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+}
+.image-container3 {
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    background-image: url('../../images/Dados.jpg'); /* Ruta de la imagen que se utilizará como fondo */
+    background-size: cover; /* Ajusta la imagen al tamaño del div */
+    background-position: center; /* Centra la imagen en el div */
+}
+.image-container {
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    background-image: url('../../images/NombresSignificados.jpg'); /* Ruta de la imagen que se utilizará como fondo */
+    background-size: cover; /* Ajusta la imagen al tamaño del div */
+    background-position: center; /* Centra la imagen en el div */
+}
+.image-container2 {
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    background-image: url('../../images/Fondopeluches.png'); /* Ruta de la imagen que se utilizará como fondo */
+    background-size: cover; /* Ajusta la imagen al tamaño del div */
+    background-position: center; /* Centra la imagen en el div */
+}
+
+    .profile-button:focus {
+        background: #682773;
+        box-shadow: none
+    }
+
+    .profile-button:active {
+        background: #682773;
+        box-shadow: none
+    }
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.conetedor-bebes{
+    margin-left:7%
+}
+
+.title-bebes {
+    font-weight: 600; /* Semibold */
+    font-size: 115%;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+.experience {
+    font-size: 20px;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+
+.form-control {
+    border: 2px dashed #3399CC; /* Color del borde deseado */
+    width: 150%;
+    background: none;
+    color: #706c6c;
+    font-size: 1rem;
+    padding: .6em .3em;
+   
+}
+
+.form-controlddl {
+    border: 1px solid #3399CC; /* Color del borde deseado */
+    border-radius:3px;
+    width: 100%;
+    background: none;
+    color: #706c6c;
+    font-size: 1rem;
+    padding: .6em .3em;
+}
+select.form-control {
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+}
+
+
+
+
+.form-control:not(:placeholder-shown) {
+    /* Color cuando se digita en el textbox*/
+    color: #000000;
+}
+
+
+
+    .form-control:focus + .form_label,
+    .form-control:not(:placeholder-shown) + .form_label {
+        transform: translateY(-12px) scale(1.2);
+        transform-origin: left top;
+        /*Color del label cuando se toca el textbox*/
+        color: #0029ff;
+        outline: none; /* Evita el resaltado al hacer clic */
+    }
+
+
+.form_label {
+    font-family: 'Baloo 2', 'sans-serif';
+    font-size:18px;
+    color: var(--color);
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(12px);
+    transition: transform .5s, color .3s;
+}
+.form_line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #444cf7;
+    transform: scale(1);
+    transform: left bottom;
+    transition: transform .4s;
+}
+
+@media (max-width: 700px) {
+    .contenedor2 {
+        /*display: block;  Otra opción para eliminar los atributos flex */
+        justify-content: initial;
+        align-items: initial;
+    }
+    .conetedor-bebes {
+        margin-left: 0%
+    }
+    .boton-con-imagen2 {
+        width: 80px; /* Ajusta el ancho del botón según tus necesidades */
+        height: 50px; /* Ajusta la altura del botón según tus necesidades */
+    }
+    .boton-con-imagen {
+        width: 80px; /* Ajusta el ancho del botón según tus necesidades */
+        height: 50px; /* Ajusta la altura del botón según tus necesidades */
+    }
+}

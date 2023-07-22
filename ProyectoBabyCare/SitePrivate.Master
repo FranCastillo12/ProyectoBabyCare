@@ -1,12 +1,15 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SitePrivate.master.cs" Inherits="ProyectoBabyCare.SitePrivate" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SitePrivate.master.cs" Inherits="ProyectoBabyCare.SitePrivate" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- Bootstrap 5 CDN Links -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link href="styles/generales/Navbar.css" rel="stylesheet" />
     <title>
         <asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder>
@@ -16,37 +19,52 @@
 </head>
 <body>
 
-     <nav>
-       <div class="logo">
-            <img src="..\..\Images\logo.png" class="logoo" alt="Logo de la marca">
+    <nav class="navbar navbar-expand-lg p-3">
+    <div class="container-fluid">
+    
+         <div class="logo">
+            <img src="\Images\logo.png" class="logoo" alt="Logo de la marca">
        </div>
 
-       <label for="btn" class="icon">
-         <span class="fa fa-bars"></span>
-       </label>
 
-       <input type="checkbox" id="btn" />
 
-       <ul>
-         <li><a href="#">Nombres & Significados</a></li>
-         <li><a href="#">Consejos</a></li>
-         <li><a href="#">Sobre nosotros</a></li>
-        <li>
-           <label for="btn-1" class="show">Features+</label>
-           <a href="#">Features</a>
-           <input type="checkbox" id="btn-1" />
-           <ul>
-             <li><a href="#">Feature 1</a></li>
-             <li><a href="#">Feature 2</a></li>
-             <li><a href="#">Feature 3</a></li>
-           </ul>
-           </li>
-       </ul>
-     </nav>
-        <div class="content">
+     <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon custom-toggler-icon"></span>
+    </button>
+    
+      <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Expediente & Medicación</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 active"href="#">Desarrollo</a>
+          </li>
+              <li class="nav-item">
+            <a class="nav-link mx-2 active"href="#">Preguntas</a>
+          </li>
+                <li class="nav-item dropdown">
+            <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Galeria
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Fotos</a></li>
+              <li><a class="dropdown-item" href="#">Ultrasonidos</a></li>
+              <li><a class="dropdown-item" href="#">Audios</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+        <div >
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
             </asp:ContentPlaceHolder>
         </div>
-  
+         <!-- Bootstrap 5 JS CDN Links -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 </body>
 </html>
