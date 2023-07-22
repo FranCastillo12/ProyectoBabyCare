@@ -190,5 +190,104 @@ namespace Datos
             }
         }
         #endregion
+
+        #region  Sebas
+        public List<NombresBebes> TraerNombres(string letra, int numgenero)
+        {
+            List<NombresBebes> lstNombres = new List<NombresBebes>();
+            try
+            {
+                sqlConn.Open();
+                string info = "";
+                SqlCommand command = new SqlCommand("BuscarNombresPorLetra", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@letra", letra);
+                command.Parameters.AddWithValue("@Sexo", numgenero);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string nombre = reader["Nombre"].ToString();
+                        string significado = reader["Significado"].ToString();
+                        string genero = reader["idgenero"].ToString();
+                        info += $"{nombre},{significado},{genero};";
+
+                    }
+                }
+                sqlConn.Close();
+                //Convertir la informacion
+                string[] data1 = info.Split(';');
+                foreach (string s in data1)
+                {
+                    string[] atrib = s.Split(',');
+                    NombresBebes bebe = new NombresBebes();
+                    bebe.Nombre1 = atrib[0];
+                    bebe.Significado1 = atrib[1];
+                    if (atrib[2] == "1")
+                    {
+                        bebe.Genero1 = "Niño";
+                    }
+                    else
+                    {
+                        bebe.Genero1 = "Niña";
+                    }
+                    lstNombres.Add(bebe);
+                }
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
+            return lstNombres;
+        }
+
+        public List<Consejos> Consejos()
+        {
+            List<Consejos> lstConsejos = new List<Consejos>();
+            try
+            {
+                sqlConn.Open();
+                string info = "";
+                SqlCommand command = new SqlCommand("TraerConsejos", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string titulo = reader["Titulo"].ToString();
+                        string descripcion = reader["Descripcion"].ToString();
+
+                        info += $"{titulo},{descripcion};";
+
+                    }
+                }
+                sqlConn.Close();
+                //Convertir la informacion
+                string[] data1 = info.Split(';');
+                foreach (string s in data1)
+                {
+                    string[] atrib = s.Split(',');
+                    Entidades.Consejos consejos = new Entidades.Consejos();
+                    //Continuacion del metodo
+                    consejos.Titulo = atrib[0];
+                    consejos.Descripcion = atrib[1];
+
+                    lstConsejos.Add(consejos);
+                }
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
+            return lstConsejos;
+        }
+
+        #endregion
     }
 }
