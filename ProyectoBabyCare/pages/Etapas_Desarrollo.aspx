@@ -9,6 +9,7 @@
       <div class="title">Etapas de desarrollo</div>
     <form id="form1" runat="server">
         <div id="lstfrmMantenimiento" runat="server" class="container">
+            <img  src="../images/3-4meses.png"/>
     <%--    <div class="card" style="--clr: #009688">
             <div class="img-box">
                 <img src="https://i.postimg.cc/t4w95jsf/img-01.png">

@@ -67,6 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+
+    <Content Include="images\0-3meses.jpg" />
+    <Content Include="images\3-4meses.png" />
+    <Content Include="images\5-6meses.jpg" />
+    <Content Include="images\6-9 meses.jpg" />
+    <Content Include="images\9-12meses.jpg" />
+
     <Content Include="images\bder.png" />
     <Content Include="images\bizq.png" />
     <Content Include="images\Dados.jpg" />
@@ -74,12 +81,16 @@
     <Content Include="images\gen1.png" />
     <Content Include="images\gen2.png" />
     <Content Include="images\gen3.png" />
+
     <Content Include="images\ImageLogin1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\ImageLogin2.png" />
     <Content Include="images\ImageRegistro1.png" />
     <Content Include="images\ImageRegistro2.png" />
+    <Content Include="images\imgAdminfami.png" />
+    <Content Include="images\imgperfil.png" />
+    <Content Include="images\imgperfil1.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\NombresSignificados.jpg" />
     <Content Include="images\osito.png" />

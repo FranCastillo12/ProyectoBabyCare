@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SitePublic.master.cs" Inherits="ProyectoBabyCare.SitePublic" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SitePublic.master.cs" Inherits="ProyectoBabyCare.SitePublic" %>
 
 <!DOCTYPE html>
 

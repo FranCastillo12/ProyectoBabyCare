@@ -62,7 +62,6 @@ nav .logo {
     color: red; /* Cambia el color a tu preferencia (por ejemplo, blanco) */
     background-color: red; /* Cambia el color de fondo del botón a tu preferencia */
 }
-
     /* Cambiar el color del icono del botón cuando se pasa el cursor (hover) */
     .custom-toggler:hover .custom-toggler-icon {
         color: red; /* Cambia el color a tu preferencia (por ejemplo, amarillo) */
