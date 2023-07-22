@@ -46,8 +46,8 @@ namespace Negocios
             {
                 iUsuarios = new Entidades.En_Usuarios()
                 {
-                    Usuario = dtDatos.Rows[0][""].ToString(),
-                    IdenBebe = dtDatos.Rows[0][""].ToString()
+                    Usuario = dtDatos.Rows[0]["correo"].ToString(),
+                    //IdenBebe = dtDatos.Rows[0][""].ToString()
                 };
             }
             return iUsuarios;
@@ -152,7 +152,24 @@ namespace Negocios
             }
         }
 
-
+        public DataTable ObtenerSessionbebe(string idbebe,string correo)
+        {
+            try
+            {
+                string SpName = "SP_Rol";
+                var lstParametros = new List<SqlParameter>()
+                {
+                      new SqlParameter("@idBebe", idbebe),
+                      new SqlParameter("@correo", correo)
+                };
+                Datos.ConexionSQL Iconexion = new Datos.ConexionSQL();
+                return Iconexion.ExecuteSPWithDT(SpName, lstParametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
 

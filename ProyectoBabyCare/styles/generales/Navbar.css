@@ -45,10 +45,6 @@ nav {
     transform: scale(1.2);
 }
 
-
-
-
-
 nav ul {
     float: right;
     margin-right: 40px;
@@ -130,6 +126,11 @@ nav ul ul ul li {
     font-size: 15px;
     margin-left: 40px;
 }
+
+.page-container {
+    padding-top: 70px; /* Para asegurarse de que el contenido no se oculte detrás del navbar */
+}
+
 
 @media all and (max-width: 968px) {
     nav ul {

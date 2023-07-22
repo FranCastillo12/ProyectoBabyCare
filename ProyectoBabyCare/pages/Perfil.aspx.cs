@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,9 +15,12 @@ namespace ProyectoBabyCare.pages
         {
             if (!IsPostBack)
             {
-
+                boton.Visible = false;
+                btnAdministrarFamiliares.Enabled = false;
+                Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
+                string correo = credenciales.Usuario;
                 Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
-                DataTable dtUsuarios = iUsuarios.DatosUsuario("castillof075@gmail.com");
+                DataTable dtUsuarios = iUsuarios.DatosUsuario(correo);
                 System.Text.StringBuilder strListaDatos = new System.Text.StringBuilder();
 
                 foreach (DataRow drEmpleados in dtUsuarios.Rows)
@@ -32,33 +36,127 @@ namespace ProyectoBabyCare.pages
                     txtCorreo.Text = Convert.ToString(drEmpleados["correo"]);
                 }
 
-                DataTable dtbebes = iUsuarios.Datosbebes("castillof075@gmail.com");
+                DataTable dtbebes = iUsuarios.Datosbebes(correo);
 
 
                 dropbebes.DataSource = dtbebes;
                 dropbebes.DataTextField = "nombre_bebe";
-                dropbebes.DataValueField = "nombre_bebe";
+                dropbebes.DataValueField = "idBebe";
                 dropbebes.DataBind();
-                dropbebes.Items.Insert(0, new ListItem("Seleccione una cuenta", "0"));
+                dropbebes.Items.Insert(0, new ListItem("Seleccione un bebé", "0"));
             }
         }
 
         protected void btnModificarDatos_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text;
-            string apellidos = txtApellidos.Text;
-            string correo = txtCorreo.Text;
+          
+                string script = null;
+                Regex regex = new Regex("^[a-zA-Z\\s]+$");
+                if (txtNombre.Text == "")
+                {
+                    script = "toastr.error('El nombre no puede estar vacio');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                }
+                //else if (regex.IsMatch(txtNombre.Text))
+                //{
+                //    script = "toastr.success('¡Hola, esto es un ejemplo de Toastr en ASPX!');";
+                //    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                //}
+                else if (txtApellidos.Text == "")
+                {
+                    script = "toastr.error('Los apellidos no pueden estar vacios');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                }
+                //else if (regex.IsMatch(txtApellidos.Text)){
+                //    script = "toastr.success('¡Hola, esto es un ejemplo de Toastr en ASPX!');";
+                //    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                //}
+                else
+                {
+                    string nombre = txtNombre.Text;
+                    string apellidos = txtApellidos.Text;
+                    string correo = txtCorreo.Text;
 
-            Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
+                    Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
 
-            iUsuarios.CambioDatos(correo, nombre, apellidos);
-            //Poner el mensaje de exito
-            string script = @"Swal.fire({
-                        title: '¡Hola!',
-                        text: 'Esto es SweetAlert2 desde ASP.NET',
-                        icon: 'sucess'
-                    });";
-            ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
+                    iUsuarios.CambioDatos(correo, nombre, apellidos);
+                    //Poner el mensaje de exito
+                    script = "toastr.success('Datos modificados');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                }
+            
+
         }
+
+        protected void btnAdministrarFamiliares_Click(object sender, EventArgs e)
+        { 
+            string idbebe = Session["idbebe"] as string;
+            Response.Redirect("/pages/AdminFamiliares.aspx?id=" + idbebe);
+
+        }
+
+        protected void dropbebes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
+            string correo = credenciales.Usuario;
+            string rol = null;
+            string script = null;
+            try
+            {
+                if (dropbebes.SelectedValue == "0")
+                {
+                   
+                    script = "toastr.error('Debe escoger un rol');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                }
+                else
+                {
+                   
+                    
+                    string valorSeleccionado = dropbebes.SelectedValue;
+
+                    Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios();
+
+
+                    Session["idbebe"] = valorSeleccionado;
+
+                    DataTable resultTable = iUsuario.ObtenerSessionbebe(valorSeleccionado,correo);
+                    if (resultTable != null && resultTable.Rows.Count > 0)
+                    {
+                        // Assuming the value you need to retrieve is in the first row and first column of the DataTable
+                        rol = resultTable.Rows[0][0].ToString();
+                        lblcodigo.Text = resultTable.Rows[0][1].ToString();
+
+                        // Store the value in the Session
+                        Session["rol"] = rol;
+                    }
+                    //script = "toastr.success('Ahora tiene el rol');";
+                    //ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                 
+                    if (rol == "Encargado")
+                    {
+                        btnAdministrarFamiliares.Enabled = true;
+                        boton.Visible = true;
+                    }
+                    else
+                    {
+                        btnAdministrarFamiliares.Enabled = false;
+                        boton.Visible = false;
+                    }
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                script = "toastr.warning('Ha occurido un error,Intentelo mas tarde');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            }
+        }
+    
+
+
+   
     }
 }
