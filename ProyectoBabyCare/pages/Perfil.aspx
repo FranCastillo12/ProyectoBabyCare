@@ -117,7 +117,7 @@
 
                     <div class="image-containerRight">
   <div class="image-wrapper">
-    <img src="/images/imgperfil1.png" alt="Imagen adicional">
+    <img src="../images/imgperfil1.png" alt="Imagen adicional">
   </div>
 </div>
 
