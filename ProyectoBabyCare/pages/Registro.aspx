@@ -28,7 +28,7 @@
 
               <div class="image-containerleft">
                    <div class="image-wrapperleft">
-    &nbsp;<img src="/images/ImageRegistro2.png" alt="Imagen adicional" class="auto-style1">
+    &nbsp;<img src="../images/ImageRegistro2.png" alt="Imagen adicional" class="auto-style1">
 
 
   </div>
@@ -68,7 +68,7 @@
     </form>
      <div class="image-containerRight">
             <div class="image-wrapper">
-                <img   src="/images/ImageRegistro1.png" alt="Imagen adicional" class="auto-style2">
+                <img   src="../images/ImageRegistro1.png" alt="Imagen adicional" class="auto-style2">
                     <br />
                     <br />
                     <br />
