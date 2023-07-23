@@ -69,7 +69,7 @@ namespace ProyectoBabyCare.pages
                 Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
 
                 iBebes.Registrarbebe(nombre, apellidos, fecha_nacimiento,correo);
-                    Response.Redirect("/pages/Perfil.aspx");
+                    Response.Redirect("Perfil.aspx");
                     //Poner el mensaje de exito
                 //    script = @"Swal.fire({
                 //        title: '¡Hola!',
@@ -118,7 +118,7 @@ namespace ProyectoBabyCare.pages
                 {
                 Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
                 iBebes.IngresarXcodigo(correo, codigo);
-                    Response.Redirect("/pages/Perfil.aspx");
+                    Response.Redirect("Perfil.aspx");
                 // script = @"Swal.fire({
                 //        title: '¡Hola!',
                 //        text: 'Esto es SweetAlert2 desde ASP.NET',
