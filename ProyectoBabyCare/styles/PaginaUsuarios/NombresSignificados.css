@@ -139,18 +139,27 @@ body {
 .form-control {
     border: 2px dashed #3399CC; /* Color del borde deseado */
     width: 150%;
-    background: none;
+    background-color:white;
     color: #706c6c;
     font-size: 1rem;
     padding: .6em .3em;
-   
+    text-align: center;
+}
+.form-controlinterno {
+    border: 2px dashed #3399CC; /* Color del borde deseado */
+    width: 150%;
+    background-color: white;
+    color: #706c6c;
+    font-size: 50%;
+    padding: .6em .3em;
+    text-align: center;
 }
 
 .form-controlddl {
     border: 1px solid #3399CC; /* Color del borde deseado */
     border-radius:3px;
     width: 100%;
-    background: none;
+    background-color:white;
     color: #706c6c;
     font-size: 1rem;
     padding: .6em .3em;
@@ -235,7 +244,8 @@ select.form-control {
     width: 100%;
 }
 .txt2 {
-    width: 60%;
+    width: 80%;
+    margin-left:10%;
 }
 .imagen1 {
     width: 35%;

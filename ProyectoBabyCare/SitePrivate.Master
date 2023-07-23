@@ -38,7 +38,7 @@
             <a class="nav-link active" aria-current="page" href="Expediente.aspx">Expediente & Medicación</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active"href="pages/Etapas_Desarrollo.aspx">Desarrollo</a>
+            <a class="nav-link mx-2 active" aria-current="page" href ="Etapas_Desarrollo.aspx">Desarrollo</a>
           </li>
               <li class="nav-item">
             <a class="nav-link mx-2 active"href="#">Preguntas</a>
@@ -54,7 +54,7 @@
             </ul>
           </li>
             <li class="nav-item">
-            <a class="nav-link mx-2 active"href="#">Salir</a>
+            <a class="nav-link mx-2 active" aria-current="page" href="logout.aspx">Salir</a>
           </li>
         </ul>
       </div>
