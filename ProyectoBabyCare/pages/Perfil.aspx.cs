@@ -19,6 +19,7 @@ namespace ProyectoBabyCare.pages
                 btnAdministrarFamiliares.Visible = false;
                 Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
                 string correo = credenciales.Usuario;
+                string idbebe = credenciales.IdenBebe;
                 Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
                 DataTable dtUsuarios = iUsuarios.DatosUsuario(correo);
                 System.Text.StringBuilder strListaDatos = new System.Text.StringBuilder();
@@ -44,6 +45,13 @@ namespace ProyectoBabyCare.pages
                 dropbebes.DataValueField = "idBebe";
                 dropbebes.DataBind();
                 dropbebes.Items.Insert(0, new ListItem("Seleccione un bebé", "0"));
+                ListItem itemSeleccionado = dropbebes.Items.FindByValue(idbebe);
+                if (itemSeleccionado != null)
+                {
+                    itemSeleccionado.Selected = true;
+                    dropbebes_SelectedIndexChanged(dropbebes, EventArgs.Empty);
+
+                }
             }
         }
 
@@ -90,7 +98,9 @@ namespace ProyectoBabyCare.pages
 
         protected void btnAdministrarFamiliares_Click(object sender, EventArgs e)
         { 
-            string idbebe = Session["idbebe"] as string;
+            //string idbebe = Session["idbebe"] as string;
+            Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
+            string idbebe = credenciales.IdenBebe;
             Response.Redirect("AdminFamiliares.aspx?id=" + idbebe);
 
         }
@@ -118,7 +128,9 @@ namespace ProyectoBabyCare.pages
                     Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios();
 
 
-                    Session["idbebe"] = valorSeleccionado;
+                    credenciales.IdenBebe = valorSeleccionado;
+                    Session["Credenciales"] = credenciales;
+                    //Session["idbebe"] = valorSeleccionado;
 
                     DataTable resultTable = iUsuario.ObtenerSessionbebe(valorSeleccionado,correo);
                     if (resultTable != null && resultTable.Rows.Count > 0)
@@ -128,7 +140,9 @@ namespace ProyectoBabyCare.pages
                         lblcodigo.Text = resultTable.Rows[0][1].ToString();
 
                         // Store the value in the Session
-                        Session["rol"] = rol;
+                        credenciales.Rol = rol;
+                        Session["Credenciales"] = credenciales;
+                        //Session["rol"] = rol;
                     }
                     //script = "toastr.success('Ahora tiene el rol');";
                     //ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);

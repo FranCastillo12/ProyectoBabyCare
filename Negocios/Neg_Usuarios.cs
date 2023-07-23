@@ -47,7 +47,8 @@ namespace Negocios
                 iUsuarios = new Entidades.En_Usuarios()
                 {
                     Usuario = dtDatos.Rows[0]["correo"].ToString(),
-                    //IdenBebe = dtDatos.Rows[0][""].ToString()
+                    IdenBebe = dtDatos.Rows[0]["idBebe"].ToString(),
+                    Rol = dtDatos.Rows[0]["idRol"].ToString()
                 };
             }
             return iUsuarios;
