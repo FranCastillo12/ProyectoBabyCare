@@ -53,6 +53,9 @@
               <li><a class="dropdown-item" href="#">Audios</a></li>
             </ul>
           </li>
+            <li class="nav-item">
+            <a class="nav-link mx-2 active"href="#">Salir</a>
+          </li>
         </ul>
       </div>
     </div>
