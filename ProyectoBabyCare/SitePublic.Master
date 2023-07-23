@@ -37,20 +37,20 @@
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="NombresSignificados.aspx">Nombres & Significados</a>
+            <a class="nav-link active" aria-current="page" href="pages/NombresSignificados.aspx">Nombres & Significados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active"href="Consejos.aspx">Consejos</a>
+            <a class="nav-link mx-2 active"href="pages/Consejos.aspx">Consejos</a>
           </li>
       <%--    <li class="nav-item">
             <a class="nav-link mx-2" href="#">Pricing</a>
           </li>--%>
             <li class="nav-item">
-            <a class="nav-link mx-2 rectangulo-fondoSesion"style="color:white" href="../Login.aspx">Iniciar Sesión</a>
+            <a class="nav-link mx-2 rectangulo-fondoSesion"style="color:white" href="Login.aspx">Iniciar Sesión</a>
          
           </li>
                    <li class="nav-item">
-            <a class="nav-link mx-2 rectangulo-fondoRegis" style="color:white" href="#">Registrarse</a>
+            <a class="nav-link mx-2 rectangulo-fondoRegis" style="color:white" href="pages/Registro.aspx">Registrarse</a>
           </li>
        <%--   <li class="nav-item dropdown">
             <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

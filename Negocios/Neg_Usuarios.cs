@@ -47,7 +47,8 @@ namespace Negocios
                 iUsuarios = new Entidades.En_Usuarios()
                 {
                     Usuario = dtDatos.Rows[0]["correo"].ToString(),
-                    //IdenBebe = dtDatos.Rows[0][""].ToString()
+                    IdenBebe = dtDatos.Rows[0]["idBebe"].ToString(),
+                    Rol = dtDatos.Rows[0]["idRol"].ToString()
                 };
             }
             return iUsuarios;
@@ -170,12 +171,19 @@ namespace Negocios
                 throw ex;
             }
         }
+        #region "admin"
 
-
-
-
-
-
-
+        public DataTable VerificarCredencialesAdmin(string user, string pass)
+        {
+            string spName = "SP_InicioSesionAdmin";
+            var lstParametros = new List<SqlParameter>()
+            {
+                new SqlParameter("@correo", user),
+                new SqlParameter("@contra", pass)
+            };
+            Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
+            return iConexion.ExecuteSPWithDT(spName, lstParametros);
+        }
+        #endregion
     }
 }

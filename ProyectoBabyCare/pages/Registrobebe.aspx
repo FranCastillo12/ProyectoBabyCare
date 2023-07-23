@@ -10,14 +10,18 @@
     <title>Registro bebé</title>
     <link href="../styles/generales/Registro.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
 <body>
-    <div class="image-containerleft">
-           <div class="image-wrapperleft">
-                &nbsp;<img src="../images/ImageRegistro2.png" alt="Imagen adicional" class="auto-style1">
-            </div>
-     </div>
+              <div class="image-containerleft">
+                   <div class="image-wrapperleft">
+    &nbsp;<img src="../images/ImageRegistro2.png" alt="Imagen adicional" class="auto-style1">
 
+
+  </div>
+</div>
 
     <form id="form1" class="form" runat="server">
         <%--<h2 class="form_title">Iniciar Sesion</h2>
