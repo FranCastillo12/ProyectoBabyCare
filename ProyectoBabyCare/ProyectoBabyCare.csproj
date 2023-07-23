@@ -92,15 +92,18 @@
     <Content Include="images\NombresSignificados.jpg" />
     <Content Include="images\osito.png" />
     <Content Include="Login.aspx" />
+    <Content Include="LoginAdmin.aspx" />
     <Content Include="pages\AdminFamiliares.aspx" />
     <Content Include="pages\Consejos.aspx" />
     <Content Include="pages\Etapas_Desarrollo.aspx" />
+    <Content Include="pages\GestorBebes\index.aspx" />
     <Content Include="pages\logout.aspx" />
     <Content Include="pages\NombresSignificados.aspx" />
     <Content Include="pages\Perfil.aspx" />
     <Content Include="pages\Registro.aspx" />
     <Content Include="pages\Registrobebe.aspx" />
     <Content Include="styles\generales\Login.css" />
+    <Content Include="styles\generales\LoginAdmin.css" />
     <Content Include="styles\generales\Navbar.css" />
     <Content Include="styles\generales\Registro.css" />
     <Content Include="styles\PaginaUsuarios\AdminFamiliares.css" />
@@ -119,6 +122,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAdmin.aspx.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginAdmin.aspx.designer.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\AdminFamiliares.aspx.cs">
       <DependentUpon>AdminFamiliares.aspx</DependentUpon>
@@ -140,6 +150,13 @@
     </Compile>
     <Compile Include="pages\Etapas_Desarrollo.aspx.designer.cs">
       <DependentUpon>Etapas_Desarrollo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\GestorBebes\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\GestorBebes\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>

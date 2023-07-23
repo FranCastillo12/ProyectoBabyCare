@@ -103,7 +103,7 @@ body {
         color: #000000;
         font-family: 'Comfortaa', sans-serif;
         font-weight: 300; /* Semibold */
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
 
@@ -195,13 +195,6 @@ body {
 
     .form_container {
         margin-top: 2em;
-    }
-
-    .image-containerleft,
-    .image-containerRight {
-        float: none;
-        display: block;
-        margin: 0 auto;
     }
 
     .image-containerleft {

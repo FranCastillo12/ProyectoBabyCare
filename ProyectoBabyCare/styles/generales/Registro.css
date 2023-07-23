@@ -51,21 +51,23 @@ body {
 
 
 .form {
+    
     background-color: #ffffff;
     margin: auto;
-    height:55rem;
+    height:53rem;
     width: 80rem;
     max-width: 530px;
-    padding: 4.5em 3em;
+    padding: 4.7em 2em;
     border-radius: 10px;
     box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
     text-align: center;
+    margin-top:1.5%;
 }
 
 .logoo {
     width: 100%;
     height: auto;
-    margin-top: -20px;
+   
     margin: 0 auto;
 }
 
@@ -117,7 +119,7 @@ body {
     color: #000000;
     font-family: 'Comfortaa', sans-serif;
     font-weight: 200; /* Semibold */
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 
@@ -192,7 +194,7 @@ body {
     .form_title {
         font-size: 1.8rem
     }
-    }
+
     .image-containerleft {
         display: none;
     }
@@ -200,6 +202,7 @@ body {
     .image-containerRight {
         display: none;
     }
+
     .label-codigo {
         font-weight: 700; /* Semibold */
         font-size: 100%;
@@ -207,3 +210,4 @@ body {
         color: #DF599D;
     }
 }
+

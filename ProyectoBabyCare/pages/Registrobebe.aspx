@@ -6,7 +6,7 @@
 <head runat="server">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro bebé</title>
     <link href="../styles/generales/Registro.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -15,12 +15,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
 <body>
-    <div class="image-containerleft">
-           <div class="image-wrapperleft">
-                &nbsp;<img src="../images/ImageRegistro2.png" alt="Imagen adicional" class="auto-style1">
-            </div>
-     </div>
+              <div class="image-containerleft">
+                   <div class="image-wrapperleft">
+    &nbsp;<img src="../images/ImageRegistro2.png" alt="Imagen adicional" class="auto-style1">
 
+
+  </div>
+</div>
 
     <form id="form1" class="form" runat="server">
         <%--<h2 class="form_title">Iniciar Sesion</h2>

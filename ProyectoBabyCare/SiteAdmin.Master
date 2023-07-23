@@ -21,10 +21,9 @@
      <nav class="navbar navbar-expand-lg p-3">
     <div class="container-fluid">
     
-         <div class="logo">
-            <img src="..\Images\logo.png" class="logoo" alt="Logo de la marca">
+           <div class="logo">
+            <img src="..\..\Images\logo.png" class="logoo" alt="Logo de la marca">
        </div>
-
 
 
      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,23 +33,22 @@
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Expediente & Medicación</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-2 active"href="#">Desarrollo</a>
+            <a class="nav-link mx-2 active"href="#">Configuraci&oacute;n</a>
           </li>
               <li class="nav-item">
-            <a class="nav-link mx-2 active"href="#">Preguntas</a>
+            <a class="nav-link mx-2 active"href="#">Usuarios</a>
           </li>
-                <li class="nav-item dropdown">
+                      <li class="nav-item dropdown">
             <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Galeria
+              Gestiones
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Fotos</a></li>
-              <li><a class="dropdown-item" href="#">Ultrasonidos</a></li>
-              <li><a class="dropdown-item" href="#">Audios</a></li>
+              <li><a class="dropdown-item" href="#">Gesti&oacute;n Expediente</a></li>
+              <li><a class="dropdown-item" href="#">Gesti&oacute;n Desarrollo</a></li>
             </ul>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link mx-2 active"href="#">Estadisticas</a>
           </li>
             <li class="nav-item">
             <a class="nav-link mx-2 active"href="#">Salir</a>

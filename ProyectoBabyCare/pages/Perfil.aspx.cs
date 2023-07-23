@@ -110,6 +110,7 @@ namespace ProyectoBabyCare.pages
             Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
             string correo = credenciales.Usuario;
             string rol = null;
+            string encargado = null;
             string script = null;
             try
             {
@@ -138,6 +139,7 @@ namespace ProyectoBabyCare.pages
                         // Assuming the value you need to retrieve is in the first row and first column of the DataTable
                         rol = resultTable.Rows[0][0].ToString();
                         lblcodigo.Text = resultTable.Rows[0][1].ToString();
+                        encargado = resultTable.Rows[0][2].ToString();
 
                         // Store the value in the Session
                         credenciales.Rol = rol;
@@ -147,7 +149,7 @@ namespace ProyectoBabyCare.pages
                     //script = "toastr.success('Ahora tiene el rol');";
                     //ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                  
-                    if (rol == "Encargado")
+                    if (encargado == "True")
                     {
                         btnAdministrarFamiliares.Visible = true;
                         boton.Visible = true;

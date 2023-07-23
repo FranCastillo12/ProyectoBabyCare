@@ -38,7 +38,7 @@
             <a class="nav-link active" aria-current="page" href="#">Expediente & Medicación</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active"href="#">Desarrollo</a>
+            <a class="nav-link mx-2 active"href="pages/Etapas_Desarrollo.aspx">Desarrollo</a>
           </li>
               <li class="nav-item">
             <a class="nav-link mx-2 active"href="#">Preguntas</a>
