@@ -16,47 +16,121 @@ namespace ProyectoBabyCare.pages
 
         protected void btnCrearCuentabebe_Click(object sender, EventArgs e)
         {
-            try{
+            string script = null;
+            try
+            {
+                Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
+                string correo = credenciales.Usuario;
                 string nombre = txtNombre.Text;
                 string apellidos = TxtApellidos.Text;
+                bool entrar = false;
                 string fecha_nacimiento = txtfechadenacimiento.Text;
 
+
+                if (nombre == "")
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('El nombre es requerido');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (apellidos == "")
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('Los apellidos es requerido');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (string.IsNullOrEmpty(fecha_nacimiento))
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('La fecha de bebé no puede estar vacia');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (entrar)
+                {
+
+                }
+                else
+                { 
                 Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
 
-                iBebes.Registrarbebe(nombre, apellidos, fecha_nacimiento);
-                //Poner el mensaje de exito
-                string script = @"Swal.fire({
-                        title: '¡Hola!',
-                        text: 'Esto es SweetAlert2 desde ASP.NET',
-                        icon: 'sucess'
-                    });";
-                ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
+                iBebes.Registrarbebe(nombre, apellidos, fecha_nacimiento,correo);
+                    Response.Redirect("Perfil.aspx");
+                    //Poner el mensaje de exito
+                //    script = @"Swal.fire({
+                //        title: '¡Hola!',
+                //        text: 'Esto es SweetAlert2 desde ASP.NET',
+                //        icon: 'sucess'
+                //    });";
+                //ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
+                }
+
+
             } catch (Exception ex) {
-                throw ex;
-            
+                script = "toastr.warning('Ha occurido un error,Intentelo mas tarde');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
             }    
         }
 
         protected void btnUnirseCodigo_Click(object sender, EventArgs e)
         {
+            string script = null;
             try
             {
-                //Falta llamar a la variable session
+                Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
+                string correo = credenciales.Usuario;
+                bool entrar = false;
+               
                 string codigo = txtCodigo.Text;
-                string correo = "";
-                Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
+        
 
+                if (codigo == "")
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('Debe de ingresar un código');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (entrar)
+                {
+
+                }
+                else
+                {
+                Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
                 iBebes.IngresarXcodigo(correo, codigo);
-                string script = @"Swal.fire({
-                        title: '¡Hola!',
-                        text: 'Esto es SweetAlert2 desde ASP.NET',
-                        icon: 'sucess'
-                    });";
-                ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
+                    Response.Redirect("Perfil.aspx");
+                // script = @"Swal.fire({
+                //        title: '¡Hola!',
+                //        text: 'Esto es SweetAlert2 desde ASP.NET',
+                //        icon: 'sucess'
+                //    });";
+                //ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                script = "toastr.warning('Ha occurido un error,Intentelo mas tarde');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
             }
         }

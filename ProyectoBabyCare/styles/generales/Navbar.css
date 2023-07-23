@@ -1,105 +1,49 @@
-﻿
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
-
-
-
-* {
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    box-sizing: border-box;
-    font-family: 'Baloo 2', sans-serif;
-}
 
 body {
     background: white;
 }
 
-nav {
-    background: #F6E0ED;
+nav .logo {
+    cursor: pointer;
+    float: left;
+    text-transform: uppercase;
+    line-height: 40px;
+    justify-content: center
 }
 
-    nav:after {
-        content: '';
-        clear: both;
-        display: table;
+    nav .logo img {
+        height: 65px;
+        width: auto;
+        transition: all 0.3s;
     }
-
-    nav .logo {
-        cursor: pointer;
-        margin-right: 10%;
-        float: left;
-        text-transform: uppercase;
-        line-height: 40px;
-        padding-left: 30px;
-        justify-content: center
-    }
-
-        nav .logo img {
-            height: 60px;
-            width: auto;
-            transition: all 0.3s;
-        }
 
 .logo img:hover {
     transform: scale(1.2);
 }
-
-
-
-
-
-nav ul {
-    float: right;
-    margin-right: 40px;
-    list-style: none;
-    position: relative;
+.navbar {
+    background: #F6E0ED;
 }
 
-    nav ul li {
-        float: left;
-        display: inline-block;
-        background: #F6E0ED;
-        margin: 0 5px;
+
+.container-fluid {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight:600;
+    font-size: 23px;
+    color: #D281B2;
+}
+.ddd {
+    color: #00FF00;
+
+}
+/* styles.css */
+/* Change the color of normal navigation links */
+.navbar-nav .nav-link {
+    color: #D281B2; /* Cambia el color a tu preferencia (en este caso, verde) */
+}
+    .navbar-nav .nav-link:hover {
+        color: #006cff; /* Cambia el color a tu preferencia (en este caso, rojo) */
     }
-
-        nav ul li a {
-            color: #D281B2;
-            line-height: 70px;
-            text-decoration: none;
-            font-size: 20px;
-            padding: 8px 15px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-            nav ul li a:hover {
-                color: crimson;
-            }
-
-    nav ul ul {
-        position: absolute;
-        top: 90px;
-        opacity: 0;
-        visibility: hidden;
-        transition: top .3s;
-    }
-
-    nav ul li:hover > ul {
-        top: 70px;
-        opacity: 1;
-        visibility: visible;
-    }
-
-    nav ul ul li {
-        position: relative;
-        margin: 0px;
-        width: 150px;
-        float: none;
-        display: list-item;
-        border-bottom: 1px solid rgba(0,0,0,0.3);
-    }
-
 .rectangulo-fondoSesion {
     background-color: #3EB6B6;
     color: #ffffff;
@@ -108,102 +52,17 @@ nav ul {
 
 .rectangulo-fondoRegis {
     background-color: #AEB9CA;
-    color: #ffffff;
+    color: red;
     border-radius: 10px;
 }
+/* styles.css */
 
-nav ul ul li a {
-    line-height: 50px;
+/* Cambiar el color del botón y el icono */
+.custom-toggler {
+    color: red; /* Cambia el color a tu preferencia (por ejemplo, blanco) */
+    background-color: red; /* Cambia el color de fondo del botón a tu preferencia */
 }
-
-nav ul ul ul li {
-    position: relative;
-    top: -60px;
-    left: 150px;
-}
-
-.show, .icon, input {
-    display: none;
-}
-
-.fa-plus {
-    font-size: 15px;
-    margin-left: 40px;
-}
-
-@media all and (max-width: 968px) {
-    nav ul {
-        margin-right: 0px;
-        float: left;
+    /* Cambiar el color del icono del botón cuando se pasa el cursor (hover) */
+    .custom-toggler:hover .custom-toggler-icon {
+        color: red; /* Cambia el color a tu preferencia (por ejemplo, amarillo) */
     }
-
-    nav .logo {
-        padding-left: 30px;
-        width: 100%;
-    }
-
-    .show + a, ul {
-        display: none;
-    }
-
-    nav ul li, nav ul ul li {
-        display: block;
-        width: 100%;
-    }
-
-    .show {
-        display: block;
-        color: white;
-        font-size: 18px;
-        text-transform: uppercase;
-        padding: 0 20px;
-        line-height: 70px;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-        .show:hover {
-            color: crimson;
-        }
-
-    .icon {
-        display: block;
-        color: white;
-        position: absolute;
-        top: 0;
-        right: 40px;
-        line-height: 70px;
-        cursor: pointer;
-        font-size: 25px;
-    }
-
-    nav ul ul {
-        top: 70px;
-        border-top: 0px;
-        float: none;
-        position: static;
-        display: none;
-        opacity: 1;
-        visibility: visible;
-    }
-
-        nav ul ul a {
-            padding-left: 40px;
-        }
-
-        nav ul ul ul a {
-            padding-left: 80px;
-        }
-
-        nav ul ul ul li {
-            position: static;
-        }
-
-    [id^=btn]:checked + ul {
-        display: block;
-    }
-
-    nav ul ul li {
-        border-bottom: 0px;
-    }
-}

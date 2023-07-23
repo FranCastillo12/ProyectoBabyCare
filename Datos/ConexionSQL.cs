@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
+using Entidades;
 
 namespace Datos
 {
@@ -192,6 +193,77 @@ namespace Datos
         #endregion
 
         #region  Sebas
+
+
+        #region expediente
+        public Entidades.Expediente Expediente(string correo,int idbebe)
+        {
+            Entidades.Expediente Expediente = new Entidades.Expediente();
+            try
+            {
+                sqlConn.Open();
+                string info = "";
+                SqlCommand command = new SqlCommand("ObtenerDatosBasicosExpedienteBebe", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@correo", correo);
+                command.Parameters.AddWithValue("@idbebe", idbebe);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string idexpediente = reader["idExpediente"].ToString();
+                        string nombrebebe = reader["NombreBebe"].ToString();
+                        string idbebe2 = reader["idBebe"].ToString();
+                        string cedula = reader["Cedula"].ToString();
+                        string nombrePadre = reader["NombrePadre"].ToString();
+                        string nombreMadre = reader["NombreMadre"].ToString();
+                        string peso = reader["Peso"].ToString();
+                        string estatura = reader["Estatura"].ToString();
+                        string tiposangre = reader["TipoSangre"].ToString();
+                        string genero = reader["Genero"].ToString();
+                        string fechanacimiento = reader["FechaNacimiento"].ToString();
+
+                        info = $"{idexpediente}@{nombrebebe}@{idbebe2}@{cedula}@{nombrePadre}@{nombreMadre}@{peso}@{estatura}@{tiposangre}@{genero}@{fechanacimiento}";
+
+                    }
+                }
+                sqlConn.Close();
+                //Convertir la informacion
+                string[] atrib = info.Split('@');
+                Entidades.Expediente expediente = new Entidades.Expediente();
+                //Continuacion del metodo
+                expediente.Idexpediente = Convert.ToInt32(atrib[0]);
+                expediente.Nombrebebe = atrib[1];
+                expediente.Idbebe = Convert.ToInt32(atrib[2]);
+                expediente.Cedula = atrib[3];
+                expediente.NombrePadre = atrib[4];
+                expediente.NombreMadre = atrib[5];
+                expediente.Peso = float.Parse(atrib[6]);
+                expediente.Estatura = float.Parse(atrib[7]);
+                expediente.Tiposangre = atrib[8];
+                if (atrib[9].Equals("1"))
+                {
+                    expediente.Genero = "Hombre";
+                }
+                else {
+                    expediente.Genero = "Mujer";
+                }
+                
+                expediente.Fechanacimiento = atrib[10];
+
+                Expediente = expediente;
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
+            return Expediente;
+        }
+        #endregion
+
+        #region NombresSignificados
         public List<NombresBebes> TraerNombres(string letra, int numgenero)
         {
             List<NombresBebes> lstNombres = new List<NombresBebes>();
@@ -243,7 +315,9 @@ namespace Datos
 
             return lstNombres;
         }
+        #endregion
 
+        #region Consejos
         public List<Consejos> Consejos()
         {
             List<Consejos> lstConsejos = new List<Consejos>();
@@ -287,6 +361,8 @@ namespace Datos
 
             return lstConsejos;
         }
+        #endregion
+
 
         #endregion
     }

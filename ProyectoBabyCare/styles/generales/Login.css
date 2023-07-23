@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 
 * {
@@ -24,12 +25,12 @@ body {
 }
 
 .image-wrapper {
-    margin-top: 100px;
-    margin-right: 140px;
+    margin-top: 20%;
+    margin-right: 7rem;
 }
 
     .image-wrapper img {
-        width: 280px; /* Ajusta el ancho según sea necesario */
+        width: 22rem; /* Ajusta el ancho según sea necesario */
         height: auto; /* La altura se ajustará proporcionalmente según el ancho */
     }
 
@@ -39,12 +40,12 @@ body {
 }
 
 .image-wrapperleft {
-    margin-top: 550px;
+    margin-top: 95%;
     margin-left: 140px;
 }
 
     .image-wrapperleft img {
-        width: 280px; /* Ajusta el ancho según sea necesario */
+        width: 22rem; /* Ajusta el ancho según sea necesario */
         height: auto; /* La altura se ajustará proporcionalmente según el ancho */
     }
 
@@ -82,6 +83,7 @@ body {
 .form_group {
     position: relative;
     --color: #5757577e;
+    margin-top:15px;
 }
 
 
@@ -99,13 +101,16 @@ body {
     .form_input:not(:placeholder-shown) {
         /* Color cuando se digita en el textbox*/
         color: #000000;
+        font-family: 'Comfortaa', sans-serif;
+        font-weight: 300; /* Semibold */
+        font-size: 1.5rem;
     }
 
 
 
         .form_input:focus + .form_label,
         .form_input:not(:placeholder-shown) + .form_label {
-            transform: translateY(-12px) scale(1.2);
+            transform: translateY(-28px) scale(1.2);
             transform-origin: left top;
             /*Color del label cuando se toca el textbox*/
             color: #0029ff
@@ -114,11 +119,12 @@ body {
 
 .form_label {
     font-family: 'Baloo 2', 'sans-serif';
+    font-size:1.4rem;
     color: var(--color);
     position: absolute;
     top: 0;
     left: 5px;
-    transform: translateY(12px);
+    transform: translateY(10px);
     transition: transform .5s, color .3s;
 }
 
@@ -127,12 +133,17 @@ body {
     color: #ffffff;
     font-family: 'Baloo 2', 'sans-serif';
     font-weight: 800; /* Semibold */
-    font-size: 1.2rem;
-    padding: .8em 0;
+    font-size: 1.6rem;
+    height: 50px;
+    width: 80%;
     border: none;
-    border-radius: .5em;
+    border-radius: 1.4em;
+    margin: 0 auto; /* Añadimos el estilo para centrar horizontalmente */
 }
+.form_submit:hover {
+    background-color: #f30303;
 
+}
 
 
 .form_line {
@@ -140,7 +151,7 @@ body {
     bottom: 0;
     left: 0;
     background-color: #444cf7;
-    transform: scale(1);
+    transform: scale(3);
     transform: left bottom;
     transition: transform .4s;
 }
@@ -149,6 +160,15 @@ body {
 .form_input:focus + .form_line,
 .form_input:not(:placeholder-shown) ~ .form_line {
     transform: scale(1);
+}
+
+
+.warnings{
+    width:200px;
+    text-align:center;
+    margin:auto;
+    color:#ff0000;
+    padding-top:20px;
 }
 
 
@@ -163,5 +183,31 @@ body {
 
     .form_title {
         font-size: 1.8rem
+    }
+}
+/* Media query for smaller screens (e.g., phones) */
+@media (max-width: 768px) {
+    .image-wrapper,
+    .image-wrapperleft {
+        margin: 0;
+        text-align: center;
+    }
+
+    .form_container {
+        margin-top: 2em;
+    }
+
+    .image-containerleft,
+    .image-containerRight {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    .image-containerleft {
+        display: none;
+    }
+
+    .image-containerRight {
+        display: none;
     }
 }

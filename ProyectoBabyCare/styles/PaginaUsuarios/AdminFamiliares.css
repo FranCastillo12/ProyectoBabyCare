@@ -1,5 +1,9 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Baloo+2');
+﻿
+@import url('https://fonts.googleapis.com/css?family=Baloo+2');
+
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+
 .rowcambio {
     background: #ffffff;
     margin-right: 70px;
@@ -14,6 +18,7 @@
 }
 
 body {
+    overflow-x: hidden;
     background: #ffffff;
     /*    display: flex;
     flex-direction: column;
@@ -133,39 +138,22 @@ body {
 }
 
 .form-controll {
-    color: #09244B;
-    font-weight: 100; /* Semibold */
-    font-size: 150%;
+    font-weight: 100;
+    font-size: 120%;
     font-family: 'Comfortaa', sans-serif;
     height: 85px;
-    border: 2px solid #A020F0; /* Color del borde deseado */
+    border: 3px dashed #BA68C8;
     margin: 15px;
     width: 90%;
     margin: 15px auto;
 }
 
 .form-control {
-    color: #09244B;
-    font-weight: 100; /* Semibold */
-    font-size: 150%;
+    font-weight: 100;
+    font-size: 120%;
     font-family: 'Comfortaa', sans-serif;
-    height: 85px;
-    border: 3px dashed #BA68C8; /* Color del borde deseado */
-    margin: 15px;
-    width: 90%;
-    margin: 15px auto;
 }
 
-    .form-control::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translate(-50%, -50%);
-        width: 1px;
-        height: 80%;
-        background-color: #000;
-    }
 
 .card {
     width: 540px; /* Set width of cards */
@@ -175,7 +163,7 @@ body {
     border-radius: 4px; /* Slightly Curve edges */
     overflow: hidden; /* Fixes the corners */
     margin: 5px auto; /* Add space between cards and center them horizontally */
-    margin-top: -130px;
+   
     margin-left: 130px;
 }
 
@@ -215,6 +203,21 @@ select.form-control {
 .hola {
     margin: 10px;
 }
+.image-containerleft {
+    float: left;
+    margin-top:50%;
+    margin-left:-55%;
+}
+
+.image-wrapperleft {
+   
+   
+}
+
+    .image-wrapperleft img {
+        width: 18rem; /* Ajusta el ancho según sea necesario */
+        height: auto; /* La altura se ajustará proporcionalmente según el ancho */
+    }
 
 #divContenedor {
     height: 200px; /* Ajusta la altura según sea necesario */
@@ -278,4 +281,8 @@ select.form-control {
     .sub {
         font-size: 140%;
     }
+    .image-containerleft {
+        display: none;
+    }
+
 }

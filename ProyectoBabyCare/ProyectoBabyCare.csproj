@@ -67,9 +67,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\0-3meses.jpg" />
+    <Content Include="images\3-4meses.png" />
+    <Content Include="images\5-6meses.jpg" />
+    <Content Include="images\6-9 meses.jpg" />
+    <Content Include="images\9-12meses.jpg" />
     <Content Include="images\bder.png" />
     <Content Include="images\bizq.png" />
     <Content Include="images\Dados.jpg" />
+    <Content Include="images\Expediente.gif" />
+    <Content Include="images\expediente.png" />
     <Content Include="images\Fondopeluches.png" />
     <Content Include="images\gen1.png" />
     <Content Include="images\gen2.png" />
@@ -80,13 +87,19 @@
     <Content Include="images\ImageLogin2.png" />
     <Content Include="images\ImageRegistro1.png" />
     <Content Include="images\ImageRegistro2.png" />
+    <Content Include="images\imgAdminfami.png" />
+    <Content Include="images\imgperfil.png" />
+    <Content Include="images\imgperfil1.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\madre.png" />
     <Content Include="images\NombresSignificados.jpg" />
     <Content Include="images\osito.png" />
+    <Content Include="pages\Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="pages\AdminFamiliares.aspx" />
     <Content Include="pages\Consejos.aspx" />
     <Content Include="pages\Etapas_Desarrollo.aspx" />
+    <Content Include="pages\Expediente.aspx" />
     <Content Include="pages\NombresSignificados.aspx" />
     <Content Include="pages\Perfil.aspx" />
     <Content Include="pages\Registro.aspx" />
@@ -103,6 +116,13 @@
     <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pages\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -119,6 +139,7 @@
     </Compile>
     <Compile Include="pages\Consejos.aspx.cs">
       <DependentUpon>Consejos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\Consejos.aspx.designer.cs">
       <DependentUpon>Consejos.aspx</DependentUpon>
@@ -130,8 +151,16 @@
     <Compile Include="pages\Etapas_Desarrollo.aspx.designer.cs">
       <DependentUpon>Etapas_Desarrollo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\Expediente.aspx.cs">
+      <DependentUpon>Expediente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Expediente.aspx.designer.cs">
+      <DependentUpon>Expediente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\NombresSignificados.aspx.cs">
       <DependentUpon>NombresSignificados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\NombresSignificados.aspx.designer.cs">
       <DependentUpon>NombresSignificados.aspx</DependentUpon>
