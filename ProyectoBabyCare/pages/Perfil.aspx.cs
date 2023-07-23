@@ -16,7 +16,7 @@ namespace ProyectoBabyCare.pages
             if (!IsPostBack)
             {
                 boton.Visible = false;
-                btnAdministrarFamiliares.Enabled = false;
+                btnAdministrarFamiliares.Visible = false;
                 Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
                 string correo = credenciales.Usuario;
                 Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
@@ -135,12 +135,12 @@ namespace ProyectoBabyCare.pages
                  
                     if (rol == "Encargado")
                     {
-                        btnAdministrarFamiliares.Enabled = true;
+                        btnAdministrarFamiliares.Visible = true;
                         boton.Visible = true;
                     }
                     else
                     {
-                        btnAdministrarFamiliares.Enabled = false;
+                        btnAdministrarFamiliares.Visible = false;
                         boton.Visible = false;
                     }
 
