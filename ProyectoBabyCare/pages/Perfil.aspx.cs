@@ -91,7 +91,7 @@ namespace ProyectoBabyCare.pages
         protected void btnAdministrarFamiliares_Click(object sender, EventArgs e)
         { 
             string idbebe = Session["idbebe"] as string;
-            Response.Redirect("/pages/AdminFamiliares.aspx?id=" + idbebe);
+            Response.Redirect("AdminFamiliares.aspx?id=" + idbebe);
 
         }
 
