@@ -176,6 +176,7 @@
     </Compile>
     <Compile Include="pages\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\Expediente.aspx.cs">
       <DependentUpon>Expediente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
