@@ -35,7 +35,7 @@
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Expediente & Medicación</a>
+            <a class="nav-link active" aria-current="page" href="Expediente.aspx">Expediente & Medicación</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-2 active"href="#">Desarrollo</a>

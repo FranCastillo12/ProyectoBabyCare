@@ -161,8 +161,18 @@ select.form-control {
     appearance: menulist;
 }
 
-
-
+.row1 {
+    width: 50%;
+    text-align: center;
+    font-size: 110%;
+    font-family: 'Baloo 2', sans-serif;
+}
+.row2 {
+    width: 50%;
+    text-align: center;
+    font-size: 150%;
+    font-family: 'Baloo 2', sans-serif;
+}
 
 .form-control:not(:placeholder-shown) {
     /* Color cuando se digita en el textbox*/
@@ -179,7 +189,25 @@ select.form-control {
         color: #0029ff;
         outline: none; /* Evita el resaltado al hacer clic */
     }
-
+.textarea {
+    resize: none;
+    background-color: #8DCBE2;
+    margin-top: 10px;
+    color: white;
+    font-size: 17px;
+    border-radius: 5%;
+    font-family: 'Baloo 2', sans-serif;
+}
+.textareaNombres {
+    resize: none;
+    background-color: #8DCBE2;
+    margin-top: 10px;
+    color: white;
+    font-size: 28px;
+    border-radius: 5%;
+    border-radius: 5%;
+    font-family: 'Baloo 2', sans-serif;
+}
 
 .form_label {
     font-family: 'Baloo 2', 'sans-serif';
@@ -200,22 +228,78 @@ select.form-control {
     transform: left bottom;
     transition: transform .4s;
 }
+.contenedortxtareas {
+    width: 50%;
+}
+.txtPeso {
+    width: 100%;
+}
+.txt2 {
+    width: 60%;
+}
+.imagen1 {
+    width: 35%;
+    height: 10%;
+    border-radius: 15%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.imagen2 {
+    width: 25%;
+    height: 10%;
+    border-radius: 15%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
 
 @media (max-width: 700px) {
-    .contenedor2 {
-        /*display: block;  Otra opción para eliminar los atributos flex */
-        justify-content: initial;
-        align-items: initial;
+    .imagen1 {
+        width: 45%;
+        height: 10%;
+        border-radius: 15%;
+        margin-top: 14%;
+        margin-left: 1%;
     }
-    .conetedor-bebes {
-        margin-left: 0%
+    .imagen2 {
+        width: 40%;
+        height: 10%;
+        border-radius: 15%;
+        margin-top: 14%;
+        margin-left: 5%;
     }
     .boton-con-imagen2 {
-        width: 80px; /* Ajusta el ancho del botón según tus necesidades */
-        height: 50px; /* Ajusta la altura del botón según tus necesidades */
+        width: 80px;
+        height: 50px;
     }
     .boton-con-imagen {
-        width: 80px; /* Ajusta el ancho del botón según tus necesidades */
-        height: 50px; /* Ajusta la altura del botón según tus necesidades */
+        width: 80px; 
+        height: 50px; 
     }
+    .row1 {
+        width: 100%;
+        text-align: center;
+        font-size: 110%;
+        font-family: 'Baloo 2', sans-serif;
+    }
+    .row2 {
+        width: 100%;
+        text-align: center;
+        font-size: 110%;
+        font-family: 'Baloo 2', sans-serif;
+    }
+    .contenedortxtareas {
+        width:100%;
+    }
+    .textarea {
+        resize: none;
+        background-color: #8DCBE2;
+        margin-top: 10px;
+        color: white;
+        font-size: 17px;
+        border-radius: 5%;
+        border-radius: 5%;
+        font-family: 'Baloo 2', sans-serif;
+    }
+
 }
