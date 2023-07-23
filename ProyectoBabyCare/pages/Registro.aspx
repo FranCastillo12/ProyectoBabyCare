@@ -37,7 +37,7 @@
         <%--<h2 class="form_title">Iniciar Sesion</h2>
         <p class="form_paragraph">aun no tienes cuenta<a href="#" class="form_link">content</a></p>--%>
          <div class="logo">
-                    <image id="imgIcon" src="\Images\logo.png" class="logoo" alt="Imagen"></image>
+                    <image id="imgIcon" src="../Images/logo.png" class="logoo" alt="Imagen"></image>
                   </div>
 
             <div class="form_container"> 
