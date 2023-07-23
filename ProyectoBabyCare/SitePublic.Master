@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
 <head runat="server">
 <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,7 +25,7 @@
     <div class="container-fluid">
     
          <div class="logo">
-            <img src="..\Images\logo.png" class="logoo" alt="Logo de la marca">
+            <a class="nav-link active" aria-current="page" href="Inicio.aspx"><img src="..\Images\logo.png" class="logoo" alt="Logo de la marca"></a>
        </div>
 
 
@@ -37,16 +37,16 @@
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Nombres & Significados</a>
+            <a class="nav-link active" aria-current="page" href="NombresSignificados.aspx">Nombres & Significados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active"href="#">Consejos</a>
+            <a class="nav-link mx-2 active"href="Consejos.aspx">Consejos</a>
           </li>
       <%--    <li class="nav-item">
             <a class="nav-link mx-2" href="#">Pricing</a>
           </li>--%>
             <li class="nav-item">
-            <a class="nav-link mx-2 rectangulo-fondoSesion"style="color:white" href="#">Iniciar Sesión</a>
+            <a class="nav-link mx-2 rectangulo-fondoSesion"style="color:white" href="../Login.aspx">Iniciar Sesión</a>
          
           </li>
                    <li class="nav-item">

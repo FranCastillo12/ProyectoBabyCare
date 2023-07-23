@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Consejos.cs" />
     <Compile Include="En_Usuarios.cs" />
+    <Compile Include="Expediente.cs" />
     <Compile Include="NombresBebes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
