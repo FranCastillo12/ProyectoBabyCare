@@ -83,7 +83,7 @@ namespace ProyectoBabyCare
                     {
                         Session["credenciales"] = iCredenciales;
 
-                        Response.Redirect("/pages/Perfil.aspx");
+                        Response.Redirect("pages/Perfil.aspx");
                     }
                     else
                     {
@@ -109,7 +109,7 @@ namespace ProyectoBabyCare
 
         protected void btnCrearCuenta_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/pages/Registro.aspx");
+            Response.Redirect("pages/Registro.aspx");
         }
     }
 }
