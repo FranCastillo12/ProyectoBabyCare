@@ -47,6 +47,15 @@
                     <label for="fecha" class="form_label">fecha</label>
                     <span class="form_line"></span>
                 </div>
+                   <div class="form_group">
+                          <asp:DropDownList runat="server" id="ddl_departamentos" CssClass="form_input" AutoPostBack="True">
+                              <asp:ListItem Selected="True" Value="0">Seleccione</asp:ListItem>
+                             <asp:ListItem Value="3">Padre</asp:ListItem>
+                             <asp:ListItem Value="2">Madre</asp:ListItem>
+                        </asp:DropDownList>
+                    <label for="Contrasena" class="form_label">Parentezco</label>
+                    <span class="form_line"></span>
+                </div> 
                  <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="btnCrearCuentabebe" OnClick="btnCrearCuentabebe_Click"/>
             </div>
         <hr style="border-top: 2px dashed #DF599D; margin-top: 50px;color:#000000;">

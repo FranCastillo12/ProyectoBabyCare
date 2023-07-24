@@ -62,7 +62,7 @@
                       <asp:TextBox runat="server" ID="TxtContra" type="text" name="Contrasena" class="form_input" placeholder=" " />
                     <label for="Contrasena" class="form_label">Contraseña</label>
                     <span class="form_line"></span>
-                </div>  
+                </div>
                 <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="btnCrearCuenta" OnClick="btnCrearCuenta_Click"/>
             </div>
     </form>
