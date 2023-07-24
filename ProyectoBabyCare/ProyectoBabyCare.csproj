@@ -303,6 +303,7 @@
     </Compile>
     <Compile Include="pages\Salud_Citas.aspx.designer.cs">
       <DependentUpon>Salud_Citas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\SeguimientoActividades.aspx.cs">
       <DependentUpon>SeguimientoActividades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -311,6 +312,7 @@
       <DependentUpon>SeguimientoActividades.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    </Compile>
     <Compile Include="SiteAdmin.Master.cs">
       <DependentUpon>SiteAdmin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
