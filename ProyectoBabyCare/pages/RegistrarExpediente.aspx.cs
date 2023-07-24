@@ -58,9 +58,8 @@ namespace ProyectoBabyCare
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (string.IsNullOrEmpty(peso))
-                    {
-                        script =
+                    if (string.IsNullOrEmpty(txtpeso.Text))
+                    {  script =
                             "toastr.options.closeButton = true;" +
                             "toastr.options.positionClass = 'toast-top-full-width';" +
                             "toastr.error('El peso no puede quedar en blanco');";
@@ -69,7 +68,7 @@ namespace ProyectoBabyCare
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (Regex.IsMatch(peso, regexNumeroFloat))
+                    if (Regex.IsMatch(txtpeso.Text, regexNumeroFloat))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
@@ -80,7 +79,7 @@ namespace ProyectoBabyCare
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (estatura == "")
+                    if (string.IsNullOrEmpty(txtestatura.Text))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
@@ -91,7 +90,7 @@ namespace ProyectoBabyCare
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (Regex.IsMatch(estatura, regexNumeroFloat))
+                    if (Regex.IsMatch(txtestatura.Text, regexNumeroFloat))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
@@ -102,7 +101,7 @@ namespace ProyectoBabyCare
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (string.IsNullOrEmpty(fecha))
+                    if (string.IsNullOrEmpty(txtfecha.Text))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
