@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace ProyectoBabyCare.pages
 {
-    public partial class DietasPublic : System.Web.UI.Page
+    public partial class Pruebas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblComida1.Text = "Se recomienda que los bebes coman frutas";
+
         }
     }
 }

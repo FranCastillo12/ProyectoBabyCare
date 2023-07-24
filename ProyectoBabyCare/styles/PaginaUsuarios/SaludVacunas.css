@@ -38,7 +38,7 @@
     height: 70%;
     width: 85%;
     float: left;
-    color: #191970;
+    color: #DF599D;
     font-family: Comfortaa;
     background-color: #F6E0ED;
     font-size: 30px;
@@ -57,6 +57,7 @@
     height: 6%;
     text-align: center;
     margin: 2%;
+    color: #DF599D;
 }
 
 .registrarVacuna {
@@ -86,6 +87,7 @@
     text-align: center;
     font-size: 18px;
     align-items: center;
+    color: #DF599D;
 }
 
 .contenedorVacunas {
@@ -123,6 +125,7 @@
     text-align: center;
     font-size: 18px;
     align-items: center;
+    color: #3399CC;
 }
 
 .cabeceraContenedorCentro {
@@ -133,7 +136,7 @@
 .tituloCentro {
     width: 100%;
     height: 90%;
-    color: #191970;
+    color: #DF599D;
     font-size: 24px;
     text-align: center;
 }
@@ -154,6 +157,7 @@
 .textoTituloVacuna {
     text-align: center;
     color: #191970;
+    align-content: center;
 }
 
 .descripcionVacuna {
@@ -165,6 +169,7 @@
 .textoDescripcionVacuna {
     text-align: center;
     color: #191970;
+    align-content:center;
 }
 
 .fechaVacuna {
@@ -176,6 +181,7 @@
 .textoFechaVacuna {
     text-align: center;
     color: #191970;
+    align-content: center;
 }
 
 .imagenContenedorDerecha {
@@ -185,6 +191,36 @@
     padding-top: 1%
 }
 
+.botonRegistrar {
+    background-color: transparent; /* Establecer el color de fondo como transparente */
+    border: none; /* Quitar el borde del botón */
+    padding: 10px 20px; /* Añadir relleno para que el botón sea visible */
+    color: #DF599D;
+}
+.textbox {
+    background-color: transparent;
+    border: none;
+    color: #DF599D;
+    text-align:center;
+}
+
+.botonAceptar {
+    display:flex;
+    justify-content:center;
+    margin: 4% 1%,0,1%;
+    align-items: center;
+    background-color: #8DCBE2;
+    height: 10%;
+    width: 96%;
+    border-radius: 25%;
+}
+.btnAceptar {
+    background-color:transparent;
+    border:none;
+    text-align:center;
+    color: #3399CC;
+    font-size: 24px;    
+}
 .piePagina {
     width: 100%;
     height: 100px;

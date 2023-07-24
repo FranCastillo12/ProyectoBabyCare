@@ -74,8 +74,19 @@
     <Content Include="images\9-12meses.jpg" />
     <Content Include="images\bder.png" />
     <Content Include="images\Bebe.jpg" />
+    <Content Include="images\bebeAnimado.jpg" />
+    <Content Include="images\bebeCa.jpg" />
     <Content Include="images\bizq.png" />
+    <Content Include="images\calen.png" />
+    <Content Include="images\comida.jpg" />
+    <Content Include="images\comida1.jpg" />
+    <Content Include="images\comida2.jpg" />
+    <Content Include="images\comida3.jpg" />
+    <Content Include="images\comida4.jpg" />
+    <Content Include="images\comida5.jpg" />
+    <Content Include="images\comida6.jpg" />
     <Content Include="images\Dados.jpg" />
+    <Content Include="images\dietaslogo.png" />
     <Content Include="images\flecha1.png" />
     <Content Include="images\flecha2.png" />
     <Content Include="images\Fondopeluches.png" />
@@ -108,10 +119,12 @@
     <Content Include="pages\Etapas_Desarrollo.aspx" />
     <Content Include="pages\NombresSignificados.aspx" />
     <Content Include="pages\Perfil.aspx" />
+    <Content Include="pages\Pruebas.aspx" />
     <Content Include="pages\Registro.aspx" />
     <Content Include="pages\Registrobebe.aspx" />
     <Content Include="pages\SaludVacunas.aspx" />
     <Content Include="pages\Salud_Citas.aspx" />
+    <Content Include="styles\generales\CartasDietas.css" />
     <Content Include="styles\generales\Login.css" />
     <Content Include="styles\generales\Navbar.css" />
     <Content Include="styles\generales\Registro.css" />
@@ -199,6 +212,13 @@
     </Compile>
     <Compile Include="pages\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Pruebas.aspx.cs">
+      <DependentUpon>Pruebas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Pruebas.aspx.designer.cs">
+      <DependentUpon>Pruebas.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
