@@ -83,16 +83,17 @@ namespace ProyectoBabyCare.pages
                 //Vacunas
                 txtVacunas.Text = "";
                 string[] lstvacunas = ex.Vacunas(expediente.Idexpediente);
-                if (lstdetalle.Length > 0)
+                if (lstvacunas.Length > 0)
                 {
                     int cont = 1;
-                    foreach (string s in lstdetalle)
+                    foreach (string s in lstvacunas)
                     {
                         if (!s.Equals(""))
                         {
                             string[] atrib = s.Split('@');
-                            string[] fecha = atrib[1].Split(' ');
+                            string[] fecha = atrib[2].Split(' ');
                             txtVacunas.Text += $"{cont}-{fecha[0]}: {atrib[0]}\n";
+                            txtVacunas.Text += $"Descripción: {atrib[1]}\n";
                             cont++;
                         }
 
