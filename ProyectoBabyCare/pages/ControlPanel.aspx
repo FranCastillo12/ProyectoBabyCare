@@ -30,6 +30,7 @@
                 </div>
                 <div class="recuadroDatosBebe">
                     <asp:Label ID="lblNombre" runat="server" Text="Josias Madriz Calderón"></asp:Label>
+                    <br />
                     <asp:Label ID="lblEdad" runat="server" Text="   1 año y 7 meses"></asp:Label>
                 </div>
             </div>

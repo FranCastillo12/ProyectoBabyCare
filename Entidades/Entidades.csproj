@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alertas.cs" />
+    <Compile Include="Bebe.cs" />
     <Compile Include="Categorias.cs" />
     <Compile Include="Citas.cs" />
     <Compile Include="Consejos.cs" />

@@ -77,13 +77,15 @@ namespace ProyectoBabyCare
 
 
                     Entidades.En_Usuarios iCredenciales = iUsuarios.VerificarCredenciales(user, pass);
-
+                        //Guardamos los datos del bebe
+                    Entidades.Bebe bebe = Negocios.Bebe.bebe(iCredenciales.IdenBebe);
 
                     if (iCredenciales != null)
                     {
                         Session["credenciales"] = iCredenciales;
-
-                        Response.Redirect("pages/Perfil.aspx");
+                            //variable de sesion con datos del bebe
+                        Session["DatosBebe"] = bebe;
+                        Response.Redirect("pages/ControlPanel.aspx");
                     }
                     else
                     {
