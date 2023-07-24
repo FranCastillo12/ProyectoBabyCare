@@ -1,0 +1,58 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Baloo+2');
+
+.Formulario {
+    background-color: #F6E0ED;
+    width: 50%;
+    font-family: 'Baloo 2', sans-serif;
+
+}
+.Linea {
+    margin-left:40%;
+}
+
+.rb2 {
+    margin-left: 10%;
+    width: 10%;
+}
+.TEXTO {
+    width: 40%;
+}
+.profile-button {
+    font-weight: 600; /* Semibold */
+    font-size: 115%;
+    font-family: 'Baloo 2', sans-serif;
+    background: rgba(141, 203, 226, 0.4); /* Cambia el valor de opacidad según tus necesidades */
+    box-shadow: none;
+    border: none;
+    width: 143%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-left: 30%;
+    color: #0088CC;
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+}
+
+    .profile-button:focus {
+        background: #682773;
+        box-shadow: none
+    }
+
+    .profile-button:active {
+        background: #682773;
+        box-shadow: none
+    }
+
+@media (max-width: 700px) {
+    .TEXTO {
+        width:80%;
+    }
+    .Linea {
+        margin-left: 30%;
+    }
+
+    .rb2 {
+        margin-left: 15%;
+        width: 10%;
+    }
+}
