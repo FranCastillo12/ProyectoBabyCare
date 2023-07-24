@@ -550,18 +550,18 @@ namespace Datos
             return lstcategorias;
         }
 
-        public void InsertarSeguimientoActividad(int idcategoria,int idbebe,string Descripcion,string Fecha) {
+        public void InsertarSeguimientoActividad(int idcategoria,int idbebe,string Descripcion,DateTime Fecha) {
             try
             {
                 sqlConn.Open();
                 SqlCommand command = new SqlCommand("InsertarSeguimientoActividad", sqlConn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@idbebe", idcategoria);
-                command.Parameters.AddWithValue("@idcategoria", idbebe);
+                command.Parameters.AddWithValue("@idbebe", idbebe);
+                command.Parameters.AddWithValue("@idcategoria", idcategoria);
                 command.Parameters.AddWithValue("@Descripcion", Descripcion);
                 command.Parameters.AddWithValue("@Fecha", Fecha);
 
-                command.ExecuteNonQuery();
+                int c=command.ExecuteNonQuery();
 
                 sqlConn.Close();
             }
@@ -570,7 +570,38 @@ namespace Datos
 
             }
         }
-        
+
+        public List<Entidades.Seguimientos> TraerSeguimientos(int  idbebe,DateTime fecha,int idcategoria) {
+            List<Entidades.Seguimientos> lstseguimientos = new List<Seguimientos>();
+            Entidades.Seguimientos segui =new Seguimientos();
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("TraerSeguimientoActividadxFecha", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idbebe", idbebe);
+                command.Parameters.AddWithValue("@idCategoria", idcategoria);
+                command.Parameters.AddWithValue("@Fecha",fecha);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        segui = new Seguimientos();
+                        segui.Categoria = reader["Categoria"].ToString();
+                        segui.Fecha = DateTime.Parse(reader["Fecha"].ToString());
+                        segui.Descripcion = reader["Descripcion"].ToString();
+                        lstseguimientos.Add(segui);
+
+                    }
+                }
+
+                sqlConn.Close();
+            } 
+            catch(Exception ex){ }
+
+            return lstseguimientos;
+        }
         #endregion
 
         #endregion

@@ -261,18 +261,41 @@ select.form-control {
     margin-top: 5%;
     margin-left: 5%;
 }
+.DivTable1 {
+    width: 30%; /* Ancho deseado para el div */
+    height: 100%; /* Alto deseado para el div */
+    text-align:center;
+    margin-left:10%;
+}
 .DivTable {
-    width: 100%; /* Ancho deseado para el div */
+    width: 50%; /* Ancho deseado para el div */
     height: 100%; /* Alto deseado para el div */
     overflow: auto; /* Añade una barra de desplazamiento si el contenido del div es más grande */
-    border: 1px solid #ccc; /* Borde para visualizar el tamaño del div */
     background-image: url(../../images/tabla.png);
     background-size: cover;
-    background-position:center;
+    background-position: center;
+    
 }
 .tabla {
     width: 100%; /* Ajusta el ancho del GridView al 100% del contenedor */
+    height:100%;
+    border-collapse: collapse;
+    color: crimson;
+    text-align: center;
+    background-color:black;
+    opacity: 0.8;
 }
+    .tabla th {
+        border: 1px solid black; /* Borde para las celdas de encabezado */
+        background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+        padding: 8px; /* Espaciado interno de las celdas de encabezado */
+    }
+
+    /* Estilo para las celdas del cuerpo del GridView */
+    .tabla td {
+        border: 1px solid black; /* Borde para las celdas del cuerpo */
+        padding: 8px; /* Espaciado interno de las celdas del cuerpo */
+    }
 .divBoton1 {
     width: 11%;
     margin-left: 25%;
@@ -343,5 +366,15 @@ select.form-control {
         width: 29%;
         margin-left: 4%;
     }
-
+    .DivTable1 {
+        display:none;
+    }
+    .DivTable {
+        width: 100%; /* Ancho deseado para el div */
+        height: 100%; /* Alto deseado para el div */
+        overflow: auto; /* Añade una barra de desplazamiento si el contenido del div es más grande */
+        background-image: url(../../images/tabla.png);
+        background-size: cover;
+        background-position: center;
+    }
 }

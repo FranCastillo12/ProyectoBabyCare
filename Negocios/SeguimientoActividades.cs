@@ -16,9 +16,17 @@ namespace Negocios
             List<Entidades.Categorias> lista = conexionSQL.TraerCategorias();
             return lista;
         }
-        public void InsertarSeguimiento(int idcategoria,int idbebe,string fecha,string descripcion) { 
+        public void InsertarSeguimiento(int idcategoria,int idbebe,DateTime fecha,string descripcion) { 
             ConexionSQL con=new ConexionSQL();
             con.InsertarSeguimientoActividad(idcategoria,idbebe,descripcion,fecha);
+        }
+        public List<Entidades.Seguimientos> TraerSeguimientos(int idbeb,int idcategoria,DateTime fecha)
+        {
+            List<Entidades.Seguimientos> lstSeguimiento=new List<Seguimientos> ();
+            ConexionSQL con=new ConexionSQL();
+            lstSeguimiento = con.TraerSeguimientos(idbeb,fecha,idcategoria);
+
+            return lstSeguimiento;
         }
 
     }
