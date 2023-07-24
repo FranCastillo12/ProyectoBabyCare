@@ -27,6 +27,7 @@ namespace ProyectoBabyCare
 
                 if (respuesta.Equals("No existe"))
                 {
+                    string script = null;
                     bool entrar = false;
                     //Obtener datos del formulario
                     string cedula=txtCedula.Text;
@@ -57,7 +58,7 @@ namespace ProyectoBabyCare
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (peso == "")
+                    if (string.IsNullOrEmpty(peso))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
