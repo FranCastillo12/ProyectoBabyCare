@@ -28,12 +28,12 @@ namespace ProyectoBabyCare.pages
         {
             string categoria=dropcategorias.SelectedValue;
             string descripcion=txtdescripcionseguimiento.Text;
-            string fecha = DateTime.Now.ToString();
             if (Session["Credenciales"]!= null) { 
                 Entidades.En_Usuarios user = (Entidades.En_Usuarios)Session["Credenciales"];
                 string[] data=categoria.Split('-');
                 Negocios.SeguimientoActividades seg = new Negocios.SeguimientoActividades();
-                seg.InsertarSeguimiento(Convert.ToInt32(data[0]),Convert.ToInt32(user.IdenBebe),fecha,descripcion);
+                DateTime fecha=DateTime.Now;
+                seg.InsertarSeguimiento(Convert.ToInt32(data[0]),Convert.ToInt32(user.IdenBebe),fecha.Date,descripcion);
 
                 Response.Redirect("SeguimientoActividades.aspx");
             }

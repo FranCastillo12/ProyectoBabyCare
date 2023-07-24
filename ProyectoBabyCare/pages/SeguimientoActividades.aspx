@@ -6,16 +6,21 @@
     <link href="../styles/PaginaUsuarios/NombresSignificados.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    
+
     <div class="container">
-        <h1>Seguimiento de actividades</h1>
-        <form runat="server" style="font-family: 'Baloo 2', sans-serif">
+        <div class="row" style="font-family: 'Baloo 2', sans-serif; margin-top: 4%;">
+            <div style="width: 60%">
+                <h1>Seguimiento de actividades</h1>
+            </div>
+
+            <div style="width: 20%;">
+                <a runat="server" href="AgregarSeguimiento.aspx" class="btn btn-success">
+                    <h2>+ Actividad</h2>
+                </a>
+            </div>
+        </div>
+        <form runat="server" style="font-family: 'Baloo 2', sans-serif;">
             <div class="row">
-                <div style="width: 20%; margin-left: 15%">
-                    <a runat="server" href="AgregarSeguimiento.aspx" class="btn btn-success">
-                        <h2>+ Actividad</h2>
-                    </a>
-                </div>
                 <%-- Fin boton --%>
                 <div style="width: 30%; margin-left: 5%;">
                     <div>
@@ -24,7 +29,7 @@
                     <asp:DropDownList ID="dropCategoria" CssClass="form-controlddl" runat="server"></asp:DropDownList>
                 </div>
                 <%-- Fin categoria --%>
-                <div style="width: 15%">
+                <div style="width: 30%; margin-left: 2%;">
                     <div>
                         <asp:Label ID="Label2" runat="server" Text="Fecha actividad"></asp:Label>
                     </div>
@@ -33,23 +38,25 @@
                 <%-- Fin fecha --%>
             </div>
             <%-- Fin row --%>
-
-
-            <div class="row" style="margin-top: 2%;">
-                <div style="width: 50%;">
-                    <%-- Imagen --%>
-                    <div style="text-align: center;">
-                        <img runat="server" src="~/images/agenda.jpg" style="width: 50%; height: 50%; border-radius: 10%; padding-top: 3%; padding-bottom: 3%" />
-                    </div>
-                </div>
-                <div style="width: 50%;">
-                    <%-- Table --%>
-                    <div class="DivTable">
-                        <asp:GridView ID="gridseguimiento" runat="server" AutoGenerateColumns="true" CssClass="tabla"></asp:GridView>
-                    </div>
+            <div>
+                <div class="botonesSeguimiento" style="width:40%">
+                    <asp:Button ID="btnFiltrar" class="btn btn-primary profile-button" runat="server" OnClick="btnFiltrar_Click" Text="Filtrar" />
                 </div>
             </div>
-            <%-- Fin row --%>
+
+    <div class="row" style="margin-top: 2%;">
+        <div class="DivTable1">
+            <%-- Imagen --%>
+            <img runat="server" src="~/images/agenda.jpg" style="width: 100%; border-radius: 10%; padding-top: 3%; padding-bottom: 3%" />
+        </div>
+
+        <%-- Table --%>
+        <div class="DivTable">
+            <asp:GridView ID="gridseguimiento" runat="server" AutoGenerateColumns="true" CssClass="tabla"></asp:GridView>
+        </div>
+
+    </div>
+    <%-- Fin row --%>
         </form>
     </div>
 </asp:Content>
