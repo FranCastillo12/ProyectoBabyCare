@@ -261,6 +261,152 @@ namespace Datos
 
             return Expediente;
         }
+       
+        public List<Entidades.Padecimientos> Todoslospadecimientos() { 
+            List<Entidades.Padecimientos> padecimientos=new List<Padecimientos> ();
+
+            try
+            {
+                sqlConn.Open();
+                string info = "";
+                SqlCommand command = new SqlCommand("TraerPadecimientos", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string idpadecimiento = reader["idPadecimiento"].ToString();
+                        string nombrepadecimiento = reader["NombrePadecimiento"].ToString();
+
+                        info += $"{idpadecimiento}@{nombrepadecimiento};";
+
+                    }
+                }
+                sqlConn.Close();
+                //Convertir la informacion
+                string[] data = info.Split(';');
+                foreach (string s in data) {
+                    string[] atrib = s.Split('@');
+                    Entidades.Padecimientos padecimientos1 = new Entidades.Padecimientos();
+                    //Continuacion del metodo
+                    padecimientos1.Nombrepadecimiento = atrib[1];
+                    padecimientos1.IdPadecimiento = Convert.ToInt32(atrib[0]);
+
+
+                    padecimientos.Add(padecimientos1);
+                }
+                
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return padecimientos;
+        }
+
+        public List<Entidades.Padecimientos> PadecimientosExpediente(int idexpediente)
+        {
+            List<Entidades.Padecimientos> padecimientos = new List<Padecimientos>();
+
+            try
+            {
+                sqlConn.Open();
+                string info = "";
+                SqlCommand command = new SqlCommand("TraerPadecimientosExpediente", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idexpediente", idexpediente);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string nombrepadecimiento = reader["NombrePadecimiento"].ToString();
+
+                        info += $"{nombrepadecimiento};";
+
+                    }
+                }
+                sqlConn.Close();
+                //Convertir la informacion
+                string[] data = info.Split(';');
+                foreach (string s in data)
+                {
+                    if (!s.Equals("")) { 
+                        Entidades.Padecimientos padecimientos1 = new Entidades.Padecimientos();
+                        //Continuacion del metodo
+                        padecimientos1.Nombrepadecimiento = s;
+                        padecimientos.Add(padecimientos1);                    
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return padecimientos;
+        }
+
+        public string[] Detallesdelembarazo(int idexpediente)
+        {
+            string[] lstdetalles=null;
+            try
+            {
+                sqlConn.Open();
+                string info = "";
+                SqlCommand command = new SqlCommand("TraerDetallesExpediente", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idExpediente", idexpediente);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string Descripcion = reader["Descripcion"].ToString();
+                        string Fecha = reader["Fecha"].ToString();
+
+                        info += $"{Descripcion}@{Fecha};";
+
+                    }
+                }
+                sqlConn.Close();
+                lstdetalles = info.Split(';');
+
+            }
+            catch (Exception e){}
+
+            return lstdetalles;
+        }
+        public string[] historialvacunas(int idexpediente)
+        {
+            string[] lstvacunas = null;
+            try
+            {
+                sqlConn.Open();
+                string info = "";
+                SqlCommand command = new SqlCommand("TraerVacunasExpediente", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idexpediente", idexpediente);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string Descripcion = reader["DescripcionVacuna"].ToString();
+                        string Nombre = reader["NombreVacuna"].ToString();
+                        string Fecha = reader["Fecha"].ToString();
+
+                        info += $"{Nombre}@{Descripcion}@{Fecha};";
+
+                    }
+                }
+                sqlConn.Close();
+                lstvacunas = info.Split(';');
+
+            }
+            catch (Exception e) { }
+
+            return lstvacunas;
+        }
         #endregion
 
         #region NombresSignificados

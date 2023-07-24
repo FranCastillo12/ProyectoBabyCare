@@ -18,10 +18,10 @@
             <div style="text-align: center">
                 <div class="row">
 
-                    <div class="form-control" style="width: 50%;">
+                    <div class="" style="width: 50%;">
                         <asp:Button ID="bder" runat="server" class="boton-con-imagen2" OnClick="bder_Click" CommandArgument="atras" />
                     </div>
-                    <div class="form-control" style="width: 50%;">
+                    <div class="" style="width: 50%;">
                         <asp:Button ID="bizq" runat="server" class="boton-con-imagen" OnClick="bder_Click" CommandArgument="adelante" />
                     </div>
 
