@@ -26,6 +26,7 @@ namespace ProyectoBabyCare.pages
                 string apellidos = TxtApellidos.Text;
                 bool entrar = false;
                 string fecha_nacimiento = txtfechadenacimiento.Text;
+                string valorSeleccionado = ddl_departamentos.SelectedValue;
                 string regexNombre = @"^[A-Za-z ]+$";
 
                 Regex regexNombreU = new Regex(regexNombre);
@@ -74,6 +75,17 @@ namespace ProyectoBabyCare.pages
                     //warningss += "El correo es necesario <br>";
                     entrar = true;
                 }
+                if (valorSeleccionado == "0")
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('Debe seleccionar un parentezco');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
                 if (entrar)
                 {
 
@@ -82,7 +94,7 @@ namespace ProyectoBabyCare.pages
                 { 
                 Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
 
-                iBebes.Registrarbebe(nombre, apellidos, fecha_nacimiento,correo);
+                iBebes.Registrarbebe(nombre, apellidos, fecha_nacimiento,correo,valorSeleccionado);
                     Response.Redirect("Perfil.aspx");
                     //Poner el mensaje de exito
                 //    script = @"Swal.fire({

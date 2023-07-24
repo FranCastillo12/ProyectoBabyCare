@@ -35,7 +35,7 @@
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="Expediente.aspx">Expediente & Medicación</a>
+            <a class="nav-link active" aria-current="page" href="Expediente.aspx">Expediente & Medicaci&oacute;n</a>
           </li>
                   <li class="nav-item dropdown">
             <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,18 +43,21 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="SeguimientoActividades.aspx">Seguimiento</a></li>
-              <li><a class="dropdown-item" href="#">Alertar</a></li>
+              <li><a class="dropdown-item" href="#">Alertas</a></li>
             </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-2 active" aria-current="page" href ="Etapas_Desarrollo.aspx">Desarrollo</a>
           </li>
               <li class="nav-item">
+            <a class="nav-link mx-2 active"href="#">Dietas</a>
+          </li>
+              <li class="nav-item">
             <a class="nav-link mx-2 active"href="#">Preguntas</a>
           </li>
                 <li class="nav-item dropdown">
             <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Galeria
+              Galer&iacute;a
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="#">Fotos</a></li>
@@ -63,7 +66,8 @@
             </ul>
           </li>
             <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page" href="logout.aspx">Salir</a>
+            <a class="nav-link mx-2 active rectangulo-fondoSalir" style="color:white" aria-current="page" href="logout.aspx">Salir</a>
+
           </li>
         </ul>
       </div>

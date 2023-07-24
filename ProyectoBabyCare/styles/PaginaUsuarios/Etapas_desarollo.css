@@ -139,6 +139,16 @@ body {
                 opacity: 0.8;
             }
 
+
+
+.piePagina {
+    width: 100%;
+    height: 100px;
+    position: relative;
+
+}
+
+
 @media (max-width: 480px) {
     .container .card {
         width: 230px;

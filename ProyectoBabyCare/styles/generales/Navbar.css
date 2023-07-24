@@ -28,8 +28,8 @@ nav .logo {
 
 .container-fluid {
     font-family: 'Baloo 2', sans-serif;
-    font-weight:600;
-    font-size: 23px;
+    font-weight:700;
+    font-size: 20px;
     color: #D281B2;
 }
 .ddd {
@@ -52,6 +52,12 @@ nav .logo {
 
 .rectangulo-fondoRegis {
     background-color: #AEB9CA;
+    color: red;
+    border-radius: 10px;
+}
+
+.rectangulo-fondoSalir {
+    background-color: #3399CC;
     color: red;
     border-radius: 10px;
 }

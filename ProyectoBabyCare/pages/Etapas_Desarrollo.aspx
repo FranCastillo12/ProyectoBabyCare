@@ -33,5 +33,11 @@
         </div>--%>
        
     </div>
+
     </form>
+          <div class="contenedor">                        
+            <div class="piePagina">
+                <img style="width:100%; height:100%" alt="" src="../images/Footer.png" />
+            </div>
+</div>
 </asp:Content>
