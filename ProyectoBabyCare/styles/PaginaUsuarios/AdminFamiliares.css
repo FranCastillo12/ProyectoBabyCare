@@ -27,19 +27,19 @@ body {
     align-content: center;
     min-height: 100vh;
 }
-
 .title {
-    font-weight: 600; /* Semibold */
-    font-size: 170%;
-    font-family: 'Comfortaa', sans-serif;
+    margin: 1%;
+    float: left;
+    font-family: Comfortaa;
+    font-weight: 500;
     position: absolute;
     top: 130px;
+    font-size: 30px;
     background-color: #FFC0CB;
     padding: 10px;
     border-radius: 5px;
-    color: #fff;
+    color: #191970;
 }
-
 
 
 .container.rounded {

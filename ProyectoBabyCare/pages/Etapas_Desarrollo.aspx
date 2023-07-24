@@ -7,6 +7,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
       <div class="title">Etapas de desarrollo</div>
+<%--    <div class ="contenedorTitulo">
+            <div class="tituloPrincipal">
+                <div class="textoTituloPrincipal">
+                    Calendarización de citas
+                </div>
+            </div>
+        </div>--%>
     <form id="form1" runat="server">
         <div id="lstfrmMantenimiento" runat="server" class="container">
             <img  src="../images/3-4meses.png"/>

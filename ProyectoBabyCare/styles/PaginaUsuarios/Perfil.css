@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Baloo+2');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 body {
     background:#ffffff;
@@ -12,15 +13,17 @@ body {
     align-items: center;
 }
 .title {
-    width:13%;
+    margin: 1%;
+    float: left;
+    font-family: Comfortaa;
+    font-weight: 500;
     position: absolute;
     top: 130px;
-    font-size: 350%;
+    font-size: 30px;
     background-color: #FFC0CB;
     padding: 10px;
     border-radius: 5px;
-    color: #fff;
-    z-index: -1;
+    color: #191970;
 }
 h2 {
     font-size: 450%;
