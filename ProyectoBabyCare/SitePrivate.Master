@@ -42,7 +42,7 @@
               Actividades
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Seguimiento</a></li>
+              <li><a class="dropdown-item" href="SeguimientoActividades.aspx">Seguimiento</a></li>
               <li><a class="dropdown-item" href="#">Alertar</a></li>
             </ul>
           </li>
