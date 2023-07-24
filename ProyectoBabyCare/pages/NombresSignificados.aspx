@@ -3,22 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <style>
-    #<%= txtArea.ClientID %> {
-        resize: none;
-        background-color: #8DCBE2;
-        margin-top:10px;
-        color:white;
-        font-size:30px;
-        border-radius:5%;
-        font-family: 'Baloo 2', sans-serif;
-    }
-</style>
 <link href="../styles/PaginaUsuarios/NombresSignificados.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="image-container">
-        <div style="font-family: 'Baloo 2', sans-serif;color:black;font-size:14px;width:450px;margin-left:40px">
+        <div style="font-family: 'Baloo 2', sans-serif;color:black;font-size:14px;width:80%;margin-left:40px">
             <h1 style="color:#F495B6">Nombres y significados</h1>
              <asp:Label ID="Label1" runat="server" Text="¡La llegada de un bebé es un momento emocionante! Elegir el nombre perfecto es una decisión importante y personal. Aquí encontrarás opciones populares y significativas para inspirarte en esta hermosa elección. ¡Descubre los mejores nombres para tu bebé y déjate llevar por la emoción de darle la bienvenida a tu pequeño tesoro!"></asp:Label>
        </div>
@@ -80,7 +69,7 @@
 
                 <div class="row" style="width: 60%;">
                     <div style="width:30%;z-index: 2;">
-                        <asp:TextBox runat="server" ID="txtArea" TextMode="MultiLine" Rows="5" Columns="20" ReadOnly="true" CssClass="custom-textbox" />
+                        <asp:TextBox runat="server" ID="txtArea" TextMode="MultiLine" Rows="5" Columns="20" ReadOnly="true" CssClass="textareaNombres custom-textbox" />
                          
                     </div>
                    <div style="width:30%;margin-left:35%;margin-top:5%">

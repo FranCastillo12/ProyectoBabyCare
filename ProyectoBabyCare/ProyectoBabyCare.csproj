@@ -72,6 +72,7 @@
     <Content Include="images\5-6meses.jpg" />
     <Content Include="images\6-9 meses.jpg" />
     <Content Include="images\9-12meses.jpg" />
+    <Content Include="images\agenda.jpg" />
     <Content Include="images\bder.png" />
     <Content Include="images\Bebe.jpg" />
     <Content Include="images\bebeAnimado.jpg" />
@@ -89,6 +90,8 @@
     <Content Include="images\dietaslogo.png" />
     <Content Include="images\flecha1.png" />
     <Content Include="images\flecha2.png" />
+    <Content Include="images\Expediente.gif" />
+    <Content Include="images\expediente.png" />
     <Content Include="images\Fondopeluches.png" />
     <Content Include="images\Footer.png" />
     <Content Include="images\gen1.png" />
@@ -104,12 +107,17 @@
     <Content Include="images\imgperfil.png" />
     <Content Include="images\imgperfil1.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\madre.png" />
     <Content Include="images\NombresSignificados.jpg" />
     <Content Include="images\osito.png" />
     <Content Include="images\Pies.png" />
     <Content Include="images\Vacuna.png" />
     <Content Include="images\Vacunacion.png" />
+    <Content Include="images\tabla.png" />
+    <Content Include="pages\AgregarSeguimiento.aspx" />
+    <Content Include="pages\Inicio.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="LoginAdmin.aspx" />
     <Content Include="pages\AdminFamiliares.aspx" />
     <Content Include="pages\AdminUsuarios.aspx" />
     <Content Include="pages\Consejos.aspx" />
@@ -117,6 +125,9 @@
     <Content Include="pages\DietasPrivate.aspx" />
     <Content Include="pages\DietasPublic.aspx" />
     <Content Include="pages\Etapas_Desarrollo.aspx" />
+    <Content Include="pages\GestorBebes\index.aspx" />
+    <Content Include="pages\logout.aspx" />
+    <Content Include="pages\Expediente.aspx" />
     <Content Include="pages\NombresSignificados.aspx" />
     <Content Include="pages\Perfil.aspx" />
     <Content Include="pages\Pruebas.aspx" />
@@ -125,7 +136,9 @@
     <Content Include="pages\SaludVacunas.aspx" />
     <Content Include="pages\Salud_Citas.aspx" />
     <Content Include="styles\generales\CartasDietas.css" />
+    <Content Include="pages\SeguimientoActividades.aspx" />
     <Content Include="styles\generales\Login.css" />
+    <Content Include="styles\generales\LoginAdmin.css" />
     <Content Include="styles\generales\Navbar.css" />
     <Content Include="styles\generales\Registro.css" />
     <Content Include="styles\PaginaUsuarios\AdminFamiliares.css" />
@@ -138,17 +151,39 @@
     <Content Include="styles\PaginaUsuarios\Perfil.css" />
     <Content Include="styles\PaginaUsuarios\SaludCitas.css" />
     <Content Include="styles\PaginaUsuarios\SaludVacunas.css" />
+    <Content Include="styles\generales\registroU.css" />
     <Content Include="Web.config" />
     <Content Include="WebFormPrivate.aspx" />
     <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pages\AgregarSeguimiento.aspx.cs">
+      <DependentUpon>AgregarSeguimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AgregarSeguimiento.aspx.designer.cs">
+      <DependentUpon>AgregarSeguimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAdmin.aspx.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginAdmin.aspx.designer.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\AdminFamiliares.aspx.cs">
       <DependentUpon>AdminFamiliares.aspx</DependentUpon>
@@ -199,6 +234,27 @@
     <Compile Include="pages\Etapas_Desarrollo.aspx.designer.cs">
       <DependentUpon>Etapas_Desarrollo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\GestorBebes\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\GestorBebes\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Expediente.aspx.cs">
+      <DependentUpon>Expediente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Expediente.aspx.designer.cs">
+      <DependentUpon>Expediente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\NombresSignificados.aspx.cs">
       <DependentUpon>NombresSignificados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -247,8 +303,21 @@
     </Compile>
     <Compile Include="pages\Salud_Citas.aspx.designer.cs">
       <DependentUpon>Salud_Citas.aspx</DependentUpon>
+    <Compile Include="pages\SeguimientoActividades.aspx.cs">
+      <DependentUpon>SeguimientoActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\SeguimientoActividades.aspx.designer.cs">
+      <DependentUpon>SeguimientoActividades.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteAdmin.Master.cs">
+      <DependentUpon>SiteAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteAdmin.Master.designer.cs">
+      <DependentUpon>SiteAdmin.Master</DependentUpon>
+    </Compile>
     <Compile Include="SitePrivate.Master.cs">
       <DependentUpon>SitePrivate.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -282,6 +351,7 @@
     <None Include="packages.config" />
     <Content Include="SitePublic.Master" />
     <Content Include="SitePrivate.Master" />
+    <Content Include="SiteAdmin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

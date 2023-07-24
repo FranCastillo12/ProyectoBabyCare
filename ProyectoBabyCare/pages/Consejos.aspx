@@ -18,10 +18,10 @@
             <div style="text-align: center">
                 <div class="row">
 
-                    <div class="form-control" style="width: 50%;">
+                    <div class="" style="width: 50%;">
                         <asp:Button ID="bder" runat="server" class="boton-con-imagen2" OnClick="bder_Click" CommandArgument="atras" />
                     </div>
-                    <div class="form-control" style="width: 50%;">
+                    <div class="" style="width: 50%;">
                         <asp:Button ID="bizq" runat="server" class="boton-con-imagen" OnClick="bder_Click" CommandArgument="adelante" />
                     </div>
 
@@ -34,7 +34,7 @@
                     <div id="titulo" style="font-family: 'Baloo 2', sans-serif; color: #F495B6; font-size: 30px;">
                         <asp:Label ID="lbltitulo" runat="server" Text="Titulo del consejo"></asp:Label>
                     </div>
-                    <div id="desc" style="font-family: 'Baloo 2', sans-serif; font-size: 20px; color: #8DCBE2;">
+                    <div id="desc" style="font-family: 'Baloo 2', sans-serif; font-size: 20px; color: black;">
                         <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion del consejo"></asp:Label>
                     </div>
                 </div>

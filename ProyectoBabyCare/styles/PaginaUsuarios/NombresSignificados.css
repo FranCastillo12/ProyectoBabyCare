@@ -139,18 +139,27 @@ body {
 .form-control {
     border: 2px dashed #3399CC; /* Color del borde deseado */
     width: 150%;
-    background: none;
+    background-color:white;
     color: #706c6c;
     font-size: 1rem;
     padding: .6em .3em;
-   
+    text-align: center;
+}
+.form-controlinterno {
+    border: 2px dashed #3399CC; /* Color del borde deseado */
+    width: 150%;
+    background-color: white;
+    color: #706c6c;
+    font-size: 50%;
+    padding: .6em .3em;
+    text-align: center;
 }
 
 .form-controlddl {
     border: 1px solid #3399CC; /* Color del borde deseado */
     border-radius:3px;
     width: 100%;
-    background: none;
+    background-color:white;
     color: #706c6c;
     font-size: 1rem;
     padding: .6em .3em;
@@ -161,8 +170,18 @@ select.form-control {
     appearance: menulist;
 }
 
-
-
+.row1 {
+    width: 50%;
+    text-align: center;
+    font-size: 110%;
+    font-family: 'Baloo 2', sans-serif;
+}
+.row2 {
+    width: 50%;
+    text-align: center;
+    font-size: 150%;
+    font-family: 'Baloo 2', sans-serif;
+}
 
 .form-control:not(:placeholder-shown) {
     /* Color cuando se digita en el textbox*/
@@ -179,7 +198,25 @@ select.form-control {
         color: #0029ff;
         outline: none; /* Evita el resaltado al hacer clic */
     }
-
+.textarea {
+    resize: none;
+    background-color: #8DCBE2;
+    margin-top: 10px;
+    color: white;
+    font-size: 17px;
+    border-radius: 5%;
+    font-family: 'Baloo 2', sans-serif;
+}
+.textareaNombres {
+    resize: none;
+    background-color: #8DCBE2;
+    margin-top: 10px;
+    color: white;
+    font-size: 28px;
+    border-radius: 5%;
+    border-radius: 5%;
+    font-family: 'Baloo 2', sans-serif;
+}
 
 .form_label {
     font-family: 'Baloo 2', 'sans-serif';
@@ -200,22 +237,144 @@ select.form-control {
     transform: left bottom;
     transition: transform .4s;
 }
+.contenedortxtareas {
+    width: 50%;
+}
+.txtPeso {
+    width: 100%;
+}
+.txt2 {
+    width: 80%;
+    margin-left:10%;
+}
+.imagen1 {
+    width: 35%;
+    height: 10%;
+    border-radius: 15%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.imagen2 {
+    width: 25%;
+    height: 10%;
+    border-radius: 15%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.DivTable1 {
+    width: 30%; /* Ancho deseado para el div */
+    height: 100%; /* Alto deseado para el div */
+    text-align:center;
+    margin-left:10%;
+}
+.DivTable {
+    width: 50%; /* Ancho deseado para el div */
+    height: 100%; /* Alto deseado para el div */
+    overflow: auto; /* Añade una barra de desplazamiento si el contenido del div es más grande */
+    background-image: url(../../images/tabla.png);
+    background-size: cover;
+    background-position: center;
+    
+}
+.tabla {
+    width: 100%; /* Ajusta el ancho del GridView al 100% del contenedor */
+    height:100%;
+    border-collapse: collapse;
+    color: crimson;
+    text-align: center;
+    background-color:black;
+    opacity: 0.8;
+}
+    .tabla th {
+        border: 1px solid black; /* Borde para las celdas de encabezado */
+        background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+        padding: 8px; /* Espaciado interno de las celdas de encabezado */
+    }
+
+    /* Estilo para las celdas del cuerpo del GridView */
+    .tabla td {
+        border: 1px solid black; /* Borde para las celdas del cuerpo */
+        padding: 8px; /* Espaciado interno de las celdas del cuerpo */
+    }
+.divBoton1 {
+    width: 11%;
+    margin-left: 25%;
+}
+.divBoton2 {
+    width: 11%;
+    margin-left: 10%;
+}
+.botonesSeguimiento {
+    width: 100%;
+    text-align: center;
+}
 
 @media (max-width: 700px) {
-    .contenedor2 {
-        /*display: block;  Otra opción para eliminar los atributos flex */
-        justify-content: initial;
-        align-items: initial;
+    .imagen1 {
+        width: 45%;
+        height: 10%;
+        border-radius: 15%;
+        margin-top: 14%;
+        margin-left: 1%;
     }
-    .conetedor-bebes {
-        margin-left: 0%
+    .imagen2 {
+        width: 40%;
+        height: 10%;
+        border-radius: 15%;
+        margin-top: 14%;
+        margin-left: 5%;
     }
     .boton-con-imagen2 {
-        width: 80px; /* Ajusta el ancho del botón según tus necesidades */
-        height: 50px; /* Ajusta la altura del botón según tus necesidades */
+        width: 80px;
+        height: 50px;
     }
     .boton-con-imagen {
-        width: 80px; /* Ajusta el ancho del botón según tus necesidades */
-        height: 50px; /* Ajusta la altura del botón según tus necesidades */
+        width: 80px; 
+        height: 50px; 
+    }
+    .row1 {
+        width: 100%;
+        text-align: center;
+        font-size: 110%;
+        font-family: 'Baloo 2', sans-serif;
+    }
+    .row2 {
+        width: 100%;
+        text-align: center;
+        font-size: 110%;
+        font-family: 'Baloo 2', sans-serif;
+    }
+    .contenedortxtareas {
+        width:100%;
+    }
+    .textarea {
+        resize: none;
+        background-color: #8DCBE2;
+        margin-top: 10px;
+        color: white;
+        font-size: 17px;
+        border-radius: 5%;
+        border-radius: 5%;
+        font-family: 'Baloo 2', sans-serif;
+    }
+    .divBoton1 {
+        width: 25%;
+        margin-left: 5%;
+    }
+
+    .divBoton2 {
+        width: 29%;
+        margin-left: 4%;
+    }
+    .DivTable1 {
+        display:none;
+    }
+    .DivTable {
+        width: 100%; /* Ancho deseado para el div */
+        height: 100%; /* Alto deseado para el div */
+        overflow: auto; /* Añade una barra de desplazamiento si el contenido del div es más grande */
+        background-image: url(../../images/tabla.png);
+        background-size: cover;
+        background-position: center;
     }
 }
