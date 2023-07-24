@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div style="width: 30%; margin-left: 25%">
-                        <asp:Button ID="btnModificar" class="btn btn-primary profile-button" runat="server" Text="Modificar" />
+                        <asp:Button ID="btnModificar" class="btn btn-primary profile-button" runat="server" OnClick="btnModificar_Click" Text="Modificar" />
                     </div>
 
                 </div>
@@ -90,7 +90,7 @@
                             <asp:TextBox ID="txtFechaDetalle" runat="server" placeholder="Fecha" type="date" CssClass="form-controlinterno"></asp:TextBox>
                         </div>
                         <div style="text-align: center; width: 50%; font-size: 60%; margin-top: 1%">
-                            <asp:Button ID="btnAgregarDetalle" class="btn btn-primary profile-button" runat="server" Text="Agregar detalle" />
+                            <asp:Button ID="btnAgregarDetalle" class="btn btn-primary profile-button" runat="server" OnClick="btnAgregarDetalle_Click" Text="Agregar detalle" />
                         </div>
                     </div>
 
@@ -101,10 +101,10 @@
                         <asp:TextBox runat="server" ID="txtPadecimientos" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
                         <%-- Padecimientos --%>
                         <div style="width: 90%; margin-left: 10%;">
-                            <asp:DropDownList ID="dpllPadecimientos" runat="server" CssClass="form-controlinterno form-controlddl"></asp:DropDownList>
+                            <asp:DropDownList ID="dpllPadecimientos" runat="server" AutoPostBack="true" CssClass="form-controlinterno form-controlddl"></asp:DropDownList>
                         </div>
                         <div style="text-align: center; width: 60%; font-size: 50%; margin-top: 1%;">
-                            <asp:Button ID="btnagregarpadecimientos" class="btn btn-primary profile-button" runat="server" Text="Agregar padecimiento" />
+                            <asp:Button ID="btnagregarpadecimientos" class="btn btn-primary profile-button" runat="server" OnClick="btnagregarpadecimientos_Click" Text="Agregar padecimiento" />
                         </div>
                     </div>
                     <div class="contenedortxtareas">
@@ -113,19 +113,6 @@
                         </div>
                         <asp:TextBox runat="server" ID="txtVacunas" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
 
-                        <%-- Agregar vacunas --%>
-                        <div style="width: 45%; margin-left: 15%;">
-                            <asp:TextBox ID="txtNombreVacuna" runat="server" placeholder="Nombre  vacuna" CssClass="form-controlinterno"></asp:TextBox>
-                        </div>
-                        <div style="width: 45%; margin-left: 15%;">
-                            <asp:TextBox ID="txtDescripcionvacuna" runat="server" placeholder="Descripcion" CssClass="form-controlinterno"></asp:TextBox>
-                        </div>
-                        <div style="width: 45%; margin-left: 15%; margin-top: 1%">
-                            <asp:TextBox ID="txtFechaVacuna" runat="server" type="date" placeholder="Fecha" CssClass="form-controlinterno"></asp:TextBox>
-                        </div>
-                        <div style="text-align: center; width: 50%; font-size: 60%; margin-top: 1%">
-                            <asp:Button ID="Button1" class="btn btn-primary profile-button" runat="server" Text="Agregar vacuna" />
-                        </div>
                     </div>
                     <div class="contenedortxtareas">
                         <img runat="server" src="~/images/Expediente.gif" style="width: 100%; height: 95%; text-align: center; border-radius: 10%; margin-top: 4%" />
