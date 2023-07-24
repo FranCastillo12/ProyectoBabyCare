@@ -19,14 +19,19 @@ namespace ProyectoBabyCare.pages
         List<Entidades.Padecimientos> lstpadecimientosexpediente = new List<Padecimientos>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Credenciales"] != null)
+            {
+                Entidades.En_Usuarios usuario = (Entidades.En_Usuarios)Session["Credenciales"];
+                correo = usuario.Usuario;
+                idbebe = Convert.ToInt32(Convert.ToString(usuario.IdenBebe));
+                string ExisteExpediente = ex.ValidarExpediente(idbebe);
+                if (ExisteExpediente.Equals("No existe")) {
+                    Response.Redirect("RegistrarExpediente.aspx");
+                }
+            }
             if (!IsPostBack) {
 
-                if (Session["Credenciales"] != null)
-                {
-                    Entidades.En_Usuarios usuario = (Entidades.En_Usuarios)Session["Credenciales"];
-                    correo = usuario.Usuario;
-                    idbebe = Convert.ToInt32(Convert.ToString(usuario.IdenBebe));
-                }
+                
 
                 lstpadecimientos = ex.TodoslosPadecimientos();
                 dpllPadecimientos.Items.Add("Seleccione un padecimiento");

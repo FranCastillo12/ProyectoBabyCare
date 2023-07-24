@@ -77,6 +77,15 @@ body {
     color: #0088CC;
     text-transform: uppercase; /* Convierte el texto en mayúsculas */
 }
+    .profile-button:focus {
+        background: #682773;
+        box-shadow: none
+    }
+
+    .profile-button:active {
+        background: #682773;
+        box-shadow: none
+    }
 .image-container3 {
     width: 100%; /* Ajusta el ancho según tus necesidades */
     height: 200px; /* Ajusta la altura según tus necesidades */
@@ -99,15 +108,7 @@ body {
     background-position: center; /* Centra la imagen en el div */
 }
 
-    .profile-button:focus {
-        background: #682773;
-        box-shadow: none
-    }
 
-    .profile-button:active {
-        background: #682773;
-        box-shadow: none
-    }
 
 .back:hover {
     color: #682773;

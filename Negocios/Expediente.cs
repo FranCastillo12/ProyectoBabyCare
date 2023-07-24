@@ -9,6 +9,16 @@ namespace Negocios
 {
     public class Expediente
     {
+        public void IngresarExpediente(int idbebe, string cedula, int genero, float peso, float estatura, string tiposangre, DateTime fechanac) { 
+            ConexionSQL con=new ConexionSQL();
+            con.IngresarDatosBasicosExpediente(idbebe,cedula,genero,peso,estatura,tiposangre,fechanac);
+        }
+        public string ValidarExpediente(int idbebe) {
+            string respuesta = "";
+            ConexionSQL con=new ConexionSQL();
+            respuesta=con.ValidarExpediente(idbebe);
+            return respuesta;
+        }
         public Entidades.Expediente obtenerexpediente(string correo,int idbebe) {
             Entidades.Expediente Expediente=new Entidades.Expediente();
             ConexionSQL conexionSQL = new ConexionSQL();
