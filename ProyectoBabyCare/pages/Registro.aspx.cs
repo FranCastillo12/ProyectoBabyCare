@@ -27,15 +27,38 @@ namespace ProyectoBabyCare.pages
                 string pass = TxtContra.Text;
                 bool entrar = false;
                 string regexEmail = @"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$";
-               
+                string regexNombre = @"^[A-Za-z ]+$";
 
                 Regex regex = new Regex(regexEmail);
+                Regex regexNombreU = new Regex(regexNombre);
                 if (nombre == "")
                 {
                     script =
                         "toastr.options.closeButton = true;" +
                         "toastr.options.positionClass = 'toast-top-full-width';" +
                         "toastr.error('El nombre es requerido');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (!regexNombreU.IsMatch(nombre))
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('El nombre solo puede tener letras');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (!regexNombreU.IsMatch(apellidos))
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('Los apellidos solo pueden tener letras');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                     //warningss += "El correo es necesario <br>";
@@ -92,10 +115,6 @@ namespace ProyectoBabyCare.pages
                 }
                 else
                 {
-
-               
-
-
                 Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
 
                 iUsuarios.RegistroUsuarios(nombre, apellidos, correo, pass);

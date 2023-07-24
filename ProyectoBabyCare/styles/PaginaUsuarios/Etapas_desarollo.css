@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -16,13 +17,28 @@ body {
 }
 
 .title {
+    margin: 1%;
+    float: left;
+    font-family: Comfortaa;
+    font-weight: 500;
     position: absolute;
     top: 130px;
-    font-size: 24px;
+    font-size: 30px;
     background-color: #FFC0CB;
     padding: 10px;
     border-radius: 5px;
-    color: #fff;
+    color: #191970;
+}
+.contenedorTitulo {
+    width: 100%;
+    height: 13%;
+    margin: 1%;
+}
+
+.tituloPrincipal {
+    float: left;
+    width: 30%;
+    height: 90%;
 }
 
 .container {

@@ -26,7 +26,9 @@ namespace ProyectoBabyCare.pages
                 string apellidos = TxtApellidos.Text;
                 bool entrar = false;
                 string fecha_nacimiento = txtfechadenacimiento.Text;
+                string regexNombre = @"^[A-Za-z ]+$";
 
+                Regex regexNombreU = new Regex(regexNombre);
 
                 if (nombre == "")
                 {
@@ -50,12 +52,23 @@ namespace ProyectoBabyCare.pages
                     //warningss += "El correo es necesario <br>";
                     entrar = true;
                 }
-                if (string.IsNullOrEmpty(fecha_nacimiento))
+                if (!regexNombreU.IsMatch(nombre))
                 {
                     script =
                         "toastr.options.closeButton = true;" +
                         "toastr.options.positionClass = 'toast-top-full-width';" +
-                        "toastr.error('La fecha de bebé no puede estar vacia');";
+                        "toastr.error('El nombre solo puede tener letras');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (!regexNombreU.IsMatch(apellidos))
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('Los apellidos solo pueden tener letras');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                     //warningss += "El correo es necesario <br>";
