@@ -12,7 +12,7 @@
     <form runat="server">
 
          <div class="title">
-             <h2>Mi perfil</h2>
+             Mi perfil
          </div>
         <div class="contendor" style="margin-top:200px"> 
 
