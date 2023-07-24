@@ -396,7 +396,6 @@ namespace Datos
                         string Fecha = reader["Fecha"].ToString();
 
                         info += $"{Nombre}@{Descripcion}@{Fecha};";
-
                     }
                 }
                 sqlConn.Close();
