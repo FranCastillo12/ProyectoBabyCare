@@ -1,0 +1,120 @@
+﻿body {
+}
+
+
+.contenedor {
+    width: 100%;
+    height: 500px;
+}
+.contenedorSuperior{
+    width:100%;
+    height:45%;
+}
+.contenedorInferior {
+    width: 100%;
+    height:55%;
+}
+.contenedors1{
+    width:50%;
+    height:100%;
+    float:left;
+}
+.contenedors2 {
+    width: 50%;
+    height: 100%;
+    height: 100%;
+    float: left;
+}
+
+.cabeceraTitulo{
+    width:80%;
+    height:25%;
+    margin:2%;
+}
+.recuadroTitulo {
+    height: 70%;
+    width: 84%;
+    float: left;
+    color: #DF599D;
+    font-family: Comfortaa;
+    background-color: #F6E0ED;
+    font-size: 30px;
+    text-align: center;
+}
+.recuadroLogo {
+    margin-left:1%;
+    width: 14%;
+    float: left;
+    height: 100%;
+    padding: 1%;
+}
+
+.recuadroFiltro {
+    width: 98%;
+    height: 70%;
+    border-radius: 25%;
+    background-color: #8DCBE2;
+    margin:2%;
+}
+
+.filtroTitulo {
+    padding-top: 3%;
+    height: 20%;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 1%;
+    color: #3399CC;
+}
+.filtroCentro {
+    font-size: 20px;
+    text-align: center;
+    align-content: center;
+    height: 50%;
+    color: #3399CC;
+}
+.textbox {
+    margin: 1%;
+    width: 10%;
+    border-radius: 25%;
+    background-color: #F6E0ED;
+    border:none;
+}
+
+.filtroFooter{
+    margin-top:1%;
+    width:100%;
+    align-content:center;
+    font-size:20px;
+    height:15%;
+    text-align:center;
+}
+.boton {
+    margin: 0 3% 0 3%;
+    border-radius: 25%;
+    background-color: #F6E0ED;
+    border: none;
+    color: #DF599D;
+}
+
+/*Contenedor inferior*/
+.carta{
+    margin: 3% 0 0 1%;
+    float:left;
+    width:15.5%;
+    height:98%;
+
+}
+.label {
+    color: #191970;
+    font-size: 15px;
+    background: rgba(246, 224, 237, 0.7);
+    padding: 5px; 
+    color: #DF599D;
+}
+.piePagina {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+
+}

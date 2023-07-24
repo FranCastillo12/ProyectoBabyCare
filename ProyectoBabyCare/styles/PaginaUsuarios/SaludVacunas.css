@@ -1,0 +1,229 @@
+﻿body {
+    background-color: #FFFFFF;
+}
+
+.contenedor {
+    width: 100%;
+    height: 500px;
+}
+
+.contenedorIzquierdo {
+    width: 41%;
+    float: left;
+    height: 80%;
+    margin: 1%;
+}
+
+.contenedorCentro {
+    width: 38%;
+    float: left;
+    height: 80%;
+    margin: 1%;
+}
+
+.contenedorDerecho {
+    width: 15%;
+    float: left;
+    height: 80%;
+    margin: 1%;
+}
+
+.cabeceraContenedorIzquierda {
+    width: 100%;
+    height: 20%;
+    top: 0;
+}
+
+.tituloIzquierda1 {
+    height: 70%;
+    width: 85%;
+    float: left;
+    color: #DF599D;
+    font-family: Comfortaa;
+    background-color: #F6E0ED;
+    font-size: 30px;
+    text-align: center;
+}
+
+.tituloIzquierda2 {
+    width: 15%;
+    float: left;
+    height: 100%;
+    padding: 1%;
+}
+
+.listaVacunas {
+    width: 100%;
+    height: 6%;
+    text-align: center;
+    margin: 2%;
+    color: #DF599D;
+}
+
+.registrarVacuna {
+    width: 100%;
+    height: 10%;
+    border-radius: 15%;
+}
+
+.registrarVacunaLogo {
+    width: 10%;
+    float: left;
+    height: 100%;
+    margin: 1%;
+    padding: 1%;
+}
+
+.registrarVacunaTexto {
+    width: 85%;
+    border-radius: 3%;
+    background-color: #F6E0ED;
+    float: left;
+    height: 100%;
+    margin: 1%;
+}
+
+.textoRegistrarVacuna {
+    text-align: center;
+    font-size: 18px;
+    align-items: center;
+    color: #DF599D;
+}
+
+.contenedorVacunas {
+    width: 100%;
+    overflow-y: auto;
+    height: 60%;
+}
+
+.Vacuna {
+    margin-top: 1%;
+    width: 100%;
+    height: 15%;
+    height: 16%;
+    border-radius: 15%;
+}
+
+.VacunaLogo {
+    width: 10%;
+    float: left;
+    height: 100%;
+    margin: 1%;
+    padding: 1%;
+}
+
+.VacunaTexto {
+    width: 85%;
+    border-radius: 3%;
+    background-color: #8DCBE2;
+    float: left;
+    height: 100%;
+    margin: 1%;
+}
+
+.textoNuevaVacuna {
+    text-align: center;
+    font-size: 18px;
+    align-items: center;
+    color: #3399CC;
+}
+
+.cabeceraContenedorCentro {
+    height: 10%;
+    top: 0;
+}
+
+.tituloCentro {
+    width: 100%;
+    height: 90%;
+    color: #DF599D;
+    font-size: 24px;
+    text-align: center;
+}
+
+.cuadroVacuna {
+    width: 98%;
+    height: 88%;
+    background-color: #F6E0ED;
+    border-radius: 5%;
+}
+
+.tituloVacuna {
+    width: 95%;
+    height: 10%;
+    margin: 1.5%;
+}
+
+.textoTituloVacuna {
+    text-align: center;
+    color: #191970;
+    align-content: center;
+}
+
+.descripcionVacuna {
+    width: 95%;
+    height: 75%;
+    margin: 1.5%;
+}
+
+.textoDescripcionVacuna {
+    text-align: center;
+    color: #191970;
+    align-content:center;
+}
+
+.fechaVacuna {
+    width: 95%;
+    height: 10%;
+    margin: 1.5%;
+}
+
+.textoFechaVacuna {
+    text-align: center;
+    color: #191970;
+    align-content: center;
+}
+
+.imagenContenedorDerecha {
+    width: 95%;
+    height: 50%;
+    top: 0;
+    padding-top: 1%
+}
+
+.botonRegistrar {
+    background-color: transparent; /* Establecer el color de fondo como transparente */
+    border: none; /* Quitar el borde del botón */
+    padding: 10px 20px; /* Añadir relleno para que el botón sea visible */
+    color: #DF599D;
+}
+.textbox {
+    background-color: transparent;
+    border: none;
+    color: #DF599D;
+    text-align:center;
+}
+
+.botonAceptar {
+    display:flex;
+    justify-content:center;
+    margin: 4% 1%,0,1%;
+    align-items: center;
+    background-color: #8DCBE2;
+    height: 10%;
+    width: 96%;
+    border-radius: 25%;
+}
+.btnAceptar {
+    background-color:transparent;
+    border:none;
+    text-align:center;
+    color: #3399CC;
+    font-size: 24px;    
+}
+.piePagina {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+}
