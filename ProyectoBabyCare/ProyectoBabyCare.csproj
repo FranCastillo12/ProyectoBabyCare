@@ -1,4 +1,4 @@
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -72,6 +72,7 @@
     <Content Include="images\5-6meses.jpg" />
     <Content Include="images\6-9 meses.jpg" />
     <Content Include="images\9-12meses.jpg" />
+    <Content Include="images\agenda.jpg" />
     <Content Include="images\bder.png" />
     <Content Include="images\bizq.png" />
     <Content Include="images\Dados.jpg" />
@@ -94,6 +95,8 @@
     <Content Include="images\madre.png" />
     <Content Include="images\NombresSignificados.jpg" />
     <Content Include="images\osito.png" />
+    <Content Include="images\tabla.png" />
+    <Content Include="pages\AgregarSeguimiento.aspx" />
     <Content Include="pages\Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LoginAdmin.aspx" />
@@ -107,6 +110,7 @@
     <Content Include="pages\Perfil.aspx" />
     <Content Include="pages\Registro.aspx" />
     <Content Include="pages\Registrobebe.aspx" />
+    <Content Include="pages\SeguimientoActividades.aspx" />
     <Content Include="styles\generales\Login.css" />
     <Content Include="styles\generales\LoginAdmin.css" />
     <Content Include="styles\generales\Navbar.css" />
@@ -121,6 +125,13 @@
     <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pages\AgregarSeguimiento.aspx.cs">
+      <DependentUpon>AgregarSeguimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AgregarSeguimiento.aspx.designer.cs">
+      <DependentUpon>AgregarSeguimiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,6 +222,13 @@
     </Compile>
     <Compile Include="pages\Registrobebe.aspx.designer.cs">
       <DependentUpon>Registrobebe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\SeguimientoActividades.aspx.cs">
+      <DependentUpon>SeguimientoActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\SeguimientoActividades.aspx.designer.cs">
+      <DependentUpon>SeguimientoActividades.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SiteAdmin.Master.cs">

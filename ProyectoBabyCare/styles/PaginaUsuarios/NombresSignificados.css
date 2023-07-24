@@ -261,7 +261,30 @@ select.form-control {
     margin-top: 5%;
     margin-left: 5%;
 }
-
+.DivTable {
+    width: 100%; /* Ancho deseado para el div */
+    height: 100%; /* Alto deseado para el div */
+    overflow: auto; /* Añade una barra de desplazamiento si el contenido del div es más grande */
+    border: 1px solid #ccc; /* Borde para visualizar el tamaño del div */
+    background-image: url(../../images/tabla.png);
+    background-size: cover;
+    background-position:center;
+}
+.tabla {
+    width: 100%; /* Ajusta el ancho del GridView al 100% del contenedor */
+}
+.divBoton1 {
+    width: 11%;
+    margin-left: 25%;
+}
+.divBoton2 {
+    width: 11%;
+    margin-left: 10%;
+}
+.botonesSeguimiento {
+    width: 100%;
+    text-align: center;
+}
 
 @media (max-width: 700px) {
     .imagen1 {
@@ -310,6 +333,15 @@ select.form-control {
         border-radius: 5%;
         border-radius: 5%;
         font-family: 'Baloo 2', sans-serif;
+    }
+    .divBoton1 {
+        width: 25%;
+        margin-left: 5%;
+    }
+
+    .divBoton2 {
+        width: 29%;
+        margin-left: 4%;
     }
 
 }

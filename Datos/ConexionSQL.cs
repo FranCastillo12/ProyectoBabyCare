@@ -509,6 +509,69 @@ namespace Datos
         }
         #endregion
 
+        #region SeguimientoActividades
+        public List<Entidades.Categorias> TraerCategorias() {
+            List<Entidades.Categorias> lstcategorias = new List<Entidades.Categorias>();
+
+            try
+            {
+                sqlConn.Open();
+                string info = "";
+                SqlCommand command = new SqlCommand("TraerCategorias", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string id = reader["idCategoria"].ToString();
+                        string des = reader["Descripcion"].ToString();
+                        info += $"{id}@{des};";
+
+                    }
+                }
+                sqlConn.Close();
+                //Convertir la informacion
+                string[] data1 = info.Split(';');
+                foreach (string s in data1)
+                {
+                    string[] atrib = s.Split('@');
+                    Entidades.Categorias categoria =new Entidades.Categorias();
+                    categoria.Idcategorial = Convert.ToInt32(atrib[0]);
+                    categoria.Nombre = atrib[1];
+                    lstcategorias.Add(categoria);
+                }
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return lstcategorias;
+        }
+
+        public void InsertarSeguimientoActividad(int idcategoria,int idbebe,string Descripcion,string Fecha) {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("InsertarSeguimientoActividad", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idbebe", idcategoria);
+                command.Parameters.AddWithValue("@idcategoria", idbebe);
+                command.Parameters.AddWithValue("@Descripcion", Descripcion);
+                command.Parameters.AddWithValue("@Fecha", Fecha);
+
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+        
+        #endregion
 
         #endregion
     }
