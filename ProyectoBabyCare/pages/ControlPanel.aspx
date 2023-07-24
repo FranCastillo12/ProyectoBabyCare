@@ -37,8 +37,9 @@
                 <div class="contenedor3">
                     <div class="recuadroConsejo">
                         <asp:Label CssClass="textoConsejo" ID="lblConsejo" runat="server" Text="
-                            ¿Sabías que el cuidado amoroso y adecuado es esencial para el desarrollo saludable de tu bebé?
-                            "></asp:Label>                        
+                            ¿Sabías que el cuidado amoroso y adecuado es esencial para el desarrollo 
+                            saludable de tu bebé?">
+                        </asp:Label>                        
                     </div>
                 </div>
                 <div class="contenedor4">
