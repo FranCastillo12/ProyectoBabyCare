@@ -46,8 +46,10 @@
     <Compile Include="Categorias.cs" />
     <Compile Include="Citas.cs" />
     <Compile Include="Consejos.cs" />
+    <Compile Include="Correos.cs" />
     <Compile Include="En_Usuarios.cs" />
     <Compile Include="Expediente.cs" />
+    <Compile Include="Generos.cs" />
     <Compile Include="NombresBebes.cs" />
     <Compile Include="Padecimientos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

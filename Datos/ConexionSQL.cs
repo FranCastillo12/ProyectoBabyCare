@@ -196,6 +196,46 @@ namespace Datos
 
 
         #region expediente
+        public string ValidarExpediente(int idbebe) {
+            string respuesta = "No existe";
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("ExisteExpediente", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idbebe", idbebe);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        respuesta = reader["respuesta"].ToString();
+                    }
+                }
+                sqlConn.Close();
+            }
+            catch (Exception e){}
+            return respuesta;
+        }
+
+        public void IngresarDatosBasicosExpediente(int idbebe,string cedula,int genero,float peso,float estatura,string tiposangre,DateTime fechanac) {
+            try 
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("IngresarDatosBasicosExpediente", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idbebe", idbebe);
+                command.Parameters.AddWithValue("@cedula", cedula);
+                command.Parameters.AddWithValue("@genero", genero);
+                command.Parameters.AddWithValue("@peso", peso);
+                command.Parameters.AddWithValue("@estatura", estatura);
+                command.Parameters.AddWithValue("@tiposangre", tiposangre);
+                command.Parameters.AddWithValue("@fecha", fechanac);
+                command.ExecuteNonQuery();
+
+                command.Clone();
+            }catch(Exception ex){ }
+            
+        }
         public Entidades.Expediente Expediente(string correo,int idbebe)
         {
             Entidades.Expediente Expediente = new Entidades.Expediente();
@@ -406,6 +446,84 @@ namespace Datos
 
             return lstvacunas;
         }
+
+        public List<Entidades.Generos> TraerGeneros() { 
+            List<Entidades.Generos> lstGeneros=new List<Generos> ();
+            Entidades.Generos genero = null;
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("TraerGeneros", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        genero = new Entidades.Generos();
+                        genero.Idgenero = Convert.ToInt32(reader["idGenero"].ToString());
+                        genero.NGenero = reader["Genero"].ToString();
+                        lstGeneros.Add(genero);
+                    }
+                }
+                sqlConn.Close();
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return lstGeneros;
+        }
+
+        public void ModificarExpediente(int idexpediente, float peso, float estatura, string tiposangre, string cedula, int genero) {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("ModificarExpediente", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idexpediente", idexpediente);
+                command.Parameters.AddWithValue("@cedula", cedula);
+                command.Parameters.AddWithValue("@genero", genero);
+                command.Parameters.AddWithValue("@peso", peso);
+                command.Parameters.AddWithValue("@Estatura", estatura);
+                command.Parameters.AddWithValue("@Tiposangre", tiposangre);
+                command.ExecuteNonQuery();
+
+                command.Clone();
+            }
+            catch (Exception ex) { }
+        }
+        public void InsertarDetalleExpediente(int idbebe,string descripcion,DateTime fecha) {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("IngresarDetalleExpediente", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idbebe", idbebe);
+                command.Parameters.AddWithValue("@descripcion", descripcion);
+                command.Parameters.AddWithValue("@fecha", fecha);
+                command.ExecuteNonQuery();
+
+                command.Clone();
+            }
+            catch (Exception ex) { }
+        }
+        public void InsertarPadecimientoExpediente(int idbebe,int idpadecimiento) {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("IngresarPadecimientoExpediente", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idbebe", idbebe);
+                command.Parameters.AddWithValue("@idpadecimiento", idpadecimiento);
+                command.ExecuteNonQuery();
+
+                command.Clone();
+            }
+            catch (Exception ex) { }
+        }
+
         #endregion
 
         #region NombresSignificados
