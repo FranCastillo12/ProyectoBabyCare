@@ -6,15 +6,15 @@
     <link href="../styles/PaginaUsuarios/RegistroExpediente.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container" style="text-align: center;">
-        <div style="text-align: center; font-family: 'Baloo 2', sans-serif;">
-            <h1>Registro del expediente
+    <div class="" style="text-align: center;">
+        <div style="text-align: center; font-family: 'Baloo 2', sans-serif;margin-top:1%;margin-bottom:1%;width:70%">
+            <h1 style="background-color: #F6E0ED;align-content:center">Registro del expediente
             </h1>
         </div>
         <div class="row">
             <div style="width: 25%; background-image: url(../images/reg1.png); background-size: cover; background-position: center;">
             </div>
-            <form runat="server" class="Formulario">
+            <form runat="server" class="Formulario" style="padding-top:10%;padding-bottom:10%">
                 <div>
                     <div style="text-align: center">
                         <asp:Label ID="Label1" runat="server" Text="Cedula del bebe"></asp:Label>

@@ -28,10 +28,19 @@ namespace ProyectoBabyCare.pages
                 if (ExisteExpediente.Equals("No existe")) {
                     Response.Redirect("RegistrarExpediente.aspx");
                 }
+                if (!usuario.Rol.Equals("Madre") || !usuario.Rol.Equals("Padre")) { 
+                    btnModificar.Visible = false;
+                    btnagregarpadecimientos.Visible = false;
+                    btnAgregarDetalle.Visible = false;
+                    txtDescripcion.Visible = false;
+                    txtFechaDetalle.Visible = false;
+                    dpllPadecimientos.Visible = false;
+                }
             }
             if (!IsPostBack) {
+                Session["idExpedienteBebe"] = null;
 
-                
+
 
                 lstpadecimientos = ex.TodoslosPadecimientos();
                 dpllPadecimientos.Items.Add("Seleccione un padecimiento");
@@ -39,20 +48,41 @@ namespace ProyectoBabyCare.pages
                 {
                     dpllPadecimientos.Items.Add(ex1.IdPadecimiento + "-" + ex1.Nombrepadecimiento);
                 }
-                if (idbebe != 0 && !correo.Equals(""))
+                if (idbebe != 0)
                 {
                     Entidades.Expediente expediente = new Entidades.Expediente();
                     
-                    expediente = ex.obtenerexpediente(correo, idbebe);
-                    if (expediente.Nombrebebe != null)
+                    expediente = ex.obtenerexpediente(idbebe);
+                    if (expediente.Idexpediente != 0)
                     {
+                        Session["idExpedienteBebe"] = expediente.Idexpediente;
                         txtnombre.Text = expediente.Nombrebebe;
                         txtPeso.Text = Convert.ToString(expediente.Peso);
                         txtSangre.Text = expediente.Tiposangre.Trim();
                         txtpapa.Text = expediente.NombrePadre;
                         txtmama.Text = expediente.NombreMadre;
                         txtestatura.Text = Convert.ToString(expediente.Estatura);
-                        txtfecha.Text = expediente.Fechanacimiento;
+                        string[] fechanac= expediente.Fechanacimiento.Split(' ');
+                        txtfecha.Text = fechanac[0];
+                        txtcedula.Text = expediente.Cedula;
+
+                        //Generos
+                        List<Entidades.Generos> lstgeneros= new List<Entidades.Generos>();
+                        lstgeneros=ex.TraerGeneros();
+                        foreach (Entidades.Generos g in lstgeneros) {
+                            dopgenero.Items.Add(g.NGenero);
+                        }
+
+                        foreach (ListItem item in dopgenero.Items) {
+
+                            if (item.Value == expediente.Genero)
+                            {
+                                // Si encuentra el valor buscado, lo selecciona
+                                item.Selected = true;
+
+                                break; // Termina el bucle después de encontrar el valor buscado
+                            }
+                        }
 
                         //padecimientos
 
@@ -76,7 +106,7 @@ namespace ProyectoBabyCare.pages
                         //detalles
                         txtDetalles.Text = "";
                         string[] lstdetalle = ex.Detalles(expediente.Idexpediente);
-                        if (lstdetalle.Length > 0)
+                        if (lstdetalle.Length > 0 && !lstdetalle[0].Equals(""))
                         {
                             int cont = 1;
                             foreach (string s in lstdetalle)
@@ -98,7 +128,7 @@ namespace ProyectoBabyCare.pages
                         //Vacunas
                         txtVacunas.Text = "";
                         string[] lstvacunas = ex.Vacunas(expediente.Idexpediente);
-                        if (lstvacunas.Length > 0)
+                        if (lstvacunas.Length > 0 && !lstvacunas[0].Equals(""))
                         {
                             int cont = 1;
                             foreach (string s in lstvacunas)
@@ -128,6 +158,7 @@ namespace ProyectoBabyCare.pages
                         txtmama.Text = "Sin registros";
                         txtestatura.Text = "Sin registros";
                         txtfecha.Text = "Sin registros";
+                        txtcedula.Text = "Sin registro";
                     }
 
 
@@ -140,6 +171,7 @@ namespace ProyectoBabyCare.pages
                     txtmama.Text = "Sin registros";
                     txtestatura.Text = "Sin registros";
                     txtfecha.Text = "Sin registros";
+                    txtcedula.Text = "Sin registro";
                 }
             }
             
@@ -148,16 +180,54 @@ namespace ProyectoBabyCare.pages
 
         protected void btnagregarpadecimientos_Click(object sender, EventArgs e)
         {
-
+            if (!dpllPadecimientos.SelectedValue.Equals("Seleccione un padecimiento")) { 
+                string padecimiento = dpllPadecimientos.SelectedValue;
+                string[] data=padecimiento.Split('-');
+                Entidades.En_Usuarios user = (Entidades.En_Usuarios)Session["Credenciales"];
+                ex.IngresarPadecimiento(Convert.ToInt32(user.IdenBebe), Convert.ToInt32(data[0]));
+            }
+            Response.Redirect("Expediente.aspx");
         }
 
         protected void btnAgregarDetalle_Click(object sender, EventArgs e)
         {
-
+            string detalle=txtDescripcion.Text;
+            DateTime fecha=DateTime.Parse(txtFechaDetalle.Text);
+            Entidades.En_Usuarios user = (Entidades.En_Usuarios)Session["Credenciales"];
+            if (Convert.ToInt32(user.IdenBebe)!=0) {
+                ex.IngresarDetalleExpediente(Convert.ToInt32(user.IdenBebe), detalle,fecha.Date);
+            }
+            Response.Redirect("Expediente.aspx");
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
+            if (Session["Credenciales"] != null ) {
+                float peso=float.Parse(txtPeso.Text);
+                string tiposangre=txtSangre.Text;
+                float estatura=float.Parse(txtestatura.Text);
+                string cedula=txtcedula.Text;
+                string genero = dopgenero.SelectedValue;
+                int idGenero = 0;
+                if (genero.Equals("Hombre"))
+                {
+                    idGenero = 1;
+                }
+                else if (genero.Equals("Mujer"))
+                {
+                    idGenero = 2;
+                }
+                else {
+                    idGenero = 0;
+                }
+                if (idGenero != 0) {
+                    if (Convert.ToInt32(Session["idExpedienteBebe"])!=0 && Session["idExpedienteBebe"]!=null) { 
+                        ex.ModificarExpediente(Convert.ToInt32(Session["idExpedienteBebe"]),peso,estatura,tiposangre,cedula,idGenero);
+                    }
+                    
+                }
+                Response.Redirect("Expediente.aspx");
+            }
 
         }
     }

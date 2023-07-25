@@ -170,9 +170,16 @@ namespace ProyectoBabyCare.pages
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
         }
-    
 
+        protected void btnEnviarCodido_Click()
+        {
+            //string correo = txtemail.text;
+            //Envio por correo el codfigo del bebe
+        }
 
-   
+        protected void btnEnviarCodido_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

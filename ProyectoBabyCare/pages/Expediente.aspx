@@ -22,7 +22,6 @@
         </div>
     </div>
 
-    <div class="container mt-3" style="width: 100%;">
         <form runat="server" style="margin-bottom: 5%; background-color: #F6E0ED; padding-top: 2%; padding-bottom: 2%; border-radius: 10%">
 
             <div class="row">
@@ -69,7 +68,19 @@
                             <asp:TextBox ID="txtfecha" ReadOnly="true" runat="server" CssClass="txt2 form-control"></asp:TextBox>
                         </div>
                     </div>
-                    <div style="width: 30%; margin-left: 25%">
+                    <div style="width: 40%;margin-left:20%">
+                        <asp:Label ID="Label8" runat="server" Text="Cédula"></asp:Label>
+                        <div style="text-align:center">
+                            <asp:TextBox ID="txtcedula" runat="server" CssClass="form-control" style="width:90%"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div style="width: 25%;">
+                        <asp:Label ID="Label10" runat="server" Text="Género"></asp:Label>
+                        <div>
+                            <asp:DropDownList ID="dopgenero" AutoPostBack="true" CssClass="form-controlddl" runat="server"></asp:DropDownList>
+                        </div>
+                    </div>
+                    <div style="width: 30%; margin-left: 25%;margin-top:2%">
                         <asp:Button ID="btnModificar" class="btn btn-primary profile-button" runat="server" OnClick="btnModificar_Click" Text="Modificar" />
                     </div>
 
@@ -120,5 +131,4 @@
                 </div>
             </div>
         </form>
-    </div>
 </asp:Content>
