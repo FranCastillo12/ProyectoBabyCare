@@ -17,7 +17,7 @@
 <body>
             <div class="image-containerleft">
   <div class="image-wrapperleft">
-    <img src="images/ImageLogin1.png" alt="Imagen adicional">
+    <img src="images/ImageLogin1.png" alt="Imagen adicional"/>
   </div>
 </div>
    <form id="form1" class="form" runat="server">
