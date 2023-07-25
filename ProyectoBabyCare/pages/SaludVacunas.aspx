@@ -73,7 +73,16 @@
                 <img style="width:100%; height:100%" alt="" src="../images/Vacunacion.png" />
             </div>
             <div class="botonAceptar">
-                <asp:Button CssClass="btnAceptar" ID="btnAceptar" runat="server" Text="Aceptar" />
+                <asp:Button CssClass="btnAceptar" ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+            </div>
+            <div class="botonAceptar">
+                <asp:Button CssClass="btnAceptar" ID="btnEditar" runat="server" Text="Modificar" OnClick="btnEditar_Click" />
+            </div>
+            <div class="botonAceptar">
+                <asp:Button CssClass="btnAceptar" ID="btnBorrar" runat="server" Text="Borrar" OnClick="btnBorrar_Click" />
+            </div>
+            <div>
+                <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
             </div>
         </div>
         <div class="piePagina">

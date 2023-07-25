@@ -136,9 +136,9 @@ namespace Negocios
                     {
                         Entidades.Vacunas v = new Entidades.Vacunas
                         {
-                            Nombre = fila[0].ToString(),
-                            Descripcion = fila[1].ToString(),
-                            Fecha = Convert.ToDateTime(fila[2].ToString())
+                            Nombre = fila[1].ToString(),
+                            Descripcion = fila[2].ToString(),
+                            Fecha = Convert.ToDateTime(fila[3].ToString())
                         };
 
                         vacunas.Add(v);

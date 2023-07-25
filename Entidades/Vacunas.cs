@@ -8,6 +8,7 @@ namespace Entidades
 {
     public class Vacunas
     {
+        int _idVacuna;
         String _Nombre;
         String _Descripcion;
         DateTime _Fecha;
@@ -15,5 +16,6 @@ namespace Entidades
         public string Nombre { get => _Nombre; set => _Nombre = value; }
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
         public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
+        public int IdVacuna { get => _idVacuna; set => _idVacuna = value; }
     }
 }

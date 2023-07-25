@@ -82,9 +82,14 @@ namespace ProyectoBabyCare
 
                     if (iCredenciales != null)
                     {
-                        Session["credenciales"] = iCredenciales;
+                        Session["Credenciales"] = iCredenciales;
                             //variable de sesion con datos del bebe
+
+                        Session["DatosBebe"] = bebe;
+
+
                         //Session["DatosBebe"] = bebe;
+
                         Response.Redirect("pages/ControlPanel.aspx");
                     }
                     else
