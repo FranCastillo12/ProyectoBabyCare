@@ -126,12 +126,11 @@ namespace ProyectoBabyCare.pages
                     
                     string valorSeleccionado = dropbebes.SelectedValue;
 
-                    Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios();
-
+                    Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios();                   
 
                     credenciales.IdenBebe = valorSeleccionado;
                     Session["Credenciales"] = credenciales;
-                    //Session["idbebe"] = valorSeleccionado;
+                    //Session["idbebe"] = valorSeleccionado;                    
 
                     DataTable resultTable = iUsuario.ObtenerSessionbebe(valorSeleccionado,correo);
                     if (resultTable != null && resultTable.Rows.Count > 0)
@@ -142,6 +141,8 @@ namespace ProyectoBabyCare.pages
                         encargado = resultTable.Rows[0][2].ToString();
 
                         // Store the value in the Session
+                        Entidades.Bebe bebe = Negocios.Bebe.bebe(credenciales.IdenBebe);
+                        Session["DatosBebe"] = bebe;
                         credenciales.Rol = rol;
                         Session["Credenciales"] = credenciales;
                         //Session["rol"] = rol;

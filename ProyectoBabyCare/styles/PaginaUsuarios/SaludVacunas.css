@@ -222,7 +222,7 @@
 .botonAceptar {
     display:flex;
     justify-content:center;
-    margin: 4% 1%,0,1%;
+    margin: 5% 1% 1% 5%;
     align-items: center;
     background-color: #8DCBE2;
     height: 10%;

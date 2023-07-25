@@ -12,9 +12,12 @@ namespace ProyectoBabyCare.pages
     public partial class SaludVacunas : System.Web.UI.Page
     {
         List<Entidades.Vacunas> listaVacunas = new List<Entidades.Vacunas>();
+        int idBebe = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idBebe = 6;
+            En_Usuarios credenciales = (En_Usuarios)Session["Credenciales"];            
+            idBebe = Convert.ToInt16(credenciales.IdenBebe);
+
             try
             {                
                 listaVacunas = Negocios.Vacunas.ListaVacunas(idBebe);
@@ -68,9 +71,11 @@ namespace ProyectoBabyCare.pages
                     txtTitulo.Text = NombreVacuna;
                     txtDescripcion.Text = vacuna.Descripcion;
                     txtFecha.Text = vacuna.Fecha.ToString();
+
+                    int i = vacuna.IdVacuna;
+                    Session["idVacuna"] = i;
                 }
             }            
-
         }
 
         protected void btnRegistrarNueva_Click(object sender, EventArgs e)
@@ -78,6 +83,72 @@ namespace ProyectoBabyCare.pages
             txtTitulo.Text = "Titulo Vacuna Nueva";
             txtDescripcion.Text = "Descripcion Vacuna nueva";
             txtFecha.Text = DateTime.Now.ToString();
+        }     
+        protected void btnBorrar_Click(object sender, EventArgs e)
+        {            
+            try
+            {
+                int i = (int)Session["idVacuna"];
+
+                Negocios.Vacunas.BorrarVacuna(i, idBebe);
+                Response.Redirect("SaludVacunas.aspx", false);
+            }
+            catch (Exception exc)
+            {
+                lblMensaje.Text = exc.Message;
+            }
+        }
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            //var vacuna = listaVacunas.FirstOrDefault(v=>v.nom)
+            if (txtTitulo.Text.Length < 5 || txtDescripcion.Text.Length < 5)
+            {
+                lblMensaje.Text = "Datos no válidos";
+            }
+            try
+            {
+                DateTime fecha = Convert.ToDateTime(txtFecha.Text);
+            }
+            catch
+            {
+                lblMensaje.Text = "Fecha no válida";
+            }
+            try
+            {
+                int i = (int)Session["idVacuna"];
+
+                Negocios.Vacunas.EditarVacuna(i,idBebe, txtTitulo.Text, txtDescripcion.Text, Convert.ToDateTime(txtFecha.Text));
+                Response.Redirect("SaludVacunas.aspx", false);
+            }
+            catch (Exception exc)
+            {
+                lblMensaje.Text = exc.Message;
+            }
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (txtTitulo.Text.Length < 5 || txtDescripcion.Text.Length<5)
+            {
+                lblMensaje.Text = "Datos no válidos";
+            }
+            try
+            {
+                DateTime fecha = Convert.ToDateTime(txtFecha.Text);
+            }
+            catch
+            {
+                lblMensaje.Text = "Fecha no válida";
+            }
+            try
+            {
+                Negocios.Vacunas.AgregarVacuna(idBebe, txtTitulo.Text, txtDescripcion.Text, Convert.ToDateTime(txtFecha.Text));
+                Response.Redirect("SaludVacunas.aspx",false);
+            } catch (Exception exc)
+            {
+                lblMensaje.Text = exc.Message;
+            }
+            
         }
     }
 }
