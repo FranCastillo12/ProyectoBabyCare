@@ -36,6 +36,8 @@
     
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">                   
 
+      <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="Expediente.aspx">Expediente & Medicaci&oacute;n</a>
@@ -48,6 +50,8 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="SeguimientoActividades.aspx">Seguimiento</a></li>
               <li><a class="dropdown-item" href="#">Alertas</a></li>
+
+              <li><a class="dropdown-item" href="Expediente.aspx">Expediente</a></li>
               <li><a class="dropdown-item" href="SaludVacunas.aspx">Vacunas</a></li>
               <li><a class="dropdown-item" href="Salud_Citas.aspx">Citas</a></li>
             </ul>
