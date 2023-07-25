@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Consejos.cs" />
     <Compile Include="ControlPanel.cs" />
+    <Compile Include="Correos.cs" />
     <Compile Include="Expediente.cs" />
     <Compile Include="Neg_bebes.cs" />
     <Compile Include="Neg_EtapasDesarrollo.cs" />
