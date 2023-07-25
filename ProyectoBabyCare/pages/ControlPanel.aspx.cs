@@ -25,6 +25,7 @@ namespace ProyectoBabyCare.pages
 
                     En_Usuarios credenciales = (En_Usuarios)Session["Credenciales"];
                     Entidades.Bebe bebe = (Entidades.Bebe)Session["DatosBebe"];
+                    Session["rol"] = credenciales.Rol;
 
                     if (credenciales != null && bebe !=null)
                     {
@@ -64,19 +65,19 @@ namespace ProyectoBabyCare.pages
 
                     switch (rol)
                     {
-                        case "2":
+                        case "padre":
                             lblPerfil.Text = "Perfil de Madre";
                             break;
-                        case "3":
+                        case "madre":
                             lblPerfil.Text = "Perfil de Padre";
                             break;
-                        case "4":
+                        case "abuelo":
                             lblPerfil.Text = "Perfil de abuelo";
                             break;
-                        case "5":
+                        case "babysister":
                             lblPerfil.Text = "Perfil de babySister";
                             break;
-                        case "6":
+                        case "normal":
                             lblPerfil.Text = "Perfil normal";
                             break;
                         default:
@@ -84,10 +85,10 @@ namespace ProyectoBabyCare.pages
                             break;
                     }
                 
-                    List<Citas> listaCitas = Negocios.ControlPanel.ListaCitas(6);
+                    List<Entidades.Citas> listaCitas = Negocios.ControlPanel.ListaCitas(6);
                     List<Alertas> listaAlertas = Negocios.ControlPanel.ListaAlertas(6);
                     List<Seguimientos> listaSeguimientos = Negocios.ControlPanel.ListaSeguimiento(6);
-                    List<Vacunas> listaVacunas = Negocios.ControlPanel.ListaVacunas(6);                
+                    List<Entidades.Vacunas> listaVacunas = Negocios.ControlPanel.ListaVacunas(6);                
 
                     int cantidadCitas, cantidadAlertas, cantidadVacunas, cantidadSeguimientos;
 

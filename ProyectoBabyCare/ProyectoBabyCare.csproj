@@ -1,4 +1,4 @@
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -78,6 +78,7 @@
     <Content Include="images\bebeAnimado.jpg" />
     <Content Include="images\bebeCa.jpg" />
     <Content Include="images\bizq.png" />
+    <Content Include="images\borrar.png" />
     <Content Include="images\calen.png" />
     <Content Include="images\comida.jpg" />
     <Content Include="images\comida1.jpg" />
@@ -88,6 +89,7 @@
     <Content Include="images\comida6.jpg" />
     <Content Include="images\Dados.jpg" />
     <Content Include="images\dietaslogo.png" />
+    <Content Include="images\editar.png" />
     <Content Include="images\flecha1.png" />
     <Content Include="images\flecha2.png" />
     <Content Include="images\Expediente.gif" />

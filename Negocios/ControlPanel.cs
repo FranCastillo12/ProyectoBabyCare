@@ -16,7 +16,7 @@ namespace Negocios
         {
             try
             {
-                List<Citas> citas = new List<Citas>();
+                List<Entidades.Citas> citas = new List<Entidades.Citas>();
                 string spName = "VerCitas";
                 var lstParametros = new List<SqlParameter>()
                 {
@@ -29,11 +29,11 @@ namespace Negocios
                 {
                     foreach(DataRow fila in dtCitas.Rows)
                     {
-                        Citas c = new Citas
-                        {
-                            Lugar = fila[0].ToString(),
-                            Titulo = fila[1].ToString(),
-                            Fecha= Convert.ToDateTime(fila[2])
+                        Entidades.Citas c = new Entidades.Citas
+                        {                            
+                            Lugar = fila[1].ToString(),
+                            Titulo = fila[2].ToString(),
+                            Fecha= Convert.ToDateTime(fila[3])
                         };
                         citas.Add(c);
                     }
@@ -121,7 +121,7 @@ namespace Negocios
         {
             try
             {
-                List<Vacunas> vacunas = new List<Vacunas>();
+                List<Entidades.Vacunas> vacunas = new List<Entidades.Vacunas>();
                 string spName = "VerVacunas";
                 var lstParametros = new List<SqlParameter>()
                 {
@@ -134,7 +134,7 @@ namespace Negocios
                 {
                     foreach (DataRow fila in dtVacunas.Rows)
                     {
-                        Vacunas v = new Vacunas
+                        Entidades.Vacunas v = new Entidades.Vacunas
                         {
                             Nombre = fila[0].ToString(),
                             Descripcion = fila[1].ToString(),
