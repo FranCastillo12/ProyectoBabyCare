@@ -21,22 +21,17 @@ namespace ProyectoBabyCare
                 Entidades.En_Usuarios usu = (Entidades.En_Usuarios)Session["Credenciales"];
                 Negocios.Expediente ex=new Negocios.Expediente();
                 string respuesta = ex.ValidarExpediente(Convert.ToInt32(usu.IdenBebe));
-                string regexNumeros = @"^[0-9]+$";
-                string regexNumeroFloat = @"^[0-9]+(\.[0-9]+)?$";
+                string regexNumeros = @"^[0-9]{9}$";
+                string regexNumeroFloat = @"^\d+(\.\d+)?$";
 
 
                 if (respuesta.Equals("No existe"))
                 {
                     string script = null;
                     bool entrar = false;
-                    //Obtener datos del formulario
-                    string cedula=txtCedula.Text;
-                    float peso=float.Parse(txtpeso.Text);
-                    float estatura= float.Parse(txtestatura.Text);
-                    DateTime fecha=DateTime.Parse(txtfecha.Text);
-                    string tiposangre=txtTiposangre.Text;
+                    
                     int genero = 0;
-                    if (cedula == "")
+                    if (txtCedula.Text == "")
                     {
                         script =
                             "toastr.options.closeButton = true;" +
@@ -47,7 +42,7 @@ namespace ProyectoBabyCare
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (Regex.IsMatch(cedula, regexNumeros))
+                    if (Regex.IsMatch(txtCedula.Text, regexNumeros))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
@@ -95,7 +90,7 @@ namespace ProyectoBabyCare
                         script =
                             "toastr.options.closeButton = true;" +
                             "toastr.options.positionClass = 'toast-top-full-width';" +
-                            "toastr.error('El peso solo puede tener numeros');";
+                            "toastr.error('La estatura solo puede tener numeros');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         //warningss += "El correo es necesario <br>";
@@ -130,6 +125,11 @@ namespace ProyectoBabyCare
 
                         entrar = true;
                     }
+                    string cedula = txtCedula.Text;
+                    float peso = float.Parse(txtpeso.Text);
+                    float estatura = float.Parse(txtestatura.Text);
+                    DateTime fecha = DateTime.Parse(txtfecha.Text);
+                    string tiposangre = txtTiposangre.Text;
                     if (entrar)
                     {
 
