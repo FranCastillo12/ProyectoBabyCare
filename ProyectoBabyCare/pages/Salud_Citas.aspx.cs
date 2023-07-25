@@ -108,7 +108,11 @@ namespace ProyectoBabyCare.pages
             }
             catch (Exception)
             {
-                lblMensaje.Text = "Algo salió mal";
+                string script =
+                                 "toastr.options.closeButton = true;" +
+                                 "toastr.options.positionClass = 'toast-top-full-width';" +
+                                 "toastr.error('Revisar los datos ingresados');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
         }
         protected void ButtonEditarEliminar_Click(object sender, EventArgs e)
@@ -145,7 +149,12 @@ namespace ProyectoBabyCare.pages
                         }
                         catch (Exception)
                         {
-                            lblMensaje.Text = "Algo salió mal";
+
+                            string script =
+                                "toastr.options.closeButton = true;" +
+                                "toastr.options.positionClass = 'toast-top-full-width';" +
+                                "toastr.error('Revisar los datos ingresados');";
+                            ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                         }                        
                     }
                 }
@@ -184,7 +193,11 @@ namespace ProyectoBabyCare.pages
             }
             catch (Exception exc)
             {
-                lblMensaje.Text = "Ocurrio un error";
+                string script =
+                                 "toastr.options.closeButton = true;" +
+                                 "toastr.options.positionClass = 'toast-top-full-width';" +
+                                 "toastr.error('Revisar los datos ingresados');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
 
         }
