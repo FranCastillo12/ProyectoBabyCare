@@ -21,7 +21,7 @@ namespace ProyectoBabyCare
                 Entidades.En_Usuarios usu = (Entidades.En_Usuarios)Session["Credenciales"];
                 Negocios.Expediente ex=new Negocios.Expediente();
                 string respuesta = ex.ValidarExpediente(Convert.ToInt32(usu.IdenBebe));
-                string regexNumeros = @"^[0-9]{9}$";
+                string regexNumeros = @"^[0-9]{10}$";
                 string regexNumeroFloat = @"^\d+(\.\d+)?$";
 
 
@@ -37,17 +37,6 @@ namespace ProyectoBabyCare
                             "toastr.options.closeButton = true;" +
                             "toastr.options.positionClass = 'toast-top-full-width';" +
                             "toastr.error('La cédula no puede quedar en blanco');";
-                        ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-
-                        //warningss += "El correo es necesario <br>";
-                        entrar = true;
-                    }
-                    if (Regex.IsMatch(txtCedula.Text, regexNumeros))
-                    {
-                        script =
-                            "toastr.options.closeButton = true;" +
-                            "toastr.options.positionClass = 'toast-top-full-width';" +
-                            "toastr.error('La cédula solo puede contener numeros');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         //warningss += "El correo es necesario <br>";

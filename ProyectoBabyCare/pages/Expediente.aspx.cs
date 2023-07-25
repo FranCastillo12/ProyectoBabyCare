@@ -28,7 +28,16 @@ namespace ProyectoBabyCare.pages
                 if (ExisteExpediente.Equals("No existe")) {
                     Response.Redirect("RegistrarExpediente.aspx");
                 }
-                if (!usuario.Rol.Equals("Madre") || !usuario.Rol.Equals("Padre")) { 
+                if (usuario.Rol.Equals("Madre") || usuario.Rol.Equals("Padre")) { 
+                    btnModificar.Visible = true;
+                    btnagregarpadecimientos.Visible = true;
+                    btnAgregarDetalle.Visible = true;
+                    txtDescripcion.Visible = true;
+                    txtFechaDetalle.Visible = true;
+                    dpllPadecimientos.Visible = true;
+                }
+                else
+                {
                     btnModificar.Visible = false;
                     btnagregarpadecimientos.Visible = false;
                     btnAgregarDetalle.Visible = false;
@@ -201,12 +210,57 @@ namespace ProyectoBabyCare.pages
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
+            string script = null;
+            bool entrar = false;
             if (Session["Credenciales"] != null ) {
-                float peso=float.Parse(txtPeso.Text);
-                string tiposangre=txtSangre.Text;
-                float estatura=float.Parse(txtestatura.Text);
-                string cedula=txtcedula.Text;
                 string genero = dopgenero.SelectedValue;
+
+                if (txtcedula.Text == "")
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('La cédula no puede quedar en blanco');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (string.IsNullOrEmpty(txtestatura.Text))
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('La estatura no puede quedar en blanco');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (string.IsNullOrEmpty(txtPeso.Text))
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('El peso no puede quedar en blanco');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (txtSangre.Text == "")
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('El tipo de sangre no puede quedar en blanco');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+       
+
                 int idGenero = 0;
                 if (genero.Equals("Hombre"))
                 {
@@ -217,15 +271,35 @@ namespace ProyectoBabyCare.pages
                     idGenero = 2;
                 }
                 else {
-                    idGenero = 0;
+                    script =
+                         "toastr.options.closeButton = true;" +
+                         "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.error('Debe indicar el genero');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    entrar = true;
                 }
-                if (idGenero != 0) {
-                    if (Convert.ToInt32(Session["idExpedienteBebe"])!=0 && Session["idExpedienteBebe"]!=null) { 
-                        ex.ModificarExpediente(Convert.ToInt32(Session["idExpedienteBebe"]),peso,estatura,tiposangre,cedula,idGenero);
-                    }
+
+
+                if (entrar)
+                {
+
+
+                }
+                else
+                {
+                    float peso = float.Parse(txtPeso.Text);
+                    string tiposangre = txtSangre.Text;
+                    float estatura = float.Parse(txtestatura.Text);
+                    string cedula = txtcedula.Text;
                     
+                    if (Convert.ToInt32(Session["idExpedienteBebe"]) != 0 && Session["idExpedienteBebe"] != null)
+                    {
+                        ex.ModificarExpediente(Convert.ToInt32(Session["idExpedienteBebe"]), peso, estatura, tiposangre, cedula, idGenero);
+                    }
+                    Response.Redirect("Expediente.aspx");
                 }
-                Response.Redirect("Expediente.aspx");
+
             }
 
         }
