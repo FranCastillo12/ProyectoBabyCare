@@ -2,16 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 body {
-    background:#ffffff;
+    background: #ffffff;
     max-width: auto;
     max-height: auto;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
+
 .contenedor2 {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
+
 .title {
     margin: 1%;
     float: left;
@@ -25,11 +27,13 @@ body {
     border-radius: 5px;
     color: #191970;
 }
+
 h2 {
     font-size: 450%;
 }
-.row{
-    background:#ffecf7
+
+.row {
+    background: #ffecf7
 }
 
 .container.rounded {
@@ -42,6 +46,7 @@ h2 {
     background-color: #FFC0CB;
     margin-top: 900px;
 }
+
 .profile-buttonddl {
     font-weight: 600; /* Semibold */
     font-size: 130%;
@@ -58,9 +63,30 @@ h2 {
     color: #A020F0;
     text-transform: uppercase; /* Convierte el texto en mayúsculas */
 }
-.profile-buttonddl:hover {
-    background:#682773;
+
+    .profile-buttonddl:hover {
+        background: #682773;
+    }
+
+.profile-buttonCompartir {
+    font-weight: 600; /* Semibold */
+    font-size: 130%;
+    font-family: 'Baloo 2', sans-serif;
+    background: rgba(141, 203, 226, 0.8); /* Cambia el valor de opacidad según tus necesidades */
+    box-shadow: none;
+    border: none;
+    height: 40px;
+    width: 90%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-left: 5%;
+    color: #0088CC;
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
 }
+
+
+
 .profile-button {
     font-weight: 600; /* Semibold */
     font-size: 135%;
@@ -83,23 +109,24 @@ h2 {
     opacity: 0.6; /* Opacidad para indicar que el botón está deshabilitado */
     /* Agrega otros estilos visuales deseados para el botón deshabilitado */
 }
-    .profile-button:focus {
-        background: #682773;
-        box-shadow: none
-    }
 
-    .profile-button:active {
-        background: #682773;
-        box-shadow: none
-    }
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
 
 .back:hover {
     color: #682773;
     cursor: pointer
 }
 
-.conetedor-bebes{
-    margin-left:7%
+.conetedor-bebes {
+    margin-left: 7%
 }
 
 .title-bebes {
@@ -118,12 +145,12 @@ h2 {
     text-decoration: none;
 }
 
-.add-experience:hover {
-    background: #BA68C8;
-    color: #fff;
-    cursor: pointer;
-    border: solid 1px #BA68C8
-}
+    .add-experience:hover {
+        background: #BA68C8;
+        color: #fff;
+        cursor: pointer;
+        border: solid 1px #BA68C8
+    }
 
 .form-control {
     border: 2px dashed #3399CC; /* Color del borde deseado */
@@ -132,18 +159,18 @@ h2 {
     color: #706c6c;
     font-size: 1.4rem;
     padding: .6em .3em;
-   
 }
 
 .form-controlddl {
     border: 1px solid #3399CC; /* Color del borde deseado */
-    border-radius:3px;
+    border-radius: 3px;
     width: 100%;
     background: none;
     color: #706c6c;
     font-size: 1rem;
     padding: .6em .3em;
 }
+
 select.form-control {
     -webkit-appearance: menulist;
     -moz-appearance: menulist;
@@ -173,10 +200,9 @@ select.form-control {
 
 .form_label {
     font-family: 'Baloo 2', 'sans-serif';
-    font-size:23px;
-   
- 
+    font-size: 23px;
 }
+
 .form_line {
     position: absolute;
     bottom: 0;
@@ -198,65 +224,81 @@ h2 {
 
 .label-codigo {
     font-family: 'Baloo 2', 'sans-serif';
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 31px;
+    font-weight: 500;
     color: #ffffff;
 }
+
+.input_email {
+    border-radius: 3px;
+    width: 20rem;
+    height: 3rem;
+}
+
+
 /*:::Fin Boton-Modal:::*/
 /*:::Ventana Modal:::*/
 #btn-modal {
     display: none;
 }
-.container-modal{
+
+.container-modal {
     width: 100%;
     height: 100vh;
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     background-color: rgba(144, 148, 150, 0.7);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 100;
 }
-#btn-modal:checked ~ .container-modal{
+
+#btn-modal:checked ~ .container-modal {
     display: flex;
 }
+
 .content-modal {
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    background: rgba(160, 32, 240, 0.29); /* Cambia este valor según la opacidad deseada */
+    background: rgba(190, 32, 240, 0.36); /* Cambia este valor según la opacidad deseada */
     border-radius: 4px;
 }
-.content-modal h2{
-    margin-bottom: 15px;
-}
-.content-modal p{
-    padding: 15px 0px;
-    border-top: 1px solid #dbdbdb;
-    border-bottom: 1px solid #dbdbdb;
-}
-.content-modal .btn-cerrar{
-    width: 100%;
-    margin-top: 15px;
-    display: flex;
-    justify-content: flex-end;
-   
-}
-    .content-modal .btn-cerrar label {
-        font-family: 'Baloo 2', 'sans-serif';
-        font-size: 20px;
-        font-weight: 600;
-        padding: 7px 10px;
-        background: rgba(141, 203, 226, 8); /* Cambia el valor de opacidad según tus necesidades */
-        color: #fff;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 300ms ease;
+
+    .content-modal h2 {
+        margin-bottom: 15px;
     }
-.content-modal .btn-cerrar label:hover{
-    background-color:#185E83;
-}
+
+    .content-modal p {
+        padding: 15px 0px;
+        border-top: 1px solid #dbdbdb;
+        border-bottom: 1px solid #dbdbdb;
+    }
+
+    .content-modal .btn-cerrar {
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+        .content-modal .btn-cerrar label {
+            font-family: 'Baloo 2', 'sans-serif';
+            font-size: 10px;
+            font-weight: 600;
+            padding: 7px 10px;
+            background: rgba(141, 203, 226, 8); /* Cambia el valor de opacidad según tus necesidades */
+            color: #0088CC;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 300ms ease;
+        }
+
+            .content-modal .btn-cerrar label:hover {
+                background-color: #185E83;
+            }
 
 .cerrar-modal {
     width: 100%;
@@ -270,7 +312,7 @@ h2 {
 .image-containerRight {
     float: right;
     margin-top: -15%;
-    margin-right:30%;
+    margin-right: 30%;
 }
 
 .image-wrapper {
@@ -286,7 +328,7 @@ h2 {
 
 
 @media screen and (max-width:800px) {
-    .content-modal{
+    .content-modal {
         width: 90%;
     }
 }
@@ -308,17 +350,17 @@ h2 {
         justify-content: initial;
         align-items: initial;
     }
+
     .conetedor-bebes {
         margin-left: 0%
     }
+
     .form-control {
         border: 2px dashed #3399CC; /* Color del borde deseado */
         font-size: 1rem;
-       
         width: 150%;
         background: none;
         color: #706c6c;
-
     }
 
     .experience {

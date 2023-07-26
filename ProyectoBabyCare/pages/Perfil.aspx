@@ -89,13 +89,14 @@
     <div class="container-modal">
         <div class="content-modal">
             <h2>Código Bébe</h2>
-       
-            <p>
+        <p>
                 
-                <asp:Label Text="" runat="server" class="label-codigo" ID="lblcodigo" />
-            
-
-            </p>
+                <asp:Label Text="dfdfd" runat="server" class="label-codigo" ID="lblcodigo" />
+                <br />
+              
+                
+               <asp:textbox Text="" runat="server" ID="txtemail" class="input_email" placeholder="Ingresar correo" />
+                 </p>
             <div class="btn-cerrar">
                 <label  for="btn-modal">Cerrar</label>
             </div>
