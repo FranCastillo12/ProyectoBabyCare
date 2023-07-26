@@ -86,7 +86,39 @@ namespace Datos
 
 
         #region "Manejo de Procedimientos Almacenados"
+        public int ExecuteSPWithScalar(string SPName, List<SqlParameter> ListaParametros)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand()
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = SPName,
+                    Connection = this.sqlConn
+                };
 
+                foreach (SqlParameter sqlParam in ListaParametros)
+                    cmd.Parameters.Add(sqlParam);
+
+                sqlConn.Open();
+
+                object result = cmd.ExecuteScalar();
+
+                sqlConn.Close();
+
+                return Convert.ToInt32(result);
+            }
+            catch (SqlException sql)
+            {
+                if (sqlConn.State == ConnectionState.Open)
+                    sqlConn.Close();
+                throw sql;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void ExecuteSP(string SPName, List<SqlParameter> ListaParametros)
         {
             try

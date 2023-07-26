@@ -20,7 +20,7 @@ namespace ProyectoBabyCare.pages
             string script = null;
             try
             {
-               
+
                 string nombre = txtNombre.Text;
                 string apellidos = TxtApellidos.Text;
                 string correo = txtCorreo.Text;
@@ -89,10 +89,10 @@ namespace ProyectoBabyCare.pages
 
                 if (!regex.IsMatch(correo))
                 {
-                      script =
-                      "toastr.options.closeButton = true;" +
-                      "toastr.options.positionClass = 'toast-top-full-width';" +
-                      "toastr.error('El email no es valido');";
+                    script =
+                    "toastr.options.closeButton = true;" +
+                    "toastr.options.positionClass = 'toast-top-full-width';" +
+                    "toastr.error('El email no es valido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                     //warningss += "El email no es valido <br>";
@@ -115,10 +115,27 @@ namespace ProyectoBabyCare.pages
                 }
                 else
                 {
-                Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
 
-                iUsuarios.RegistroUsuarios(nombre, apellidos, correo, pass);
-                    Response.Redirect("../Login.aspx");
+                    Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
+                    int consutla = iUsuarios.VertificarCorreo(correo);
+                    if (consutla > 0)
+                    {
+                        script =
+                       "toastr.options.closeButton = true;" +
+                       "toastr.options.positionClass = 'toast-top-full-width';" +
+                       "toastr.error('El correo ingresado ya existe');";
+                        ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                        txtCorreo.Text = "";
+                        txtNombre.Text = "";
+                        TxtApellidos.Text = "";
+                        TxtContra.Text = "";
+                    }
+                    else
+                    {
+                        iUsuarios.RegistroUsuarios(nombre, apellidos, correo, pass);
+                        Response.Redirect("../Login.aspx");
+                    }
                 }
             }
             catch (Exception ex)

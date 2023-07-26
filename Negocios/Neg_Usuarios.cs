@@ -10,6 +10,26 @@ namespace Negocios
 {
     public class Neg_Usuarios
     {
+        public int VertificarCorreo(string correo)
+        {
+            try
+            {
+                string spName = "SP_VerificarCorreo";
+                var lstParametros = new List<SqlParameter>()
+            {
+                new SqlParameter("@correo", correo),
+
+            };
+                Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
+                return iConexion.ExecuteSPWithScalar(spName, lstParametros);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void RegistroUsuarios(string nombre, string apellidos, string correo, string pass)
         {
             try
@@ -46,7 +66,7 @@ namespace Negocios
             {
                 iUsuarios = new Entidades.En_Usuarios()
                 {
-                    Usuario = dtDatos.Rows[0]["correo"].ToString(),
+                    IdUsuario = Convert.ToInt32(dtDatos.Rows[0]["idUsuario"]),
                     IdenBebe = dtDatos.Rows[0]["idBebe"].ToString(),
                     Rol = dtDatos.Rows[0]["idRol"].ToString()
                 };
@@ -55,12 +75,12 @@ namespace Negocios
 
         }
 
-        public DataTable DatosUsuario(string user)
+        public DataTable DatosUsuario(int idusuario)
         {
             string spName = "SP_DatosUsuario";
             var lstParametros = new List<SqlParameter>()
             {
-                new SqlParameter("@correo", user),
+               new SqlParameter("@idUsuario", idusuario),
 
             };
             Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
@@ -68,12 +88,12 @@ namespace Negocios
 
         }
 
-        public DataTable Datosbebes(string user)
+        public DataTable Datosbebes(int idusuario)
         {
             string spName = "SP_Obtenerbebes";
             var lstParametros = new List<SqlParameter>()
             {
-                new SqlParameter("@correo", user),
+                new SqlParameter("@idUsuario", idusuario),
 
             };
             Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
@@ -133,13 +153,14 @@ namespace Negocios
                 throw ex;
             }
         }
-        public void CambioDatos(string correo, string nombre,string apellidos)
+        public void CambioDatos(int idUsuario, string correo, string nombre, string apellidos)
         {
             try
             {
                 string SpName = "SP_ModificarDatosUsuario";
                 var lstParametros = new List<SqlParameter>()
                 {
+                   new SqlParameter("@idUsuario", idUsuario),
                     new SqlParameter("@correo", correo),
                     new SqlParameter("@nombre", nombre),
                      new SqlParameter("@apellidos", apellidos)
@@ -153,7 +174,7 @@ namespace Negocios
             }
         }
 
-        public DataTable ObtenerSessionbebe(string idbebe,string correo)
+        public DataTable ObtenerSessionbebe(string idbebe, int idusuario)
         {
             try
             {
@@ -161,7 +182,7 @@ namespace Negocios
                 var lstParametros = new List<SqlParameter>()
                 {
                       new SqlParameter("@idBebe", idbebe),
-                      new SqlParameter("@correo", correo)
+                      new SqlParameter("@idUsuario", idusuario)
                 };
                 Datos.ConexionSQL Iconexion = new Datos.ConexionSQL();
                 return Iconexion.ExecuteSPWithDT(SpName, lstParametros);

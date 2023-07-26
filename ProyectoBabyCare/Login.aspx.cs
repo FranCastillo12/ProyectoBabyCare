@@ -85,7 +85,7 @@ namespace ProyectoBabyCare
                         Session["Credenciales"] = iCredenciales;
                             //variable de sesion con datos del bebe
 
-                        Session["DatosBebe"] = bebe;
+                        //Session["DatosBebe"] = bebe;
 
 
                         //Session["DatosBebe"] = bebe;

@@ -8,6 +8,10 @@ namespace Entidades
 {
     public class En_Usuarios
     {
+        private int IntIdUsuario;
+
+        public int IdUsuario { get => IntIdUsuario; set => IntIdUsuario = value; }
+
         private string StrUsuario;
 
         public string Usuario { get => StrUsuario; set => StrUsuario = value; }

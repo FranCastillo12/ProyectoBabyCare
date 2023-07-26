@@ -9,7 +9,7 @@ namespace Negocios
 {
     public class Neg_bebes
     {
-        public void Registrarbebe(string nombre, string apellidos, string fechanacimiento,string correo,string rol)
+        public void Registrarbebe(string nombre, string apellidos, string fechanacimiento, int idUsuario, string rol)
         {
             try
             {
@@ -19,7 +19,7 @@ namespace Negocios
                 new SqlParameter("@nombre", nombre),
                 new SqlParameter("@apellidos", apellidos),
                 new SqlParameter("@fecha_nacimiento", fechanacimiento),
-                new SqlParameter("@correo", correo),
+                new SqlParameter("@idUsuario", idUsuario),
                 new SqlParameter("@rol", rol),
 
             };
@@ -32,7 +32,7 @@ namespace Negocios
             }
         }
 
-        public void IngresarXcodigo(string correo, string codigo)
+        public void IngresarXcodigo(int idUsuario, string codigo)
         {
             try
             {
@@ -40,7 +40,7 @@ namespace Negocios
                 var lstParametros = new List<SqlParameter>()
             {
                 new SqlParameter("@codigo", codigo),
-                new SqlParameter("@correo", correo)  
+                new SqlParameter("@idUsuario", idUsuario)
             };
                 Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
                 iConexion.ExecuteSP(spName, lstParametros);
