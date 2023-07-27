@@ -47,7 +47,7 @@
         <%-- IMAGEN QUE SE COLOCA A LA IZQUIERDA --%>
             <div class="image-containerRight">
   <div class="image-wrapper">
-    <img src="images/ImageLogin2.png" alt="Imagen adicional">
+    <img src="images/ImageLogin2.png" alt="Imagen adicional"/>
   </div>
 </div>
 

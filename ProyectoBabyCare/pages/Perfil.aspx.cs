@@ -35,6 +35,9 @@ namespace ProyectoBabyCare.pages
 
 
                     txtCorreo.Text = Convert.ToString(drEmpleados["correo"]);
+
+                    TextBox1.Text = Convert.ToString(drEmpleados["Rol"]);
+
                 }
 
                 DataTable dtbebes = iUsuarios.Datosbebes(idUsuario);
@@ -170,10 +173,10 @@ namespace ProyectoBabyCare.pages
             }
         }
 
-        protected System.Void btnEnviarCodido_Click()
+        protected void btnEnviarCodido_Click(object sender, EventArgs e)
         {
-            string correo = txtemail.text;
-            //Envio por correo el codfigo del bebe
+            string correo = txtemail.Text;
+            //Aqui se debe ingresar para el envio de correos
         }
     }
 }
