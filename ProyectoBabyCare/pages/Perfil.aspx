@@ -70,6 +70,8 @@
                                    <div class="mb-3 mt-3">
            <label class="form_label"style="color:#3399CC" for="Rol">Parentezco:</label>
       <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control-rol" placeholder="" ReadOnly="true"></asp:TextBox>
+                                      
+                                       <asp:Label Text="" runat="server" class="label-codigo" ID="lblnombreBebe" style="display: none;" />
 
       
             
@@ -88,7 +90,7 @@
     <div class="btn btn-primary profile-buttonddll boton-modal" runat="server" id="boton">
      
         <label for="btn-modal">
-            Código Bebé
+            Compartit Código Bebé
         </label>
     </div>
 <!--Fin de Boton-->

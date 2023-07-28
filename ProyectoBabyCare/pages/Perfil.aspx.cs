@@ -11,6 +11,7 @@ namespace ProyectoBabyCare.pages
 {
     public partial class Perfil : System.Web.UI.Page
     {
+        string nombrebebe;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -139,14 +140,17 @@ namespace ProyectoBabyCare.pages
                     if (resultTable != null && resultTable.Rows.Count > 0)
                     {
                         // Assuming the value you need to retrieve is in the first row and first column of the DataTable
+                       
                         rol = resultTable.Rows[0][0].ToString();
                         lblcodigo.Text = resultTable.Rows[0][1].ToString();
                         encargado = resultTable.Rows[0][2].ToString();
+                        lblnombreBebe.Text = resultTable.Rows[0][3].ToString();
+                        TextBox1.Text = rol;
 
                         // Store the value in the Session
                         credenciales.Rol = rol;
                         Session["Credenciales"] = credenciales;
-                        //Session["rol"] = rol;
+                        Session["rol"] = rol;
                     }
                     //script = "toastr.success('Ahora tiene el rol');";
                     //ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
@@ -176,7 +180,25 @@ namespace ProyectoBabyCare.pages
         protected void btnEnviarCodido_Click(object sender, EventArgs e)
         {
             string correo = txtemail.Text;
+            string codigo = lblcodigo.Text;
+            string nombrebebe = lblnombreBebe.Text;
+            string script = null;
             //Aqui se debe ingresar para el envio de correos
+            if (correo == "")
+            {
+                script = "toastr.error('Debe de ingresar un correo');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            }
+            else
+            {
+                
+                Negocios.Correos CorreoCodigo = new Negocios.Correos();
+                CorreoCodigo.EnviarCorreoCodigo(nombrebebe, correo, codigo);
+                script = "toastr.success('Correo enviado con exito');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                txtemail.Text = "";
+            }
+
         }
     }
 }

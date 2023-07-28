@@ -102,7 +102,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\0-3meses.jpg" />
+    <Content Include="images\12-24meses.jpg" />
+    <Content Include="images\2-4anos.jpg" />
     <Content Include="images\3-4meses.png" />
+    <Content Include="images\4-6anos.png" />
     <Content Include="images\5-6meses.jpg" />
     <Content Include="images\6-9 meses.jpg" />
     <Content Include="images\9-12meses.jpg" />
