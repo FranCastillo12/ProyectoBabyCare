@@ -35,7 +35,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('El nombre es requerido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -46,7 +46,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Los apellidos es requerido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -57,7 +57,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('El nombre solo puede tener letras');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -68,7 +68,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Los apellidos solo pueden tener letras');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -79,7 +79,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Debe seleccionar un parentezco');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -131,7 +131,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Debe de ingresar un código');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
