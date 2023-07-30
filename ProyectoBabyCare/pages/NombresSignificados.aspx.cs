@@ -30,12 +30,12 @@ namespace ProyectoBabyCare
             }
             if(genero == 0)
             {
-                script = "toastr.success('Debe de elegir un genero');";
+                script = "toastr.error('Debe de elegir un genero');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
             else if(letra == "")
             {
-                script = "toastr.success('Debe de ingresar una letra');";
+                script = "toastr.error('Debe de ingresar una letra');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
 
