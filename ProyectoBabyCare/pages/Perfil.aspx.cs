@@ -171,10 +171,10 @@ namespace ProyectoBabyCare.pages
         }
 
 
-        protected System.Void btnEnviarCodido_Click()
-        {
-            string correo = txtemail.text;
-            //Envio por correo el codfigo del bebe
-        }
+        //protected System.Void btnEnviarCodido_Click()
+        //{
+        //    string correo = txtemail.text;
+        //    //Envio por correo el codfigo del bebe
+        //}
     }
 }
