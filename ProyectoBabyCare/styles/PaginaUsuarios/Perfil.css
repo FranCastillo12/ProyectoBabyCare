@@ -17,10 +17,10 @@ body {
 .title {
     margin: 1%;
     float: left;
-    font-family: Comfortaa;
+    font-family: 'Baloo 2', sans-serif;
     font-weight: 500;
     position: absolute;
-    top: 130px;
+    top: 85px;
     font-size: 30px;
     background-color: #FFC0CB;
     padding: 10px;
@@ -37,14 +37,14 @@ h2 {
 }
 
 .container.rounded {
-    margin-top: 850px;
+    margin-top: 700px;
     background-color: #FFC0CB;
 }
 
 .container-con-borde {
     border: 3.5px dashed rgba(255, 20, 147, 0.75);
     background-color: #FFC0CB;
-    margin-top: 850px;
+    margin-top: 700px;
 }
 
 .profile-buttonddl {
@@ -364,12 +364,12 @@ h2 {
 }
 
 .image-wrapper {
-    margin-top: -80px;
-    margin-left: 140%;
+    margin-top: -85px;
+    margin-left: 160%;
 }
 
     .image-wrapper img {
-        width: 20rem; /* Ajusta el ancho según sea necesario */
+        width: 17.8rem; /* Ajusta el ancho según sea necesario */
         height: auto; /* La altura se ajustará proporcionalmente según el ancho */
     }
 
@@ -379,6 +379,11 @@ h2 {
     .content-modal {
         width: 90%;
     }
+
+    .image-containerRight {
+        display: none;
+    }
+
 }
 /*:::Fin Ventana Modal:::*/
 

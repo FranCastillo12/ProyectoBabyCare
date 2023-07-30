@@ -13,7 +13,7 @@ nav .logo {
 }
 
     nav .logo img {
-        height: 65px;
+        height: 47px;
         width: auto;
         transition: all 0.3s;
     }
@@ -29,7 +29,7 @@ nav .logo {
 .container-fluid {
     font-family: 'Baloo 2', sans-serif;
     font-weight:700;
-    font-size: 18px;
+    font-size: 16.2px;
     color: #D281B2;
 }
 .ddd {

@@ -17,7 +17,7 @@
          <div class="title">
              Perfil
          </div>
-        <div class="contendor" style="margin-top:130px"> 
+        <div class="contendor" style="margin-top:110px"> 
 
 
         
