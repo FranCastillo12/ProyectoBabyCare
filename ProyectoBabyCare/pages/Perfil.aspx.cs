@@ -14,6 +14,8 @@ namespace ProyectoBabyCare.pages
         string nombrebebe;
         protected void Page_Load(object sender, EventArgs e)
         {
+            string script = "<script>document.body.style.zoom = '100%';</script>";
+            ClientScript.RegisterStartupScript(this.GetType(), "Set100PercentSizeScript", script);
             if (!IsPostBack)
             {
                 boton.Visible = false;
