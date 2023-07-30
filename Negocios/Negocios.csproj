@@ -77,10 +77,6 @@
       <Project>{377df8a0-841a-48cf-abc2-3b5a8ad68466}</Project>
       <Name>Datos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{4ba6dc22-f5b9-41dc-91c9-d3366aa14ca0}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
