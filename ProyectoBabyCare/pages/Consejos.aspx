@@ -10,16 +10,16 @@
         <div style="padding-top: 2%; padding-bottom: 6%; padding-left: 6%; padding-right: 6%;">
             <h1 style="font-family: 'Baloo 2', sans-serif; color: white; width: 100%">Consejos
             </h1>
-            <div style="width: 60%">
-                <h7 style="font-family: 'Baloo 2', sans-serif; color: white;">
+            <div style="width: 80%">
+                <h5 style="font-family: 'Baloo 2', sans-serif; color: white;">
                     La crianza de tu bebé es un viaje único y lleno de amor. Aquí encontrarás consejos prácticos para comenzar esta hermosa aventura juntos. ¡Prepárate para brindarle todo el amor y cuidado que necesita!
-                </h7>
+                </h5>
             </div>
 
         </div>
     </div>
 
-    <div class="mt-2">
+    <div class="">
         <form runat="server">
             <div style="text-align: center">
                 <div class="row">
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <%--End Form row --%>
-            <div class="image-container3 mb-5 mt-5" style="text-align: center">
+            <div class="image-container3 mb-5 mt-1" style="text-align: center">
                 <div style="background-color: black; opacity: 0.6;">
                     <div id="titulo" style="font-family: 'Baloo 2', sans-serif; color: white; font-size: 30px;">
                         <asp:Label ID="lbltitulo" runat="server" Text="Titulo del consejo"></asp:Label>
