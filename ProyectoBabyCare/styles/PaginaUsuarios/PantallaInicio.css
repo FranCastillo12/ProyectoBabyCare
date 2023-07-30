@@ -19,7 +19,7 @@
     padding-top: 2%;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
     .Tarjeta1 {
         background-color: #F495B6;
         width: 90%;

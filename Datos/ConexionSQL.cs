@@ -264,11 +264,12 @@ namespace Datos
                 command.Parameters.AddWithValue("@fecha", fechanac);
                 command.ExecuteNonQuery();
 
-                command.Clone();
-            }catch(Exception ex){ }
+                sqlConn.Close();
+            }
+            catch(Exception ex){ }
             
         }
-        public Entidades.Expediente Expediente(string correo,int idbebe)
+        public Entidades.Expediente Expediente(int idbebe)
         {
             Entidades.Expediente Expediente = new Entidades.Expediente();
             try
@@ -277,7 +278,6 @@ namespace Datos
                 string info = "";
                 SqlCommand command = new SqlCommand("ObtenerDatosBasicosExpedienteBebe", sqlConn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@correo", correo);
                 command.Parameters.AddWithValue("@idbebe", idbebe);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -522,7 +522,7 @@ namespace Datos
                 command.Parameters.AddWithValue("@Tiposangre", tiposangre);
                 command.ExecuteNonQuery();
 
-                command.Clone();
+                sqlConn.Close();
             }
             catch (Exception ex) { }
         }
@@ -537,7 +537,7 @@ namespace Datos
                 command.Parameters.AddWithValue("@fecha", fecha);
                 command.ExecuteNonQuery();
 
-                command.Clone();
+                sqlConn.Close();
             }
             catch (Exception ex) { }
         }
@@ -551,7 +551,7 @@ namespace Datos
                 command.Parameters.AddWithValue("@idpadecimiento", idpadecimiento);
                 command.ExecuteNonQuery();
 
-                command.Clone();
+                sqlConn.Close();
             }
             catch (Exception ex) { }
         }

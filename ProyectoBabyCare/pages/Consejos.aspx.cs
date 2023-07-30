@@ -12,19 +12,20 @@ namespace ProyectoBabyCare.pages
     public partial class Consejos : System.Web.UI.Page
     {
         int indice=0;
-        List<Entidades.Consejos> lstConsejos = new List<Entidades.Consejos>();
-        Negocios.Consejos consejos = new Negocios.Consejos();
+        List<Entidades.ConsejosApi> lstConsejos = new List<Entidades.ConsejosApi>();
+        Negocios.ConsumirAPI consejos=new Negocios.ConsumirAPI();
     
         protected void Page_Load(object sender, EventArgs e)
         {
-            lstConsejos=consejos.Obtenerconsejos();
+            lstConsejos=consejos.ObtenerConsejos();
             if (Session["indice"] != null)
             {
                 indice = (int)Session["indice"];
             }
             if (!IsPostBack)
             {
-                if (lstConsejos.Count>0) { 
+                if (lstConsejos.Count>0) {
+                    numconsejo.Text = $"Consejo: {indice+1}";
                     lbltitulo.Text = lstConsejos[indice].Titulo;
                     lblDescripcion.Text = lstConsejos[indice].Descripcion;
                 }
@@ -51,6 +52,7 @@ namespace ProyectoBabyCare.pages
                             lbltitulo.Text = lstConsejos[indice].Titulo;
                             lblDescripcion.Text = lstConsejos[indice].Descripcion;
 
+                            numconsejo.Text = $"Consejo: {indice + 1}";
                             Session["Indice"] = indice;
                         }
                     }
@@ -62,6 +64,7 @@ namespace ProyectoBabyCare.pages
                         lbltitulo.Text = lstConsejos[indice].Titulo;
                         lblDescripcion.Text = lstConsejos[indice].Descripcion;
 
+                        numconsejo.Text = $"Consejo: {indice + 1}";
                         Session["Indice"] = indice;
                     }
 
@@ -77,6 +80,7 @@ namespace ProyectoBabyCare.pages
                         lbltitulo.Text=lstConsejos[indice].Titulo;
                         lblDescripcion.Text = lstConsejos[indice].Descripcion;
 
+                        numconsejo.Text = $"Consejo: {indice + 1}";
                         Session["Indice"] = indice;  
                     }
                     else
@@ -85,6 +89,7 @@ namespace ProyectoBabyCare.pages
                         lbltitulo.Text = lstConsejos[indice].Titulo;
                         lblDescripcion.Text = lstConsejos[indice].Descripcion;
 
+                        numconsejo.Text = $"Consejo: {indice + 1}";
                         Session["Indice"] = indice;
                     }
                     break;
