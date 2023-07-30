@@ -23,7 +23,7 @@ body {
 }
 .boton-con-imagen {
     width: 200px; /* Ajusta el ancho del botón según tus necesidades */
-    height: 110px; /* Ajusta la altura del botón según tus necesidades */
+    height: 100px; /* Ajusta la altura del botón según tus necesidades */
     background-image: url(../../images/bder.png); /* Reemplaza 'ruta-de-la-imagen.jpg' con la URL o la ruta a tu imagen */
     background-size: cover; /* Cubre completamente el botón con la imagen */
     border: none; /* Quita el borde del botón, si lo deseas */
@@ -31,7 +31,7 @@ body {
 }
 .boton-con-imagen2 {
     width: 200px; /* Ajusta el ancho del botón según tus necesidades */
-    height: 110px; /* Ajusta la altura del botón según tus necesidades */
+    height: 100px; /* Ajusta la altura del botón según tus necesidades */
     background-image: url(../../images/bizq.png); /* Reemplaza 'ruta-de-la-imagen.jpg' con la URL o la ruta a tu imagen */
     background-size: cover; /* Cubre completamente el botón con la imagen */
     border: none; /* Quita el borde del botón, si lo deseas */
@@ -96,13 +96,12 @@ body {
 .image-container {
     width: 100%; /* Ajusta el ancho según tus necesidades */
     height: 200px; /* Ajusta la altura según tus necesidades */
-    background-image: url('../../images/NombresSignificados.jpg'); /* Ruta de la imagen que se utilizará como fondo */
+    background-image: url('../../images/fondoletras.jpg'); /* Ruta de la imagen que se utilizará como fondo */
     background-size: cover; /* Ajusta la imagen al tamaño del div */
     background-position: center; /* Centra la imagen en el div */
 }
 .image-container2 {
     width: 100%; /* Ajusta el ancho según tus necesidades */
-    height: 200px; /* Ajusta la altura según tus necesidades */
     background-image: url('../../images/Fondopeluches.png'); /* Ruta de la imagen que se utilizará como fondo */
     background-size: cover; /* Ajusta la imagen al tamaño del div */
     background-position: center; /* Centra la imagen en el div */
@@ -281,20 +280,21 @@ select.form-control {
     width: 100%; /* Ajusta el ancho del GridView al 100% del contenedor */
     height:100%;
     border-collapse: collapse;
-    color: crimson;
+    color: white;
     text-align: center;
-    background-color:black;
-    opacity: 0.8;
+    background-color:darkorange;
+    opacity: 0.9;
 }
     .tabla th {
-        border: 1px solid black; /* Borde para las celdas de encabezado */
-        background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+        border: 1px solid white; /* Borde para las celdas de encabezado */
+        color: white;
         padding: 8px; /* Espaciado interno de las celdas de encabezado */
     }
 
     /* Estilo para las celdas del cuerpo del GridView */
     .tabla td {
-        border: 1px solid black; /* Borde para las celdas del cuerpo */
+        border: 1px solid white; /* Borde para las celdas del cuerpo */
+        color: white;
         padding: 8px; /* Espaciado interno de las celdas del cuerpo */
     }
 .divBoton1 {
@@ -309,11 +309,17 @@ select.form-control {
     width: 100%;
     text-align: center;
 }
+.EnumeradorConsejo {
+    font-family: 'Baloo 2', sans-serif;
+    font-size:300%;
+    text-align:center;
+}
+
 
 @media (max-width: 700px) {
     .imagen1 {
         width: 45%;
-        height: 10%;
+        height: 5%;
         border-radius: 15%;
         margin-top: 14%;
         margin-left: 1%;
@@ -326,12 +332,13 @@ select.form-control {
         margin-left: 5%;
     }
     .boton-con-imagen2 {
-        width: 80px;
-        height: 50px;
+        width: 100px;
+        height: 60px;
     }
     .boton-con-imagen {
-        width: 80px; 
-        height: 50px; 
+        width: 100px;
+        height: 60px;
+        margin-right: 10%;
     }
     .row1 {
         width: 100%;
@@ -377,5 +384,11 @@ select.form-control {
         background-image: url(../../images/tabla.png);
         background-size: cover;
         background-position: center;
+    }
+    .EnumeradorConsejo {
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 110%;
+        text-align: center;
+        margin-left:20%;
     }
 }

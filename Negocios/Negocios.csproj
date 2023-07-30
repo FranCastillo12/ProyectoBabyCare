@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
@@ -60,6 +63,7 @@
     <Compile Include="Bebe.cs" />
     <Compile Include="Citas.cs" />
     <Compile Include="Consejos.cs" />
+    <Compile Include="ConsumirAPI.cs" />
     <Compile Include="ControlPanel.cs" />
     <Compile Include="Correos.cs" />
     <Compile Include="Expediente.cs" />
@@ -80,6 +84,9 @@
       <Project>{4ba6dc22-f5b9-41dc-91c9-d3366aa14ca0}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,12 +29,12 @@ namespace ProyectoBabyCare
             }
 
 
-            Negocios.NombresSignificados bd=new Negocios.NombresSignificados();
-            List<NombresBebes> nombres = bd.ObtenerNombres(letra,genero);
+            Negocios.ConsumirAPI bd=new Negocios.ConsumirAPI();
+            List<Entidades.NombresSignificados> nombres = bd.ObtenerNombresSignificados(letra,genero);
             //Agregar nombres el textarea
             int Conteo = 1;
-            foreach (NombresBebes n in nombres) {
-                txtArea.Text += $" {Conteo}-{n.Nombre1}: {n.Significado1} \n";
+            foreach (Entidades.NombresSignificados n in nombres) {
+                txtArea.Text += $" {Conteo}-{n.Nombre}: {n.Significado} \n";
                 Conteo++;
             }
 

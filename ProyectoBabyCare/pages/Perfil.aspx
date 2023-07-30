@@ -99,7 +99,9 @@
                  </p>
             <div class="btn-cerrar">
                 <%--<label  for="btn-modal">Cerrar</label>--%>
+
                 <asp:Button CssClass="btn btn-primary profile-buttonCompartir" for="btn-modal" Text="Compartir" runat="server" ID="btnEnviarCodido" OnClick="btnEnviarCodido_Click"/>
+
             </div>
         </div>
         <label for="btn-modal" class="cerrar-modal"></label>

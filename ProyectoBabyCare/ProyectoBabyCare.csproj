@@ -131,6 +131,8 @@
     <Content Include="images\flecha2.png" />
     <Content Include="images\Expediente.gif" />
     <Content Include="images\expediente.png" />
+    <Content Include="images\fondobotones.jpg" />
+    <Content Include="images\fondoletras.jpg" />
     <Content Include="images\Fondopeluches.png" />
     <Content Include="images\Footer.png" />
     <Content Include="images\galeria.png" />
@@ -148,6 +150,8 @@
     <Content Include="images\imgperfil1.png" />
     <Content Include="images\interrogacion.png" />
     <Content Include="images\jeringa.png" />
+    <Content Include="images\jugueteslat1.jpg" />
+    <Content Include="images\jugueteslat2.jpg" />
     <Content Include="images\juguetesninio.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\madre.png" />
@@ -426,7 +430,6 @@
       <Name>Negocios</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

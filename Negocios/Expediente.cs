@@ -33,10 +33,10 @@ namespace Negocios
             respuesta=con.ValidarExpediente(idbebe);
             return respuesta;
         }
-        public Entidades.Expediente obtenerexpediente(string correo,int idbebe) {
+        public Entidades.Expediente obtenerexpediente(int idbebe) {
             Entidades.Expediente Expediente=new Entidades.Expediente();
             ConexionSQL conexionSQL = new ConexionSQL();
-            Expediente=conexionSQL.Expediente(correo,idbebe);
+            Expediente=conexionSQL.Expediente(idbebe);
 
             return Expediente;
         }

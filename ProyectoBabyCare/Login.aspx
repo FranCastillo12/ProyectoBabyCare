@@ -4,14 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
     <title>Inicio Sesión</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link href="styles/generales/Login.css" rel="stylesheet" />
 </head>
 <body>
@@ -43,15 +43,15 @@
        <p class="warnings" id="warnings" runat="server"></p>
   
     </form>
-    
-        <%-- IMAGEN QUE SE COLOCA A LA IZQUIERDA --%>
-            <div class="image-containerRight">
-  <div class="image-wrapper">
-    <img src="images/ImageLogin2.png" alt="Imagen adicional">
-  </div>
-</div>
 
-   
+    <%-- IMAGEN QUE SE COLOCA A LA IZQUIERDA --%>
+    <div class="image-containerRight">
+        <div class="image-wrapper">
+            <img src="images/ImageLogin2.png" alt="Imagen adicional" />
+        </div>
+    </div>
+
+
 </body>
-    
+
 </html>

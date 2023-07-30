@@ -57,11 +57,11 @@ namespace ProyectoBabyCare.pages
                 {
                     dpllPadecimientos.Items.Add(ex1.IdPadecimiento + "-" + ex1.Nombrepadecimiento);
                 }
-                if (idbebe != 0 && !correo.Equals(""))
+                if (idbebe != 0)
                 {
                     Entidades.Expediente expediente = new Entidades.Expediente();
                     
-                    expediente = ex.obtenerexpediente(correo, idbebe);
+                    expediente = ex.obtenerexpediente(idbebe);
                     if (expediente.Idexpediente != 0)
                     {
                         Session["idExpedienteBebe"] = expediente.Idexpediente;
@@ -71,7 +71,8 @@ namespace ProyectoBabyCare.pages
                         txtpapa.Text = expediente.NombrePadre;
                         txtmama.Text = expediente.NombreMadre;
                         txtestatura.Text = Convert.ToString(expediente.Estatura);
-                        txtfecha.Text = expediente.Fechanacimiento;
+                        string[] fechanac= expediente.Fechanacimiento.Split(' ');
+                        txtfecha.Text = fechanac[0];
                         txtcedula.Text = expediente.Cedula;
 
                         //Generos

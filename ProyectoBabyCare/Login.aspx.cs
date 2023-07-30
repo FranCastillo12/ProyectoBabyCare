@@ -66,7 +66,7 @@ namespace ProyectoBabyCare
                 }
                 if (entrar)
                 {
-                    warnings.InnerHtml = warningss;
+                    //warnings.InnerHtml = warningss;
                     
                 }
                 else
