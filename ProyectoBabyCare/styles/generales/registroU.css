@@ -57,8 +57,9 @@ body {
     background-color: #ffffff;
     margin: auto;
     width: 95%;
-    max-width: 530px;
-    padding: 4.5em 3em;
+    max-width: 540px;
+    height: 850px; /* Ajusta este valor según lo desees */
+    padding: 4.9em 3em;
     border-radius: 10px;
     box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
     text-align: center;
@@ -102,15 +103,14 @@ body {
         /* Color cuando se digita en el textbox*/
         color: #000000;
         font-family: 'Comfortaa', sans-serif;
-        font-weight: 300; /* Semibold */
-        font-size: 1.2rem;
+        font-size: 1.07rem;
     }
 
 
 
         .form_input:focus + .form_label,
         .form_input:not(:placeholder-shown) + .form_label {
-            transform: translateY(-25px) scale(1.1);
+            transform: translateY(-22px) scale(1.1);
             transform-origin: left top;
             /*Color del label cuando se toca el textbox*/
             color: #0029ff

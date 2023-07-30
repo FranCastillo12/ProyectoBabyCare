@@ -86,7 +86,39 @@ namespace Datos
 
 
         #region "Manejo de Procedimientos Almacenados"
+        public int ExecuteSPWithScalar(string SPName, List<SqlParameter> ListaParametros)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand()
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = SPName,
+                    Connection = this.sqlConn
+                };
 
+                foreach (SqlParameter sqlParam in ListaParametros)
+                    cmd.Parameters.Add(sqlParam);
+
+                sqlConn.Open();
+
+                object result = cmd.ExecuteScalar();
+
+                sqlConn.Close();
+
+                return Convert.ToInt32(result);
+            }
+            catch (SqlException sql)
+            {
+                if (sqlConn.State == ConnectionState.Open)
+                    sqlConn.Close();
+                throw sql;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void ExecuteSP(string SPName, List<SqlParameter> ListaParametros)
         {
             try
@@ -436,7 +468,6 @@ namespace Datos
                         string Fecha = reader["Fecha"].ToString();
 
                         info += $"{Nombre}@{Descripcion}@{Fecha};";
-
                     }
                 }
                 sqlConn.Close();
@@ -723,70 +754,6 @@ namespace Datos
         #endregion
 
         #endregion
-
-        #region Ernye
-
-        //Traer la lista de citas del bebé
-        public DataTable TablaCitas (int idBebe)
-        {
-            // private string comandoVerCitas = "";
-            DataTable dataTable = new DataTable();
-            try
-            {
-                using (sqlConn) 
-                {
-                    using (SqlCommand sqlCommand = new SqlCommand("comando", sqlConn)) 
-                    {
-                        sqlCommand.CommandType=CommandType.StoredProcedure;
-                        sqlCommand.Parameters.Add(new SqlParameter("idBebe", SqlDbType.Int)).Value = idBebe;
-
-                        sqlConn.Open();
-
-                        using (SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand))
-                        {
-                            dataAdapter.Fill(dataTable);
-                        }
-                    };
-                };
-                return dataTable;
-
-            } catch (Exception)
-            {
-                return dataTable;
-            }
-        }
-
-        //Traer la lista de alertas 
-        public DataTable TablaAlertas(int idBebe)
-        {
-            // private string comandoVerCitas = "";
-            DataTable dataTable = new DataTable();
-            try
-            {
-                using (sqlConn)
-                {
-                    using (SqlCommand sqlCommand = new SqlCommand("comando", sqlConn))
-                    {
-                        sqlCommand.CommandType = CommandType.StoredProcedure;
-                        sqlCommand.Parameters.Add(new SqlParameter("idBebe", SqlDbType.Int)).Value = idBebe;
-
-                        sqlConn.Open();
-
-                        using (SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand))
-                        {
-                            dataAdapter.Fill(dataTable);
-                        }
-                    };
-                };
-                return dataTable;
-
-            }
-            catch (Exception)
-            {
-                return dataTable;
-            }
-        }
-
-        #endregion
+       
     }
 }

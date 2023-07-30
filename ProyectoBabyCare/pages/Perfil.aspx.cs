@@ -18,10 +18,10 @@ namespace ProyectoBabyCare.pages
                 boton.Visible = false;
                 btnAdministrarFamiliares.Visible = false;
                 Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
-                string correo = credenciales.Usuario;
+                int idUsuario = credenciales.IdUsuario;
                 string idbebe = credenciales.IdenBebe;
                 Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
-                DataTable dtUsuarios = iUsuarios.DatosUsuario(correo);
+                DataTable dtUsuarios = iUsuarios.DatosUsuario(idUsuario);
                 System.Text.StringBuilder strListaDatos = new System.Text.StringBuilder();
 
                 foreach (DataRow drEmpleados in dtUsuarios.Rows)
@@ -37,7 +37,7 @@ namespace ProyectoBabyCare.pages
                     txtCorreo.Text = Convert.ToString(drEmpleados["correo"]);
                 }
 
-                DataTable dtbebes = iUsuarios.Datosbebes(correo);
+                DataTable dtbebes = iUsuarios.Datosbebes(idUsuario);
 
 
                 dropbebes.DataSource = dtbebes;
@@ -57,43 +57,42 @@ namespace ProyectoBabyCare.pages
 
         protected void btnModificarDatos_Click(object sender, EventArgs e)
         {
-          
-                string script = null;
-                Regex regex = new Regex("^[a-zA-Z\\s]+$");
-                if (txtNombre.Text == "")
-                {
-                    script = "toastr.error('El nombre no puede estar vacio');";
-                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-                }
-                //else if (regex.IsMatch(txtNombre.Text))
-                //{
-                //    script = "toastr.success('¡Hola, esto es un ejemplo de Toastr en ASPX!');";
-                //    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-                //}
-                else if (txtApellidos.Text == "")
-                {
-                    script = "toastr.error('Los apellidos no pueden estar vacios');";
-                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-                }
-                //else if (regex.IsMatch(txtApellidos.Text)){
-                //    script = "toastr.success('¡Hola, esto es un ejemplo de Toastr en ASPX!');";
-                //    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-                //}
-                else
-                {
-                    string nombre = txtNombre.Text;
-                    string apellidos = txtApellidos.Text;
-                    string correo = txtCorreo.Text;
+            Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
+            int idUsuario = credenciales.IdUsuario;
+            string script = null;
+            Regex regex = new Regex("^[a-zA-Z\\s]+$");
+            if (txtNombre.Text == "")
+            {
+                script = "toastr.error('El nombre no puede estar vacio');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            }
+            //else if (regex.IsMatch(txtNombre.Text))
+            //{
+            //    script = "toastr.success('¡Hola, esto es un ejemplo de Toastr en ASPX!');";
+            //    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            //}
+            else if (txtApellidos.Text == "")
+            {
+                script = "toastr.error('Los apellidos no pueden estar vacios');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            }
+            //else if (regex.IsMatch(txtApellidos.Text)){
+            //    script = "toastr.success('¡Hola, esto es un ejemplo de Toastr en ASPX!');";
+            //    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            //}
+            else
+            {
+                string nombre = txtNombre.Text;
+                string apellidos = txtApellidos.Text;
+                string correo = txtCorreo.Text;
 
-                    Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
+                Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
 
-                    iUsuarios.CambioDatos(correo, nombre, apellidos);
-                    //Poner el mensaje de exito
-                    script = "toastr.success('Datos modificados');";
-                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-                }
-            
-
+                iUsuarios.CambioDatos(idUsuario, correo, nombre, apellidos);
+                //Poner el mensaje de exito
+                script = "toastr.success('Datos modificados');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            }
         }
 
         protected void btnAdministrarFamiliares_Click(object sender, EventArgs e)
@@ -108,7 +107,7 @@ namespace ProyectoBabyCare.pages
         protected void dropbebes_SelectedIndexChanged(object sender, EventArgs e)
         {
             Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
-            string correo = credenciales.Usuario;
+            int idUsuario = credenciales.IdUsuario;
             string rol = null;
             string encargado = null;
             string script = null;
@@ -116,14 +115,14 @@ namespace ProyectoBabyCare.pages
             {
                 if (dropbebes.SelectedValue == "0")
                 {
-                   
+
                     script = "toastr.error('Debe escoger un rol');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 }
                 else
                 {
-                   
-                    
+
+
                     string valorSeleccionado = dropbebes.SelectedValue;
 
                     Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios();
@@ -133,7 +132,7 @@ namespace ProyectoBabyCare.pages
                     Session["Credenciales"] = credenciales;
                     //Session["idbebe"] = valorSeleccionado;
 
-                    DataTable resultTable = iUsuario.ObtenerSessionbebe(valorSeleccionado,correo);
+                    DataTable resultTable = iUsuario.ObtenerSessionbebe(valorSeleccionado, idUsuario);
                     if (resultTable != null && resultTable.Rows.Count > 0)
                     {
                         // Assuming the value you need to retrieve is in the first row and first column of the DataTable
@@ -148,7 +147,7 @@ namespace ProyectoBabyCare.pages
                     }
                     //script = "toastr.success('Ahora tiene el rol');";
                     //ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-                 
+
                     if (encargado == "True")
                     {
                         btnAdministrarFamiliares.Visible = true;
@@ -171,15 +170,11 @@ namespace ProyectoBabyCare.pages
             }
         }
 
-        protected void btnEnviarCodido_Click()
+
+        protected System.Void btnEnviarCodido_Click()
         {
-            //string correo = txtemail.text;
+            string correo = txtemail.text;
             //Envio por correo el codfigo del bebe
-        }
-
-        protected void btnEnviarCodido_Click1(object sender, EventArgs e)
-        {
-
         }
     }
 }

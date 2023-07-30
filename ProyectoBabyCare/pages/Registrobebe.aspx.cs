@@ -21,11 +21,12 @@ namespace ProyectoBabyCare.pages
             try
             {
                 Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
-                string correo = credenciales.Usuario;
+                int idUsuario = credenciales.IdUsuario;
                 string nombre = txtNombre.Text;
                 string apellidos = TxtApellidos.Text;
                 bool entrar = false;
                 string fecha_nacimiento = txtfechadenacimiento.Text;
+                string valorSeleccionado = ddl_departamentos.SelectedValue;
                 string regexNombre = @"^[A-Za-z ]+$";
 
                 Regex regexNombreU = new Regex(regexNombre);
@@ -74,31 +75,44 @@ namespace ProyectoBabyCare.pages
                     //warningss += "El correo es necesario <br>";
                     entrar = true;
                 }
+                if (valorSeleccionado == "0")
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.error('Debe seleccionar un parentezco');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
                 if (entrar)
                 {
 
                 }
                 else
-                { 
-                Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
+                {
+                    Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
 
-                iBebes.Registrarbebe(nombre, apellidos, fecha_nacimiento,correo);
+                    iBebes.Registrarbebe(nombre, apellidos, fecha_nacimiento, idUsuario, valorSeleccionado);
                     Response.Redirect("Perfil.aspx");
                     //Poner el mensaje de exito
-                //    script = @"Swal.fire({
-                //        title: '¡Hola!',
-                //        text: 'Esto es SweetAlert2 desde ASP.NET',
-                //        icon: 'sucess'
-                //    });";
-                //ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
+                    //    script = @"Swal.fire({
+                    //        title: '¡Hola!',
+                    //        text: 'Esto es SweetAlert2 desde ASP.NET',
+                    //        icon: 'sucess'
+                    //    });";
+                    //ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
                 }
 
 
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 script = "toastr.warning('Ha occurido un error,Intentelo mas tarde');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
-            }    
+            }
         }
 
         protected void btnUnirseCodigo_Click(object sender, EventArgs e)
@@ -107,11 +121,11 @@ namespace ProyectoBabyCare.pages
             try
             {
                 Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
-                string correo = credenciales.Usuario;
+                int idUsuario = credenciales.IdUsuario;
                 bool entrar = false;
-               
+
                 string codigo = txtCodigo.Text;
-        
+
 
                 if (codigo == "")
                 {
@@ -130,15 +144,15 @@ namespace ProyectoBabyCare.pages
                 }
                 else
                 {
-                Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
-                iBebes.IngresarXcodigo(correo, codigo);
+                    Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
+                    iBebes.IngresarXcodigo(idUsuario, codigo);
                     Response.Redirect("Perfil.aspx");
-                // script = @"Swal.fire({
-                //        title: '¡Hola!',
-                //        text: 'Esto es SweetAlert2 desde ASP.NET',
-                //        icon: 'sucess'
-                //    });";
-                //ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
+                    // script = @"Swal.fire({
+                    //        title: '¡Hola!',
+                    //        text: 'Esto es SweetAlert2 desde ASP.NET',
+                    //        icon: 'sucess'
+                    //    });";
+                    //ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
                 }
             }
             catch (Exception ex)

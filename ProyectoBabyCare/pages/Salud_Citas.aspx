@@ -5,9 +5,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <link href="../styles/PaginaUsuarios/SaludCitas.css" rel="stylesheet" />
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-<form id="form1" runat="server">
+
+<form id="form1" runat="server">    
     <div class="contenedor">
         <div class ="contenedorTitulo">
             <div class="tituloPrincipal">
@@ -26,7 +32,7 @@
                 </div>
             </div>
             <div class="textoSubTitulo">
-                Agregar una nueva
+                <asp:Button CssClass="btnNuevaCita" ID="btnAgregarNueva" runat="server" Text="Agregar una nueva" OnClick="btnAgregarNueva_Click" />                
             </div>
         </div>
         <div class="contenedorCentro">
@@ -55,22 +61,10 @@
                     </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         Editar - Borrar
-                </div>
-                <div class="contenedorCitas">
-                    <asp:GridView ID="gvCitas" runat="server" AutoGenerateColumns="False">
-                        <Columns>
-                            <asp:BoundField DataField="Lugar" HeaderText="Lugar" />
-                            <asp:BoundField DataField="Titulo" HeaderText="Titulo" />
-                            <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
-                            <asp:TemplateField HeaderText="Acciones">
-                                <ItemTemplate>
-                                    <asp:Button ID="btnEditar" runat="server" Text="Editar" CommandName="EditarRegistro" CommandArgument='<%# Container.DataItemIndex %>' />
-                                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CommandName="EliminarRegistro" CommandArgument='<%# Container.DataItemIndex %>' />
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
-                </div>
+                </div>                
+                <div runat="server" class="contenedorCitas" id="contenedorCitas">
+                                       
+                </div>                                                     
             </div>
             <div class="contenedorDerecha">
                 <div class="contenedorDerecha1">
@@ -105,7 +99,7 @@
                     </div>
                     <div class="cd2Recuadro">
                         <div class="cd2Boton">
-                            <asp:Button style="background-color:transparent; border:none; color:white;" ID="btnAgrear" runat="server" Text="Agregar" />
+                            <asp:Button style="background-color:transparent; border:none; color:white;" ID="btnAgrear" runat="server" Text="Agregar" OnClick="btnAgrear_Click" />
                         </div>                        
                     </div>
                     <div class="cd2Falso">
@@ -114,6 +108,7 @@
                 </div>
             </div>           
         </div>
+        <asp:Label CssClass="btnNuevaCita" ID="lblMensaje" runat="server" Text=""></asp:Label>
         <div class="piePagina">
             <img style="width:100%; height:100%" alt="" src="../images/Footer.png" />
         </div>

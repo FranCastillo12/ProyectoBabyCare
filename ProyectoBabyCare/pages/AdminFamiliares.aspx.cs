@@ -37,71 +37,71 @@ namespace ProyectoBabyCare.pages
                 string id = Convert.ToString(Request.QueryString["id"]);
                 // Hacer lo que necesites con el valor de "id".
 
-            Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios();
+                Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios();
 
-            DataTable TableUsuarios = iUsuario.ObtenerUsuarioRelacionados(id);
+                DataTable TableUsuarios = iUsuario.ObtenerUsuarioRelacionados(id);
 
-            StringBuilder StrListaUsuarios = new StringBuilder();
+                StringBuilder StrListaUsuarios = new StringBuilder();
 
-            int i = 0;
-            // Agregar el botón al divContenedor
-            foreach (DataRow drUsuarios in TableUsuarios.Rows)
-            {
-                Panel panel = new Panel();
-                panel.CssClass = "form-controll";
-                panel.Style["display"] = "flex";
-                panel.Style["align-items"] = "center";
-                panel.Style["justify-content"] = "space-between";
-                panel.Style["overflow"] = "hidden";
-                panel.Style["background-color"] = "transparent"; // Establecer el color de fondo como blanco
-
-
-                Button button = new Button();
-                button.CssClass = "form-control";
-                button.ID = drUsuarios["idUsuarioBebe"].ToString();
-                button.Text = drUsuarios["nombre"].ToString();
-                button.Style["text-align"] = "left";
-                button.BorderStyle = BorderStyle.None; // Quitar los bordes del botón
-                button.Click += Button_Click;
-
-                Label label = new Label();
-                label.Text = drUsuarios["rol"].ToString();
-                label.Style["text-align"] = "right";
-                label.Style["padding-right"] = "20px"; // Agrega un espacio de 10px entre el borde derecho del panel y el contenido del label
-                label.Style["font-size"] = "30px";
-                string contenido = label.Text;
-                if (contenido == "Madre")
+                int i = 0;
+                // Agregar el botón al divContenedor
+                foreach (DataRow drUsuarios in TableUsuarios.Rows)
                 {
-                    label.Style["color"] = "lightgreen"; // Cambiar a color verde suave
+                    Panel panel = new Panel();
+                    panel.CssClass = "form-controll";
+                    panel.Style["display"] = "flex";
+                    panel.Style["align-items"] = "center";
+                    panel.Style["justify-content"] = "space-between";
+                    panel.Style["overflow"] = "hidden";
+                    panel.Style["background-color"] = "transparent"; // Establecer el color de fondo como blanco
 
-                }
-                else if (contenido == "Padre")
-                {
-                    label.Style["color"] = "orange"; // Cambiar a color rojo
-                }
-                else if (contenido == "Encargado")
-                {
-                    label.Style["color"] = "purple"; // Cambiar a color rojo
-                }
-               else if (contenido == "Abuelo")
-               {
+
+                    Button button = new Button();
+                    button.CssClass = "form-control";
+                    button.ID = drUsuarios["idUsuarioBebe"].ToString();
+                    button.Text = drUsuarios["nombre"].ToString();
+                    button.Style["text-align"] = "left";
+                    button.BorderStyle = BorderStyle.None; // Quitar los bordes del botón
+                    button.Click += Button_Click;
+
+                    Label label = new Label();
+                    label.Text = drUsuarios["rol"].ToString();
+                    label.Style["text-align"] = "right";
+                    label.Style["padding-right"] = "20px"; // Agrega un espacio de 10px entre el borde derecho del panel y el contenido del label
+                    label.Style["font-size"] = "30px";
+                    string contenido = label.Text;
+                    if (contenido == "Madre")
+                    {
+                        label.Style["color"] = "lightgreen"; // Cambiar a color verde suave
+
+                    }
+                    else if (contenido == "Padre")
+                    {
+                        label.Style["color"] = "orange"; // Cambiar a color rojo
+                    }
+                    else if (contenido == "Encargado")
+                    {
+                        label.Style["color"] = "purple"; // Cambiar a color rojo
+                    }
+                    else if (contenido == "Abuelo")
+                    {
                         label.Style["color"] = "green"; // Cambiar a color rojo
-               }
-               else if (contenido == "BabySister")
-               { 
-                 label.Style["color"] = "blue"; // Cambiar a color rojo
-               }
-               else if (contenido == "Normal")
-               {
-                label.Style["color"] = "red"; // Cambiar a color rojo
-               }         
+                    }
+                    else if (contenido == "BabySister")
+                    {
+                        label.Style["color"] = "blue"; // Cambiar a color rojo
+                    }
+                    else if (contenido == "Normal")
+                    {
+                        label.Style["color"] = "red"; // Cambiar a color rojo
+                    }
                     panel.Controls.Add(button);
-                panel.Controls.Add(label);
+                    panel.Controls.Add(label);
 
-                divContenedor.Controls.Add(panel);
+                    divContenedor.Controls.Add(panel);
+                }
             }
         }
-    }
 
 
         protected void Button_Click(object sender, EventArgs e)
@@ -152,8 +152,8 @@ namespace ProyectoBabyCare.pages
                     string redirectScript = "<meta http-equiv='refresh' content='1'>";
                     Response.Write(redirectScript);
                 }
-                 
-                
+
+
             }
             catch (Exception ex)
             {
