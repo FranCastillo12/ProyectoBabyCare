@@ -33,7 +33,7 @@
 
   </div>
 </div>
-  <form id="form1" class="needs-validation form" runat="server" novalidate>
+  <form id="form1" class="needs-validation form" runat="server" style="margin-top:30px">
         <%--<h2 class="form_title">Iniciar Sesion</h2>
         <p class="form_paragraph">aun no tienes cuenta<a href="#" class="form_link">content</a></p>--%>
          <div class="logo">
