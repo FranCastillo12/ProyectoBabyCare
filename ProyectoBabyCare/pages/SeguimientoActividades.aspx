@@ -7,10 +7,9 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container">
         <div class="row" style="font-family: 'Baloo 2', sans-serif; margin-top: 4%;">
-            <div style="width: 60%">
-                <h1>Seguimiento de actividades</h1>
+            <div style="width: 50%;background-color: #F6E0ED;text-align:center">
+                <h2 style="margin-top:2%">Seguimiento de actividades</h2>
             </div>
 
             <div style="width: 20%;">
@@ -22,7 +21,7 @@
         <form runat="server" style="font-family: 'Baloo 2', sans-serif;">
             <div class="row">
                 <%-- Fin boton --%>
-                <div style="width: 30%; margin-left: 5%;">
+                <div style="width: 30%; margin-left: 10%;">
                     <div>
                         <asp:Label ID="Label1" runat="server" Text="Categoría"></asp:Label>
                     </div>
@@ -39,7 +38,7 @@
             </div>
             <%-- Fin row --%>
             <div>
-                <div class="botonesSeguimiento" style="width:40%">
+                <div class="botonesSeguimiento mt-3" style="width:30%;margin-left:20%">
                     <asp:Button ID="btnFiltrar" class="btn btn-primary profile-button" runat="server" OnClick="btnFiltrar_Click" Text="Filtrar" />
                 </div>
             </div>
@@ -58,5 +57,4 @@
     </div>
     <%-- Fin row --%>
         </form>
-    </div>
 </asp:Content>
