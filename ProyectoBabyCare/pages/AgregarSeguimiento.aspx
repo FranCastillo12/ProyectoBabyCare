@@ -11,13 +11,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+
         <form runat="server" style="font-family: 'Baloo 2', sans-serif; border-radius: 10%; background-color: #F6E0ED; color: black; margin-left: 10%; margin-right: 10%; margin-top: 4%;">
             <div style="text-align: center;">
                 <div>
-                    <asp:Label ID="Label1" runat="server" Text="Categoria"></asp:Label>
+                    <h3>Categoria</h3>
                 </div>
-                <div style="width: 50%; margin-left: 20%;">
+                <div style="width: 40%; margin-left: 30%;">
                     <asp:DropDownList ID="dropcategorias" AutoPostBack="true" CssClass="form-controlddl" runat="server" Style="text-align: center;"></asp:DropDownList>
                 </div>
 
@@ -40,5 +40,4 @@
                 </div>
             </div>
         </form>
-    </div>
 </asp:Content>

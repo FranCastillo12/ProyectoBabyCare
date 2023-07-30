@@ -131,6 +131,8 @@
     <Content Include="images\flecha2.png" />
     <Content Include="images\Expediente.gif" />
     <Content Include="images\expediente.png" />
+    <Content Include="images\fondobotones.jpg" />
+    <Content Include="images\fondoletras.jpg" />
     <Content Include="images\Fondopeluches.png" />
     <Content Include="images\Footer.png" />
     <Content Include="images\galeria.png" />

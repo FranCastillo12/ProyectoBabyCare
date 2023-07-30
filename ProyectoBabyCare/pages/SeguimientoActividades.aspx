@@ -8,8 +8,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
         <div class="row" style="font-family: 'Baloo 2', sans-serif; margin-top: 4%;">
-            <div style="width: 40%;margin-left:10%">
-                <h1>Seguimiento de actividades</h1>
+            <div style="width: 50%;background-color: #F6E0ED;text-align:center">
+                <h2 style="margin-top:2%">Seguimiento de actividades</h2>
             </div>
 
             <div style="width: 20%;">

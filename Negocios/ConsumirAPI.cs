@@ -15,7 +15,7 @@ namespace Negocios
             {
                 var task = Task.Run(
                 async () => {
-                    return await producto.GetAsync($"http://localhost:5041/NombresSignificados/{letra}/{Sexo}");
+                    return await producto.GetAsync($"https://tiusr9pl.cuc-carrera-ti.ac.cr/apistios/NombresSignificados/{letra}/{Sexo}");
                 });
                     
                 HttpResponseMessage message = task.Result;
@@ -43,7 +43,7 @@ namespace Negocios
             {
                 var task = Task.Run(
                 async () => {
-                    return await producto.GetAsync($"");
+                    return await producto.GetAsync($"https://tiusr9pl.cuc-carrera-ti.ac.cr/apistios/Consejos");
                 });
 
                 HttpResponseMessage message = task.Result;

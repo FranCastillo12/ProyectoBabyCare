@@ -13,10 +13,10 @@
             </h1>
             <h1 style="font-family: 'Baloo 2', sans-serif; color: #F495B6;">BABY CARE
             </h1>
-            <h3 style="font-family: 'Baloo 2', sans-serif; color: white; width: 40%">Este sistema está diseñado especialmente para padres que desean hacer su vida más fácil mientras cuidan y crian a sus hijos.
+            <h5 style="font-family: 'Baloo 2', sans-serif; color: white; width: 85%">Este sistema está diseñado especialmente para padres que desean hacer su vida más fácil mientras cuidan y crian a sus hijos.
                 Sabemos que ser padre puede ser una tarea desafiante y abrumadora,
                 pero estamos aquí para brindarte el apoyo para mejorar tu experiencia como padre o madre. 
-            </h3>
+            </h5>
         </div>
 
     </div>
@@ -25,7 +25,7 @@
     <div class="row">
         <div style="width: 15%;background-image:url('../images/jugueteslat2.jpg');background-size:cover;">
         </div>
-        <div class="row" style="width: 68%; margin-top: 4%; margin-bottom: 4%;margin-left:1%;margin-right:1%">
+        <div class="row" style="width: 68%; margin-top: 4%; margin-bottom: 4%;margin-left:1%;margin-right:1%;border-radius:5%;background-color: #F6E0ED;">
             <div class="row" style="margin-top: 4%">
                 <div class="Tarjeta1">
                     <div>
@@ -51,7 +51,7 @@
             </div>
 
             <%-- Segunda linea --%>
-            <div class="row" style="margin-top: 4%; margin-bottom: 4%">
+            <div class="row" style="margin-top: 1%; margin-bottom: 4%">
                 <div class="Tarjeta1">
                     <div>
                         <img runat="server" src="~/images/neuronas.png" style="width: 50%; height: 50%;" />
