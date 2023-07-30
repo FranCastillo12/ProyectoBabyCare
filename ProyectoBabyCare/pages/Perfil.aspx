@@ -93,7 +93,7 @@
     <div class="btn btn-primary profile-buttonddll boton-modal" runat="server" id="boton">
      
         <label for="btn-modal">
-            Compartit Código Bebé
+            Compartir Código Bebé
         </label>
     </div>
 <!--Fin de Boton-->
