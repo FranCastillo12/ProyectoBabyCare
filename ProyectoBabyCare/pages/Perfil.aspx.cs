@@ -11,48 +11,54 @@ namespace ProyectoBabyCare.pages
 {
     public partial class Perfil : System.Web.UI.Page
     {
+        string nombrebebe;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                boton.Visible = false;
-                btnAdministrarFamiliares.Visible = false;
-                Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
-                int idUsuario = credenciales.IdUsuario;
-                string idbebe = credenciales.IdenBebe;
-                Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
-                DataTable dtUsuarios = iUsuarios.DatosUsuario(idUsuario);
-                System.Text.StringBuilder strListaDatos = new System.Text.StringBuilder();
+            //string script = "<script>document.body.style.zoom = '100%';</script>";
+            //ClientScript.RegisterStartupScript(this.GetType(), "Set100PercentSizeScript", script);
+            //if (!IsPostBack)
+            //{
+            //    boton.Visible = false;
+            //    btnAdministrarFamiliares.Visible = false;
+            //    Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
+            //    int idUsuario = credenciales.IdUsuario;
+            //    string idbebe = credenciales.IdenBebe;
+            //    Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
+            //    DataTable dtUsuarios = iUsuarios.DatosUsuario(idUsuario);
+            //    System.Text.StringBuilder strListaDatos = new System.Text.StringBuilder();
 
-                foreach (DataRow drEmpleados in dtUsuarios.Rows)
-                {
+            //    foreach (DataRow drEmpleados in dtUsuarios.Rows)
+            //    {
 
-                    // Rellenar un TextBox llamado txtNombre con el valor de la columna "Nombre"
-                    txtNombre.Text = Convert.ToString(drEmpleados["nombre"]);
+            //        // Rellenar un TextBox llamado txtNombre con el valor de la columna "Nombre"
+            //        txtNombre.Text = Convert.ToString(drEmpleados["nombre"]);
 
-                    // Rellenar otro TextBox llamado txtApellido con el valor de la columna "Apellido1"
-                    txtApellidos.Text = Convert.ToString(drEmpleados["apellidos"]);
-
-
-                    txtCorreo.Text = Convert.ToString(drEmpleados["correo"]);
-                }
-
-                DataTable dtbebes = iUsuarios.Datosbebes(idUsuario);
+            //        // Rellenar otro TextBox llamado txtApellido con el valor de la columna "Apellido1"
+            //        txtApellidos.Text = Convert.ToString(drEmpleados["apellidos"]);
 
 
-                dropbebes.DataSource = dtbebes;
-                dropbebes.DataTextField = "nombre_bebe";
-                dropbebes.DataValueField = "idBebe";
-                dropbebes.DataBind();
-                dropbebes.Items.Insert(0, new ListItem("Seleccione un bebé", "0"));
-                ListItem itemSeleccionado = dropbebes.Items.FindByValue(idbebe);
-                if (itemSeleccionado != null)
-                {
-                    itemSeleccionado.Selected = true;
-                    dropbebes_SelectedIndexChanged(dropbebes, EventArgs.Empty);
+            //        txtCorreo.Text = Convert.ToString(drEmpleados["correo"]);
 
-                }
-            }
+            //        TextBox1.Text = Convert.ToString(drEmpleados["Rol"]);
+
+            //    }
+
+            //    DataTable dtbebes = iUsuarios.Datosbebes(idUsuario);
+
+
+            //    dropbebes.DataSource = dtbebes;
+            //    dropbebes.DataTextField = "nombre_bebe";
+            //    dropbebes.DataValueField = "idBebe";
+            //    dropbebes.DataBind();
+            //    dropbebes.Items.Insert(0, new ListItem("Seleccione un bebé", "0"));
+            //    ListItem itemSeleccionado = dropbebes.Items.FindByValue(idbebe);
+            //    if (itemSeleccionado != null)
+            //    {
+            //        itemSeleccionado.Selected = true;
+            //        dropbebes_SelectedIndexChanged(dropbebes, EventArgs.Empty);
+
+            //    }
+            //}
         }
 
         protected void btnModificarDatos_Click(object sender, EventArgs e)
@@ -136,14 +142,17 @@ namespace ProyectoBabyCare.pages
                     if (resultTable != null && resultTable.Rows.Count > 0)
                     {
                         // Assuming the value you need to retrieve is in the first row and first column of the DataTable
+                       
                         rol = resultTable.Rows[0][0].ToString();
                         lblcodigo.Text = resultTable.Rows[0][1].ToString();
                         encargado = resultTable.Rows[0][2].ToString();
+                        lblnombreBebe.Text = resultTable.Rows[0][3].ToString();
+                        TextBox1.Text = rol;
 
                         // Store the value in the Session
                         credenciales.Rol = rol;
                         Session["Credenciales"] = credenciales;
-                        //Session["rol"] = rol;
+                        Session["rol"] = rol;
                     }
                     //script = "toastr.success('Ahora tiene el rol');";
                     //ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
@@ -170,11 +179,29 @@ namespace ProyectoBabyCare.pages
             }
         }
 
+        protected void btnEnviarCodido_Click(object sender, EventArgs e)
+        {
+            string correo = txtemail.Text;
+            string codigo = lblcodigo.Text;
+            string nombrebebe = lblnombreBebe.Text;
+            string script = null;
+            //Aqui se debe ingresar para el envio de correos
+            if (correo == "")
+            {
+                script = "toastr.error('Debe de ingresar un correo');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            }
+            else
+            {
+                
+                Negocios.Correos CorreoCodigo = new Negocios.Correos();
+                CorreoCodigo.EnviarCorreoCodigo(nombrebebe, correo, codigo);
+                script = "toastr.success('Correo enviado con exito');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                txtemail.Text = "";
+            }
 
-        //protected System.Void btnEnviarCodido_Click()
-        //{
-        //    string correo = txtemail.text;
-        //    //Envio por correo el codfigo del bebe
-        //}
+        }
+
     }
 }

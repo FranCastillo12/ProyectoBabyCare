@@ -22,7 +22,7 @@
         <div class="col-md-5 border-right">
             <div class="container">
   <div class="sub">
-    Selecciona el usuario a modificar
+    Darle click usuario a modificar
   </div>
 </div>
             <div class="p-3 py-5" id="divContenedor" runat="server">

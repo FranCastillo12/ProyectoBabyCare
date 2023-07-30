@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ProyectoBabyCare.Login" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ProyectoBabyCare.Login" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+<meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width/>
     <title>Inicio Sesión</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -43,13 +43,13 @@
        <p class="warnings" id="warnings" runat="server"></p>
   
     </form>
-
-    <%-- IMAGEN QUE SE COLOCA A LA IZQUIERDA --%>
-    <div class="image-containerRight">
-        <div class="image-wrapper">
-            <img src="images/ImageLogin2.png" alt="Imagen adicional" />
-        </div>
-    </div>
+    
+        <%-- IMAGEN QUE SE COLOCA A LA IZQUIERDA --%>
+            <div class="image-containerRight">
+  <div class="image-wrapper">
+    <img src="images/ImageLogin2.png" alt="Imagen adicional"/>
+  </div>
+</div>
 
 
 </body>

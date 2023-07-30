@@ -80,7 +80,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active"href="Perfil.aspx">Mi perfil</a>
+            <a class="nav-link mx-2 active"href="Perfil.aspx">Perfil</a>
           </li>
             <li class="nav-item">
             <a class="nav-link mx-2 active rectangulo-fondoSalir" style="color:white" aria-current="page" href="logout.aspx">Salir</a>

@@ -13,5 +13,12 @@ namespace Negocios
             correo.EnviarCorreo(NombreUsuario,CorreoUsuario);
 
         }
+
+        public void EnviarCorreoCodigo(string nombrebebe, string CorreoUsuario,string codigo)
+        {
+            Entidades.Correos correo = new Entidades.Correos();
+            correo.EnviarCorreoCodigobebe(nombrebebe, CorreoUsuario,codigo);
+
+        }
     }
 }
