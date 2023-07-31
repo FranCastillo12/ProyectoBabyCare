@@ -14,7 +14,8 @@ namespace ProyectoBabyCare.pages
         string nombrebebe;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string script = "<script>document.body.style.zoom = '100%';</script>";
+            
+                string script = "<script>document.body.style.zoom = '100%';</script>";
             ClientScript.RegisterStartupScript(this.GetType(), "Set100PercentSizeScript", script);
             if (!IsPostBack)
             {
@@ -158,6 +159,7 @@ namespace ProyectoBabyCare.pages
 
         protected void dropbebes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
             int idUsuario = credenciales.IdUsuario;
             string rol = null;
@@ -165,7 +167,8 @@ namespace ProyectoBabyCare.pages
             string script = null;
             try
             {
-                if (dropbebes.SelectedValue == "0")
+              
+                    if (dropbebes.SelectedValue == "0")
                 {
                     script =
                             "toastr.options.closeButton = true;" +
@@ -196,7 +199,7 @@ namespace ProyectoBabyCare.pages
                         encargado = resultTable.Rows[0][2].ToString();
                         lblnombreBebe.Text = resultTable.Rows[0][3].ToString();
                         TextBox1.Text = rol;
-
+           
                         // Store the value in the Session
                         credenciales.Rol = rol;
                         Session["Credenciales"] = credenciales;
@@ -215,10 +218,14 @@ namespace ProyectoBabyCare.pages
                         btnAdministrarFamiliares.Visible = false;
                         boton.Visible = false;
                     }
+                    // Obtener la instancia de la Master Page
+                    SitePrivate masterPage = (SitePrivate)this.Master;
 
+                    // Ahora puedes llamar al método público de la Master Page
+                    masterPage.MiMetodoEnMasterPage();
                 }
 
-
+               
             }
             catch (Exception ex)
             {

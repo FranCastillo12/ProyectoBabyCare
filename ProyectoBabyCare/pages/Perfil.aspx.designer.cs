@@ -121,5 +121,19 @@ namespace ProyectoBabyCare.pages
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEnviarCodido;
+
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new ProyectoBabyCare.SitePrivate Master
+        {
+            get
+            {
+                return ((ProyectoBabyCare.SitePrivate)(base.Master));
+            }
+        }
     }
 }
