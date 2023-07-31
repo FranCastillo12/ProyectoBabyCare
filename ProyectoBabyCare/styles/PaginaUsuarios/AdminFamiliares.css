@@ -30,15 +30,15 @@ body {
 .title {
     margin: 1%;
     float: left;
-    font-family: Comfortaa;
+    font-family: 'Baloo 2', sans-serif;
     font-weight: 500;
     position: absolute;
-    top: 130px;
+    top: 85px;
     font-size: 30px;
-    background-color: #FFC0CB;
+    background-color: #F6E0ED;
+    color: mediumblue;
     padding: 10px;
     border-radius: 5px;
-    color: #191970;
 }
 
 
@@ -164,7 +164,7 @@ body {
     overflow: hidden; /* Fixes the corners */
     margin: 5px auto; /* Add space between cards and center them horizontally */
    
-    margin-left: 130px;
+    margin-left:50px;
 }
 
 
