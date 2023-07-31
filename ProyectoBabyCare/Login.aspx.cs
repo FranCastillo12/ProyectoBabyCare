@@ -86,21 +86,20 @@ namespace ProyectoBabyCare
                         Session["Credenciales"] = iCredenciales;
 
 
-                            //Variable session para el manejo de permisos de invitado
-                           if(iCredenciales.Rol == "Invitado")
-                            {
-                                Session["IsDropDownEventExecuted"] = true;
-                            }
+                        //Variable session para el manejo de permisos de invitado
+                        if(iCredenciales.Rol == "Invitado")
+                        {
+                            Session["IsDropDownEventExecuted"] = true;
+                        }
 
+                        //Token de verificacion de dos pasos
+                        Negocios.Correos correos = new Negocios.Correos();
+                        string token = correos.EnviarToken(user);
+                        Session["tokenLogin"] = token;
 
-                            //variable de sesion con datos del bebe
-
-                        //Session["DatosBebe"] = bebe;
-
-
-                        //Session["DatosBebe"] = bebe;
-
-                        Response.Redirect("pages/ControlPanel.aspx");
+                        //Redireccionar a la pagina de validacion de token 
+                        Response.Redirect("pages/SegundoFactorAuten.aspx");
+                        //Response.Redirect("pages/ControlPanel.aspx");
                     }
                     else
                     {

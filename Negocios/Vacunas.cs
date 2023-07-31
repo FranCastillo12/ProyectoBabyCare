@@ -61,12 +61,13 @@ namespace Negocios
                 };
                 ConexionSQL iConexion = new Datos.ConexionSQL();
                 iConexion.ExecuteSP(spName, lstParametros);
-            } catch (Exception)
+            }
+            catch (Exception)
             {
                 throw new Exception("No se pudo agregar la vacuna");
             }
         }
-        public static void EditarVacuna(int idVacuna,int idBebe, string nombre, string descripcion, DateTime fecha)
+        public static void EditarVacuna(int idVacuna, int idBebe, string nombre, string descripcion, DateTime fecha)
         {
             try
             {
