@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <link href="../styles/PaginaUsuarios/SaludVacunas.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
@@ -63,7 +64,8 @@
                 </div>              
                 <div class="fechaVacuna">
                     <div class="textoFechaVacuna">                        
-                        <asp:TextBox CssClass="textbox" ID="txtFecha" runat="server">Fecha x</asp:TextBox>
+                        <%--<asp:TextBox CssClass="textbox" ID="txtFecha" runat="server">Fecha x</asp:TextBox>--%>
+                        <asp:TextBox CssClass="textbox" ID="txtFecha" runat="server" type="datetime-local" placeholder="Fecha y hora"></asp:TextBox>
                     </div>
                 </div>
             </div>

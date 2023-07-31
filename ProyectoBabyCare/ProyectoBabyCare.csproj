@@ -110,9 +110,16 @@
     <Content Include="images\6-9 meses.jpg" />
     <Content Include="images\9-12meses.jpg" />
     <Content Include="images\agenda.jpg" />
+    <Content Include="images\bebe2.jpg" />
     <Content Include="images\bder.png" />
     <Content Include="images\Bebe.jpg" />
-    <Content Include="images\bebeAnimado.jpg" />
+    <Content Include="images\bebe3.jpg" />
+    <Content Include="images\bebe4.png" />
+    <Content Include="images\bebe5.jpg" />
+    <Content Include="images\bebe6.png" />
+    <Content Include="images\bebe7.jpg" />
+    <Content Include="images\bebe8.jpg" />
+    <Content Include="images\bebe1.jpg" />
     <Content Include="images\bebeCa.jpg" />
     <Content Include="images\bizq.png" />
     <Content Include="images\borrar.png" />
@@ -134,6 +141,7 @@
     <Content Include="images\flecha2.png" />
     <Content Include="images\Expediente.gif" />
     <Content Include="images\expediente.png" />
+    <Content Include="images\flechas2.png" />
     <Content Include="images\fondobotones.jpg" />
     <Content Include="images\fondoletras.jpg" />
     <Content Include="images\Fondopeluches.png" />
@@ -167,6 +175,7 @@
     <Content Include="images\Vacunacion.png" />
     <Content Include="images\tabla.png" />
     <Content Include="pages\AgregarSeguimiento.aspx" />
+    <Content Include="pages\ControlPanel2.aspx" />
     <Content Include="pages\Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LoginAdmin.aspx" />
@@ -198,6 +207,7 @@
     <Content Include="styles\PaginaUsuarios\AdminFamiliares.css" />
     <Content Include="styles\PaginaUsuarios\AdminUsuarios.css" />
     <Content Include="styles\PaginaUsuarios\ControlPanel.css" />
+    <Content Include="styles\PaginaUsuarios\ControlPanel2.css" />
     <Content Include="styles\PaginaUsuarios\DietasPrivate.css" />
     <Content Include="styles\PaginaUsuarios\DietasPublic.css" />
     <Content Include="styles\PaginaUsuarios\Etapas_desarollo.css" />
@@ -219,6 +229,13 @@
     </Compile>
     <Compile Include="pages\AgregarSeguimiento.aspx.designer.cs">
       <DependentUpon>AgregarSeguimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ControlPanel2.aspx.cs">
+      <DependentUpon>ControlPanel2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ControlPanel2.aspx.designer.cs">
+      <DependentUpon>ControlPanel2.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
