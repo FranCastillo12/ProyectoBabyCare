@@ -17,10 +17,10 @@
         <div class="row">
             <div style="width: 25%; background-image: url(../images/reg1.png); background-size: cover; background-position: center;">
             </div>
-            <form runat="server" class="Formulario" style="padding-top:10%;padding-bottom:10%">
+            <form runat="server" class="Formulario" style="padding-top:1%;padding-bottom:1%">
                 <div>
                     <div style="text-align: center">
-                        <asp:Label ID="Label1" runat="server" Text="Cedula del bebe"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Cédula del bebé"></asp:Label>
                     </div>
                     <div style="align-items: center; text-align: center;">
                         <div>
@@ -30,7 +30,7 @@
                 </div>
                 <div>
                     <div style="text-align: center">
-                        <asp:Label ID="Label6" runat="server" Text="Genero"></asp:Label>
+                        <asp:Label ID="Label6" runat="server" Text="Género"></asp:Label>
                     </div>
                     <div>
                         <div class="row Linea">
