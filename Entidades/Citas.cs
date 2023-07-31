@@ -12,11 +12,11 @@ namespace Entidades
         string _lugar;
         string _titulo;
         DateTime _fecha;
-
+        string _Prioridad;
         public int IdCita { get => _idCita; set => _idCita = value; }
         public string Lugar { get => _lugar; set => _lugar = value; }
         public string Titulo { get => _titulo; set => _titulo = value; }
         public DateTime Fecha { get => _fecha; set => _fecha = value; }
-        
+        public string Prioridad { get => _Prioridad; set => _Prioridad = value; }
     }
 }

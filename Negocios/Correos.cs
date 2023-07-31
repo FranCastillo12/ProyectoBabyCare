@@ -13,5 +13,12 @@ namespace Negocios
             correo.EnviarCorreo(NombreUsuario,CorreoUsuario);
 
         }
+        public string EnviarToken(string CorreoUsuario)
+        {
+            Entidades.Correos correo = new Entidades.Correos();
+            return correo.EnviarToken(CorreoUsuario);
+
+        }
     }
+
 }

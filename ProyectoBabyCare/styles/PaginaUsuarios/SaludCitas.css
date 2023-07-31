@@ -1,6 +1,5 @@
 ﻿body {
-
-
+    font-family: 'Baloo 2', sans-serif;
 }
 
 .contenedor {
@@ -10,7 +9,7 @@
 
 .contenedorTitulo {
     width:100%;
-    height: 13%;
+    height: 10%; 
     margin:1%;
 }
 
@@ -35,18 +34,19 @@
     background-color: #F6E0ED;
     font-size: 30px;
     text-align: center;
-    font-family: Comfortaa;
+    font-family: Comfortaa;    
 }
 
 .contenedorSubtitulos {
-    width:100%;
-    height:10%;
+    width:98%;
+    height:8%;
     margin:1%;
+    float:left;
 }
 .subTitulo1{
     float:left;
     margin:1%;
-    width:49%;
+    width:32%;
     height:90%
 }
 .textoSubTitulo {
@@ -56,20 +56,34 @@
     font-family: Comfortaa;
     text-decoration: underline;
 }
+.contenedorSubtitulo1 {
+    float:left;
+    width:48%;
+    height: 98%;
+    text-align: center;
+    align-content:center;
+}
+.contenedorSubtitulo1-1 {
+    float: left;
+    width: 25%;
+    height: 98%;
+    text-align: center;
+    align-content: center;
+}
 
 .contenedorCentro{
     width:100%;
     margin:1%;
-    height:50%;
+    height:54%;
 }
 .contenedorIzquierda{
-    width:54%;
+    width:61%;
     margin:1%;
     height:98%;
     float:left;
 }
 .contenedorDerecha {
-    width: 42%;
+    width: 35%;
     height: 98%;
     float: left;
     margin:1%;
@@ -77,11 +91,11 @@
 
 .contenedorDerecha1 {
     width: 100%;
-    height: 74%;
+    height: 20%;
     float: left;
 }
 .cd1Recuadro{
-    height:33%;
+    height:100%;    
 }
 .cd1Label {
     height: 98%;
@@ -89,7 +103,7 @@
     float: left;
     text-align: center;
     font-family: Comfortaa;
-    font-size: 25px;
+    font-size: 22px;
     color: #3399CC;
 }
 .cdTextBox {
@@ -100,7 +114,7 @@
 }
 .contenedorDerecha2 {
     width: 100%;
-    height: 24%;
+    height: 20%;
     position: relative;
 }
 .cd2Falso {
@@ -118,7 +132,7 @@
 }
 .cd2Boton {
       text-align:center;
-      font-size:20px;
+      font-size:18px;
       margin-top:5%;
 }
 .cabeceraCitas {
@@ -128,7 +142,7 @@
     color: #3399CC;
 }
 .cabeceraColumna {
-    width: 25%;
+    width: 20%;
     float: left;
     height: 100%;
     justify-content:center;
@@ -150,7 +164,7 @@
 }
 
 .contenedorCitas {
-    height: 82%;
+    height: 89%;
     width: 98%;
     overflow-y: auto;
 }
@@ -161,30 +175,55 @@
     height: 20%;    
     border-radius: 15%;
 }
-.Citas1 {
-    width: 76%;
+.CitaNormal {
+    width: 82%;
     height: 100%;
-    background-color: #F6E0ED;
+    background-color: white;
     color: #3399CC;
-    margin-top:1%;
-    float:left;
-}
-
-.Citas2 {
-    margin-left:1%;
-    width: 10%;
-    height: 98%;    
     margin-top: 1%;
     float: left;
 }
+.CitaBaja {
+    width: 82%;
+    height: 100%;
+    background-color: #fbd8dc;
+    color: #3399CC;
+    margin-top: 1%;
+    float: left;
+}
+.CitaMedia {
+    width: 82%;
+    height: 100%;
+    background-color: #f4b1bb;
+    color: white;
+    margin-top: 1%;
+    float: left;
+}
+.CitaAlta {
+    width: 82%;
+    height: 100%;
+    background-color: #ea899a;
+    color: white;
+    margin-top: 1%;
+    float: left;
+}
+
+.Citas2 {
+    margin-left: 1%;
+    width: 8%;
+    height: 98%;
+    margin-top: 1%;
+    float: left;
+    color: #3399CC;
+}
 .ContenidoCitas {
     height: 98%;
-    width: 33%;
+    width: 25%;
     align-content: center;
     text-align: center;
-    font-size: 18px;
-    color: #DF599D;
-    float:left;
+    font-size: 15px;
+    /*color: #3399CC;*/
+    float: left;
 }
 
 .btnEditar{
@@ -203,7 +242,7 @@
 
 .piePagina {
     width: 100%;
-    height: 100px;
+    height: 12%;
     bottom: 0;
     position:absolute;
 }

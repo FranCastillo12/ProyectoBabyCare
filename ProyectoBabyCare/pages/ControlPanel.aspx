@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <link href="../styles/PaginaUsuarios/ControlPanel.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
@@ -26,8 +27,35 @@
             </div>
             <div class="contenedor2">
                 <div class="recuadroBebe">
-                    <img class="imagenBebe" alt="" src="../images/bebeAnimado.jpg" />
+                    <img class="imagenBebe" id="imagenBebe" alt="" src="../images/bebe1.jpg" />
                 </div>
+                <script type="text/javascript">
+                      // Arreglo con las URLs de las imágenes a mostrar
+                    const imagenes = [
+                          "../images/bebe1.jpg",
+                          "../images/bebe2.jpg",                                                                              
+                          "../images/bebe6.png",
+                          "../images/bebe7.jpg",                                                    
+                      ];
+
+                      let indiceImagen = 0;
+                      const intervaloTiempo = 7000; //7 segundos para cambiar
+
+                      // Función para cambiar la imagen
+                      function cambiarImagen() {
+                          const imagenBebe = document.getElementById("imagenBebe");
+                          imagenBebe.src = imagenes[indiceImagen];
+
+                          // Incrementa el índice para mostrar la siguiente imagen
+                          indiceImagen = (indiceImagen + 1) % imagenes.length;
+                      }
+
+                      // Iniciar el intervalo cuando la página se carga
+                      window.onload = function () {
+                          cambiarImagen(); // Mostrar la primera imagen inmediatamente
+                          setInterval(cambiarImagen, intervaloTiempo);
+                      };
+                </script>
                 <div class="recuadroDatosBebe">
                     <asp:Label ID="lblNombre" runat="server" Text="Josias Madriz Calderón"></asp:Label>
                     <br />
