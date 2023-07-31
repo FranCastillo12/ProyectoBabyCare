@@ -16,7 +16,7 @@ namespace ProyectoBabyCare
 
             string rol = credenciales.Rol;
 
-           if(rol == "Invitado")
+            if (rol == "Invitado")
             {
                 expediente.Visible = false;
                 navbarDropdownMenuLink1.Visible = false;

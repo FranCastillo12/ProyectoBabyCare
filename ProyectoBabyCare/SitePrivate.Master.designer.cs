@@ -39,7 +39,7 @@ namespace ProyectoBabyCare
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor expediente;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl expediente;
 
         /// <summary>
         /// Control navbarDropdownMenuLink1.
