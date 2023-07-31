@@ -1,13 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ProyectoBabyCare.Login" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ProyectoBabyCare.Login" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
-    <title>Inicio Sesión</title>
+<meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width"/>
+    <title>Inicio Sesi&oacute;n</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
@@ -15,15 +15,15 @@
     <link href="styles/generales/Login.css" rel="stylesheet" />
 </head>
 <body>
-            <div class="image-containerleft">
-  <div class="image-wrapperleft">
-    <img src="images/ImageLogin1.png" alt="Imagen adicional"/>
-  </div>
-</div>
-   <form id="form1" class="form" runat="server">
-         <div class="logo">
-                    <image id="imgIcon" src="Images\logo.png" class="logoo" alt="Imagen"></image>
-                  </div>
+    <div class="image-containerleft">
+        <div class="image-wrapperleft">
+            <img src="images/ImageLogin1.png" alt="Imagen adicional" />
+        </div>
+    </div>
+    <form id="form1" class="form" runat="server">
+        <div class="logo">
+            <image id="imgIcon" src="Images\logo.png" class="logoo" alt="Imagen"></image>
+        </div>
 
             <div class="form_container"> 
                 <div class="form_group" style=" margin-top:20px;">
@@ -34,10 +34,10 @@
                 </div>
                   <div class="form_group">
                       <asp:TextBox runat="server"  type="type" name="Contrasena" ID="txtContra" class="form_input" placeholder=" "/>    
-                    <label for="Contrasena" class="form_label">Contraseña</label>
+                    <label for="Contrasena" class="form_label">Contrase&ntilde;a</label>
                     <span class="form_line"></span>
                 </div>
-                 <asp:Button Text="Iniciar Sesión" runat="server" CssClass="form_submit" type="submit" ID="btnIniciarSesion" OnClick="btnIniciarSesion_Click"/>
+                 <asp:Button Text="Iniciar Sesi&oacute;n" runat="server" CssClass="form_submit" type="submit" ID="btnIniciarSesion" OnClick="btnIniciarSesion_Click"/>
                  <asp:Button Text="Crear Cuenta" runat="server" CssClass="form_submit" type="submit" ID="btnCrearCuenta" OnClick="btnCrearCuenta_Click"/>
             </div>  
        <p class="warnings" id="warnings" runat="server"></p>

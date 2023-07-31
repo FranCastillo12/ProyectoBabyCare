@@ -36,7 +36,7 @@ namespace ProyectoBabyCare.pages
             {
                 script =
                     "toastr.options.closeButton = true;" +
-                    "toastr.options.positionClass = 'toast-top-full-width';" +
+                     "toastr.options.positionClass = 'toast-bottom-right';" +
                     "toastr.error('La descripción no puede estar vacia');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -47,7 +47,7 @@ namespace ProyectoBabyCare.pages
             {
                 script =
                     "toastr.options.closeButton = true;" +
-                    "toastr.options.positionClass = 'toast-top-full-width';" +
+                     "toastr.options.positionClass = 'toast-bottom-right';" +
                     "toastr.error('Seleccione una categoria');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -76,7 +76,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                     "toastr.options.closeButton = true;" +
-                    "toastr.options.positionClass = 'toast-top-full-width';" +
+                     "toastr.options.positionClass = 'toast-bottom-right';" +
                     "toastr.warning('Ha ocurrido un error');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 }

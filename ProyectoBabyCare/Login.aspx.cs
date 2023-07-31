@@ -14,7 +14,8 @@ namespace ProyectoBabyCare
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string script = "<script>document.body.style.zoom = '80%';</script>";
+            ClientScript.RegisterStartupScript(this.GetType(), "Set100PercentSizeScript", script);
         }
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace ProyectoBabyCare
                 {
                      script =
                          "toastr.options.closeButton = true;" +
-                         "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
                          "toastr.error('El correo es requerido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -46,7 +47,7 @@ namespace ProyectoBabyCare
                 {
                     script = 
                       "toastr.options.closeButton = true;" +
-                      "toastr.options.positionClass = 'toast-top-full-width';" +
+                      "toastr.options.positionClass = 'toast-bottom-right';" +
                       "toastr.error('El email no es valido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -57,7 +58,7 @@ namespace ProyectoBabyCare
                 {
                     script =
                       "toastr.options.closeButton = true;" +
-                      "toastr.options.positionClass = 'toast-top-full-width';" +
+                      "toastr.options.positionClass = 'toast-bottom-right';" +
                       "toastr.error('La contraseña es necesaria');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 

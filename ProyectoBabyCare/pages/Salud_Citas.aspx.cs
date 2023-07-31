@@ -110,7 +110,7 @@ namespace ProyectoBabyCare.pages
             {
                 string script =
                                  "toastr.options.closeButton = true;" +
-                                 "toastr.options.positionClass = 'toast-top-full-width';" +
+                                 "toastr.options.positionClass = 'toast-bottom-right';" +
                                  "toastr.error('Revisar los datos ingresados');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
@@ -152,7 +152,7 @@ namespace ProyectoBabyCare.pages
 
                             string script =
                                 "toastr.options.closeButton = true;" +
-                                "toastr.options.positionClass = 'toast-top-full-width';" +
+                                "toastr.options.positionClass = 'toast-bottom-right';" +
                                 "toastr.error('Revisar los datos ingresados');";
                             ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                         }                        
@@ -195,7 +195,7 @@ namespace ProyectoBabyCare.pages
             {
                 string script =
                                  "toastr.options.closeButton = true;" +
-                                 "toastr.options.positionClass = 'toast-top-full-width';" +
+                                  "toastr.options.positionClass = 'toast-bottom-right';" +
                                  "toastr.error('Revisar los datos ingresados');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }

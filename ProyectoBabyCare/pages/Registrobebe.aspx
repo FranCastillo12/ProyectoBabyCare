@@ -6,7 +6,7 @@
 <head runat="server">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width"/>
     <title>Registro bebé</title>
     <link href="../styles/generales/Registro.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -23,7 +23,7 @@
   </div>
 </div>
 
-    <form id="form1" class="form" runat="server">
+    <form id="form1" class="form" runat="server" style="margin-top:10px">
         <%--<h2 class="form_title">Iniciar Sesion</h2>
         <p class="form_paragraph">aun no tienes cuenta<a href="#" class="form_link">content</a></p>--%>
          <div class="logo">

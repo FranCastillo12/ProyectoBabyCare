@@ -220,7 +220,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('La cédula no puede quedar en blanco');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -231,7 +231,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('La estatura no puede quedar en blanco');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -242,7 +242,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('El peso no puede quedar en blanco');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -253,7 +253,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('El tipo de sangre no puede quedar en blanco');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -274,7 +274,7 @@ namespace ProyectoBabyCare.pages
                 else {
                     script =
                          "toastr.options.closeButton = true;" +
-                         "toastr.options.positionClass = 'toast-top-full-width';" +
+                          "toastr.options.positionClass = 'toast-bottom-right';" +
                          "toastr.error('Debe indicar el genero');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
