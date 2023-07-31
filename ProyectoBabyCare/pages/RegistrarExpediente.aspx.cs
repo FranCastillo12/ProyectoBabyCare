@@ -22,7 +22,7 @@ namespace ProyectoBabyCare
                 Negocios.Expediente ex=new Negocios.Expediente();
                 string respuesta = ex.ValidarExpediente(Convert.ToInt32(usu.IdenBebe));
                 string regexNumeros = @"^[0-9]{10}$";
-                string regexNumeroFloat = @"^\d+(\.\d+)?$";
+                string regexNumeroFloat = @"^\d+(\.\d*)?$";
 
 
                 if (respuesta.Equals("No existe"))
@@ -35,61 +35,61 @@ namespace ProyectoBabyCare
                     {
                         script =
                             "toastr.options.closeButton = true;" +
-                            "toastr.options.positionClass = 'toast-top-full-width';" +
+                             "toastr.options.positionClass = 'toast-bottom-right';" +
                             "toastr.error('La cédula no puede quedar en blanco');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (string.IsNullOrEmpty(txtpeso.Text))
+                    else if (txtpeso.Text == "")
                     {  script =
                             "toastr.options.closeButton = true;" +
-                            "toastr.options.positionClass = 'toast-top-full-width';" +
+                            "toastr.options.positionClass = 'toast-bottom-right';" +
                             "toastr.error('El peso no puede quedar en blanco');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (Regex.IsMatch(txtpeso.Text, regexNumeroFloat))
+                    else if (!Regex.IsMatch(txtpeso.Text, regexNumeroFloat))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
-                            "toastr.options.positionClass = 'toast-top-full-width';" +
+                            "toastr.options.positionClass = 'toast-bottom-right';" +
                             "toastr.error('El peso solo puede tener numeros');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (string.IsNullOrEmpty(txtestatura.Text))
+                    else if (txtestatura.Text == "")
                     {
                         script =
                             "toastr.options.closeButton = true;" +
-                            "toastr.options.positionClass = 'toast-top-full-width';" +
-                            "toastr.error('El peso no puede quedar en blanco');";
+                             "toastr.options.positionClass = 'toast-bottom-right';" +
+                            "toastr.error('La estatura no puede quedar en blanco');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (Regex.IsMatch(txtestatura.Text, regexNumeroFloat))
+                    else if (!Regex.IsMatch(txtestatura.Text, regexNumeroFloat))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
-                            "toastr.options.positionClass = 'toast-top-full-width';" +
+                             "toastr.options.positionClass = 'toast-bottom-right';" +
                             "toastr.error('La estatura solo puede tener numeros');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    if (string.IsNullOrEmpty(txtfecha.Text))
+                    else if (string.IsNullOrEmpty(txtfecha.Text))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
-                            "toastr.options.positionClass = 'toast-top-full-width';" +
+                            "toastr.options.positionClass = 'toast-bottom-right';" +
                             "toastr.error('La fecha de nacimiento no puede ir vacia');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -108,17 +108,13 @@ namespace ProyectoBabyCare
                     {
                         script =
                           "toastr.options.closeButton = true;" +
-                          "toastr.options.positionClass = 'toast-top-full-width';" +
+                          "toastr.options.positionClass = 'toast-bottom-right';" +
                           "toastr.error('Debe indicar el genero');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         entrar = true;
                     }
-                    string cedula = txtCedula.Text;
-                    float peso = float.Parse(txtpeso.Text);
-                    float estatura = float.Parse(txtestatura.Text);
-                    DateTime fecha = DateTime.Parse(txtfecha.Text);
-                    string tiposangre = txtTiposangre.Text;
+                    
                     if (entrar)
                     {
 
@@ -126,6 +122,11 @@ namespace ProyectoBabyCare
                     }
                     else
                     {
+                        string cedula = txtCedula.Text;
+                        float peso = float.Parse(txtpeso.Text);
+                        float estatura = float.Parse(txtestatura.Text);
+                        DateTime fecha = DateTime.Parse(txtfecha.Text);
+                        string tiposangre = txtTiposangre.Text;
                         ex.IngresarExpediente(Convert.ToInt32(usu.IdenBebe), cedula, genero, peso, estatura, tiposangre, fecha);
                         Response.Redirect("Expediente.aspx");
                     }   
