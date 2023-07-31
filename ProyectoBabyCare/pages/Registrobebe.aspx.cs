@@ -12,7 +12,8 @@ namespace ProyectoBabyCare.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string script = "<script>document.body.style.zoom = '80%';</script>";
+            ClientScript.RegisterStartupScript(this.GetType(), "Set100PercentSizeScript", script);
         }
 
         protected void btnCrearCuentabebe_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('El nombre es requerido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -46,7 +47,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Los apellidos es requerido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -57,7 +58,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('El nombre solo puede tener letras');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -68,7 +69,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Los apellidos solo pueden tener letras');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -79,7 +80,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Debe seleccionar un parentezco');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -131,7 +132,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Debe de ingresar un código');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -145,18 +146,40 @@ namespace ProyectoBabyCare.pages
                 else
                 {
                     Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
-                    iBebes.IngresarXcodigo(idUsuario, codigo);
-                    Response.Redirect("Perfil.aspx");
-                    // script = @"Swal.fire({
-                    //        title: '¡Hola!',
-                    //        text: 'Esto es SweetAlert2 desde ASP.NET',
-                    //        icon: 'sucess'
-                    //    });";
-                    //ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
+                   //Consulta para saber si la persona ya se encuentra enlazado al bebe
+                    int consutla = iBebes.VerificarCodigobebe(idUsuario, codigo);
+                    if (consutla == 0)
+                    {
+                        iBebes.IngresarXcodigo(idUsuario, codigo);
+                        Response.Redirect("Perfil.aspx");
+                    }
+                    else
+                    {
+                       script = @"
+                                    Swal.fire({
+                                title: '¡Error!',
+                                    text: 'El bebé ya se encuentra enlazado a su cuenta',
+                                     icon: 'error'
+                                     }).then(function() {
+                                        // Esta función se ejecutará después de que el usuario haga clic en el botón 'Aceptar' de la alerta.
+                                    window.location.href = 'Perfil.aspx'; // Reemplaza 'PaginaDeLogin.aspx' con la página de inicio de sesión.
+                                        });
+                                        ";
+
+                        ScriptManager.RegisterStartupScript(this, GetType(), "SweetAlert", script, true);
+                    }
                 }
             }
             catch (Exception ex)
             {
+                if(ex.ToString() == "El codigo del bebé no existe")
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
+                        "toastr.error('El codigo del bebé no existe');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                }
                 script = "toastr.warning('Ha occurido un error,Intentelo mas tarde');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 

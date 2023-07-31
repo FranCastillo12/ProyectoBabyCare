@@ -10,12 +10,12 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
  <div style="width: 100%; height: 40%; background-image: url(../images/fondoletras.jpg); background-size: cover; background-position: center;">
-        <div style="padding-top: 2%; padding-bottom: 6%; padding-left: 6%; padding-right: 6%;">
+        <div style="padding-top: 2%; padding-bottom: 2%; padding-left: 6%; padding-right: 6%;">
             <h1 style="font-family: 'Baloo 2', sans-serif; color: white;">Nombres y Significados
             </h1>
-            <h7 style="font-family: 'Baloo 2', sans-serif; color: white; width: 40%">
+            <h4 style="font-family: 'Baloo 2', sans-serif; color: white; width: 90%">
             ¡La llegada de un bebé es un momento emocionante! Elegir el nombre perfecto es una decisión importante y personal. Aquí encontrarás opciones populares y significativas para inspirarte en esta hermosa elección. ¡Descubre los mejores nombres para tu bebé y déjate llevar por la emoción de darle la bienvenida a tu pequeño tesoro!
-            </h7>
+            </h4>
         </div>
 
     </div>

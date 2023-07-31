@@ -8,7 +8,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <%-- Titulo,desc,imagen de cabecera --%>
     <div style="width: 100%; height: 70%; background-image: url(../images/juguetesninio.jpg); background-size: cover; background-position: center;">
-        <div style="padding-top: 2%; padding-bottom: 6%; padding-left: 6%; padding-right: 6%;">
+        <div style="padding-top: 2%; padding-bottom: 2%; padding-left: 6%; padding-right: 6%;">
             <h1 style="font-family: 'Baloo 2', sans-serif; color: white">BIENVENIDO AL SISTEMA
             </h1>
             <h1 style="font-family: 'Baloo 2', sans-serif; color: #F495B6;">BABY CARE
@@ -37,7 +37,7 @@
                 <div class="Tarjeta1">
                     <div>
                         <img runat="server" src="~/images/jeringa.png" style="width: 30%; height: 30%;" />
-                        <h4 style="color: white; font-family: 'Baloo 2', sans-serif">Calendarizar de forma rápida y facil las vacinas
+                        <h4 style="color: white; font-family: 'Baloo 2', sans-serif">Calendarizar de forma rápida y facil las vacunas
                         </h4>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                 <div class="Tarjeta1">
                     <div>
                         <img runat="server" src="~/images/interrogacion.png" style="width: 50%; height: 50%;" />
-                        <h4 style="color: white; font-family: 'Baloo 2', sans-serif">Facil acesso a preguntas con expertos
+                        <h4 style="color: white; font-family: 'Baloo 2', sans-serif">Fácil acesso a preguntas con expertos
                         </h4>
                     </div>
                 </div>

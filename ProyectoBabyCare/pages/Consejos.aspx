@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div style="width: 100%; height: 70%; background-image: url(../images/fondobotones.jpg); background-size: cover; background-position: center;">
-        <div style="padding-top: 2%; padding-bottom: 6%; padding-left: 6%; padding-right: 6%;">
+        <div style="padding-top: 2%; padding-bottom: 2%; padding-left: 6%; padding-right: 6%;">
             <h1 style="font-family: 'Baloo 2', sans-serif; color: white; width: 100%">Consejos
             </h1>
             <div style="width: 80%">
@@ -39,10 +39,10 @@
             <%--End Form row --%>
             <div class="image-container3 mb-5 mt-1" style="text-align: center">
                 <div style="background-color: black; opacity: 0.6;">
-                    <div id="titulo" style="font-family: 'Baloo 2', sans-serif; color: white; font-size: 30px;">
+                    <div id="titulo" style="font-family: 'Baloo 2', sans-serif; color: #F495B6; font-size: 30px;">
                         <asp:Label ID="lbltitulo" runat="server" Text="Titulo del consejo"></asp:Label>
                     </div>
-                    <div id="desc" style="font-family: 'Baloo 2', sans-serif; font-size: 20px; color: white;">
+                    <div id="desc" style="font-family: 'Baloo 2', sans-serif; font-size: 30px; color: white;">
                         <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion del consejo"></asp:Label>
                     </div>
                 </div>
