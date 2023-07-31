@@ -9,119 +9,195 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <div style="font-family: 'Baloo 2', sans-serif;background-color: #F6E0ED; color: black; margin-top: 1%; margin-bottom: 1%; text-align: center">
+        <div>
+            <h2>Expediente de mi tesorito</h2>
+        </div>
+    </div>
     <div class="row">
-        <div style="font-family: 'Baloo 2', sans-serif; width: 70%; background-color: #F6E0ED; color: black; margin-top: 1%; margin-bottom: 1%; text-align: center">
-            <h2 >Expediente de mi tesorito</h2>
+        <div style="width: 15%;background-image:url('../images/jugueteslat1.jpg');background-size:cover;border-radius:10%">
+
+        </div>
+        <div style="width: 70%;">
+            <form runat="server" class="Formulario-Expediente">
+
+                <div class="row">
+                    <%-- Datos Basicos del expediente --%>
+                    <div class="row row1">
+                        <div>
+                            <asp:Label ID="lblnombre" runat="server" Text="Nombre del bebe"></asp:Label>
+                        </div>
+                        <div style="width: 50%; margin-left: 20%;">
+                            <asp:TextBox ID="txtnombre" ReadOnly="true" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div style="width: 25%; text-align: center; margin-left: 20%">
+                            <asp:Label ID="Label4" runat="server" Text="Peso"></asp:Label>
+                            <div>
+                                <asp:TextBox ID="txtPeso" runat="server" CssClass="txtPeso form-control" MaxLength="5"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div style="width: 50%;">
+                            <asp:Label ID="Label5" runat="server" Text="Tipo de sangre"></asp:Label>
+                            <div>
+                                <asp:TextBox ID="txtSangre" runat="server" CssClass="txt2 form-control"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <asp:Label ID="Label6" runat="server" Text="Nombre de papito"></asp:Label>
+                        </div>
+                        <div style="width: 50%; margin-left: 20%;">
+                            <asp:TextBox ID="txtpapa" ReadOnly="true" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div>
+                            <asp:Label ID="Label7" runat="server" Text="Nombre de mamita"></asp:Label>
+                        </div>
+                        <div style="width: 50%; margin-left: 20%;">
+                            <asp:TextBox ID="txtmama" ReadOnly="true" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div style="width: 25%; text-align: center; margin-left: 20%">
+                            <asp:Label ID="Label9" runat="server" Text="Estatura"></asp:Label>
+                            <div>
+                                <asp:TextBox ID="txtestatura" runat="server" CssClass="txtPeso form-control" MaxLength="5"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div style="width: 50%;">
+                            <asp:Label ID="lblfecha" runat="server" Text="FechaNacimiento"></asp:Label>
+                            <div>
+                                <asp:TextBox ID="txtfecha" ReadOnly="true" runat="server" CssClass="txt2 form-control" ></asp:TextBox>
+                            </div>
+                        </div>
+                        <div style="width: 40%; margin-left: 20%">
+                            <asp:Label ID="Label8" runat="server" Text="Cédula"></asp:Label>
+                            <div style="text-align: center">
+                                <asp:TextBox ID="txtcedula" runat="server" CssClass="form-control" Style="width: 95%"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div style="width: 35%;">
+                            <asp:Label ID="Label10" runat="server" Text="Género"></asp:Label>
+                            <div>
+                                <asp:DropDownList ID="dopgenero" AutoPostBack="true" CssClass="form-controlddl" runat="server"></asp:DropDownList>
+                            </div>
+                        </div>
+                        <div style="width: 40%; margin-left: 20%; margin-top: 2%">
+                            <asp:Button ID="btnModificar" class="btn btn-primary profile-button" runat="server" OnClick="btnModificar_Click" Text="Modificar" />
+                        </div>
+
+                    </div>
+
+
+                    <%-- Detalles,Vacunas,padecimientos --%>
+                    <div class="row2">
+
+                        <!--Boton-->
+
+                        <label for="btn-modal1" class="btn btn-primary" style="width: 90%; height: 9%; margin-top: 2%">
+                            Ver Detalles del embarazo
+                        </label>
+
+                        <!--Fin de Boton-->
+                        <!--Ventana Modal-->
+                        <input type="checkbox" id="btn-modal1">
+                        <div class="container-modal1">
+                            <div class="content-modal1">
+                                <h2 style="">Detalles del embarazo</h2>
+                                <%-- Inicio Body --%>
+                                <%-- Detalles del embarazo --%>
+
+                                <asp:TextBox runat="server" ID="txtDetalles" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea" />
+
+                                <div style="width: 45%; margin-left: 15%;">
+                                    <asp:TextBox ID="txtDescripcion" runat="server" placeholder="Descripcion" CssClass="form-controlinterno"></asp:TextBox>
+                                </div>
+                                <div style="width: 45%; margin-left: 15%; margin-top: 1%">
+                                    <asp:TextBox ID="txtFechaDetalle" runat="server" placeholder="Fecha" type="date" CssClass="form-controlinterno"></asp:TextBox>
+                                </div>
+                                <div style="text-align: center; width: 50%; font-size: 60%; margin-top: 1%">
+                                    <asp:Button ID="btnAgregarDetalle" class="btn btn-primary profile-button" runat="server" OnClick="btnAgregarDetalle_Click" Text="Agregar detalle" />
+                                </div>
+
+
+                                <%-- Fin body --%>
+                                <div class="btn-cerrar1">
+                                    <%--<label  for="btn-modal">Cerrar</label>--%>
+                                </div>
+                            </div>
+                            <label for="btn-modal1" class="cerrar-modal1"></label>
+                        </div>
+                        <!--Fin de Ventana Modal-->
+
+                        <!--Boton-->
+
+                        <label for="btn-modal2" class="btn btn-primary" style="width: 90%; height: 9%; margin-top: 2%">
+                            Ver padecimientos
+                        </label>
+
+                        <!--Fin de Boton-->
+                        <!--Ventana Modal-->
+                        <input type="checkbox" id="btn-modal2">
+                        <div class="container-modal2">
+                            <div class="content-modal2">
+                                <h2 style="">Padecimientos</h2>
+                                <%-- Inicio Body --%>
+                                <%-- Padecimientos --%>
+                                <asp:TextBox runat="server" ID="txtPadecimientos" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
+
+                                <div style="width: 90%; margin-left: 10%;">
+                                    <asp:DropDownList ID="dpllPadecimientos" runat="server" AutoPostBack="true" CssClass="form-controlinterno form-controlddl"></asp:DropDownList>
+                                </div>
+                                <div style="text-align: center; width: 60%; font-size: 50%; margin-top: 1%;">
+                                    <asp:Button ID="btnagregarpadecimientos" class="btn btn-primary profile-button" runat="server" OnClick="btnagregarpadecimientos_Click" Text="Agregar padecimiento" />
+                                </div>
+                                <%-- Fin body --%>
+                                <div class="btn-cerrar2">
+                                    <%--<label  for="btn-modal">Cerrar</label>--%>
+                                </div>
+                            </div>
+                            <label for="btn-modal2" class="cerrar-modal2"></label>
+                        </div>
+                        <!--Fin de Ventana Modal-->
+
+
+                        <!--Boton-->
+
+                        <label for="btn-modal3" class="btn btn-primary" style="width: 90%; height: 9%; margin-top: 2%">
+                            Ver vacunas
+                        </label>
+
+                        <!--Fin de Boton-->
+                        <!--Ventana Modal-->
+                        <input type="checkbox" id="btn-modal3">
+                        <div class="container-modal3">
+                            <div class="content-modal3">
+                                <h2 style="">Vacunas</h2>
+                                <%-- Inicio Body --%>
+                                <%-- Vacunas --%>
+
+                                <asp:TextBox runat="server" ID="txtVacunas" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
+
+                                <%-- Fin body --%>
+                                <div class="btn-cerrar3">
+                                    <%--<label  for="btn-modal">Cerrar</label>--%>
+                                </div>
+                            </div>
+                            <label for="btn-modal3" class="cerrar-modal3"></label>
+                        </div>
+                        <!--Fin de Ventana Modal-->
+                        <div style="margin-top: 2%">
+                            <%-- Imagen Ilustrativa --%>
+                            <img runat="server" src="~/images/Expediente.gif" style="width: 80%; height: 80%; border-radius: 10%;" />
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+        <div style="width: 15%;background-image:url('../images/jugueteslat1.jpg');background-size:cover;border-radius:10%">
+
         </div>
     </div>
 
-    <form runat="server" style="margin-bottom: 5%; background-color: #F6E0ED; padding-top: 2%; padding-bottom: 2%; border-radius: 10%">
 
-        <div class="row">
-            <div class="row row1">
-                <div>
-                    <asp:Label ID="lblnombre" runat="server" Text="Nombre del bebe"></asp:Label>
-                </div>
-                <div style="width: 50%; margin-left: 20%;">
-                    <asp:TextBox ID="txtnombre" ReadOnly="true" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                <div style="width: 20%; text-align: center; margin-left: 25%">
-                    <asp:Label ID="Label4" runat="server" Text="Peso"></asp:Label>
-                    <div>
-                        <asp:TextBox ID="txtPeso" runat="server" CssClass="txtPeso form-control"></asp:TextBox>
-                    </div>
-                </div>
-                <div style="width: 40%;">
-                    <asp:Label ID="Label5" runat="server" Text="Tipo de sangre"></asp:Label>
-                    <div>
-                        <asp:TextBox ID="txtSangre" runat="server" CssClass="txt2 form-control"></asp:TextBox>
-                    </div>
-                </div>
-                <div>
-                    <asp:Label ID="Label6" runat="server" Text="Nombre de papito"></asp:Label>
-                </div>
-                <div style="width: 50%; margin-left: 20%;">
-                    <asp:TextBox ID="txtpapa" ReadOnly="true" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                <div>
-                    <asp:Label ID="Label7" runat="server" Text="Nombre de mamita"></asp:Label>
-                </div>
-                <div style="width: 50%; margin-left: 20%;">
-                    <asp:TextBox ID="txtmama" ReadOnly="true" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                <div style="width: 20%; text-align: center; margin-left: 20%">
-                    <asp:Label ID="Label9" runat="server" Text="Estatura"></asp:Label>
-                    <div>
-                        <asp:TextBox ID="txtestatura" runat="server" CssClass="txtPeso form-control"></asp:TextBox>
-                    </div>
-                </div>
-                <div style="width: 60%;">
-                    <asp:Label ID="lblfecha" runat="server" Text="FechaNacimiento"></asp:Label>
-                    <div>
-                        <asp:TextBox ID="txtfecha" ReadOnly="true" runat="server" CssClass="txt2 form-control"></asp:TextBox>
-                    </div>
-                </div>
-                <div style="width: 40%; margin-left: 20%">
-                    <asp:Label ID="Label8" runat="server" Text="Cédula"></asp:Label>
-                    <div style="text-align: center">
-                        <asp:TextBox ID="txtcedula" runat="server" CssClass="form-control" Style="width: 90%"></asp:TextBox>
-                    </div>
-                </div>
-                <div style="width: 25%;">
-                    <asp:Label ID="Label10" runat="server" Text="Género"></asp:Label>
-                    <div>
-                        <asp:DropDownList ID="dopgenero" AutoPostBack="true" CssClass="form-controlddl" runat="server"></asp:DropDownList>
-                    </div>
-                </div>
-                <div style="width: 30%; margin-left: 25%; margin-top: 2%">
-                    <asp:Button ID="btnModificar" class="btn btn-primary profile-button" runat="server" OnClick="btnModificar_Click" Text="Modificar" />
-                </div>
 
-            </div>
-            <%-- Detalles,Vacunas,padecimientos --%>
-            <div class="row row2">
-
-                <div class="contenedortxtareas">
-                    <div>
-                        <asp:Label ID="Label2" runat="server" Text="Detalles del embarazo"></asp:Label>
-                    </div>
-                    <asp:TextBox runat="server" ID="txtDetalles" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
-                    <%-- Agregar detalle --%>
-                    <div style="width: 45%; margin-left: 15%;">
-                        <asp:TextBox ID="txtDescripcion" runat="server" placeholder="Descripcion" CssClass="form-controlinterno"></asp:TextBox>
-                    </div>
-                    <div style="width: 45%; margin-left: 15%; margin-top: 1%">
-                        <asp:TextBox ID="txtFechaDetalle" runat="server" placeholder="Fecha" type="date" CssClass="form-controlinterno"></asp:TextBox>
-                    </div>
-                    <div style="text-align: center; width: 50%; font-size: 60%; margin-top: 1%">
-                        <asp:Button ID="btnAgregarDetalle" class="btn btn-primary profile-button" runat="server" OnClick="btnAgregarDetalle_Click" Text="Agregar detalle" />
-                    </div>
-                </div>
-
-                <div class="contenedortxtareas">
-                    <div>
-                        <asp:Label ID="Label1" runat="server" Text="Padecimientos"></asp:Label>
-                    </div>
-                    <asp:TextBox runat="server" ID="txtPadecimientos" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
-                    <%-- Padecimientos --%>
-                    <div style="width: 90%; margin-left: 10%;">
-                        <asp:DropDownList ID="dpllPadecimientos" runat="server" AutoPostBack="true" CssClass="form-controlinterno form-controlddl"></asp:DropDownList>
-                    </div>
-                    <div style="text-align: center; width: 60%; font-size: 50%; margin-top: 1%;">
-                        <asp:Button ID="btnagregarpadecimientos" class="btn btn-primary profile-button" runat="server" OnClick="btnagregarpadecimientos_Click" Text="Agregar padecimiento" />
-                    </div>
-                </div>
-                <div class="contenedortxtareas">
-                    <div>
-                        <asp:Label ID="Label3" runat="server" Text="Historial de vacunas"></asp:Label>
-                    </div>
-                    <asp:TextBox runat="server" ID="txtVacunas" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
-
-                </div>
-                <div class="contenedortxtareas">
-                    <img runat="server" src="~/images/Expediente.gif" style="width: 80%; height: 80%; border-radius: 10%; margin-top: 4%;margin-left:2%" />
-                </div>
-            </div>
-        </div>
-    </form>
 </asp:Content>

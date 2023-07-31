@@ -15,15 +15,15 @@
     <link href="styles/generales/Login.css" rel="stylesheet" />
 </head>
 <body>
-            <div class="image-containerleft">
-  <div class="image-wrapperleft">
-    <img src="images/ImageLogin1.png" alt="Imagen adicional"/>
-  </div>
-</div>
-   <form id="form1" class="form" runat="server">
-         <div class="logo">
-                    <image id="imgIcon" src="Images\logo.png" class="logoo" alt="Imagen"></image>
-                  </div>
+    <div class="image-containerleft">
+        <div class="image-wrapperleft">
+            <img src="images/ImageLogin1.png" alt="Imagen adicional" />
+        </div>
+    </div>
+    <form id="form1" class="form" runat="server">
+        <div class="logo">
+            <image id="imgIcon" src="Images\logo.png" class="logoo" alt="Imagen"></image>
+        </div>
 
             <div class="form_container"> 
                 <div class="form_group" style=" margin-top:20px;">
@@ -43,13 +43,13 @@
        <p class="warnings" id="warnings" runat="server"></p>
   
     </form>
-    
-        <%-- IMAGEN QUE SE COLOCA A LA IZQUIERDA --%>
-            <div class="image-containerRight">
-  <div class="image-wrapper">
-    <img src="images/ImageLogin2.png" alt="Imagen adicional"/>
-  </div>
-</div>
+
+    <%-- IMAGEN QUE SE COLOCA A LA IZQUIERDA --%>
+    <div class="image-containerRight">
+        <div class="image-wrapper">
+            <img src="images/ImageLogin2.png" alt="Imagen adicional" />
+        </div>
+    </div>
 
 
 </body>
