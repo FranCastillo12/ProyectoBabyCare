@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-        <div class="row" style="font-family: 'Baloo 2', sans-serif; margin-top: 4%;">
+        <div class="row" style="font-family: 'Baloo 2', sans-serif; margin-top: 1%;">
             <div style="width: 50%;background-color: #F6E0ED;text-align:center">
                 <h2 style="margin-top:2%">Seguimiento de actividades</h2>
             </div>
@@ -43,10 +43,10 @@
                 </div>
             </div>
 
-    <div class="row" style="margin-top: 2%;">
+    <div class="row" style="margin-top: 1%;">
         <div class="DivTable1">
             <%-- Imagen --%>
-            <img runat="server" src="~/images/agenda.jpg" style="width: 100%; border-radius: 10%; padding-top: 3%; padding-bottom: 3%" />
+            <img runat="server" src="~/images/agenda.jpg" style="width: 100%; border-radius: 10%; padding-top: 1%; padding-bottom: 3%" />
         </div>
 
         <%-- Table --%>

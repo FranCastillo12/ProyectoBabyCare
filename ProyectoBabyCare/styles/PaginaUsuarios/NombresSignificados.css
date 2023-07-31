@@ -171,16 +171,18 @@ select.form-control {
 }
 
 .row1 {
-    width: 50%;
+    width: 70%;
     text-align: center;
     font-size: 110%;
     font-family: 'Baloo 2', sans-serif;
 }
 .row2 {
-    width: 50%;
+    width: 29%;
+    height:50%;
     text-align: center;
     font-size: 150%;
     font-family: 'Baloo 2', sans-serif;
+    margin-top:10%;
 }
 
 .form-control:not(:placeholder-shown) {
@@ -188,7 +190,15 @@ select.form-control {
     color: #000000;
 }
 
-
+.Formulario-Expediente {
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #F6E0ED;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 10%;
+    width: 80%;
+}
 
     .form-control:focus + .form_label,
     .form-control:not(:placeholder-shown) + .form_label {
@@ -314,7 +324,210 @@ select.form-control {
     font-size:300%;
     text-align:center;
 }
+/*:::Ventana Modal 1:::*/
+#btn-modal1 {
+    display: none;
+}
 
+.container-modal1 {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(144, 148, 150, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#btn-modal1:checked ~ .container-modal1 {
+    display: flex;
+}
+
+.content-modal1 {
+    width: 100%;
+    max-width: 70%;
+    padding: 20px;
+    background-color: #F6E0ED;
+    opacity: 0.8;
+    border-radius: 4px;
+}
+
+    .content-modal1 h2 {
+        margin-bottom: 15px;
+    }
+
+    .content-modal1 .btn-cerrar1 {
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+        .content-modal1 .btn-cerrar1 label {
+            font-family: 'Baloo 2', 'sans-serif';
+            font-size: 10px;
+            font-weight: 600;
+            padding: 7px 10px;
+            background: rgba(141, 203, 226, 8); /* Cambia el valor de opacidad según tus necesidades */
+            color: #0088CC;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 300ms ease;
+        }
+
+            .content-modal1 .btn-cerrar1 label:hover {
+                background-color: #185E83;
+            }
+
+.cerrar-modal1 {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+/*:::Ventana Modal 2:::*/
+#btn-modal2 {
+    display: none;
+}
+
+.container-modal2 {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(144, 148, 150, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#btn-modal2:checked ~ .container-modal2 {
+    display: flex;
+}
+
+.content-modal2 {
+    width: 100%;
+    max-width: 70%;
+    padding: 20px;
+    background-color: #F6E0ED;
+    opacity: 0.8;
+    border-radius: 4px;
+}
+
+    .content-modal2 h2 {
+        margin-bottom: 15px;
+    }
+
+    .content-modal2 .btn-cerrar2 {
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+        .content-modal2 .btn-cerrar2 label {
+            font-family: 'Baloo 2', 'sans-serif';
+            font-size: 10px;
+            font-weight: 600;
+            padding: 7px 10px;
+            background: rgba(141, 203, 226, 8); /* Cambia el valor de opacidad según tus necesidades */
+            color: #0088CC;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 300ms ease;
+        }
+
+            .content-modal2 .btn-cerrar2 label:hover {
+                background-color: #185E83;
+            }
+
+.cerrar-modal2 {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+/*:::Ventana Modal 3:::*/
+#btn-modal3 {
+    display: none;
+}
+
+.container-modal3 {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(144, 148, 150, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#btn-modal3:checked ~ .container-modal3 {
+    display: flex;
+}
+
+.content-modal3 {
+    width: 100%;
+    max-width: 70%;
+    padding: 20px;
+    background-color: #F6E0ED;
+    opacity: 0.8;
+    border-radius: 4px;
+}
+
+    .content-modal3 h2 {
+        margin-bottom: 15px;
+    }
+
+    .content-modal3 p {
+        padding: 15px 0px;
+        border-top: 1px solid #dbdbdb;
+        border-bottom: 1px solid #dbdbdb;
+    }
+
+    .content-modal3 .btn-cerrar3 {
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+        .content-modal3 .btn-cerrar3 label {
+            font-family: 'Baloo 2', 'sans-serif';
+            font-size: 10px;
+            font-weight: 600;
+            padding: 7px 10px;
+            background: rgba(141, 203, 226, 8); /* Cambia el valor de opacidad según tus necesidades */
+            color: #0088CC;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 300ms ease;
+        }
+
+            .content-modal3 .btn-cerrar3 label:hover {
+                background-color: #185E83;
+            }
+
+.cerrar-modal3 {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 
 @media (max-width: 700px) {
     .imagen1 {
@@ -323,6 +536,13 @@ select.form-control {
         border-radius: 15%;
         margin-top: 14%;
         margin-left: 1%;
+    }
+    .Formulario-Expediente {
+        background-color: #F6E0ED;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        border-radius: 10%;
+        width: 90%;
     }
     .imagen2 {
         width: 40%;
