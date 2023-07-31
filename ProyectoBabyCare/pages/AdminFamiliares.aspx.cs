@@ -134,7 +134,10 @@ namespace ProyectoBabyCare.pages
                 if (ddlRoles.SelectedValue == "0")
                 {
                     cambiorol.Visible = true;
-                    script = "toastr.error('Debe escoger un rol');";
+                    script =
+                     "toastr.options.closeButton = true;" +
+                     "toastr.options.positionClass = 'toast-bottom-right';" +
+                    "toastr.error('Debe escoger un rol');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 }
                 else

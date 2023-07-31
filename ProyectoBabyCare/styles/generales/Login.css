@@ -103,14 +103,14 @@ body {
         color: #000000;
         font-family: 'Comfortaa', sans-serif;
         font-weight: 300; /* Semibold */
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
 
 
         .form_input:focus + .form_label,
         .form_input:not(:placeholder-shown) + .form_label {
-            transform: translateY(-28px) scale(1.2);
+            transform: translateY(-26px) scale(1.1);
             transform-origin: left top;
             /*Color del label cuando se toca el textbox*/
             color: #0029ff
@@ -124,7 +124,7 @@ body {
     position: absolute;
     top: 0;
     left: 5px;
-    transform: translateY(10px);
+    transform: translateY(7px);
     transition: transform .5s, color .3s;
 }
 
@@ -162,14 +162,6 @@ body {
     transform: scale(1);
 }
 
-
-.warnings{
-    width:200px;
-    text-align:center;
-    margin:auto;
-    color:#ff0000;
-    padding-top:20px;
-}
 
 
 @media (max-width:425px) {

@@ -76,7 +76,7 @@ namespace ProyectoBabyCare.pages
             {
                 script =
                   "toastr.options.closeButton = true;" +
-                  "toastr.options.positionClass = 'toast-top-full-width';" +
+                 "toastr.options.positionClass = 'toast-bottom-right';" +
                   "toastr.error('El email no es valido');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -87,7 +87,7 @@ namespace ProyectoBabyCare.pages
             {
                 script =
                   "toastr.options.closeButton = true;" +
-                  "toastr.options.positionClass = 'toast-top-full-width';" +
+                  "toastr.options.positionClass = 'toast-bottom-right';" +
                   "toastr.error('El email no puede estar vacio');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -98,22 +98,35 @@ namespace ProyectoBabyCare.pages
 
             else if (txtNombre.Text == "")
             {
-                script = "toastr.error('El nombre no puede estar vacio');";
+
+                script =
+                  "toastr.options.closeButton = true;" +
+                  "toastr.options.positionClass = 'toast-bottom-right';" +
+                 "toastr.error('El nombre no puede estar vacio');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
             else if (!regex.IsMatch(txtNombre.Text))
             {
-                script = "toastr.error('El nombre solo puede contener letras');";
+                script =
+                 "toastr.options.closeButton = true;" +
+                 "toastr.options.positionClass = 'toast-bottom-right';" +
+                "toastr.error('El nombre solo puede contener letras');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
             else if (txtApellidos.Text == "")
             {
-                script = "toastr.error('Los apellidos no pueden estar vacios');";
+                script =
+                 "toastr.options.closeButton = true;" +
+                 "toastr.options.positionClass = 'toast-bottom-right';" +
+                "toastr.error('Los apellidos no pueden estar vacios');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
             else if (!regex.IsMatch(txtApellidos.Text))
             {
-                script = "toastr.error('Los apellidos solo pueden contener letras');";
+                script =
+                 "toastr.options.closeButton = true;" +
+                 "toastr.options.positionClass = 'toast-bottom-right';" +
+               "toastr.error('Los apellidos solo pueden contener letras');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
             else
@@ -126,7 +139,10 @@ namespace ProyectoBabyCare.pages
 
                 iUsuarios.CambioDatos(idUsuario, correo, nombre, apellidos);
                 //Poner el mensaje de exito
-                script = "toastr.success('Datos modificados');";
+                script =
+                 "toastr.options.closeButton = true;" +
+                 "toastr.options.positionClass = 'toast-bottom-right';" +
+               "toastr.success('Datos modificados');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
         }
@@ -151,8 +167,10 @@ namespace ProyectoBabyCare.pages
             {
                 if (dropbebes.SelectedValue == "0")
                 {
-
-                    script = "toastr.error('Debe escoger un rol');";
+                    script =
+                            "toastr.options.closeButton = true;" +
+                            "toastr.options.positionClass = 'toast-bottom-right';" +
+                           "toastr.error('Debe escoger un rol');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 }
                 else
@@ -218,7 +236,11 @@ namespace ProyectoBabyCare.pages
             //Aqui se debe ingresar para el envio de correos
             if (correo == "")
             {
-                script = "toastr.error('Debe de ingresar un correo');";
+
+                script =
+                            "toastr.options.closeButton = true;" +
+                            "toastr.options.positionClass = 'toast-bottom-right';" +
+                           "toastr.error('Debe de ingresar un correo');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
             else
@@ -226,7 +248,12 @@ namespace ProyectoBabyCare.pages
                 
                 Negocios.Correos CorreoCodigo = new Negocios.Correos();
                 CorreoCodigo.EnviarCorreoCodigo(nombrebebe, correo, codigo);
-                script = "toastr.success('Correo enviado con exito');";
+
+
+                script =
+                            "toastr.options.closeButton = true;" +
+                            "toastr.options.positionClass = 'toast-bottom-right';" +
+                           "toastr.success('Correo enviado con exito');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 txtemail.Text = "";
             }

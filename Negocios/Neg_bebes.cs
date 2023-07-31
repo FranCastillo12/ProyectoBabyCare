@@ -51,6 +51,24 @@ namespace Negocios
             }
         }
 
+        public int VerificarCodigobebe(int idUsuario, string codigo)
+        {
+            try
+            {
+                string spName = "SP_Existenciabebe";
+                var lstParametros = new List<SqlParameter>()
+            {
+                new SqlParameter("@codigo", codigo),
+                new SqlParameter("@idUsuario", idUsuario)
+            };
+                Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
+                return iConexion.ExecuteSPWithScalar(spName, lstParametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
     }
