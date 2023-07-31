@@ -84,6 +84,15 @@ namespace ProyectoBabyCare
                     if (iCredenciales != null)
                     {
                         Session["Credenciales"] = iCredenciales;
+
+
+                            //Variable session para el manejo de permisos de invitado
+                           if(iCredenciales.Rol == "Invitado")
+                            {
+                                Session["IsDropDownEventExecuted"] = true;
+                            }
+
+
                             //variable de sesion con datos del bebe
 
                         //Session["DatosBebe"] = bebe;
