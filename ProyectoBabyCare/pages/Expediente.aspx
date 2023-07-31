@@ -11,13 +11,14 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div style="font-family: 'Baloo 2', sans-serif; width: 70%; background-color: #F6E0ED; color: black; margin-top: 1%; margin-bottom: 1%; text-align: center">
-            <h2 >Expediente de mi tesorito</h2>
+            <h2>Expediente de mi tesorito</h2>
         </div>
     </div>
 
     <form runat="server" style="margin-bottom: 5%; background-color: #F6E0ED; padding-top: 2%; padding-bottom: 2%; border-radius: 10%">
 
         <div class="row">
+            <%-- Datos Basicos del expediente --%>
             <div class="row row1">
                 <div>
                     <asp:Label ID="lblnombre" runat="server" Text="Nombre del bebe"></asp:Label>
@@ -81,12 +82,15 @@
             <%-- Detalles,Vacunas,padecimientos --%>
             <div class="row row2">
 
+
+
+                <%-- Detalles del embarazo --%>
                 <div class="contenedortxtareas">
                     <div>
                         <asp:Label ID="Label2" runat="server" Text="Detalles del embarazo"></asp:Label>
                     </div>
                     <asp:TextBox runat="server" ID="txtDetalles" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
-                    <%-- Agregar detalle --%>
+
                     <div style="width: 45%; margin-left: 15%;">
                         <asp:TextBox ID="txtDescripcion" runat="server" placeholder="Descripcion" CssClass="form-controlinterno"></asp:TextBox>
                     </div>
@@ -98,12 +102,16 @@
                     </div>
                 </div>
 
+
+
+
+                <%-- Padecimientos --%>
                 <div class="contenedortxtareas">
                     <div>
                         <asp:Label ID="Label1" runat="server" Text="Padecimientos"></asp:Label>
                     </div>
                     <asp:TextBox runat="server" ID="txtPadecimientos" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
-                    <%-- Padecimientos --%>
+
                     <div style="width: 90%; margin-left: 10%;">
                         <asp:DropDownList ID="dpllPadecimientos" runat="server" AutoPostBack="true" CssClass="form-controlinterno form-controlddl"></asp:DropDownList>
                     </div>
@@ -111,6 +119,10 @@
                         <asp:Button ID="btnagregarpadecimientos" class="btn btn-primary profile-button" runat="server" OnClick="btnagregarpadecimientos_Click" Text="Agregar padecimiento" />
                     </div>
                 </div>
+
+
+
+                <%-- Vacunas --%>
                 <div class="contenedortxtareas">
                     <div>
                         <asp:Label ID="Label3" runat="server" Text="Historial de vacunas"></asp:Label>
@@ -118,8 +130,12 @@
                     <asp:TextBox runat="server" ID="txtVacunas" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
 
                 </div>
+
+
+
+                <%-- Imagen Ilustrativa --%>
                 <div class="contenedortxtareas">
-                    <img runat="server" src="~/images/Expediente.gif" style="width: 80%; height: 80%; border-radius: 10%; margin-top: 4%;margin-left:2%" />
+                    <img runat="server" src="~/images/Expediente.gif" style="width: 80%; height: 80%; border-radius: 10%; margin-top: 4%; margin-left: 2%" />
                 </div>
             </div>
         </div>
