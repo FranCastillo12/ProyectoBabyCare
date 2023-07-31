@@ -33,7 +33,8 @@ namespace Negocios
                         {                            
                             Lugar = fila[1].ToString(),
                             Titulo = fila[2].ToString(),
-                            Fecha= Convert.ToDateTime(fila[3])
+                            Fecha= Convert.ToDateTime(fila[3]),
+                            Prioridad = fila[4].ToString()
                         };
                         citas.Add(c);
                     }
@@ -86,12 +87,12 @@ namespace Negocios
             {
                 List<Seguimientos> seguimientos = new List<Seguimientos>();
                 string spName = "TraerSeguimientoActividadxFecha";
-                DateTime fechaActual = DateTime.Now;
+                //DateTime fechaActual = DateTime.Now;
                 var lstParametros = new List<SqlParameter>()
                 {
                     new SqlParameter("@idbebe", idBebe),
                     new SqlParameter("@idCategoria", "0"),
-                    new SqlParameter("@Fecha", fechaActual)                    
+                    new SqlParameter("@Fecha", "")                    
                 };
                 ConexionSQL iConexion = new Datos.ConexionSQL();
                 DataTable dtSeguimiento = iConexion.ExecuteSPWithDT(spName, lstParametros);
@@ -152,5 +153,39 @@ namespace Negocios
                 throw;
             }
         }
+        public static List<Entidades.ConsejosParientes> ListaConsejosParientes(int idTipo)
+        {
+            try
+            {
+                List<Entidades.ConsejosParientes> consejosParientes = new List<Entidades.ConsejosParientes>();
+                string spName = "VerConsejosParientes";
+                var lstParametros = new List<SqlParameter>()
+                {
+                    new SqlParameter("@idTipo", idTipo),
+                };
+                ConexionSQL iConexion = new Datos.ConexionSQL();
+                DataTable dtConsejosP = iConexion.ExecuteSPWithDT(spName, lstParametros);
+
+                if (dtConsejosP != null && dtConsejosP.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in dtConsejosP.Rows)
+                    {                       
+                        var c = new Entidades.ConsejosParientes
+                        {
+                            Id = Convert.ToInt16(fila[0]),
+                            Descripcion = fila[1].ToString()
+                        };
+
+                        consejosParientes.Add(c);
+                    }
+                }
+                return consejosParientes;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }

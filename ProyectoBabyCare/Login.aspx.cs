@@ -76,20 +76,19 @@ namespace ProyectoBabyCare
                     Negocios.Neg_Usuarios iUsuarios = new Negocios.Neg_Usuarios();
 
 
-                    Entidades.En_Usuarios iCredenciales = iUsuarios.VerificarCredenciales(user, pass);
-                        //Guardamos los datos del bebe
-                    //Entidades.Bebe bebe = Negocios.Bebe.bebe(iCredenciales.IdenBebe);
+                    Entidades.En_Usuarios iCredenciales = iUsuarios.VerificarCredenciales(user, pass);                        
 
                     if (iCredenciales != null)
                     {
                         Session["Credenciales"] = iCredenciales;
-                            //variable de sesion con datos del bebe
 
-                        //Session["DatosBebe"] = bebe;
+                            //Token de verificacion de dos pasos
+                            //Negocios.Correos correos = new Negocios.Correos();
+                            //string token = correos.EnviarToken(user);
+                            //Session["tokenLogin"] = token;
 
-
-                        //Session["DatosBebe"] = bebe;
-
+                            //Redireccionar a la pagina de validacion de token 
+                            // Response.Redirect("pages/token.aspx");
                         Response.Redirect("pages/ControlPanel.aspx");
                     }
                     else

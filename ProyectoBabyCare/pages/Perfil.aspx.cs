@@ -96,7 +96,7 @@ namespace ProyectoBabyCare.pages
         }
 
         protected void btnAdministrarFamiliares_Click(object sender, EventArgs e)
-        { 
+        {
             //string idbebe = Session["idbebe"] as string;
             Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
             string idbebe = credenciales.IdenBebe;
@@ -169,11 +169,11 @@ namespace ProyectoBabyCare.pages
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
         }
-
-        protected System.Void btnEnviarCodido_Click()
-        {
-            string correo = txtemail.text;
-            //Envio por correo el codfigo del bebe
-        }
     }
+    //    protected System.Void btnEnviarCodido_Click()
+    //    {
+    //        string correo = txtemail.text;
+    //        //Envio por correo el codfigo del bebe
+    //    }
+    //}
 }

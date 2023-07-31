@@ -11,9 +11,9 @@ namespace Entidades
 {
     public class Correos
     {
-        private string EmailBabyCare = "BabyCare.helpyourbaby@gmail.com";
-        private string Contrasenia = "uyzlxrlifxoqovjo";
-        public void EnviarCorreo(string NombreUsuario,string CorreoUsuario) {
+        private static string EmailBabyCare = "BabyCare.helpyourbaby@gmail.com";
+        private static string Contrasenia = "uyzlxrlifxoqovjo";
+        public void EnviarCorreo (string NombreUsuario,string CorreoUsuario) {
             try
             {
                 // Datos del remitente
@@ -42,7 +42,37 @@ namespace Entidades
             {
                 Console.WriteLine("Error al enviar el correo: " + ex.Message);
             }
+        }
+        public string EnviarToken( string correo)
+        {
+            try
+            {
+                Random r = new Random();
+                int token = r.Next(999, 10000);
+                string ContenidoMensaje ="¡Hola!"+"\n\nSe esta intentando acceder a su cuenta de BabyCare," +
+                    " para completar el proceso ingrese el siguiente codigo:\n\n"+Convert.ToString(token) +
+                    "\n\nSaludos.\nEquipo BabyCare.";
 
+
+                SmtpClient clienteSmtp = new SmtpClient("smtp.gmail.com", 587);
+                clienteSmtp.EnableSsl = true;
+                clienteSmtp.UseDefaultCredentials = false;
+                clienteSmtp.Credentials = new NetworkCredential(EmailBabyCare, Contrasenia);
+
+                // Crear el mensaje
+                MailMessage mensaje = new MailMessage(EmailBabyCare, correo);
+                mensaje.Subject = "Correo de confirmación de registro";
+                mensaje.Body = ContenidoMensaje;
+
+                // Enviar el mensaje
+                clienteSmtp.Send(mensaje);
+
+                return Convert.ToString(token);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
