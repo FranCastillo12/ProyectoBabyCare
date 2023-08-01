@@ -9,14 +9,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="font-family: 'Baloo 2', sans-serif;background-color: #F6E0ED; color: black; margin-top: 1%; margin-bottom: 1%; text-align: center">
+    <div style="font-family: 'Baloo 2', sans-serif; background-color: #F6E0ED; color: mediumblue; margin-top: 1%; margin-bottom: 1%; text-align: center">
         <div>
             <h2>Expediente de mi tesorito</h2>
         </div>
     </div>
     <div class="row">
-        <div style="width: 15%;background-image:url('../images/jugueteslat1.jpg');background-size:cover;border-radius:10%">
-
+        <div style="width: 15%; background-image: url('../images/jugueteslat1.jpg'); background-size: cover; border-radius: 10%">
         </div>
         <div style="width: 70%;">
             <form runat="server" class="Formulario-Expediente">
@@ -63,7 +62,7 @@
                         <div style="width: 50%;">
                             <asp:Label ID="lblfecha" runat="server" Text="FechaNacimiento"></asp:Label>
                             <div>
-                                <asp:TextBox ID="txtfecha" ReadOnly="true" runat="server" CssClass="txt2 form-control" ></asp:TextBox>
+                                <asp:TextBox ID="txtfecha" ReadOnly="true" runat="server" CssClass="txt2 form-control"></asp:TextBox>
                             </div>
                         </div>
                         <div style="width: 40%; margin-left: 20%">
@@ -99,12 +98,15 @@
                         <input type="checkbox" id="btn-modal1">
                         <div class="container-modal1">
                             <div class="content-modal1">
-                                <h2 style="">Detalles del embarazo</h2>
+                                <h2 style="color: mediumblue">Detalles del embarazo</h2>
                                 <%-- Inicio Body --%>
                                 <%-- Detalles del embarazo --%>
-
-                                <asp:TextBox runat="server" ID="txtDetalles" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea" />
-
+                                <div class="DivTableExpediente">
+                                    <div style="color: white; background-color: cornflowerblue; font-size: 25px; opacity: 0.9; text-align: center;">
+                                        <asp:Label ID="lblMensaje1" runat="server" Text="Sin registros"></asp:Label>
+                                    </div>
+                                    <asp:GridView ID="griddetalles" runat="server" AutoGenerateColumns="true" CssClass="tabla2"></asp:GridView>
+                                </div>
                                 <div style="width: 45%; margin-left: 15%;">
                                     <asp:TextBox ID="txtDescripcion" runat="server" placeholder="Descripcion" CssClass="form-controlinterno"></asp:TextBox>
                                 </div>
@@ -136,10 +138,15 @@
                         <input type="checkbox" id="btn-modal2">
                         <div class="container-modal2">
                             <div class="content-modal2">
-                                <h2 style="">Padecimientos</h2>
+                                <h2 style="color: mediumblue">Padecimientos</h2>
                                 <%-- Inicio Body --%>
                                 <%-- Padecimientos --%>
-                                <asp:TextBox runat="server" ID="txtPadecimientos" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
+                                <div class="DivTableExpediente">
+                                    <div style="color: white; background-color: cornflowerblue; font-size: 25px; opacity: 0.9; text-align: center;">
+                                        <asp:Label ID="lblMensaje2" runat="server" Text="Sin registros"></asp:Label>
+                                    </div>
+                                    <asp:GridView ID="gridpadecimientos" runat="server" AutoGenerateColumns="true" CssClass="tabla2"></asp:GridView>
+                                </div>
 
                                 <div style="width: 90%; margin-left: 10%;">
                                     <asp:DropDownList ID="dpllPadecimientos" runat="server" AutoPostBack="true" CssClass="form-controlinterno form-controlddl"></asp:DropDownList>
@@ -168,11 +175,16 @@
                         <input type="checkbox" id="btn-modal3">
                         <div class="container-modal3">
                             <div class="content-modal3">
-                                <h2 style="">Vacunas</h2>
+                                <h2 style="color: mediumblue">Vacunas</h2>
                                 <%-- Inicio Body --%>
                                 <%-- Vacunas --%>
+                                <div class="DivTableExpediente">
+                                    <div style="color: white; background-color: cornflowerblue; font-size: 25px; opacity: 0.9; text-align: center;">
+                                        <asp:Label ID="lblMensaje3" runat="server" Text="Sin registros"></asp:Label>
+                                    </div>
+                                    <asp:GridView ID="gridvacunas" runat="server" AutoGenerateColumns="true" CssClass="tabla2"></asp:GridView>
+                                </div>
 
-                                <asp:TextBox runat="server" ID="txtVacunas" TextMode="MultiLine" Rows="5" ReadOnly="true" Columns="20" Text="Sin registros" CssClass="textarea custom-textbox" />
 
                                 <%-- Fin body --%>
                                 <div class="btn-cerrar3">
@@ -193,8 +205,7 @@
                 </div>
             </form>
         </div>
-        <div style="width: 15%;background-image:url('../images/jugueteslat1.jpg');background-size:cover;border-radius:10%">
-
+        <div style="width: 15%; background-image: url('../images/jugueteslat1.jpg'); background-size: cover; border-radius: 10%">
         </div>
     </div>
 

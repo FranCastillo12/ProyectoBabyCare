@@ -210,7 +210,9 @@ select.form-control {
     }
 .textarea {
     resize: none;
-    background-color: #8DCBE2;
+    background-image: url(../../images/agenda.jpg);
+    background-size:cover;
+    background-position:center;
     margin-top: 10px;
     color: white;
     font-size: 17px;
@@ -281,11 +283,22 @@ select.form-control {
     width: 50%; /* Ancho deseado para el div */
     height: 100%; /* Alto deseado para el div */
     overflow: auto; /* Añade una barra de desplazamiento si el contenido del div es más grande */
+    text-align:center;
     background-image: url(../../images/tabla.png);
     background-size: cover;
     background-position: center;
     
 }
+.DivTableExpediente {
+    width: 100%; /* Ancho deseado para el div */
+    height: 100%; /* Alto deseado para el div */
+    overflow: auto; /* Añade una barra de desplazamiento si el contenido del div es más grande */
+    background-image: url(../../images/expediente.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
 .tabla {
     width: 100%; /* Ajusta el ancho del GridView al 100% del contenedor */
     height:100%;
@@ -307,9 +320,33 @@ select.form-control {
         color: white;
         padding: 8px; /* Espaciado interno de las celdas del cuerpo */
     }
+.tabla2 {
+    width: 100%; /* Ajusta el ancho del GridView al 100% del contenedor */
+    height: 100%;
+    border-collapse: collapse;
+    color: white;
+    text-align: center;
+    background-color: cornflowerblue;
+    opacity: 0.9;
+}
+
+    .tabla2 th {
+        border: 1px solid white; /* Borde para las celdas de encabezado */
+        color: white;
+        padding: 8px; /* Espaciado interno de las celdas de encabezado */
+    }
+
+    /* Estilo para las celdas del cuerpo del GridView */
+    .tabla2 td {
+        border: 1px solid white; /* Borde para las celdas del cuerpo */
+        color: white;
+        padding: 8px; /* Espaciado interno de las celdas del cuerpo */
+    }
+
+
 .divBoton1 {
     width: 11%;
-    margin-left: 25%;
+    margin-left: 40%;
 }
 .divBoton2 {
     width: 11%;
@@ -586,8 +623,8 @@ select.form-control {
         font-family: 'Baloo 2', sans-serif;
     }
     .divBoton1 {
-        width: 25%;
-        margin-left: 5%;
+        width: 30%;
+        margin-left: 20%;
     }
 
     .divBoton2 {

@@ -186,13 +186,22 @@ namespace ProyectoBabyCare.pages
         protected global::System.Web.UI.WebControls.Button btnModificar;
 
         /// <summary>
-        /// Control txtDetalles.
+        /// Control lblMensaje1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDetalles;
+        protected global::System.Web.UI.WebControls.Label lblMensaje1;
+
+        /// <summary>
+        /// Control griddetalles.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView griddetalles;
 
         /// <summary>
         /// Control txtDescripcion.
@@ -222,13 +231,22 @@ namespace ProyectoBabyCare.pages
         protected global::System.Web.UI.WebControls.Button btnAgregarDetalle;
 
         /// <summary>
-        /// Control txtPadecimientos.
+        /// Control lblMensaje2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPadecimientos;
+        protected global::System.Web.UI.WebControls.Label lblMensaje2;
+
+        /// <summary>
+        /// Control gridpadecimientos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridpadecimientos;
 
         /// <summary>
         /// Control dpllPadecimientos.
@@ -249,12 +267,21 @@ namespace ProyectoBabyCare.pages
         protected global::System.Web.UI.WebControls.Button btnagregarpadecimientos;
 
         /// <summary>
-        /// Control txtVacunas.
+        /// Control lblMensaje3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVacunas;
+        protected global::System.Web.UI.WebControls.Label lblMensaje3;
+
+        /// <summary>
+        /// Control gridvacunas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridvacunas;
     }
 }

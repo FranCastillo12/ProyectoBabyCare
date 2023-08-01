@@ -720,7 +720,7 @@ namespace Datos
             }
         }
 
-        public List<Entidades.Seguimientos> TraerSeguimientos(int  idbebe,DateTime fecha,int idcategoria) {
+        public List<Entidades.Seguimientos> TraerSeguimientos(int  idbebe, DateTime fecha1, DateTime fecha2, int idcategoria) {
             List<Entidades.Seguimientos> lstseguimientos = new List<Seguimientos>();
             Entidades.Seguimientos segui =new Seguimientos();
             try
@@ -730,7 +730,8 @@ namespace Datos
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@idbebe", idbebe);
                 command.Parameters.AddWithValue("@idCategoria", idcategoria);
-                command.Parameters.AddWithValue("@Fecha",fecha);
+                command.Parameters.AddWithValue("@Fecha1",fecha1);
+                command.Parameters.AddWithValue("@Fecha2", fecha2);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {

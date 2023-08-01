@@ -105,7 +105,7 @@ namespace Negocios
                         {
                             Categoria = fila[2].ToString(),
                             Descripcion = fila[3].ToString(),
-                            Fecha = Convert.ToDateTime(fila[4].ToString())
+                            Fecha = DateTime.Parse(fila[4].ToString())
                         };
                         seguimientos.Add(s);
                     }

@@ -20,11 +20,11 @@ namespace Negocios
             ConexionSQL con=new ConexionSQL();
             con.InsertarSeguimientoActividad(idcategoria,idbebe,descripcion,fecha);
         }
-        public List<Entidades.Seguimientos> TraerSeguimientos(int idbeb,int idcategoria,DateTime fecha)
+        public List<Entidades.Seguimientos> TraerSeguimientos(int idbeb,int idcategoria, DateTime fecha1, DateTime fecha2)
         {
             List<Entidades.Seguimientos> lstSeguimiento=new List<Seguimientos> ();
             ConexionSQL con=new ConexionSQL();
-            lstSeguimiento = con.TraerSeguimientos(idbeb,fecha,idcategoria);
+            lstSeguimiento = con.TraerSeguimientos(idbeb,fecha1,fecha2,idcategoria);
 
             return lstSeguimiento;
         }

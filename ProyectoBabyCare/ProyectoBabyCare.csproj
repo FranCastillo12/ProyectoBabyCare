@@ -223,6 +223,7 @@
     <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="pages\AgregarSeguimiento.aspx.cs">
       <DependentUpon>AgregarSeguimiento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
