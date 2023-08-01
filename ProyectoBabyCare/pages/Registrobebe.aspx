@@ -44,7 +44,7 @@
                 </div>
                   <div class="form_group">
                       <asp:TextBox runat="server" type="date" name="fecha" ID="txtfechadenacimiento" class="form_input" placeholder=" " />
-                    <label for="fecha" class="form_label">fecha</label>
+                    <label for="fecha" class="form_label">Fecha del bebé</label>
                     <span class="form_line"></span>
                 </div>
                    <div class="form_group">
