@@ -33,7 +33,7 @@
                     <span class="form_line"></span>
                 </div>
                   <div class="form_group">
-                      <asp:TextBox runat="server"  type="type" name="Contrasena" ID="txtContra" class="form_input" placeholder=" "/>    
+                      <asp:TextBox runat="server"  type="password" name="Contrasena" ID="txtContra" class="form_input" placeholder=" "/>    
                     <label for="Contrasena" class="form_label">Contrase&ntilde;a</label>
                     <span class="form_line"></span>
                 </div>
