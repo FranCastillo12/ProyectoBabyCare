@@ -176,6 +176,7 @@
     <Content Include="images\tabla.png" />
     <Content Include="pages\AgregarSeguimiento.aspx" />
     <Content Include="pages\ControlPanel2.aspx" />
+    <Content Include="pages\GestorBebes\PerfilesSistema.aspx" />
     <Content Include="pages\Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LoginAdmin.aspx" />
@@ -204,6 +205,7 @@
     <Content Include="styles\generales\LoginAdmin.css" />
     <Content Include="styles\generales\Navbar.css" />
     <Content Include="styles\generales\Registro.css" />
+    <Content Include="styles\PaginasAdmin\PerfilesSistema.css" />
     <Content Include="styles\PaginaUsuarios\AdminFamiliares.css" />
     <Content Include="styles\PaginaUsuarios\AdminUsuarios.css" />
     <Content Include="styles\PaginaUsuarios\ControlPanel.css" />
@@ -236,6 +238,13 @@
     </Compile>
     <Compile Include="pages\ControlPanel2.aspx.designer.cs">
       <DependentUpon>ControlPanel2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\GestorBebes\PerfilesSistema.aspx.cs">
+      <DependentUpon>PerfilesSistema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\GestorBebes\PerfilesSistema.aspx.designer.cs">
+      <DependentUpon>PerfilesSistema.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

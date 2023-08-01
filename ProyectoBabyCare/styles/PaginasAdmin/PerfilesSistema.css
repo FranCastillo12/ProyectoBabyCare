@@ -1,0 +1,16 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 75%;
+    max-width: 600px; /* Opcional: Establece un ancho máximo para el contenedor */
+    border: 2px solid #ccc; /* Solo para mostrar el contenedor en el ejemplo */
+    padding: 20px; /* Añade un espaciado interno para el contenido dentro del contenedor */
+    /* Agrega otros estilos según tus necesidades */
+}

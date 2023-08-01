@@ -37,7 +37,8 @@
         font-family: "Roboto Condensed", sans-serif;
         font-weight: normal;
         text-transform: uppercase;
-        color: #DF599D;
+        color: #DF599D;        
+        border-color:white
     }
 
     .card p, .card a {
