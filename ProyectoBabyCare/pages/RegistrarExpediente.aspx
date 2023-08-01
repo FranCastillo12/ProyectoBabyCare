@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="" style="text-align: center;">
-        <div style="text-align: center; font-family: 'Baloo 2', sans-serif;margin-top:1%;margin-bottom:1%;width:70%">
+        <div style="text-align: center; font-family: 'Baloo 2', sans-serif;margin-top:1%;margin-bottom:1%;color:mediumblue">
             <h1 style="background-color: #F6E0ED;align-content:center">Registro del expediente
             </h1>
         </div>

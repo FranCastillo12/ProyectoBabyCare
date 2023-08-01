@@ -20,7 +20,14 @@ namespace ProyectoBabyCare.pages
                 if (Session["Credenciales"] != null) {
                     Entidades.En_Usuarios usu=new Entidades.En_Usuarios();
                     usu = (Entidades.En_Usuarios)Session["Credenciales"];
-                    lstseguimientos = seg.TraerSeguimientos(Convert.ToInt32(usu.IdenBebe),0,DateTime.Now.Date, DateTime.Now.Date);
+                    if (!usu.IdenBebe.Equals(""))
+                    {
+                        lstseguimientos = seg.TraerSeguimientos(Convert.ToInt32(usu.IdenBebe), 0, DateTime.Now.Date, DateTime.Now.Date);
+                    }
+                    else {
+                        Response.Redirect("ControlPanel.aspx");
+                    }
+                    
                 }
                 
                 dropCategoria.Items.Add("Selecciona una categoría");
