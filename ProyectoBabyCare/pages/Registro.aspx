@@ -59,7 +59,7 @@
                     <span class="form_line"></span>
                 </div>
                   <div class="form_group">
-                      <asp:TextBox runat="server" ID="TxtContra" type="text" name="Contrasena" class="form_input" placeholder=" " />
+                      <asp:TextBox runat="server" ID="TxtContra" type="password" name="Contrasena" class="form_input" placeholder=" " />
                     <label for="Contrasena" class="form_label">Contraseña</label>
                     <span class="form_line"></span>
                 </div>

@@ -357,6 +357,15 @@ namespace ProyectoBabyCare.pages
                         ex.ModificarExpediente(Convert.ToInt32(Session["idExpedienteBebe"]), peso, estatura, tiposangre, cedula, idGenero);
                     }
                     Response.Redirect("Expediente.aspx");
+
+                    script =
+                        "toastr.options.closeButton = true;" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
+                        "toastr.error('Datos modificados');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+
+
                 }
 
             }
