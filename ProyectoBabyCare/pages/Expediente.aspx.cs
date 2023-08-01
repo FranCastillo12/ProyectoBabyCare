@@ -3,6 +3,7 @@ using Negocios;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -98,64 +99,78 @@ namespace ProyectoBabyCare.pages
 
                         lstpadecimientosexpediente = ex.PadecimientosExpediente(expediente.Idexpediente);
 
-                        txtPadecimientos.Text = "";
+                        lblMensaje1.Text = "";
                         if (lstpadecimientosexpediente.Count > 0)
                         {
+                            DataTable tablapadecimientos = new DataTable();
+                            tablapadecimientos.Columns.Add("#", typeof(int));
+                            tablapadecimientos.Columns.Add("Nombre del padecimiento", typeof(string));
                             int cont = 1;
                             foreach (Entidades.Padecimientos ex2 in lstpadecimientosexpediente)
                             {
-                                txtPadecimientos.Text += cont + "-" + ex2.Nombrepadecimiento + "\n";
+                                tablapadecimientos.Rows.Add(cont,ex2.Nombrepadecimiento);
                                 cont++;
                             }
+                            gridpadecimientos.DataSource = tablapadecimientos;
+                            gridpadecimientos.DataBind();
                         }
                         else
                         {
-                            txtPadecimientos.Text = "Sin registros";
+                            lblMensaje1.Text = "Sin registros";
                         }
                         //detalles
-                        txtDetalles.Text = "";
+                        lblMensaje2.Text = "";
                         string[] lstdetalle = ex.Detalles(expediente.Idexpediente);
                         if (lstdetalle.Length > 0 && !lstdetalle[0].Equals(""))
                         {
-                            int cont = 1;
+                            DataTable tabladetalles = new DataTable();
+                            tabladetalles.Columns.Add("Fecha del detalle", typeof(string));
+                            tabladetalles.Columns.Add("Descripcion", typeof(string));
                             foreach (string s in lstdetalle)
                             {
                                 if (!s.Equals(""))
                                 {
                                     string[] atrib = s.Split('@');
                                     string[] fecha = atrib[1].Split(' ');
-                                    txtDetalles.Text += $"{cont}-{fecha[0]}: {atrib[0]}\n";
-                                    cont++;
+                                    //tabladetalles.Text += $"{fecha[0]}: {atrib[0]}\n";
+                                    tabladetalles.Rows.Add(fecha[0], atrib[0]);
                                 }
 
                             }
+                            griddetalles.DataSource = tabladetalles;
+                            griddetalles.DataBind();
                         }
                         else
                         {
-                            txtDetalles.Text = "Sin registros";
+                            lblMensaje2.Text = "Sin registros";
                         }
                         //Vacunas
-                        txtVacunas.Text = "";
+                        lblMensaje3.Text = "";
                         string[] lstvacunas = ex.Vacunas(expediente.Idexpediente);
                         if (lstvacunas.Length > 0 && !lstvacunas[0].Equals(""))
                         {
-                            int cont = 1;
+                            DataTable tablaVacunas = new DataTable();
+                            tablaVacunas.Columns.Add("Fecha de vacuna", typeof(string));
+                            tablaVacunas.Columns.Add("Nombre", typeof(string));
+                            tablaVacunas.Columns.Add("Descripción", typeof(string));
+
                             foreach (string s in lstvacunas)
                             {
                                 if (!s.Equals(""))
                                 {
                                     string[] atrib = s.Split('@');
                                     string[] fecha = atrib[2].Split(' ');
-                                    txtVacunas.Text += $"{cont}-{fecha[0]}: {atrib[0]}\n";
-                                    txtVacunas.Text += $"Descripción: {atrib[1]}\n";
-                                    cont++;
+                                    //Generar el DATATABLE
+                                    tablaVacunas.Rows.Add(fecha[0], atrib[0], atrib[1]);
                                 }
-
+                                
                             }
+                            gridvacunas.DataSource = tablaVacunas;
+                            gridvacunas.DataBind();
                         }
                         else
                         {
-                            txtVacunas.Text = "Sin registros";
+                            lblMensaje3.Text= "Sin registros";
                         }
                     }
                     else

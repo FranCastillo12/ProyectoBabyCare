@@ -25,7 +25,7 @@
     <div class="row">
         <div style="width: 15%;background-image:url('../images/jugueteslat2.jpg');background-size:cover;">
         </div>
-        <div class="row" style="width: 68%; margin-top: 4%; margin-bottom: 4%;margin-left:1%;margin-right:1%;border-radius:5%;background-color: #F6E0ED;">
+        <div class="row" style="width: 68%; margin-top: 1%; margin-bottom: 1%;margin-left:1%;margin-right:1%;border-radius:5%;background-color: #F6E0ED;">
             <div class="row" style="margin-top: 4%">
                 <div class="Tarjeta1">
                     <div>

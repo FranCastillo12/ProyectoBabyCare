@@ -207,8 +207,10 @@ namespace ProyectoBabyCare.pages
                         this.idCita = cita.IdCita;
                         txtLugar.Text = cita.Lugar;
                         txtTitulo.Text = cita.Titulo;
+
                         
                         //DateTime fecha = DateTime.ParseExact(cita.Fecha.ToString(), "dd/MM/yyyy H:mm:ss", CultureInfo.InvariantCulture);
+
                         DateTime fecha = cita.Fecha;
                         txtFecha.Text = fecha.ToString("yyyy-MM-ddTHH:mm");
 
