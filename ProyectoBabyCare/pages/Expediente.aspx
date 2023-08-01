@@ -145,7 +145,7 @@
                                     <div style="color: white; background-color: cornflowerblue; font-size: 25px; opacity: 0.9; text-align: center;">
                                         <asp:Label ID="lblMensaje2" runat="server" Text="Sin registros"></asp:Label>
                                     </div>
-                                    <asp:GridView ID="gridpadecimientos" runat="server" AutoGenerateColumns="true" CssClass="tabla2"></asp:GridView>
+                                    <asp:GridView ID="gridpadecimientos" runat="server" CssClass="tabla2"></asp:GridView>
                                 </div>
 
                                 <div style="width: 90%; margin-left: 10%;">
