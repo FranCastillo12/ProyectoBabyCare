@@ -25,6 +25,7 @@
          <div class="logo">
             <a href="ControlPanel.aspx">
                 <img src="..\Images\logo.png" class="logoo" alt="Logo de la marca">
+                
             </a>             
        </div>
 
@@ -36,15 +37,15 @@
     
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">                   
 
-      <div class=" collapse navbar-collapse" id="navbarNavDropdown">
-      
+    
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="Expediente.aspx">Expediente & Medicaci&oacute;n</a>
-
+              <div runat="server" id="expediente">
+            <a class="nav-link active"aria-current="page" href="Expediente.aspx">Expediente & Medicaci&oacute;n</a>
+             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link mx-2 dropdown-toggle" runat="server" href="#" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Actividades
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -87,7 +88,7 @@
 
           </li>
         </ul>
-      </div>
+      </iv>
     </div>
     </nav>
         <div >

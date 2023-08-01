@@ -33,7 +33,8 @@ namespace Negocios
                             IdCita = Convert.ToInt16(fila[0].ToString()),
                             Lugar = fila[1].ToString(),
                             Titulo = fila[2].ToString(),
-                            Fecha = Convert.ToDateTime(fila[3].ToString())
+                            Fecha = Convert.ToDateTime(fila[3].ToString()),
+                            Prioridad = fila[4].ToString(),
                         };
 
                         citas.Add(c);
@@ -47,7 +48,7 @@ namespace Negocios
                 throw;
             }
         }
-        public static void EditarCita(int idCita, string lugar, string titulo, DateTime fecha)
+        public static void EditarCita(int idCita, string lugar, string titulo, DateTime fecha, int idPrioridad)
         {
             try
             {
@@ -58,6 +59,7 @@ namespace Negocios
                     new SqlParameter("@Lugar", lugar),
                     new SqlParameter("@Titulo", titulo),
                     new SqlParameter("@Fecha", fecha),
+                    new SqlParameter("@idPrioridad", idPrioridad)
                 };
                 ConexionSQL iConexion = new Datos.ConexionSQL();
                 iConexion.ExecuteSP(spName, lstParametros);
@@ -65,9 +67,9 @@ namespace Negocios
             catch (Exception exc)
             {
                 throw new Exception("No se pudo editar la cita");
-            }            
+            }
         }
-        public static void NuevaCita(int idBebe, string lugar, string titulo, DateTime fecha)
+        public static void NuevaCita(int idBebe, string lugar, string titulo, DateTime fecha, int idPrioridad)
         {
             try
             {
@@ -78,6 +80,7 @@ namespace Negocios
                     new SqlParameter("@Lugar", lugar),
                     new SqlParameter("@Titulo", titulo),
                     new SqlParameter("@Fecha", fecha),
+                    new SqlParameter("@idPrioridad", idPrioridad)
                 };
                 ConexionSQL iConexion = new Datos.ConexionSQL();
                 iConexion.ExecuteSP(spName, lstParametros);
@@ -94,7 +97,7 @@ namespace Negocios
                 string spName = "BorrarCita";
                 var lstParametros = new List<SqlParameter>()
                 {
-                    new SqlParameter("@idCita", idCita)                   
+                    new SqlParameter("@idCita", idCita)
                 };
                 ConexionSQL iConexion = new Datos.ConexionSQL();
                 iConexion.ExecuteSP(spName, lstParametros);
@@ -102,6 +105,35 @@ namespace Negocios
             catch (Exception exc)
             {
                 throw new Exception("No se pudo borrar la cita");
+            }
+        }
+        public static List<Entidades.PrioridadCitas> verPrioridadCitas()
+        {
+            try
+            {
+                string spName = "VerPrioridadCitas";
+                List<Entidades.PrioridadCitas> prioridadCitas = new List<PrioridadCitas>();
+                ConexionSQL iConexion = new Datos.ConexionSQL();
+                DataTable dtPrioridadCitas = iConexion.ExecuteSPWithDT(spName, null);
+
+                if (dtPrioridadCitas != null && dtPrioridadCitas.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in dtPrioridadCitas.Rows)
+                    {
+                        Entidades.PrioridadCitas p = new Entidades.PrioridadCitas
+                        {
+                            IdPrioridad = Convert.ToInt16(fila[0].ToString()),
+                            Prioridad = fila[1].ToString()
+                        };
+
+                        prioridadCitas.Add(p);
+                    }
+                }
+                return prioridadCitas;
+            }
+            catch (Exception exc)
+            {
+                throw new Exception("No se pudieron cargar PrioridadCitas");
             }
         }
     }

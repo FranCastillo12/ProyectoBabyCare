@@ -74,7 +74,7 @@
     border-radius: 10%;
     width: 70%;
     margin: 5%;
-    height: 20%;
+    height: 21%;
 }
 
 .recuadroBebe {
@@ -130,13 +130,25 @@
     margin: 5%;
 }
 
+.indicador {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .indicador img {
+        margin-right: 50px;
+    }
+
 .perfil {
     background-color: transparent;
     color: #DF599D;
     text-align: center;
     font-size: 30px;
     width: 100%;
-    height: 10%;
+    height: 40%;
     margin-top: 20%;
     text-decoration: underline;
 }

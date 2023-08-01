@@ -140,6 +140,15 @@ namespace ProyectoBabyCare.pages
                     "toastr.error('Debe escoger un rol');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 }
+                else if (ddlRoles.SelectedValue == "")
+                {
+                    cambiorol.Visible = true;
+                    script =
+                     "toastr.options.closeButton = true;" +
+                     "toastr.options.positionClass = 'toast-bottom-right';" +
+                    "toastr.error('Debe escoger un rol');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                }
                 else
                 {
                     cambiorol.Visible = true;
@@ -148,9 +157,11 @@ namespace ProyectoBabyCare.pages
 
                     Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios();
                     iUsuario.CambioRol(idUsuario, valorSeleccionado);
-                    script = "toastr.success('El cambio de rol se ha realizado con satisfacción');";
+                    script =
+                    "toastr.options.closeButton = true;" +
+                    "toastr.options.positionClass = 'toast-bottom-right';" +
+                   "toastr.success('El cambio de rol se ha realizado con satisfacción');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-
                     // Agregar una redirección después de 1 segundo (1000 milisegundos)
                     string redirectScript = "<meta http-equiv='refresh' content='1'>";
                     Response.Write(redirectScript);
