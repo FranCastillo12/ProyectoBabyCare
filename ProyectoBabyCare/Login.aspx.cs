@@ -92,14 +92,14 @@ namespace ProyectoBabyCare
                             Session["IsDropDownEventExecuted"] = true;
                         }
 
-                        //Token de verificacion de dos pasos
-                        //Negocios.Correos correos = new Negocios.Correos();
-                        //string token = correos.EnviarToken(user);
-                        //Session["tokenLogin"] = token;
+                            //Token de verificacion de dos pasos
+                            Negocios.Correos correos = new Negocios.Correos();
+                            string token = correos.EnviarToken(user);
+                            Session["tokenLogin"] = token;
 
-                        ////Redireccionar a la pagina de validacion de token 
-                        //Response.Redirect("pages/SegundoFactorAuten.aspx");
-                        Response.Redirect("pages/ControlPanel.aspx");
+                            //Redireccionar a la pagina de validacion de token 
+                            Response.Redirect("pages/SegundoFactorAuten.aspx");
+                            //Response.Redirect("pages/ControlPanel.aspx");
                     }
                     else
                     {
