@@ -110,9 +110,11 @@ namespace ProyectoBabyCare.pages
             }
             catch (Exception ex)
             {
-                script = "toastr.warning('Ha occurido un error,Intentelo mas tarde');";
+                script =
+                       "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
+                       "toastr.warning('Ha occurido un error,Intentelo mas tarde');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-
             }
         }
 

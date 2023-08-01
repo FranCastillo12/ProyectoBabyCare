@@ -31,7 +31,7 @@ namespace ProyectoBabyCare.pages
                         mensaje = "Como usuario "+credenciales.Rol+" no puedes registrar Vacunas";
                     string script =
                                    "toastr.options.closeButton = true;" +
-                                   "toastr.options.positionClass = 'toast-top-full-width';" +
+                                   "toastr.options.positionClass = 'toast-bottom-right';" +
                                    $"toastr.error('{mensaje}');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 }
@@ -89,7 +89,7 @@ namespace ProyectoBabyCare.pages
                 string mensaje = exc.Message;
                 string script =
                                 "toastr.options.closeButton = true;" +
-                                "toastr.options.positionClass = 'toast-top-full-width';" +
+                                "toastr.options.positionClass = 'toast-bottom-right';" +
                                 $"toastr.error('{mensaje}');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
@@ -106,7 +106,13 @@ namespace ProyectoBabyCare.pages
                 if (vacuna.IdVacuna.ToString() == idVacuna)
                 {
                     txtTitulo.Text = vacuna.Nombre;
+
+                    txtDescripcion.Text = vacuna.Descripcion;
+                    string fechaStr = vacuna.Fecha.ToString();
+                    //DateTime fecha = DateTime.ParseExact(fechaStr, "dd/MM/yyyy H:mm:ss", CultureInfo.InvariantCulture);
+
                     txtDescripcion.Text = vacuna.Descripcion;                    
+
                     DateTime fecha = vacuna.Fecha;
                     txtFecha.Text = fecha.ToString("yyyy-MM-ddTHH:mm");
 
@@ -136,7 +142,7 @@ namespace ProyectoBabyCare.pages
                 string mensaje = exc.Message;
                 string script =
                                 "toastr.options.closeButton = true;" +
-                                "toastr.options.positionClass = 'toast-top-full-width';" +
+                                "toastr.options.positionClass = 'toast-bottom-right';" +
                                 $"toastr.error('{mensaje}');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
@@ -164,7 +170,7 @@ namespace ProyectoBabyCare.pages
                 string mensaje = exc.Message;
                 string script =
                                  "toastr.options.closeButton = true;" +
-                                 "toastr.options.positionClass = 'toast-top-full-width';" +
+                                 "toastr.options.positionClass = 'toast-bottom-right';" +
                                  $"toastr.error('{mensaje}');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
@@ -188,7 +194,7 @@ namespace ProyectoBabyCare.pages
                 string mensaje = exc.Message;
                 string script =
                                 "toastr.options.closeButton = true;" +
-                                "toastr.options.positionClass = 'toast-top-full-width';" +
+                               "toastr.options.positionClass = 'toast-bottom-right';" +
                                 $"toastr.error('{mensaje}');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
