@@ -11,14 +11,14 @@
      <div class="contenedor">
         <div class="contenedorIzquierdo">
             <div class="cabeceraContenedorIzquierda">
-                <div class="tituloIzquierda1">
+                <div class="tituloIzquierda1" style="font-family: 'Baloo 2', sans-serif">
                     Registro de Vacunación
                 </div>
                 <div class="tituloIzquierda2">
                     <img alt="" style="height:100%; width:100%;" src="../images/Vacuna.png" />
                 </div>
             </div>
-            <div class="listaVacunas">
+            <div class="listaVacunas" >
                 Lista de vacunas
             </div>
             <div class="registrarVacuna">
