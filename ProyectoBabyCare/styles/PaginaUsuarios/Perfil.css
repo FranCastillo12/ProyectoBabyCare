@@ -22,10 +22,10 @@ body {
     position: absolute;
     top: 85px;
     font-size: 30px;
-    background-color: #FFC0CB;
+    background-color: #F6E0ED;
+    color: mediumblue;
     padding: 10px;
     border-radius: 5px;
-    color: #191970;
 }
 
 h2 {
