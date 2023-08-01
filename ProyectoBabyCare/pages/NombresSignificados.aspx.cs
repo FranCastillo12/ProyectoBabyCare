@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,6 +17,7 @@ namespace ProyectoBabyCare
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
+            string patron = @"^[A-Za-z]+$";
             string script = null;
             txtArea.Text = "";
             string letra=txtLetra.Text;
@@ -42,6 +44,14 @@ namespace ProyectoBabyCare
                      "toastr.options.closeButton = true;" +
                      "toastr.options.positionClass = 'toast-bottom-right';" +
                      "toastr.error('Debe de ingresar una letra');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            }
+            else if (!Regex.IsMatch(letra, patron))
+            {
+                script =
+                     "toastr.options.closeButton = true;" +
+                     "toastr.options.positionClass = 'toast-bottom-right';" +
+                     "toastr.error('No puede ingresar numeros');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
 

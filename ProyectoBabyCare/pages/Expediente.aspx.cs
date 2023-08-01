@@ -189,24 +189,56 @@ namespace ProyectoBabyCare.pages
 
         protected void btnagregarpadecimientos_Click(object sender, EventArgs e)
         {
-            if (!dpllPadecimientos.SelectedValue.Equals("Seleccione un padecimiento")) { 
+            string script = null;
+            if (dpllPadecimientos.SelectedValue.Equals("Seleccione un padecimiento")) {
+                script =
+                         "toastr.options.closeButton = true;" +
+                          "toastr.options.positionClass = 'toast-bottom-right';" +
+                         "toastr.error('Debe de ingresar un padecimiento');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            }
+            else
+            {
                 string padecimiento = dpllPadecimientos.SelectedValue;
-                string[] data=padecimiento.Split('-');
+                string[] data = padecimiento.Split('-');
                 Entidades.En_Usuarios user = (Entidades.En_Usuarios)Session["Credenciales"];
                 ex.IngresarPadecimiento(Convert.ToInt32(user.IdenBebe), Convert.ToInt32(data[0]));
+                Response.Redirect("Expediente.aspx");
             }
-            Response.Redirect("Expediente.aspx");
+            
         }
 
         protected void btnAgregarDetalle_Click(object sender, EventArgs e)
         {
-            string detalle=txtDescripcion.Text;
-            DateTime fecha=DateTime.Parse(txtFechaDetalle.Text);
-            Entidades.En_Usuarios user = (Entidades.En_Usuarios)Session["Credenciales"];
-            if (Convert.ToInt32(user.IdenBebe)!=0) {
-                ex.IngresarDetalleExpediente(Convert.ToInt32(user.IdenBebe), detalle,fecha.Date);
+            string script = null;
+            if(txtDescripcion.Text== "")
+            {
+                script =
+                         "toastr.options.closeButton = true;" +
+                          "toastr.options.positionClass = 'toast-bottom-right';" +
+                         "toastr.error('Debe de ingresar una descripcion');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
-            Response.Redirect("Expediente.aspx");
+            else if (txtFechaDetalle.Text == "")
+            {
+                script =
+                         "toastr.options.closeButton = true;" +
+                          "toastr.options.positionClass = 'toast-bottom-right';" +
+                         "toastr.error('Debe de ingresar la fecha de cuando sucedio');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+            }
+            else
+            {
+                string detalle = txtDescripcion.Text;
+                DateTime fecha = DateTime.Parse(txtFechaDetalle.Text);
+                Entidades.En_Usuarios user = (Entidades.En_Usuarios)Session["Credenciales"];
+                if (Convert.ToInt32(user.IdenBebe) != 0)
+                {
+                    ex.IngresarDetalleExpediente(Convert.ToInt32(user.IdenBebe), detalle, fecha.Date);
+                }
+                Response.Redirect("Expediente.aspx");
+            }
+           
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)

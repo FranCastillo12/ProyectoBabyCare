@@ -16,6 +16,7 @@ namespace ProyectoBabyCare.pages
 
         protected void btnReenviar_Click(object sender, EventArgs e)
         {
+            string script = null;
             if (Session["Credenciales"] != null)
             {
                 Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
@@ -30,20 +31,37 @@ namespace ProyectoBabyCare.pages
                     Session["tokenLogin"] = token;
 
                     //lblMensaje.Text = "Codigo reenviado correctamente a " + usuario.Correo;
+
+                    script =
+                        "toastr.options.closeButton = true;" +
+                       "toastr.options.positionClass = 'toast-bottom-right';" +
+                        "toastr.success('El correo se ha reenviado');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 }
                 else
                 {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                       "toastr.options.positionClass = 'toast-bottom-right';" +
+                        "toastr.error('No se pudo encontrar el correo');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                     //lblMensaje.Text = "No se pudo encontrar el correo";
                 }
             }
             else
             {
-               // lblMensaje.Text = "No se pudieron encontrar sus datos con el correo ingresado";
+                script =
+                        "toastr.options.closeButton = true;" +
+                       "toastr.options.positionClass = 'toast-bottom-right';" +
+                        "toastr.warning('No se pudieron encontrar sus datos con el correo ingresado');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                // lblMensaje.Text = "No se pudieron encontrar sus datos con el correo ingresado";
             }
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
+            string script = null;
             if (Session["tokenLogin"] != null)
             {
                 string strToken = (string)Session["tokenLogin"];
@@ -54,11 +72,21 @@ namespace ProyectoBabyCare.pages
                 }
                 else
                 {
+                    script =
+                         "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
+                         "toastr.error('El token ingresado no es valido');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                     //lblMensaje.Text = "El token ingresado NO es valido";
                 }
             }
             else
             {
+                script =
+                         "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
+                         "toastr.error('No se pudo enviar el codigo');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 //lblMensaje.Text = "No se pudo enviar el codigo";
             }
         }
