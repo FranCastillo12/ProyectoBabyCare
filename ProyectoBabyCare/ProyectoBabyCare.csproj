@@ -174,7 +174,6 @@
     <Content Include="images\Vacuna.png" />
     <Content Include="images\Vacunacion.png" />
     <Content Include="images\tabla.png" />
-    <Content Include="pages\AgregarSeguimiento.aspx" />
     <Content Include="pages\ControlPanel2.aspx" />
     <Content Include="pages\GestorBebes\PerfilesSistema.aspx" />
     <Content Include="pages\Inicio.aspx" />
@@ -225,14 +224,6 @@
     <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
-
-    <Compile Include="pages\AgregarSeguimiento.aspx.cs">
-      <DependentUpon>AgregarSeguimiento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\AgregarSeguimiento.aspx.designer.cs">
-      <DependentUpon>AgregarSeguimiento.aspx</DependentUpon>
-    </Compile>
     <Compile Include="pages\ControlPanel2.aspx.cs">
       <DependentUpon>ControlPanel2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
