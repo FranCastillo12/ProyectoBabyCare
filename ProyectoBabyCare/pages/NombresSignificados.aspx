@@ -76,7 +76,7 @@
 
                 <div class="row" style="width: 60%;">
                     <div style="width: 30%; z-index: 2;">
-                        <asp:TextBox runat="server" ID="txtArea" TextMode="MultiLine" Rows="5" Columns="20" ReadOnly="true" CssClass="textareaNombres custom-textbox" />
+                        <asp:TextBox runat="server" ID="txtArea" TextMode="MultiLine" Rows="6" Columns="30" ReadOnly="true" CssClass="textareaNombres custom-textbox" />
 
                     </div>
                     <div style="width: 30%; margin-left: 35%; margin-top: 5%">

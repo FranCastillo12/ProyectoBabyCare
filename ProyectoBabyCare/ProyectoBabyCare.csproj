@@ -166,7 +166,6 @@
     <Content Include="images\Vacuna.png" />
     <Content Include="images\Vacunacion.png" />
     <Content Include="images\tabla.png" />
-    <Content Include="pages\AgregarSeguimiento.aspx" />
     <Content Include="pages\Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LoginAdmin.aspx" />
@@ -213,13 +212,6 @@
     <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="pages\AgregarSeguimiento.aspx.cs">
-      <DependentUpon>AgregarSeguimiento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\AgregarSeguimiento.aspx.designer.cs">
-      <DependentUpon>AgregarSeguimiento.aspx</DependentUpon>
-    </Compile>
     <Compile Include="pages\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
