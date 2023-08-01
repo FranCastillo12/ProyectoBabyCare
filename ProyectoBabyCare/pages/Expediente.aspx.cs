@@ -220,7 +220,7 @@ namespace ProyectoBabyCare.pages
                 script =
                          "toastr.options.closeButton = true;" +
                           "toastr.options.positionClass = 'toast-bottom-right';" +
-                         "toastr.error('Debe de ingresar un padecimiento');";
+                         "toastr.error('Debe de seleccionar un padecimiento');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
             else
@@ -356,7 +356,7 @@ namespace ProyectoBabyCare.pages
                     {
                         ex.ModificarExpediente(Convert.ToInt32(Session["idExpedienteBebe"]), peso, estatura, tiposangre, cedula, idGenero);
                     }
-                    Response.Redirect("Expediente.aspx");
+                    
 
                     script =
                         "toastr.options.closeButton = true;" +
