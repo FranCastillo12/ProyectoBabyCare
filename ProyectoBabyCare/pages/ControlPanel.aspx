@@ -11,7 +11,7 @@
         <div class="contenedor">
             <div class="contenedor1">
                 <div class="cabeceraContenedor1">
-                    <div class="tituloIzquierda1">
+                    <div class="tituloIzquierda1" style="font-family: 'Baloo 2', sans-serif">
                         Panel de Control
                     </div>                    
                 </div>

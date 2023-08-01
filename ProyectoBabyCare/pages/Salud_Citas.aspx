@@ -18,7 +18,7 @@
     <div class="contenedor">
         <div class ="contenedorTitulo">
             <div class="tituloPrincipal">
-                <div class="textoTituloPrincipal">
+                <div class="textoTituloPrincipal" style="font-family: 'Baloo 2', sans-serif">
                     Calendarización de citas
                 </div>
             </div>

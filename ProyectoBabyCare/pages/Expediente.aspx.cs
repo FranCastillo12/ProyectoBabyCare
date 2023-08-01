@@ -24,28 +24,39 @@ namespace ProyectoBabyCare.pages
             {
                 Entidades.En_Usuarios usuario = (Entidades.En_Usuarios)Session["Credenciales"];
                 correo = usuario.Usuario;
-                idbebe = Convert.ToInt32(Convert.ToString(usuario.IdenBebe));
-                string ExisteExpediente = ex.ValidarExpediente(idbebe);
-                if (ExisteExpediente.Equals("No existe")) {
-                    Response.Redirect("RegistrarExpediente.aspx");
-                }
-                if (usuario.Rol.Equals("Madre") || usuario.Rol.Equals("Padre")) { 
-                    btnModificar.Visible = true;
-                    btnagregarpadecimientos.Visible = true;
-                    btnAgregarDetalle.Visible = true;
-                    txtDescripcion.Visible = true;
-                    txtFechaDetalle.Visible = true;
-                    dpllPadecimientos.Visible = true;
-                }
-                else
+
+                if (!usuario.IdenBebe.Equals(""))
                 {
-                    btnModificar.Visible = false;
-                    btnagregarpadecimientos.Visible = false;
-                    btnAgregarDetalle.Visible = false;
-                    txtDescripcion.Visible = false;
-                    txtFechaDetalle.Visible = false;
-                    dpllPadecimientos.Visible = false;
+                    idbebe = Convert.ToInt32(Convert.ToString(usuario.IdenBebe));
+                    string ExisteExpediente = ex.ValidarExpediente(idbebe);
+                    if (ExisteExpediente.Equals("No existe"))
+                    {
+                        Response.Redirect("RegistrarExpediente.aspx");
+                    }
+                    if (usuario.Rol.Equals("Madre") || usuario.Rol.Equals("Padre"))
+                    {
+                        btnModificar.Visible = true;
+                        btnagregarpadecimientos.Visible = true;
+                        btnAgregarDetalle.Visible = true;
+                        txtDescripcion.Visible = true;
+                        txtFechaDetalle.Visible = true;
+                        dpllPadecimientos.Visible = true;
+                    }
+                    else
+                    {
+                        btnModificar.Visible = false;
+                        btnagregarpadecimientos.Visible = false;
+                        btnAgregarDetalle.Visible = false;
+                        txtDescripcion.Visible = false;
+                        txtFechaDetalle.Visible = false;
+                        dpllPadecimientos.Visible = false;
+                    }
+
                 }
+                else {
+                    Response.Redirect("ControlPanel.aspx");
+                }
+
             }
             if (!IsPostBack) {
                 Session["idExpedienteBebe"] = null;
