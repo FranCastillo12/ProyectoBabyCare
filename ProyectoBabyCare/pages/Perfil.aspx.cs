@@ -222,7 +222,7 @@ namespace ProyectoBabyCare.pages
                     SitePrivate masterPage = (SitePrivate)this.Master;
 
                     // Ahora puedes llamar al método público de la Master Page
-                    masterPage.MiMetodoEnMasterPage();
+                 //   masterPage.MiMetodoEnMasterPage();
                 }
 
                

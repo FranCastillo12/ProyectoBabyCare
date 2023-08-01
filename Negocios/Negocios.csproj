@@ -66,6 +66,7 @@
     <Compile Include="ConsumirAPI.cs" />
     <Compile Include="ControlPanel.cs" />
     <Compile Include="Correos.cs" />
+    <Compile Include="Dietas.cs" />
     <Compile Include="Expediente.cs" />
     <Compile Include="Neg_bebes.cs" />
     <Compile Include="Neg_EtapasDesarrollo.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeguimientoActividades.cs" />
     <Compile Include="Usuarios.cs" />
+    <Compile Include="UsuariosSistema.cs" />
     <Compile Include="Vacunas.cs" />
   </ItemGroup>
   <ItemGroup>

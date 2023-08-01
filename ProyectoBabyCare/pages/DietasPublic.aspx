@@ -26,20 +26,13 @@
                         <div class="filtroTitulo">
                             Seleccione una edad para mostrar resultados
                         </div>
-
                         <div class="filtroCentro">
-                            <div>                                
-                                <asp:Label ID="lblAnio" runat="server" Text="Años"></asp:Label>
-                                <asp:TextBox CssClass="textbox" ID="txtAnio" runat="server"></asp:TextBox>
-                            </div>
-                            <div>
-                                <asp:Label ID="lblMes" runat="server" Text="Meses"></asp:Label>
-                                <asp:TextBox CssClass="textbox" ID="txtMes" runat="server"></asp:TextBox>
-                            </div>                            
+                            <br />                            
+                            <asp:DropDownList CssClass="drpRangos" ID="drpRangos" runat="server" OnSelectedIndexChanged="drpRangos_SelectedIndexChanged"></asp:DropDownList>                           
                         </div>
                         <div class="filtroFooter">
-                            <asp:Button CssClass="boton" ID="btnAplicar" runat="server" Text="Aplicar" />
-                            <asp:Button CssClass="boton" ID="btnCancelar" runat="server" Text="Cancelar" />
+                            <asp:Button CssClass="boton" ID="btnAplicar" runat="server" Text="Aplicar" OnClick="btnAplicar_Click" />
+                            <asp:Button CssClass="boton" ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
                         </div>
                     </div>
                 </div>
@@ -48,13 +41,18 @@
                         <img style="width:100%; height:100%; border-radius:5%;" alt="" src="../images/comida.jpg" />
                     </div>
                 </div>
+                <div class="contenedors3">
+                    <div class="textoFlotante">
+                        <asp:Label ID="lblMensajeFlotante" runat="server" Text="Label"></asp:Label>
+                    </div>
+                </div>
             </div>
             <div class="contenedorInferior">
                 <div class="carta">
                     <div class = "card">
                         <img src="../images/comida6.jpg" alt="">
                         <div class="card-content">
-                          <h2>
+                          <h2 style="color:#450425">
                             Desayuno
                           </h2>
                           <p>
@@ -90,7 +88,7 @@
                     <div class = "card">
                         <img src="../images/comida3.jpg" alt="">
                         <div class="card-content">
-                          <h2>
+                          <h2 style="color:#450425">
                             Medio dia
                           </h2>
                           <p>
@@ -126,7 +124,7 @@
                     <div class = "card">
                         <img src="../images/comida4.jpg" alt="">
                         <div class="card-content">
-                          <h2>
+                          <h2 style="color:#450425">
                             Cena
                           </h2>
                           <p>

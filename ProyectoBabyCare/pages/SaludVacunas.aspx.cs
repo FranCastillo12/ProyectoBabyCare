@@ -106,9 +106,8 @@ namespace ProyectoBabyCare.pages
                 if (vacuna.IdVacuna.ToString() == idVacuna)
                 {
                     txtTitulo.Text = vacuna.Nombre;
-                    txtDescripcion.Text = vacuna.Descripcion;
-                    string fechaStr = vacuna.Fecha.ToString();
-                    DateTime fecha = DateTime.ParseExact(fechaStr, "dd/MM/yyyy H:mm:ss", CultureInfo.InvariantCulture);
+                    txtDescripcion.Text = vacuna.Descripcion;                    
+                    DateTime fecha = vacuna.Fecha;
                     txtFecha.Text = fecha.ToString("yyyy-MM-ddTHH:mm");
 
                     int i = vacuna.IdVacuna;

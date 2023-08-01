@@ -86,13 +86,11 @@ namespace Negocios
             try
             {
                 List<Seguimientos> seguimientos = new List<Seguimientos>();
-                string spName = "TraerSeguimientoActividadxFecha";
+                string spName = "VerSeguimientoBebe";
                 //DateTime fechaActual = DateTime.Now;
                 var lstParametros = new List<SqlParameter>()
                 {
-                    new SqlParameter("@idbebe", idBebe),
-                    new SqlParameter("@idCategoria", "0"),
-                    new SqlParameter("@Fecha", "")
+                    new SqlParameter("@idBebe", idBebe),                    
                 };
                 ConexionSQL iConexion = new Datos.ConexionSQL();
                 DataTable dtSeguimiento = iConexion.ExecuteSPWithDT(spName, lstParametros);
@@ -103,9 +101,9 @@ namespace Negocios
                     {
                         Seguimientos s = new Seguimientos
                         {
-                            Categoria = fila[2].ToString(),
-                            Descripcion = fila[3].ToString(),
-                            Fecha = DateTime.Parse(fila[4].ToString())
+                            Categoria = fila[0].ToString(),
+                            Descripcion = fila[1].ToString(),
+                            Fecha = Convert.ToDateTime(fila[2].ToString())
                         };
                         seguimientos.Add(s);
                     }
