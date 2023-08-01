@@ -64,7 +64,7 @@
           <li class="nav-item">
 
               <li class="nav-item">
-            <a class="nav-link mx-2 active"href="DietasPublic.aspx">Dietas</a>
+            <a class="nav-link mx-2 active" aria-current="page" href="DietasPublic.aspx">Dietas</a>
           </li>
               <li class="nav-item">
 

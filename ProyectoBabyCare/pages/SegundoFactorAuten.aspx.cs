@@ -11,7 +11,8 @@ namespace ProyectoBabyCare.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string script = "<script>document.body.style.zoom = '80%';</script>";
+            ClientScript.RegisterStartupScript(this.GetType(), "Set100PercentSizeScript", script);
         }
 
         protected void btnReenviar_Click(object sender, EventArgs e)

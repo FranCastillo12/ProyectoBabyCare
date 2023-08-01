@@ -22,8 +22,7 @@ namespace ProyectoBabyCare
                 Negocios.Expediente ex=new Negocios.Expediente();
                 string respuesta = ex.ValidarExpediente(Convert.ToInt32(usu.IdenBebe));
                 string regexNumeros = @"^[0-9]{10}$";
-                string regexNumeroFloat = @"^\d+(\.\d*)?$";
-
+                string regexNumeroFloat = @"^\d+(,\d*)?$";
 
                 if (respuesta.Equals("No existe"))
                 {
