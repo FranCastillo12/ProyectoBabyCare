@@ -16,7 +16,7 @@
                 <div class="contenedors1">
                     <div class="cabeceraTitulo">
                         <div class="recuadroTitulo">
-                            Dietas sedún edad
+                            Dietas
                         </div>
                         <div class="recuadroLogo">
                             <img alt="" src="../images/dietaslogo.png" style="width:90%; height:100%" />

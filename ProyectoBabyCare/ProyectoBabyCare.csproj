@@ -174,6 +174,7 @@
     <Content Include="images\Vacuna.png" />
     <Content Include="images\Vacunacion.png" />
     <Content Include="images\tabla.png" />
+    <Content Include="pages\CargaFotosVideos.aspx" />
     <Content Include="pages\ControlPanel2.aspx" />
     <Content Include="pages\GestorBebes\PerfilesSistema.aspx" />
     <Content Include="pages\Inicio.aspx" />
@@ -207,6 +208,7 @@
     <Content Include="styles\PaginasAdmin\PerfilesSistema.css" />
     <Content Include="styles\PaginaUsuarios\AdminFamiliares.css" />
     <Content Include="styles\PaginaUsuarios\AdminUsuarios.css" />
+    <Content Include="styles\PaginaUsuarios\CargaFotosVideos.css" />
     <Content Include="styles\PaginaUsuarios\ControlPanel.css" />
     <Content Include="styles\PaginaUsuarios\ControlPanel2.css" />
     <Content Include="styles\PaginaUsuarios\DietasPrivate.css" />
@@ -224,6 +226,13 @@
     <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pages\CargaFotosVideos.aspx.cs">
+      <DependentUpon>CargaFotosVideos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\CargaFotosVideos.aspx.designer.cs">
+      <DependentUpon>CargaFotosVideos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\ControlPanel2.aspx.cs">
       <DependentUpon>ControlPanel2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
