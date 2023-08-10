@@ -75,7 +75,7 @@
               Galer&iacute;a
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Fotos</a></li>
+              <li><a class="dropdown-item" href="CargaFotosVideos.aspx">Fotos y vídeos</a></li>
               <li><a class="dropdown-item" href="#">Ultrasonidos</a></li>
               <li><a class="dropdown-item" href="#">Audios</a></li>
             </ul>

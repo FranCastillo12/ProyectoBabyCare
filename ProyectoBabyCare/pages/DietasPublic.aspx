@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <link href="../styles/PaginaUsuarios/DietasPublic.css" rel="stylesheet" />
-    
+     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
     <%--Hojas de estilos cartas--%>
     <link href="../styles/generales/CartasDietas.css" rel="stylesheet" />    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -15,9 +15,7 @@
             <div class="contenedorSuperior">
                 <div class="contenedors1">
                     <div class="cabeceraTitulo">
-                        <div class="recuadroTitulo">
-                            Dietas sedún edad
-                        </div>
+                        <div class="recuadroTitulo">Dietas</div>
                         <div class="recuadroLogo">
                             <img alt="" src="../images/dietaslogo.png" style="width:90%; height:100%" />
                         </div>

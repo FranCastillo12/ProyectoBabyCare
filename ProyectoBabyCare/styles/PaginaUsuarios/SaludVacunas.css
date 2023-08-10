@@ -1,11 +1,17 @@
 ﻿body {
     background-color: #FFFFFF;
     font-family: 'Baloo 2', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .contenedor {
     width: 100%;
     height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuir espacio entre contenedores */
+    box-sizing: border-box;
 }
 
 .contenedorIzquierdo {
@@ -246,4 +252,51 @@
     height: 100px;
     position: absolute;
     bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .imagenContenedorDerecha {
+        display: none;
+    }
+
+    .registrarVacunaLogo {
+        display: none;
+    }
+
+    .contenedor {
+        flex-direction: column; /* Cambiar a disposición vertical */
+        align-items: center; /* Centrar elementos horizontalmente */
+    }
+
+    .contenedorIzquierdo,
+    .contenedorCentro,
+    .contenedorDerecho {
+        width: 100%; /* Ocupar todo el ancho en dispositivos pequeños */
+        margin: 2% 0;
+    }
+
+    .tituloIzquierda2 {
+        display: none;
+    }
+
+    .listaVacunas {
+        display: none;
+    }
+
+    .contenedorVacunas {
+        width: 100%;
+        overflow-y: initial;
+        height: 60%;
+    }
+
+    .contenedor {
+        width: 100%;
+        height: auto;
+        flex-direction: column; /* Cambiar a disposición vertical */
+        align-items: center; /* Centrar elementos horizontalmente */
+    }
+
+    .VacunaLogo {
+        display: none;
+    }
 }

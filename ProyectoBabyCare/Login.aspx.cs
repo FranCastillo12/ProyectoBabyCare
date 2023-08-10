@@ -97,7 +97,7 @@ namespace ProyectoBabyCare
                             string token = correos.EnviarToken(user);
                             Session["tokenLogin"] = token;
 
-                            //Redireccionar a la pagina de validacion de token 
+                            //Redireccionar a la pagina de validacion de token
                             Response.Redirect("pages/SegundoFactorAuten.aspx");
                             //Response.Redirect("pages/ControlPanel.aspx");
                     }
