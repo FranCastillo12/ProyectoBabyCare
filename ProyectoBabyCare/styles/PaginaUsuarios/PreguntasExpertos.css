@@ -1,0 +1,173 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Baloo+2');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+body {
+    color: #ffffff
+}
+
+.box {
+    margin: auto;
+}
+
+.card {
+    background: RGBA(51, 153, 204, 0.20);
+    /*width:800px;*/
+    padding: 8%;
+    padding-top: 35px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    margin-right: -90px
+}
+
+.lbl {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 200;
+    font-size: 26px;
+    color: #3399CC;
+}
+
+textarea[name="message"] {
+    resize: none
+}
+
+#email {
+    color: black;
+    height: 20px;
+    border-bottom: 3px solid #3399CC;
+}
+
+#message {
+    color: black;
+    height: 120px
+}
+
+input.input-box {
+    color: black;
+    border-bottom: 3px solid #3399CC;
+}
+
+
+textarea.input-box {
+    border: 3px solid #3399CC;
+}
+
+
+
+input.input-box,
+textarea.input-box {
+    background-color: #fff;
+    color: #BDBDBD
+}
+
+    input.input-box:focus,
+    textarea.input-box:focus {
+        background-color: #fff;
+        color: black;
+    }
+
+.rm-border:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+form .form-control::-webkit-input-placeholder {
+    color: #9E9E9E
+}
+
+::-moz-placeholder {
+    color: #9E9E9E !important
+}
+
+input.btn-purple {
+    font-weight: 600; /* Semibold */
+    font-size: 130%;
+    font-family: 'Baloo 2', sans-serif;
+    background: RGBA(51, 153, 204, 0.30);
+    box-shadow: none;
+    border: none;
+    height: 35px;
+    width: 29%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-left: 5%;
+    color: #3399CC;
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    margin: 0 auto;
+}
+
+    input.btn-purple:hover {
+        background: RGBA(51, 153, 204, 1);
+        color: #ffffff;
+    }
+
+.title {
+    margin: 1%;
+    float: left;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    margin-top: 15px;
+    font-size: 30px;
+    background-color: #F6E0ED;
+    color: mediumblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.titlet {
+    width:520px;
+    margin: 1%;
+    float: left;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 200;
+    position: absolute;
+    top: 325px;
+    font-size: 20px;
+    background-color: #F6E0ED;
+    color: mediumblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+    .titlet p {
+        margin: 0; /* Eliminar el margen del párrafo para un ajuste más preciso */
+    }
+.contenedor-card {
+    width: 850px;
+    margin-left: 450px;
+}
+
+
+
+.piePagina {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .titlet {
+        display: none;
+    }
+
+    .contenedor-card {
+        width: 100%; /* Cambiamos el ancho a ocupar todo el ancho disponible */
+        margin-left: 0; /* Eliminamos el margen izquierdo */
+    }
+
+    .card {
+        padding-top: 35px;
+        margin-top: 100px;
+        margin-bottom: 80px;
+        margin-right: 0px
+    }
+
+    input.btn-purple {
+        font-weight: 600; /* Semibold */
+        font-size: 110%;
+        height: 35px;
+        width: 45%;
+    }
+}
