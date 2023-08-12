@@ -108,7 +108,7 @@
         }
 
         // Cambiar contenido cada 3 segundos (3000 milisegundos)
-        setInterval(cambiarContenido, 3000);
+        setInterval(cambiarContenido, 20000);
     </script>
 
 </asp:Content>
