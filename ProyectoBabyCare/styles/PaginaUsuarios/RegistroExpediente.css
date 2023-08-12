@@ -1,22 +1,29 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Baloo+2');
 
+.body {
+    margin: 0;
+    padding: 0;
+}
+
 .Formulario {
     background-color: #F6E0ED;
     width: 50%;
     font-family: 'Baloo 2', sans-serif;
-
 }
+
 .Linea {
-    margin-left:40%;
+    margin-left: 40%;
 }
 
 .rb2 {
     margin-left: 10%;
     width: 10%;
 }
+
 .TEXTO {
     width: 40%;
 }
+
 .profile-button {
     font-weight: 600; /* Semibold */
     font-size: 115%;
@@ -43,16 +50,43 @@
         box-shadow: none
     }
 
+.radio {
+    width: 10%;
+}
+
 @media (max-width: 700px) {
-    .TEXTO {
-        width:80%;
+    .radio {
+        width: 30%;
     }
+
+    .TEXTO {
+        width: 80%;
+    }
+
     .Linea {
-        margin-left: 30%;
+        margin-left: 20%;
     }
 
     .rb2 {
         margin-left: 15%;
         width: 10%;
+    }
+
+    .Formulario {
+        padding-right: initial;
+        padding-left: initial;
+    }
+
+    element.style {
+    }
+
+    [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+        cursor: pointer;
+    }
+
+    .profile-button {
+        height: 34px;
+        width: 175%;
+        margin-left: 15%;
     }
 }

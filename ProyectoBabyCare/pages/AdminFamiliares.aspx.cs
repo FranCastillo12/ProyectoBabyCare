@@ -14,19 +14,19 @@ namespace ProyectoBabyCare.pages
     {
         protected void Page_Init(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                RecreateDynamicControls();
+            //if (!IsPostBack)
+            //{
+            //    RecreateDynamicControls();
 
-            }
+            //}
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            cambiorol.Visible = true;
-            if (IsPostBack)
-            {
-                RecreateDynamicControls();
-            }
+            //cambiorol.Visible = true;
+            //if (IsPostBack)
+            //{
+            //    RecreateDynamicControls();
+            //}
         }
         protected void RecreateDynamicControls()
         {

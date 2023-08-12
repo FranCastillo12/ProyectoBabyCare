@@ -73,12 +73,17 @@ namespace ProyectoBabyCare.pages
             }
             catch (Exception exc)
             {
-                //Excepcion desconocida
+                string script =
+                  "toastr.options.closeButton = true;" +
+                 "toastr.options.positionClass = 'toast-bottom-right';" +
+                  "toastr.error('Ha ocurrido un error intentarlo mas tarde');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string script = null;
             if (FileUpload1.HasFile)
             {
                 if (System.IO.Path.GetExtension(FileUpload1.FileName) != ".jpg"
@@ -87,21 +92,41 @@ namespace ProyectoBabyCare.pages
                     && System.IO.Path.GetExtension(FileUpload1.FileName) != ".jpeg"
                     && System.IO.Path.GetExtension(FileUpload1.FileName) != ".mp4")
                 {
+                    script =
+                    "toastr.options.closeButton = true;" +
+                    "toastr.options.positionClass = 'toast-bottom-right';" +
+                    "toastr.error('Solo puedes cargar imagenes y videos');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                     //lblMensaje.Text = "Solo puedes cargar imagenes y videos";
                 }
                 else if (FileUpload1.PostedFile.ContentLength > 10240 * 1024)
                 {
+                    script =
+                    "toastr.options.closeButton = true;" +
+                    "toastr.options.positionClass = 'toast-bottom-right';" +
+                    "toastr.error('El archivo es demasiado grande. El tamaño máximo permitido es 10 MB.');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                     //lblMensaje.Text = "El archivo es demasiado grande. El tamaño máximo permitido es 10 MB.";
                 }
                 else
                 {
                     GuardarArchivo();
+                    script =
+                   "toastr.options.closeButton = true;" +
+                   "toastr.options.positionClass = 'toast-bottom-right';" +
+                   "toastr.error('Archivo guardado con exito');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                     //lblMensaje.Text = "Archivo guardado con exito";
                     Response.Redirect("CargaFotosVideos.aspx");
                 }
             }
             else
             {
+                script =
+                   "toastr.options.closeButton = true;" +
+                   "toastr.options.positionClass = 'toast-bottom-right';" +
+                   "toastr.error('No haz seleccionado ningun archivo');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 //  lblMensaje.Text = "No haz seleccionado ningun archivo";
             }
         }
@@ -130,6 +155,11 @@ namespace ProyectoBabyCare.pages
             }
             catch (Exception e)
             {
+                string script =
+                   "toastr.options.closeButton = true;" +
+                   "toastr.options.positionClass = 'toast-bottom-right';" +
+                   "toastr.error('Ha ocurrido un error al guardar el archivo');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                 //  Excepcion guardando el archivo
             }
         }

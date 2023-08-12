@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="row">
-        <div style="width: 15%; background-image: url('../images/jugueteslat1.jpg'); background-size: cover; border-radius: 10%">
+        <div style="width: 15%; background-image: url('../images/jugueteslat1.jpg'); background-size: cover; border-radius: 10%" class="imgjuguete1">
         </div>
         <div style="width: 70%;">
             <form runat="server" class="Formulario-Expediente">
@@ -205,7 +205,7 @@
                 </div>
             </form>
         </div>
-        <div style="width: 15%; background-image: url('../images/jugueteslat1.jpg'); background-size: cover; border-radius: 10%">
+        <div style="width: 15%; background-image: url('../images/jugueteslat1.jpg'); background-size: cover; border-radius: 10%" class="imgjuguete2">
         </div>
     </div>
 

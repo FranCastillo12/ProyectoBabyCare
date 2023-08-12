@@ -1,5 +1,6 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 @import url('https://fonts.googleapis.com/css?family=Baloo+2');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 
 html, body {
@@ -20,7 +21,7 @@ body {
 .title {
     margin: 1%;
     float: left;
-    font-family: 'Baloo 2', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     font-weight: 500;
     margin-top: 15px;
     font-size: 30px;
