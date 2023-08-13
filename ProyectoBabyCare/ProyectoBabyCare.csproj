@@ -289,6 +289,7 @@
     </Compile>
     <Compile Include="pages\AlertasUsuario.aspx.designer.cs">
       <DependentUpon>AlertasUsuario.aspx</DependentUpon>
+	</Compile>
     <Compile Include="pages\CargaFotosVideos.aspx.cs">
       <DependentUpon>CargaFotosVideos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
