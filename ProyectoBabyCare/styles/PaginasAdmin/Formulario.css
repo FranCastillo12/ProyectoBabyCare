@@ -1,0 +1,36 @@
+﻿/* Estilos generales */
+body {
+    /*padding-top: 60px;*/ /* Ajustar según la altura de tu barra de navegación */
+}
+
+/* Estilos para el formulario de edición */
+.edit-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
