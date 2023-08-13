@@ -67,9 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administracion.cs" />
     <Compile Include="Archivos.cs" />
+    <Compile Include="AlertasUsuario.cs" />
     <Compile Include="Bebe.cs" />
     <Compile Include="Citas.cs" />
+    <Compile Include="Configuraciones.cs" />
     <Compile Include="Consejos.cs" />
     <Compile Include="ConsumirAPI.cs" />
     <Compile Include="ControlPanel.cs" />
@@ -100,6 +103,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

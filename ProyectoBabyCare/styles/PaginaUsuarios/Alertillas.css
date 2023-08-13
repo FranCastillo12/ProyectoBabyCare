@@ -1,0 +1,172 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Baloo+2');
+.header-style {
+    font-size: 140%;
+    font-family: 'Baloo 2', sans-serif;
+    background-color: #8DCBE2;
+    color:white;
+    z-index:100;
+}
+.grid-row-style {
+    font-size: 30px;
+    background-color: #8DCBE2;
+    opacity: 0.8;
+    color: white;
+}
+/*Ventana modal*/
+#btn-modal2 {
+    display: none;
+}
+
+.container-modal2 {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(144, 148, 150, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#btn-modal2:checked ~ .container-modal2 {
+    display: flex;
+}
+
+.content-modal2 {
+    width: 100%;
+    max-width: 70%;
+    padding: 20px;
+    background-color: #F6E0ED;
+    opacity: 0.8;
+    border-radius: 4px;
+}
+
+    .content-modal2 h2 {
+        margin-bottom: 15px;
+    }
+
+    .content-modal2 .btn-cerrar2 {
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+        .content-modal2 .btn-cerrar2 label {
+            font-family: 'Baloo 2', 'sans-serif';
+            font-size: 10px;
+            font-weight: 600;
+            padding: 7px 10px;
+            background: rgba(141, 203, 226, 8); /* Cambia el valor de opacidad según tus necesidades */
+            color: #0088CC;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 300ms ease;
+        }
+
+            .content-modal2 .btn-cerrar2 label:hover {
+                background-color: #185E83;
+            }
+
+.cerrar-modal2 {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.botonesSeguimiento {
+    width: 100px;
+    text-align: center;
+    margin-left: 0%;
+    margin-bottom: 2%;
+}
+.profile-button {
+    font-weight: 600; /* Semibold */
+    font-size: 115%;
+    font-family: 'Baloo 2', sans-serif;
+    background: rgba(141, 203, 226, 0.4); /* Cambia el valor de opacidad según tus necesidades */
+    box-shadow: none;
+    border: none;
+    width: 143%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-left: 30%;
+    color: #0088CC;
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+}
+
+    .profile-button:focus {
+        background: #682773;
+        box-shadow: none
+    }
+
+    .profile-button:active {
+        background: #682773;
+        box-shadow: none
+    }
+
+.ImagenBorde1 {
+    width: 15%;
+    background-image: url('../../images/relojes3.png');
+    background-size: cover;
+    border-radius: 10%;
+    left: 0;
+}
+.ImagenBorde2 {
+    width: 15%;
+    background-image: url('../../images/relojes3.png');
+    background-size: cover;
+    border-radius: 10%;
+    margin-left:4%;
+}
+.Datagrid {
+    width: 60%;
+    margin-left: 5%
+
+}
+.footer {
+    background-image: url('../../images/Footer.png');
+    z-index: -2;
+    background-size: cover;
+    width: 100%;
+    height: 15%;
+    position: fixed;
+    bottom: 0;
+}
+@media (max-width: 700px) {
+    .Datagrid {
+        width: 100%;
+        margin-left: 0%;
+        margin-top:2%;
+    }
+    .botonesSeguimiento {
+        width: 100px;
+        text-align: center;
+        margin-left: 5%;
+        margin-bottom: 2%;
+    }
+    .ImagenBorde1 {
+        display: none
+    }
+
+    .ImagenBorde2 {
+        display:none
+    }
+
+    .header-style {
+        font-size: 100%;
+        font-family: 'Baloo 2', sans-serif;
+        background-color: #8DCBE2;
+
+    }
+    .grid-row-style {
+        font-size: 20px;
+        background-color: #8DCBE2;
+        opacity: 0.9;
+    }
+}

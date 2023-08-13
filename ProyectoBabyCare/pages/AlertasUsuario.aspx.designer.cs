@@ -7,65 +7,83 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectoBabyCare.pages.GestorBebes
+namespace ProyectoBabyCare.pages
 {
 
 
-    public partial class PerfilesSistema
+    public partial class AlertasUsuario
     {
 
         /// <summary>
-        /// Control message.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox message;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control txtdescrip.
+        /// Control dropCategorias1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdescrip;
+        protected global::System.Web.UI.WebControls.DropDownList dropCategorias1;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control btnFiltrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Button btnFiltrar;
 
         /// <summary>
-        /// Control btnAdministrarFamiliares.
+        /// Control dropcategorias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdministrarFamiliares;
+        protected global::System.Web.UI.WebControls.DropDownList dropcategorias;
 
         /// <summary>
-        /// Control btncerrar.
+        /// Control txtDescripcionAlerta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btncerrar;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcionAlerta;
 
         /// <summary>
-        /// Control tablaUsuarios.
+        /// Control txthora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tablaUsuarios;
+        protected global::System.Web.UI.WebControls.TextBox txthora;
+
+        /// <summary>
+        /// Control btnAgregar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregar;
+
+        /// <summary>
+        /// Control GridViewAlertas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewAlertas;
     }
 }

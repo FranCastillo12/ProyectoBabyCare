@@ -55,7 +55,7 @@ namespace ProyectoBabyCare.pages
             try
             {
                 List<Entidades.Citas> listaCitas = Negocios.ControlPanel.ListaCitas(Convert.ToInt16(idbebe));
-                List<Alertas> listaAlertas = Negocios.ControlPanel.ListaAlertas(Convert.ToInt16(idbebe));
+                List<Entidades.Alertas> listaAlertas = Negocios.ControlPanel.ListaAlertas(Convert.ToInt16(idbebe));
                 List<Seguimientos> listaSeguimientos = Negocios.ControlPanel.ListaSeguimiento(Convert.ToInt16(idbebe));
                 List<Entidades.Vacunas> listaVacunas = Negocios.ControlPanel.ListaVacunas(Convert.ToInt16(idbebe));
 
