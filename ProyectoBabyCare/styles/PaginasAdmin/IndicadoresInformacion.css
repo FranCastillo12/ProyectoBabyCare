@@ -1,0 +1,71 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+
+.container {
+    border-radius: 20px 0 0 20px; /* Redondear arriba a la izquierda y abajo a la derecha */
+
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+    .container .box {
+        box-shadow: 5px 10px 5px 4px;
+        margin-top: 25px;
+        height: 250px;
+        border-radius: 35px 0 35px 0; /* Redondear arriba a la izquierda y abajo a la derecha */
+        width: calc(33% - 10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 30px;
+    }
+
+.box .quote i {
+    margin-top: 10px;
+    font-size: 45px;
+    color: #17c0eb
+}
+
+h1 {
+    color: white;
+}
+
+.box p {
+    text-align: justify;
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.box .name_job {
+    font-size: 25px;
+    margin: 10px 0 3px 0;
+    color: #ffff;
+    font-weight: 600;
+}
+
+.rating i {
+    font-size: 18px;
+    color: #8e44ad;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width:1045px) {
+    .container .box {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:710px) {
+    .container .box {
+        width: 100%;
+    }
+}

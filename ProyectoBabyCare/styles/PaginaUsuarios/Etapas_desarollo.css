@@ -19,7 +19,7 @@ body {
 .title {
     margin: 1%;
     float: left;
-    font-family: 'Baloo 2', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     font-weight: 500;
     position: absolute;
     top: 85px;
@@ -141,12 +141,12 @@ body {
 
 @media (max-width: 480px) {
     .container .card {
-        width: 230px;
+        width: 335px;
         border-radius: 15px;
     }
 
         .container .card .img-box {
-            width: 185px;
+            width: 310px;
             border-radius: 10px;
         }
 

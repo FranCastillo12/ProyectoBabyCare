@@ -1,0 +1,277 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Baloo 2', sans-serif;
+}
+
+.contenedor {
+    width: 100%;
+    height: 500px;
+}
+
+.contenedorSuperior {
+    width: 100%;
+    height: 25%;
+}
+
+.contenedorSuperiorIzquierda {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.csi1 {
+    margin: 2%;
+    background-color: #F6E0ED;
+    color: #191970;
+    font-size: 30px;
+    height: 45%;
+    width: 90%;
+    align-content: center;
+    text-align: center;
+}
+
+.contenedorSuperiorDerecha {
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+.btnContent {
+    width: 37.5%;
+    height: 100%;
+    /*padding:1px;*/
+    display: block;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.lblContent {
+    width: 37.5%;
+    height: 100%;
+    display: block;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #F5C8E3;
+    font-size: 25px;
+}
+
+.imgContent {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.imgPerfil {
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+    .imgPerfil img {
+        width: 100%;
+        height: 100%;
+    }
+
+.flu {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+.contenedorSuperiorDerecha {
+    width: 69%;
+    height: 100%;
+}
+
+.contenedorInferior {
+    width: 100%;
+    height: 75%;
+}
+
+.linea {
+    background: #0094ff;
+    height: 5px;
+    width: 100%;
+    display: block;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+    width: 95%;
+    margin: auto;
+    grid-gap: 10px;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+    .galeria > a {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 6px rgba(0,0,0,.5);
+    }
+
+    .galeria img {
+        width: 100%;
+        vertical-align: top;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .galeria a:hover img {
+        filter: blur(2px);
+        transform: rotate(10deg) scale(1.3);
+    }
+
+    .galeria video {
+        width: 100%;
+        vertical-align: top;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .galeria a:hover video {
+        filter: blur(2px);
+        transform: rotate(10deg) scale(1.3);
+    }
+
+.light-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    transition: transform.3s ease-in-out;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+
+    .light-box img {
+        width: auto;
+        max-height: 85%;
+    }
+
+    .light-box:target {
+        transform: scale(1);
+    }
+
+.close {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: #851919;
+    color: white;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+}
+
+.next {
+    display: block;
+    background: #851919;
+    color: white;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.gallery-item {
+    display: inline-block;
+    width: calc(33.33% - 20px);
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+    .gallery-item a {
+        display: block;
+        text-decoration: none;
+    }
+
+    .gallery-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+body {
+}
+
+.cargar {
+    margin-top: 10px
+}
+
+
+@media (max-width: 767px) {
+    .imgPerfil {
+        display: none;
+    }
+
+    .contenedor {
+        width: 41%;
+        float: left;
+        height: 80%;
+        margin: 1%;
+    }
+
+    .contenedorSuperiorIzquierda {
+        width: 100%;
+        height: 20%;
+        top: 0;
+    }
+
+    .csi1 {
+        height: 70%;
+        width: 160%;
+        float: left;
+        color: mediumblue;
+        font-family: Comfortaa;
+        background-color: #F6E0ED;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .linea {
+        margin-top: 160px;
+        width: 240%;
+    }
+
+    .lblContent {
+        display: none;
+    }
+
+    .cargar {
+        margin-top: 10px
+    }
+}

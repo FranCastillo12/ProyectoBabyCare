@@ -201,6 +201,7 @@
   <ItemGroup>
     <Compile Include="Alerta.cs" />
     <Compile Include="Alertas.cs" />
+    <Compile Include="Archivos.cs" />
     <Compile Include="Bebe.cs" />
     <Compile Include="Categorias.cs" />
     <Compile Include="Citas.cs" />

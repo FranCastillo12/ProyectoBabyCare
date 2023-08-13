@@ -17,12 +17,12 @@
 
     <form runat="server">
 
-        <div class="title">
-            Perfil
-        </div>
+    
         <div class="contendor" style="margin-top: 110px">
 
-
+              <div class="title">
+            Perfil
+        </div>
 
             <div class="container rounded bg-white mt-5 mb-5 container-con-borde">
                 <div class="row">
