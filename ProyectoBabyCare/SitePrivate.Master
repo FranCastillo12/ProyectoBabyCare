@@ -52,9 +52,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="SeguimientoActividades.aspx">Seguimiento</a></li>
-              <li><a class="dropdown-item" href="#">Alertas</a></li>
-
-              <li><a class="dropdown-item" href="Expediente.aspx">Expediente</a></li>
+              <li><a class="dropdown-item" href="AlertasUsuario.aspx">Alertas</a></li>
               <li><a class="dropdown-item" href="SaludVacunas.aspx">Vacunas</a></li>
               <li><a class="dropdown-item" href="Salud_Citas.aspx">Citas</a></li>
             </ul>

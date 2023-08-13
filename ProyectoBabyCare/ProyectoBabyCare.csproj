@@ -43,12 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
+
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
@@ -210,10 +212,16 @@
     <Content Include="images\reg1.png" />
     <Content Include="images\reg2.jpg" />
     <Content Include="images\Pies.png" />
+    <Content Include="images\relojes1.png" />
+    <Content Include="images\relojes2.png" />
+    <Content Include="images\relojes3.png" />
     <Content Include="images\Vacuna.png" />
     <Content Include="images\Vacunacion.png" />
     <Content Include="images\tabla.png" />
+
     <Content Include="pages\CargaFotosVideos.aspx" />
+    <Content Include="pages\AlertasUsuario.aspx" />
+
     <Content Include="pages\ControlPanel2.aspx" />
     <Content Include="pages\eliminarultrasonido.aspx" />
     <Content Include="pages\GestorBebes\GestionBebes.aspx" />
@@ -260,6 +268,7 @@
     <Content Include="styles\PaginaUsuarios\DietasPrivate.css" />
     <Content Include="styles\PaginaUsuarios\DietasPublic.css" />
     <Content Include="styles\PaginaUsuarios\Etapas_desarollo.css" />
+    <Content Include="styles\PaginaUsuarios\Alertillas.css" />
     <Content Include="styles\PaginaUsuarios\PantallaInicio.css" />
     <Content Include="styles\PaginaUsuarios\PreguntasExpertos.css" />
     <Content Include="styles\PaginaUsuarios\RegistroExpediente.css" />
@@ -274,12 +283,19 @@
     <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
+      <Compile Include="pages\AlertasUsuario.aspx.cs">
+      <DependentUpon>AlertasUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AlertasUsuario.aspx.designer.cs">
+      <DependentUpon>AlertasUsuario.aspx</DependentUpon>
     <Compile Include="pages\CargaFotosVideos.aspx.cs">
       <DependentUpon>CargaFotosVideos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\CargaFotosVideos.aspx.designer.cs">
       <DependentUpon>CargaFotosVideos.aspx</DependentUpon>
+
     </Compile>
     <Compile Include="pages\ControlPanel2.aspx.cs">
       <DependentUpon>ControlPanel2.aspx</DependentUpon>

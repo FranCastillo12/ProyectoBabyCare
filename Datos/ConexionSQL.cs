@@ -225,7 +225,128 @@ namespace Datos
         #endregion
 
         #region  Sebas
+        #region Alertas
+        public List<Entidades.Alerta> AlertasBebe(int idbebe)
+        {
+            List<Entidades.Alerta> alertas = new List<Entidades.Alerta>();
 
+            try
+            {
+                sqlConn.Open();
+
+                SqlCommand command = new SqlCommand("VerAlertasbebe", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idbebe", idbebe);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Entidades.Alerta alerta = new Entidades.Alerta();
+                        alerta.idAlerta = Convert.ToInt32(reader["idAlerta"].ToString());
+                        alerta.Descripcion = reader["nombre"].ToString();
+                        if (Convert.ToBoolean(reader["Estado"].ToString()) == true)
+                        {
+                            alerta.Estado = true;
+                        }
+                        else {
+                            alerta.Estado = false;
+                        }
+                        alerta.Categoria = reader["categoria"].ToString();  
+                        if (!reader.IsDBNull(reader.GetOrdinal("HoraAlerta")))
+                        {
+                            TimeSpan horaDeAlertaTimeSpan = reader.GetTimeSpan(reader.GetOrdinal("HoraAlerta"));
+                            DateTime fechaHoy = DateTime.Today;
+                            DateTime horaDeAlerta = fechaHoy.Add(horaDeAlertaTimeSpan);
+                            alerta.HoraDeAlerta = horaDeAlerta;
+                        }
+
+                        alertas.Add(alerta);
+                    }
+                }
+                sqlConn.Close();
+
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return alertas;
+        }
+        public string CambiarEstadoAlerta(int idAlerta,bool Estado)
+        {
+            string respuesta = "No existe";
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("ModificarEstadoAlerta", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idAlerta", idAlerta);
+                command.Parameters.AddWithValue("@Estado", Estado);
+                
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+            return respuesta;
+        }
+
+        public void ActivarAlertaSiguiente(DateTime Horasistema,int idbebe) {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("ActivarAlertaSiguiente", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idBebe", idbebe);
+                command.Parameters.AddWithValue("@HoraSistema", Horasistema);
+
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+        }
+
+        //EliminarAlerta
+        public void EliminarAlerta(int idAlerta) {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("EliminarAlerta", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idalerta", idAlerta);
+
+
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+        }
+
+        public void AgregarAlerta(int idBebe,int Categoria,string Descripcion,DateTime hora)
+        {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("AgregarAlerta", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@hora", hora);
+                command.Parameters.AddWithValue("@idcategoria", Categoria);
+                command.Parameters.AddWithValue("@descripcion", Descripcion);
+                command.Parameters.AddWithValue("@idbebe", idBebe);
+
+
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+        }
+
+        #endregion
 
         #region expediente
         public string ValidarExpediente(int idbebe) {

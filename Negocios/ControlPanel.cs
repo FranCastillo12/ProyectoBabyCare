@@ -51,7 +51,7 @@ namespace Negocios
         {
             try
             {
-                List<Alertas> alertas = new List<Alertas>();
+                List<Entidades.Alertas> alertas = new List<Entidades.Alertas>();
                 string spName = "VerAlertas";
                 var lstParametros = new List<SqlParameter>()
                 {
@@ -64,7 +64,7 @@ namespace Negocios
                 {
                     foreach (DataRow fila in dtCitas.Rows)
                     {
-                        Alertas a = new Alertas
+                        Entidades.Alertas a = new Entidades.Alertas
                         {
                             HoraAlerta = fila[0].ToString(),
                             Descripcion = fila[1].ToString(),
