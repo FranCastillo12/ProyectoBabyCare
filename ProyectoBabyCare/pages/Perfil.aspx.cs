@@ -59,6 +59,8 @@ namespace ProyectoBabyCare.pages
                     dropbebes_SelectedIndexChanged(dropbebes, EventArgs.Empty);
 
                 }
+                SitePrivate masterPage = (SitePrivate)this.Master;
+                masterPage.MiMetodoEnMasterPage();
             }
         }
 
@@ -222,7 +224,7 @@ namespace ProyectoBabyCare.pages
                     SitePrivate masterPage = (SitePrivate)this.Master;
 
                     // Ahora puedes llamar al método público de la Master Page
-                 //   masterPage.MiMetodoEnMasterPage();
+                        masterPage.MiMetodoEnMasterPage();
                 }
 
                

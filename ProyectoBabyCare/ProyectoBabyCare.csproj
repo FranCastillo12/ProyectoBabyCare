@@ -218,6 +218,7 @@
     <Content Include="pages\eliminarultrasonido.aspx" />
     <Content Include="pages\GestorBebes\GestionBebes.aspx" />
     <Content Include="pages\GestorBebes\GestionEtapasDesarrollo.aspx" />
+    <Content Include="pages\GestorBebes\logoutAdmin.aspx" />
     <Content Include="pages\GestorBebes\PerfilesSistema.aspx" />
     <Content Include="pages\Inicio.aspx" />
     <Content Include="Login.aspx" />
@@ -308,6 +309,13 @@
     </Compile>
     <Compile Include="pages\GestorBebes\GestionEtapasDesarrollo.aspx.designer.cs">
       <DependentUpon>GestionEtapasDesarrollo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\GestorBebes\logoutAdmin.aspx.cs">
+      <DependentUpon>logoutAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\GestorBebes\logoutAdmin.aspx.designer.cs">
+      <DependentUpon>logoutAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\GestorBebes\PerfilesSistema.aspx.cs">
       <DependentUpon>PerfilesSistema.aspx</DependentUpon>

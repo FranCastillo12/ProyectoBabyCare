@@ -333,5 +333,9 @@
     .tituloPrincipal {
         background-color: white;
         margin-top: 5px;
+
+    }
+    .textoTituloPrincipal {
+        width: 75%;
     }
 }

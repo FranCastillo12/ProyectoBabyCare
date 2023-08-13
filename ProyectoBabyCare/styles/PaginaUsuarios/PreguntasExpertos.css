@@ -53,17 +53,8 @@ textarea.input-box {
 
 
 
-input.input-box,
-textarea.input-box {
-    background-color: #fff;
-    color: #BDBDBD
-}
 
-    input.input-box:focus,
-    textarea.input-box:focus {
-        background-color: #fff;
-        color: black;
-    }
+
 
 .rm-border:focus {
     border-color: inherit;
@@ -114,6 +105,7 @@ input.btn-purple {
     color: mediumblue;
     padding: 10px;
     border-radius: 5px;
+    text-align: center;
 }
 
 .titlet {
