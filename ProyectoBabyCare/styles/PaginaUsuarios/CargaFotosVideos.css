@@ -274,4 +274,7 @@ body {
     .cargar {
         margin-top: 10px
     }
+    .light-box img {
+        width: 400px;
+    }
 }

@@ -73,4 +73,17 @@ nav .logo {
         width: 45px;
         margin: 0 auto;
     }
+
+    .rectangulo-fondoSesion {
+        width: 100px;
+        margin: 0 auto;
+    }
+
+    .rectangulo-fondoRegis {
+        width: 100px;
+        margin: 0 auto
+    }
+
+
+
 }

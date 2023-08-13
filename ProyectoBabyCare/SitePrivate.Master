@@ -53,8 +53,6 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="SeguimientoActividades.aspx">Seguimiento</a></li>
               <li><a class="dropdown-item" href="#">Alertas</a></li>
-
-              <li><a class="dropdown-item" href="Expediente.aspx">Expediente</a></li>
               <li><a class="dropdown-item" href="SaludVacunas.aspx">Vacunas</a></li>
               <li><a class="dropdown-item" href="Salud_Citas.aspx">Citas</a></li>
             </ul>
@@ -78,8 +76,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="CargaFotosVideos.aspx">Fotos</a></li>
-              <li><a class="dropdown-item" href="#">Ultrasonidos</a></li>
-              <li><a class="dropdown-item" href="#">Audios</a></li>
+              <li><a class="dropdown-item" href="Ultrasonidos.aspx">Ultrasonidos</a></li>
             </ul>
           </li>
           <li class="nav-item">
