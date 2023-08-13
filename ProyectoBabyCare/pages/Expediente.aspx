@@ -149,10 +149,10 @@
                                 </div>
 
                                 <div style="width: 90%; margin-left: 10%;">
-                                    <asp:DropDownList ID="dpllPadecimientos" runat="server" AutoPostBack="true" CssClass="form-controlinterno form-controlddl"></asp:DropDownList>
+                                    <asp:DropDownList ID="dpllPadecimientos" runat="server" AutoPostBack="true" CssClass="form-controlinterno1 form-controlddl1"></asp:DropDownList>
                                 </div>
                                 <div style="text-align: center; width: 60%; font-size: 50%; margin-top: 1%;">
-                                    <asp:Button ID="btnagregarpadecimientos" class="btn btn-primary profile-button" runat="server" OnClick="btnagregarpadecimientos_Click" Text="Agregar padecimiento" />
+                                    <asp:Button ID="btnagregarpadecimientos" class="btn btn-primary profile-button1" runat="server" OnClick="btnagregarpadecimientos_Click" Text="Agregar padecimiento" />
                                 </div>
                                 <%-- Fin body --%>
                                 <div class="btn-cerrar2">

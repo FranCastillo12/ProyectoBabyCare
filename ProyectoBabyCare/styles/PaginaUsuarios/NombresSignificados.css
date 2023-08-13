@@ -83,6 +83,21 @@ body {
     color: #0088CC;
     text-transform: uppercase; /* Convierte el texto en mayúsculas */
 }
+.profile-button1 {
+    font-weight: 600; /* Semibold */
+    font-size: 115%;
+    font-family: 'Baloo 2', sans-serif;
+    background: rgba(141, 203, 226, 0.4); /* Cambia el valor de opacidad según tus necesidades */
+    box-shadow: none;
+    border: none;
+    width: 143%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-left: 10%;
+    color: #0088CC;
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+}
 
     .profile-button:focus {
         background: #682773;
@@ -155,10 +170,31 @@ body {
     padding: .6em .3em;
     text-align: center;
 }
-
+.form-control1 {
+    margin-top:10px;
+    border: 2px dashed #3399CC; /* Color del borde deseado */
+    width: 100%;
+    background-color: white;
+    color: #706c6c;
+    font-size: 1rem;
+    padding: .6em .3em;
+    text-align: center;
+}
 .form-controlinterno {
     border: 2px dashed #3399CC; /* Color del borde deseado */
     width: 150%;
+    background-color: white;
+    color: #706c6c;
+    font-size: 50%;
+    padding: .6em .3em;
+    text-align: center;
+}
+.form-controlinterno1 {
+    margin-left: -80px;
+    margin-top: 10px;
+    border: 2px dashed #3399CC; /* Color del borde deseado */
+    width: 100%;
+    width: 100%;
     background-color: white;
     color: #706c6c;
     font-size: 50%;
@@ -801,5 +837,35 @@ select.form-control {
     .profile-button {
         width: 183%;
         margin-left: 10%;
+        font-size: 20px;
+        margin-top: 25px;
+    }
+    .form-controlinterno {
+        height: 50px;
+        width: 210%;
+        margin-left: -30px;
+        font-size: 150%;
+        margin-top: 10px;
+    }
+    .form-controlddl {
+        margin-top: 10px;
+        margin-left: -15px;
+        font-size: 1rem;
+      
+    }
+    .profile-button1 {
+        font-size: 20px;
+        margin-top: 10px;
+        width: 143%;
+        border-radius: 10px;
+        display: block;
+        margin-left: 15%;
+    }
+    .form-controlinterno1 {
+        margin-left: -20px;
+        margin-top: 10px;
+       
+        font-size: 100%;
+       
     }
 }
