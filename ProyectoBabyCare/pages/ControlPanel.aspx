@@ -10,10 +10,11 @@
     <form id="form1" runat="server">
         <div class="contenedor">
             <div class="contenedor1">
-                <div class="cabeceraContenedor1">
                     <div class="tituloIzquierda1" style="font-family: 'Baloo 2', sans-serif">
                         Panel de Control
-                    </div>                    
+                    </div> 
+                <div class="cabeceraContenedor1">
+                                   
                 </div>
                 <div class="notificacion1">
                     <asp:Label ID="lblNotificacion1" runat="server" Text="Label"></asp:Label>
