@@ -68,10 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Archivos.cs" />
-
     <Compile Include="AlertasUsuario.cs" />
     <Compile Include="Bebe.cs" />
     <Compile Include="Citas.cs" />
+    <Compile Include="Configuraciones.cs" />
     <Compile Include="Consejos.cs" />
     <Compile Include="ConsumirAPI.cs" />
     <Compile Include="ControlPanel.cs" />

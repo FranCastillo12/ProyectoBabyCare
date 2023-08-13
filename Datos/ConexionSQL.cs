@@ -924,7 +924,66 @@ namespace Datos
         }
         #endregion
 
+
+        #region Configuraciones
+        public Entidades.ConfiguracionesSistema TraerConfiguraciones()
+        {
+            Entidades.ConfiguracionesSistema configuraciones=new Entidades.ConfiguracionesSistema();
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("TraerConfiguracionesSistema", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        configuraciones.Fotos= Convert.ToInt32(reader["Cantidad_Fotos"].ToString());
+                        configuraciones.Videos = Convert.ToInt32(reader["Cantidad_Videos"].ToString());
+                        configuraciones.Ultrasonidos = Convert.ToInt32(reader["Cantidad_Ultrasonidos"].ToString());
+                        configuraciones.Alertas= Convert.ToInt32(reader["Cantidad_Alertas"].ToString());
+                    }
+                }
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+            return configuraciones;
+        }
+
+        public Entidades.ConfiguracionesGrupoFamiliar TraerConfiguracionesGrupoFamiliar()
+        {
+            Entidades.ConfiguracionesGrupoFamiliar configuraciones = new Entidades.ConfiguracionesGrupoFamiliar();
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("TraerConfiguracionesGrupoFamiliar", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        configuraciones.Padres = Convert.ToInt32(reader["Cantidad_Padres"].ToString());
+                        configuraciones.Madres = Convert.ToInt32(reader["Cantidad_Madres"].ToString());
+                        configuraciones.Tios = Convert.ToInt32(reader["Cantidad_Tios"].ToString());
+                        configuraciones.Tias = Convert.ToInt32(reader["Cantidad_Tias"].ToString());
+                        configuraciones.Abuelos = Convert.ToInt32(reader["Cantidad_Abuelos"].ToString());
+                        configuraciones.Babysisters = Convert.ToInt32(reader["Cantidad_Babysisters"].ToString());
+                        configuraciones.Invitados = Convert.ToInt32(reader["Cantidad_Invitados"].ToString());
+                    }
+                }
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+            return configuraciones;
+        }
+
         #endregion
-       
+
+        #endregion
+
     }
 }
