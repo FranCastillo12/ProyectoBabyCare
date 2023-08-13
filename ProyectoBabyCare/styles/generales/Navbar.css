@@ -13,7 +13,7 @@ nav .logo {
 }
 
     nav .logo img {
-        height: 47px;
+        height: 50px;
         width: auto;
         transition: all 0.3s;
     }
@@ -21,29 +21,33 @@ nav .logo {
 .logo img:hover {
     transform: scale(1.2);
 }
+
 .navbar {
     background: #F6E0ED;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.10);
 }
 
 
 .container-fluid {
     font-family: 'Baloo 2', sans-serif;
-    font-weight:700;
+    font-weight: 700;
     font-size: 16.2px;
     color: #D281B2;
 }
+
 .ddd {
     color: #00FF00;
-
 }
 /* styles.css */
 /* Change the color of normal navigation links */
 .navbar-nav .nav-link {
     color: #D281B2; /* Cambia el color a tu preferencia (en este caso, verde) */
 }
+
     .navbar-nav .nav-link:hover {
         color: #006cff; /* Cambia el color a tu preferencia (en este caso, rojo) */
     }
+
 .rectangulo-fondoSesion {
     background-color: #3EB6B6;
     color: #ffffff;
@@ -63,12 +67,10 @@ nav .logo {
 }
 /* styles.css */
 
-/* Cambiar el color del botón y el icono */
-.custom-toggler {
-    color: red; /* Cambia el color a tu preferencia (por ejemplo, blanco) */
-    background-color: red; /* Cambia el color de fondo del botón a tu preferencia */
-}
-    /* Cambiar el color del icono del botón cuando se pasa el cursor (hover) */
-    .custom-toggler:hover .custom-toggler-icon {
-        color: red; /* Cambia el color a tu preferencia (por ejemplo, amarillo) */
+
+@media (max-width: 767px) {
+    .rectangulo-fondoSalir {
+        width: 45px;
+        margin: 0 auto;
     }
+}
