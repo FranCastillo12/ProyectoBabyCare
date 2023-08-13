@@ -17,7 +17,7 @@ namespace ProyectoBabyCare.pages
 {
     public partial class AlertasUsuario : System.Web.UI.Page
     {
-        int idBebe = 39;
+        int idBebe = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -105,6 +105,81 @@ namespace ProyectoBabyCare.pages
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            
+            string seleccionado = dropCategorias1.SelectedValue;
+            if (!seleccionado.Equals("Seleccione una categoria"))
+            {
+                string[] D = seleccionado.Split('-');
+                DataTable dt = new DataTable();
+                dt.Columns.Add("HoraAlerta", typeof(string));
+                dt.Columns.Add("idAlerta", typeof(int));
+                dt.Columns.Add("Descripcion", typeof(string));
+                dt.Columns.Add("Estado", typeof(bool));
+                dt.Columns.Add("Categoria", typeof(string));
+                Negocios.AlertasUsuario alerta = new Negocios.AlertasUsuario();
+                if (Session["Credenciales"] != null) {
+                    Entidades.En_Usuarios usuario = (Entidades.En_Usuarios)Session["Credenciales"];
+                    idBebe = Convert.ToInt32(usuario.IdenBebe);
+                }
+
+                if (idBebe!=0) {
+                    List<Entidades.Alerta> alertas = alerta.FiltrarAlertas(idBebe, Convert.ToInt32(D[0]));
+                    if (alertas.Count != 0)
+                    {
+                        string HoraAlerta = "";
+                        foreach (Entidades.Alerta a in alertas)
+                        {
+                            HoraAlerta = a.HoraDeAlerta.ToString("hh:mm tt");
+                            dt.Rows.Add(HoraAlerta, a.idAlerta, a.Descripcion, a.Estado, a.Categoria);
+                        }
+                        GridViewAlertas.DataSource = dt;
+                        GridViewAlertas.DataBind();
+                    }
+                    else
+                    {
+                        string mensaje =
+                    "toastr.options.closeButton = true;" +
+                    "toastr.options.positionClass = 'toast-bottom-right';" +
+                    $"toastr.error('No hay alertas registradas con la categoria seleccionada');";
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Toastrerror", mensaje, true);
+                    }
+                }
+                
+
+
+            }
+            else {
+                string[] D = seleccionado.Split('-');
+                DataTable dt = new DataTable();
+                dt.Columns.Add("HoraAlerta", typeof(string));
+                dt.Columns.Add("idAlerta", typeof(int));
+                dt.Columns.Add("Descripcion", typeof(string));
+                dt.Columns.Add("Estado", typeof(bool));
+                dt.Columns.Add("Categoria", typeof(string));
+                if (Session["Credenciales"] != null)
+                {
+                    Entidades.En_Usuarios usuario = (Entidades.En_Usuarios)Session["Credenciales"];
+                    idBebe = Convert.ToInt32(usuario.IdenBebe);
+                }
+                Negocios.AlertasUsuario alerta = new Negocios.AlertasUsuario();
+                List<Entidades.Alerta> alertas = alerta.TraerAlertas(idBebe);
+
+                string HoraAlerta = "";
+                foreach (Entidades.Alerta a in alertas)
+                {
+                    HoraAlerta = a.HoraDeAlerta.ToString("hh:mm tt");
+                    dt.Rows.Add(HoraAlerta, a.idAlerta, a.Descripcion, a.Estado, a.Categoria);
+                }
+                GridViewAlertas.DataSource = dt;
+                GridViewAlertas.DataBind();
+
+                string mensaje =
+                "toastr.options.closeButton = true;" +
+                "toastr.options.positionClass = 'toast-bottom-right';" +
+                $"toastr.error('Debe seleccionar una categoria para poder filtrar las alertas');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "Toastrerror", mensaje, true);
+            }
+            
 
         }
 
@@ -112,7 +187,11 @@ namespace ProyectoBabyCare.pages
         {
             Button boton = (Button)sender;
             GridViewRow row = (GridViewRow)boton.NamingContainer;
-
+            if (Session["Credenciales"] != null)
+            {
+                Entidades.En_Usuarios usuario = (Entidades.En_Usuarios)Session["Credenciales"];
+                idBebe = Convert.ToInt32(usuario.IdenBebe);
+            }
             int idAlerta = Convert.ToInt32(GridViewAlertas.DataKeys[row.RowIndex].Value);
             Negocios.AlertasUsuario alerta = new Negocios.AlertasUsuario();
             List<Entidades.Alerta> lstalertas = alerta.TraerAlertas(idBebe);

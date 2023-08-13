@@ -37,5 +37,12 @@ namespace Negocios
             ConexionSQL conexionSQL = new ConexionSQL();
             conexionSQL.AgregarAlerta(bebe,cat,desc,hora);
         }
+
+        public List<Entidades.Alerta> FiltrarAlertas(int idBebe,int idCategoria) { 
+            List<Entidades.Alerta> lstAlertas= new List<Entidades.Alerta>();
+            ConexionSQL conexionSQL = new ConexionSQL();
+            lstAlertas=conexionSQL.FiltrarAlertas(idBebe,idCategoria);
+            return lstAlertas;
+        }
     }
 }

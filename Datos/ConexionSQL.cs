@@ -346,6 +346,55 @@ namespace Datos
             catch (Exception e) { }
         }
 
+        public List<Entidades.Alerta> FiltrarAlertas(int idBebe,int idCategoria) {
+            List<Entidades.Alerta> lstalertas=new List<Entidades.Alerta>();
+            try
+            {
+                sqlConn.Open();
+
+                SqlCommand command = new SqlCommand("FiltrarAlertas", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idBebe", idBebe);
+                command.Parameters.AddWithValue("@idCategoria", idCategoria);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Entidades.Alerta alerta = new Entidades.Alerta();
+                        alerta.idAlerta = Convert.ToInt32(reader["idAlerta"].ToString());
+                        alerta.Descripcion = reader["nombre"].ToString();
+                        if (Convert.ToBoolean(reader["Estado"].ToString()) == true)
+                        {
+                            alerta.Estado = true;
+                        }
+                        else
+                        {
+                            alerta.Estado = false;
+                        }
+                        alerta.Categoria = reader["categoria"].ToString();
+                        if (!reader.IsDBNull(reader.GetOrdinal("HoraAlerta")))
+                        {
+                            TimeSpan horaDeAlertaTimeSpan = reader.GetTimeSpan(reader.GetOrdinal("HoraAlerta"));
+                            DateTime fechaHoy = DateTime.Today;
+                            DateTime horaDeAlerta = fechaHoy.Add(horaDeAlertaTimeSpan);
+                            alerta.HoraDeAlerta = horaDeAlerta;
+                        }
+
+                        lstalertas.Add(alerta);
+                    }
+                }
+                sqlConn.Close();
+
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return lstalertas;
+        
+        }
+
         #endregion
 
         #region expediente
