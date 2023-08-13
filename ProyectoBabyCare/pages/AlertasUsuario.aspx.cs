@@ -119,6 +119,7 @@ namespace ProyectoBabyCare.pages
             if (lstalertas.Find(a => a.idAlerta == idAlerta && a.Estado == false) != null)
             {
                 alerta.EliminarAlerta(idAlerta);
+                Response.Redirect("AlertasUsuario.aspx");
             }
             else {
                     string mensaje =
