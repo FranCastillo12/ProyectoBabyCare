@@ -312,6 +312,7 @@
     </Compile>
     <Compile Include="pages\GestorBebes\ActualizarUsuario.aspx.designer.cs">
       <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\eliminarultrasonido.aspx.cs">
       <DependentUpon>eliminarultrasonido.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
