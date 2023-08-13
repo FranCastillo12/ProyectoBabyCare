@@ -6,6 +6,8 @@ body {
     max-width: auto;
     max-height: auto;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .contenedor2 {
@@ -17,10 +19,9 @@ body {
 .title {
     margin: 1%;
     float: left;
-    font-family: 'Baloo 2', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     font-weight: 500;
-    position: absolute;
-    top: 85px;
+    margin-top: -93px;
     font-size: 30px;
     background-color: #F6E0ED;
     color: mediumblue;

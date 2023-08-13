@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -69,7 +70,34 @@ namespace Negocios
                 throw ex;
             }
         }
+        #region"Consulta para el gestor"
 
+        public DataTable Obtener_bebesGes()
+        {
+            string spName = "SP_ObtenerBebesAdmin";
+            var lstParametros = new List<SqlParameter>()
+            {
+
+            };
+            Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
+            return iConexion.ExecuteSPWithDT(spName, lstParametros);
+
+        }
+
+        public void CambiarEstado(int idbebe, int estado)
+        {
+            string spName = "SP_CambiarEstadoBebe";
+            var lstParametros = new List<SqlParameter>()
+            {
+                  new SqlParameter("@idbebe", idbebe),
+                   new SqlParameter("@estado", estado)
+            };
+            Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
+            iConexion.ExecuteSP(spName, lstParametros);
+
+        }
+
+        #endregion
 
     }
 }

@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="row" style="font-family: 'Baloo 2', sans-serif; margin-top: 1%;">
+     <div class="row" style="font-family: 'Baloo 2', sans-serif; margin-top: 1%;">
         <div style="background-color: #F6E0ED; color: mediumblue; text-align: center">
             <h2>Seguimiento de actividades</h2>
         </div>
@@ -19,7 +19,7 @@
     <form runat="server" style="font-family: 'Baloo 2', sans-serif;">
 
         <!--Boton-->
-        <label for="btn-modal2" class="btn btn-success" style="margin-left: 60%; width: 30%; height: 9%; margin-top: 1%; font-size: 25px;">
+        <label for="btn-modal2" class="btn btn-success btn-modal" style="margin-left: 60%;height: 9%;font-size: 25px;">
             + Actividad
         </label>
         <!--Fin de Boton-->
@@ -37,12 +37,12 @@
                         <h3 style="color: mediumblue">Categoría</h3>
                     </div>
                     <div style="width: 40%; margin-left: 30%;">
-                        <asp:DropDownList ID="dropcategorias" AutoPostBack="false" CssClass="form-controlddl" runat="server" Style="text-align: center;"></asp:DropDownList>
+                        <asp:DropDownList ID="dropcategorias" AutoPostBack="false" CssClass="form-controlddl drop-actividadess" runat="server" Style="text-align: center;"></asp:DropDownList>
                     </div>
 
                 </div>
                 <div style="text-align: center; padding-left: 10%; padding-right: 10%; padding-bottom: 4%">
-                    <asp:TextBox runat="server" ID="txtdescripcionseguimiento" TextMode="MultiLine" Rows="5" Columns="15" CssClass="textareaNombres" Style="width: 100%" />
+                    <asp:TextBox runat="server" ID="txtdescripcionseguimiento" TextMode="MultiLine" Rows="5" Columns="15" CssClass="textareaNombress"/>
                 </div>
                 <div class="row">
                     <div class="divBoton1">
@@ -59,9 +59,9 @@
             <label for="btn-modal2" class="cerrar-modal2"></label>
         </div>
         <!--Fin de Ventana Modal-->
-        <div class="row">
+        <div class="row contenedor-filtros">
             <%-- Inicio Categoria --%>
-            <div style="width: 30%; margin-left: 10%;">
+            <div class="drop-actividades">
                 <div style="text-align:center">
                     <asp:Label ID="Label1" runat="server" Text="Categoría"></asp:Label>
                 </div>
@@ -71,7 +71,7 @@
 
 
             <%-- Inicio Fecha1 --%>
-            <div style="width: 15%; margin-left: 2%;">
+            <div class="txtfecha1">
                 <div style="text-align:center">
                     <asp:Label ID="Label2" runat="server" Text="Fecha 1"></asp:Label>
                 </div>
@@ -80,7 +80,7 @@
             <%-- Fin fecha1 --%>
 
             <%-- Inicio Fecha2 --%>
-            <div style="width: 15%; margin-left: 8%;">
+            <div class="txtfecha2">
                 <div style="text-align:center">
                     <asp:Label ID="Label3" runat="server" Text="Fecha 2"></asp:Label>
                 </div>

@@ -8,6 +8,10 @@
     <link href="../styles/PaginaUsuarios/CargaFotosVideos.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/3042a3f9c6.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <%-- Ajax --%>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">    
     <form id="form1" runat="server">
@@ -23,7 +27,7 @@
                         <br />
                         <asp:FileUpload ID="FileUpload1" runat="server" />                     
                         <br />
-                        <asp:Button class="btn btn-success" ID="Button1" runat="server" Text="Cargar archivo" OnClick="Button1_Click" />                        
+                        <asp:Button class="btn btn-success cargar" ID="Button1" runat="server" Text="Cargar archivo" OnClick="Button1_Click" />                        
                     </div>
                     <div style="border-left:solid; border-left-color:#F495B6" class="lblContent">
                         <br />

@@ -69,8 +69,10 @@
   <ItemGroup>
     <Compile Include="Administracion.cs" />
     <Compile Include="Archivos.cs" />
+    <Compile Include="AlertasUsuario.cs" />
     <Compile Include="Bebe.cs" />
     <Compile Include="Citas.cs" />
+    <Compile Include="Configuraciones.cs" />
     <Compile Include="Consejos.cs" />
     <Compile Include="ConsumirAPI.cs" />
     <Compile Include="ControlPanel.cs" />
@@ -79,6 +81,9 @@
     <Compile Include="Expediente.cs" />
     <Compile Include="Neg_bebes.cs" />
     <Compile Include="Neg_EtapasDesarrollo.cs" />
+    <Compile Include="Neg_Indicadores_informacion.cs" />
+    <Compile Include="Neg_Preguntas.cs" />
+    <Compile Include="Neg_Ultrasonidos.cs" />
     <Compile Include="Neg_Usuarios.cs" />
     <Compile Include="NombresSignificados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +103,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

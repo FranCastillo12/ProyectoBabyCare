@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
- <div style="width: 100%; height: 40%; background-image: url(../images/fondoletras.jpg); background-size: cover; background-position: center;">
+<div style="width: 100%; height: 40%; background-image: url(../images/fondoletras.jpg); background-size: cover; background-position: center;">
         <div style="padding-top: 2%; padding-bottom: 2%; padding-left: 6%; padding-right: 6%;">
             <h1 style="font-family: 'Baloo 2', sans-serif; color: white;">Nombres y Significados
             </h1>
@@ -24,7 +24,7 @@
         <form runat="server">
             <div class="row" style="">
                 <%-- Controles --%>
-                <div class="row" style="width: 500px; margin-top: 5%; margin-bottom: 5%">
+                <div class="row radio-button" style="margin-top: 5%; margin-bottom: 5%">
                     <div style="background-color: white; width: 90px; border-radius: 10%; margin-left: 15%; text-align: center; border: 2.5px solid black;">
                         <div>
                             <img runat="server" src="~/images/gen3.png" style="width: 70px; height: 60px" />
@@ -61,7 +61,7 @@
 
                     </div>
                     <div style="text-align: center">
-                        <div style="margin-top: 5px">
+                        <div class="txtnombre">
                             <asp:TextBox ID="txtLetra" runat="server" Style="width: 350px" onkeypress="soloLetras(event)" MaxLength="1"></asp:TextBox>
                         </div>
                         <div style="margin-top: 5px; width: 100px; margin-left: 30%">
@@ -79,7 +79,7 @@
                         <asp:TextBox runat="server" ID="txtArea" TextMode="MultiLine" Rows="6" Columns="30" ReadOnly="true" CssClass="textareaNombres custom-textbox" />
 
                     </div>
-                    <div style="width: 30%; margin-left: 35%; margin-top: 5%">
+                    <div class="img-osito" style="width: 30%; margin-left: 35%; margin-top: 5%">
                         <img runat="server" src="~/images/osito.png" style="width: 200px; height: 200px" />
                     </div>
                 </div>

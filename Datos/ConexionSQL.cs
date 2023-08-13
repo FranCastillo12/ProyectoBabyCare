@@ -225,7 +225,177 @@ namespace Datos
         #endregion
 
         #region  Sebas
+        #region Alertas
+        public List<Entidades.Alerta> AlertasBebe(int idbebe)
+        {
+            List<Entidades.Alerta> alertas = new List<Entidades.Alerta>();
 
+            try
+            {
+                sqlConn.Open();
+
+                SqlCommand command = new SqlCommand("VerAlertasbebe", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idbebe", idbebe);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Entidades.Alerta alerta = new Entidades.Alerta();
+                        alerta.idAlerta = Convert.ToInt32(reader["idAlerta"].ToString());
+                        alerta.Descripcion = reader["nombre"].ToString();
+                        if (Convert.ToBoolean(reader["Estado"].ToString()) == true)
+                        {
+                            alerta.Estado = true;
+                        }
+                        else {
+                            alerta.Estado = false;
+                        }
+                        alerta.Categoria = reader["categoria"].ToString();  
+                        if (!reader.IsDBNull(reader.GetOrdinal("HoraAlerta")))
+                        {
+                            TimeSpan horaDeAlertaTimeSpan = reader.GetTimeSpan(reader.GetOrdinal("HoraAlerta"));
+                            DateTime fechaHoy = DateTime.Today;
+                            DateTime horaDeAlerta = fechaHoy.Add(horaDeAlertaTimeSpan);
+                            alerta.HoraDeAlerta = horaDeAlerta;
+                        }
+
+                        alertas.Add(alerta);
+                    }
+                }
+                sqlConn.Close();
+
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return alertas;
+        }
+        public string CambiarEstadoAlerta(int idAlerta,bool Estado)
+        {
+            string respuesta = "No existe";
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("ModificarEstadoAlerta", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idAlerta", idAlerta);
+                command.Parameters.AddWithValue("@Estado", Estado);
+                
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+            return respuesta;
+        }
+
+        public void ActivarAlertaSiguiente(DateTime Horasistema,int idbebe) {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("ActivarAlertaSiguiente", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idBebe", idbebe);
+                command.Parameters.AddWithValue("@HoraSistema", Horasistema);
+
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+        }
+
+        //EliminarAlerta
+        public void EliminarAlerta(int idAlerta) {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("EliminarAlerta", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idalerta", idAlerta);
+
+
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+        }
+
+        public void AgregarAlerta(int idBebe,int Categoria,string Descripcion,DateTime hora)
+        {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("AgregarAlerta", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@hora", hora);
+                command.Parameters.AddWithValue("@idcategoria", Categoria);
+                command.Parameters.AddWithValue("@descripcion", Descripcion);
+                command.Parameters.AddWithValue("@idbebe", idBebe);
+
+
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+        }
+
+        public List<Entidades.Alerta> FiltrarAlertas(int idBebe,int idCategoria) {
+            List<Entidades.Alerta> lstalertas=new List<Entidades.Alerta>();
+            try
+            {
+                sqlConn.Open();
+
+                SqlCommand command = new SqlCommand("FiltrarAlertas", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idBebe", idBebe);
+                command.Parameters.AddWithValue("@idCategoria", idCategoria);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Entidades.Alerta alerta = new Entidades.Alerta();
+                        alerta.idAlerta = Convert.ToInt32(reader["idAlerta"].ToString());
+                        alerta.Descripcion = reader["nombre"].ToString();
+                        if (Convert.ToBoolean(reader["Estado"].ToString()) == true)
+                        {
+                            alerta.Estado = true;
+                        }
+                        else
+                        {
+                            alerta.Estado = false;
+                        }
+                        alerta.Categoria = reader["categoria"].ToString();
+                        if (!reader.IsDBNull(reader.GetOrdinal("HoraAlerta")))
+                        {
+                            TimeSpan horaDeAlertaTimeSpan = reader.GetTimeSpan(reader.GetOrdinal("HoraAlerta"));
+                            DateTime fechaHoy = DateTime.Today;
+                            DateTime horaDeAlerta = fechaHoy.Add(horaDeAlertaTimeSpan);
+                            alerta.HoraDeAlerta = horaDeAlerta;
+                        }
+
+                        lstalertas.Add(alerta);
+                    }
+                }
+                sqlConn.Close();
+
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return lstalertas;
+        
+        }
+
+        #endregion
 
         #region expediente
         public string ValidarExpediente(int idbebe) {
@@ -754,7 +924,66 @@ namespace Datos
         }
         #endregion
 
+
+        #region Configuraciones
+        public Entidades.ConfiguracionesSistema TraerConfiguraciones()
+        {
+            Entidades.ConfiguracionesSistema configuraciones=new Entidades.ConfiguracionesSistema();
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("TraerConfiguracionesSistema", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        configuraciones.Fotos= Convert.ToInt32(reader["Cantidad_Fotos"].ToString());
+                        configuraciones.Videos = Convert.ToInt32(reader["Cantidad_Videos"].ToString());
+                        configuraciones.Ultrasonidos = Convert.ToInt32(reader["Cantidad_Ultrasonidos"].ToString());
+                        configuraciones.Alertas= Convert.ToInt32(reader["Cantidad_Alertas"].ToString());
+                    }
+                }
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+            return configuraciones;
+        }
+
+        public Entidades.ConfiguracionesGrupoFamiliar TraerConfiguracionesGrupoFamiliar()
+        {
+            Entidades.ConfiguracionesGrupoFamiliar configuraciones = new Entidades.ConfiguracionesGrupoFamiliar();
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("TraerConfiguracionesGrupoFamiliar", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        configuraciones.Padres = Convert.ToInt32(reader["Cantidad_Padres"].ToString());
+                        configuraciones.Madres = Convert.ToInt32(reader["Cantidad_Madres"].ToString());
+                        configuraciones.Tios = Convert.ToInt32(reader["Cantidad_Tios"].ToString());
+                        configuraciones.Tias = Convert.ToInt32(reader["Cantidad_Tias"].ToString());
+                        configuraciones.Abuelos = Convert.ToInt32(reader["Cantidad_Abuelos"].ToString());
+                        configuraciones.Babysisters = Convert.ToInt32(reader["Cantidad_Babysisters"].ToString());
+                        configuraciones.Invitados = Convert.ToInt32(reader["Cantidad_Invitados"].ToString());
+                    }
+                }
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+            return configuraciones;
+        }
+
         #endregion
-       
+
+        #endregion
+
     }
 }
