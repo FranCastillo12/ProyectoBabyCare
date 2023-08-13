@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectoBabyCare.pages.GestorBebes
+namespace ProyectoBabyCare.pages
 {
 
 
-    public partial class PerfilesSistema
+    public partial class AdminUsuarios
     {
 
         /// <summary>
@@ -58,14 +58,5 @@ namespace ProyectoBabyCare.pages.GestorBebes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btncerrar;
-
-        /// <summary>
-        /// Control tablaUsuarios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tablaUsuarios;
     }
 }

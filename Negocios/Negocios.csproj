@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administracion.cs" />
     <Compile Include="Archivos.cs" />
     <Compile Include="Bebe.cs" />
     <Compile Include="Citas.cs" />

@@ -176,12 +176,13 @@
     <Content Include="images\tabla.png" />
     <Content Include="pages\CargaFotosVideos.aspx" />
     <Content Include="pages\ControlPanel2.aspx" />
+    <Content Include="pages\GestorBebes\ActualizarUsuario.aspx" />
     <Content Include="pages\GestorBebes\PerfilesSistema.aspx" />
     <Content Include="pages\Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LoginAdmin.aspx" />
     <Content Include="pages\AdminFamiliares.aspx" />
-    <Content Include="pages\AdminUsuarios.aspx" />
+    <Content Include="pages\GestorBebes\AdminUsuarios.aspx" />
     <Content Include="pages\Consejos.aspx" />
     <Content Include="pages\ControlPanel.aspx" />
     <Content Include="pages\DietasPrivate.aspx" />
@@ -205,6 +206,7 @@
     <Content Include="styles\generales\LoginAdmin.css" />
     <Content Include="styles\generales\Navbar.css" />
     <Content Include="styles\generales\Registro.css" />
+    <Content Include="styles\PaginasAdmin\Formulario.css" />
     <Content Include="styles\PaginasAdmin\PerfilesSistema.css" />
     <Content Include="styles\PaginaUsuarios\AdminFamiliares.css" />
     <Content Include="styles\PaginaUsuarios\AdminUsuarios.css" />
@@ -239,6 +241,13 @@
     </Compile>
     <Compile Include="pages\ControlPanel2.aspx.designer.cs">
       <DependentUpon>ControlPanel2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\GestorBebes\ActualizarUsuario.aspx.cs">
+      <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\GestorBebes\ActualizarUsuario.aspx.designer.cs">
+      <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\GestorBebes\PerfilesSistema.aspx.cs">
       <DependentUpon>PerfilesSistema.aspx</DependentUpon>
@@ -275,11 +284,11 @@
     <Compile Include="pages\AdminFamiliares.aspx.designer.cs">
       <DependentUpon>AdminFamiliares.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\AdminUsuarios.aspx.cs">
+    <Compile Include="pages\GestorBebes\AdminUsuarios.aspx.cs">
       <DependentUpon>AdminUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\AdminUsuarios.aspx.designer.cs">
+    <Compile Include="pages\GestorBebes\AdminUsuarios.aspx.designer.cs">
       <DependentUpon>AdminUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Consejos.aspx.cs">
