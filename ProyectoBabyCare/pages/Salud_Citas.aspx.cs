@@ -38,7 +38,7 @@ namespace ProyectoBabyCare.pages
                     mensaje = "Como usuario " + credenciales.Rol + " no puedes registrar Vacunas";
                 string script =
                                "toastr.options.closeButton = true;" +
-                               "toastr.options.positionClass = 'toast-top-full-width';" +
+                                "toastr.options.positionClass = 'toast-bottom-right';" +
                                $"toastr.error('{mensaje}');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
@@ -180,7 +180,7 @@ namespace ProyectoBabyCare.pages
 
                 string script =
                                  "toastr.options.closeButton = true;" +
-                                 "toastr.options.positionClass = 'toast-top-full-width';" +
+                                 "toastr.options.positionClass = 'toast-bottom-right';" +
                                  $"toastr.error('{mensaje}');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
@@ -245,7 +245,7 @@ namespace ProyectoBabyCare.pages
                             string mensaje = exc.Message;
                             string script =
                                 "toastr.options.closeButton = true;" +
-                                "toastr.options.positionClass = 'toast-top-full-width';" +
+                                "toastr.options.positionClass = 'toast-bottom-right';" +
                                 $"toastr.error('{mensaje}');";
                             ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                         }
@@ -292,7 +292,7 @@ namespace ProyectoBabyCare.pages
                 string mensajeError = exc.Message;
                 string script =
                                  "toastr.options.closeButton = true;" +
-                                 "toastr.options.positionClass = 'toast-top-full-width';" +
+                                  "toastr.options.positionClass = 'toast-bottom-right';" +
                                  $"toastr.error('{mensajeError}');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
