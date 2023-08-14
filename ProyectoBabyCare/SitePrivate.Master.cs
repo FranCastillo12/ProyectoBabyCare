@@ -40,6 +40,7 @@ namespace ProyectoBabyCare
             {
                 expediente.Visible = false;
                 navbarDropdownMenuLink1.Visible = false;
+                navbarDropdownMenuLink.Visible = false;
             }
             else
             {

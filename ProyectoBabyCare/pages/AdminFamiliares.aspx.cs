@@ -127,7 +127,7 @@ namespace ProyectoBabyCare.pages
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            string redirectScript = null;
             string script = null;
             try
             {
@@ -151,23 +151,109 @@ namespace ProyectoBabyCare.pages
                 }
                 else
                 {
-                    cambiorol.Visible = true;
                     string idUsuario = lblnumerousuario.Text;
                     string valorSeleccionado = ddlRoles.SelectedValue;
-
                     Negocios.Neg_Usuarios iUsuario = new Negocios.Neg_Usuarios();
-                    iUsuario.CambioRol(idUsuario, valorSeleccionado);
-                    script =
-                    "toastr.options.closeButton = true;" +
-                    "toastr.options.positionClass = 'toast-bottom-right';" +
-                   "toastr.success('El cambio de rol se ha realizado con satisfacción');";
-                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-                    // Agregar una redirección después de 1 segundo (1000 milisegundos)
-                    string redirectScript = "<meta http-equiv='refresh' content='1'>";
-                    Response.Write(redirectScript);
+
+                    Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
+                    string idbebe = credenciales.IdenBebe;
+
+
+                    if (valorSeleccionado == "3")//Padre
+                    {
+
+                        DataTable cantidad = iUsuario.CantidadFam(idbebe, valorSeleccionado);
+
+                        if (cantidad.Rows.Count > 0)
+                        {
+                            DataRow row = cantidad.Rows[0];
+
+                            int cantidadPadre = Convert.ToInt32(row[0]); // Primer columna
+
+                            int cantidadTotalPadre = Convert.ToInt32(row[1]); // Primer columna
+
+                            if (cantidadPadre >= cantidadTotalPadre)
+                            {
+                                script =
+                             "toastr.options.closeButton = true;" +
+                             "toastr.options.positionClass = 'toast-bottom-right';" +
+                             "toastr.warning('Ya supero la cantidad de padres');";
+                                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                            }
+                            else
+                            {
+
+                                cambiorol.Visible = true;
+
+
+
+                                iUsuario.CambioRol(idUsuario, valorSeleccionado);
+                                script =
+                                "toastr.options.closeButton = true;" +
+                                "toastr.options.positionClass = 'toast-bottom-right';" +
+                               "toastr.success('El cambio de rol se ha realizado con satisfacción');";
+                                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                                // Agregar una redirección después de 1 segundo (1000 milisegundos)
+                                redirectScript = "<meta http-equiv='refresh' content='1'>";
+                                Response.Write(redirectScript);
+
+                            }
+
+
+                        }
+                    }
+                    else if (valorSeleccionado == "2")//Madre
+                    {
+                        DataTable cantidadMadres = iUsuario.CantidadFam(idbebe, valorSeleccionado);
+
+                        if (cantidadMadres.Rows.Count > 0)
+                        {
+                            DataRow row = cantidadMadres.Rows[0];
+
+                            int cantidadMadre = Convert.ToInt32(row[0]); // Primer columna
+
+                            int cantidadTotalMadre = Convert.ToInt32(row[1]); // Primer columna
+
+                            if (cantidadMadre >= cantidadTotalMadre)
+                            {
+                                script =
+                             "toastr.options.closeButton = true;" +
+                             "toastr.options.positionClass = 'toast-bottom-right';" +
+                             "toastr.warning('Ya supero la cantidad de madres');";
+                                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                            }
+                            else
+                            {
+                                cambiorol.Visible = true;
+                                iUsuario.CambioRol(idUsuario, valorSeleccionado);
+                                script =
+                                "toastr.options.closeButton = true;" +
+                                "toastr.options.positionClass = 'toast-bottom-right';" +
+                               "toastr.success('El cambio de rol se ha realizado con satisfacción');";
+                                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                                // Agregar una redirección después de 1 segundo (1000 milisegundos)
+                                redirectScript = "<meta http-equiv='refresh' content='1'>";
+                                Response.Write(redirectScript);
+
+                            }
+
+                        }
+                    }
+                    else
+                    {
+
+                        cambiorol.Visible = true;
+                        iUsuario.CambioRol(idUsuario, valorSeleccionado);
+                        script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
+                       "toastr.success('El cambio de rol se ha realizado con satisfacción');";
+                        ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                        // Agregar una redirección después de 1 segundo (1000 milisegundos)
+                        redirectScript = "<meta http-equiv='refresh' content='1'>";
+                        Response.Write(redirectScript);
+                    }
                 }
-
-
             }
             catch (Exception ex)
             {

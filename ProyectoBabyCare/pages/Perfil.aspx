@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-md-4 conetedor-bebes">
                         <div class="p-3 py-5">
-                            <div style="color: #3399CC" class="d-flex justify-content-between align-items-center experience"><span class="title-bebes">Mi nucleo<a href="Registrobebe.aspx">Registrobebe.aspx</a></span><a href="Registrobebe.aspx" class="border px-1 p-1 add-experience"><i style="" class="fa fa-plus"></i>&nbsp; Bebé</a></div>
+                            <div style="color: #3399CC" class="d-flex justify-content-between align-items-center experience"><span class="title-bebes">Mi núcleo</span><a href="Registrobebe.aspx" class="border px-1 p-1 add-experience"><i style="" class="fa fa-plus"></i>&nbsp; Bebé</a></div>
                             <br>
                             <div class="col-md-12">
                                 <asp:DropDownList ID="dropbebes" runat="server" CssClass="form-controlddl" AutoPostBack="true" OnSelectedIndexChanged="dropbebes_SelectedIndexChanged">

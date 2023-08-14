@@ -31,7 +31,7 @@
                 Ultrasonidos
             </div>
             <!-- Button to Open the Modal -->
-            <button class="profile-buttonddll" type="button" data-toggle="modal" data-target="#myModal" >
+            <button class="profile-buttonddll" type="button" data-toggle="modal" data-target="#myModal" runat="server" id="btnmodal" >
                 Agregar
             </button>
             
@@ -72,7 +72,7 @@
                                         Agregar imagen
                         <%--<asp:TextBox type="file" id="file" class="select-image" ClientIDMode="Static" style="display:none" runat="server"/>--%>
 
-                                        <asp:FileUpload ID="file" class="select-image" ClientIDMode="Static" runat="server" Style="display: none;" />
+                                        <asp:FileUpload ID="file" class="select-image" ClientIDMode="Static" runat="server" Style="display: none;" accept=".jpg,.png" />
                                     </label>
                                 </div>
                                 <%--<button class="select-image">Select Image</button>--%>
