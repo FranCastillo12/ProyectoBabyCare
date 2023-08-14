@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h1 style="background-color: #F6E0ED; color: mediumblue; margin-top: 1%; text-align: center">Alertitas</h1>
+    <h1 style="background-color: #F6E0ED; color: mediumblue; margin-top: 1%; text-align: center;font-family: 'Baloo 2', sans-serif">Alertitas</h1>
 
     <div class="row">
         <div class="ImagenBorde1">
