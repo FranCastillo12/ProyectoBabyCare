@@ -13,6 +13,7 @@ namespace ProyectoBabyCare.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
 
@@ -63,12 +64,13 @@ namespace ProyectoBabyCare.pages
 
                 //Agrega el código HTML a la página web para mostrar las cartas
                 this.lstfrmMantenimiento.InnerHtml = strListaProductos.ToString();
-
+                int idbebee = 0;
+                idbebee = Convert.ToInt32(credenciales.IdenBebe);
                 //Llama al metodo para activar las alertas y mostrar mensaje
                 Negocios.AlertasUsuario alert = new Negocios.AlertasUsuario();
                 DateTime horaActual = DateTime.Now;
-                alert.ActivateAlertas(horaActual, idBebe);
-                List<Entidades.Alerta> alertas = alert.TraerAlertas(idBebe);
+                alert.ActivateAlertas(horaActual, idbebee);
+                List<Entidades.Alerta> alertas = alert.TraerAlertas(idbebee);
 
                 string scriptalerta = null;
                 foreach (Entidades.Alerta alrt in alertas)
