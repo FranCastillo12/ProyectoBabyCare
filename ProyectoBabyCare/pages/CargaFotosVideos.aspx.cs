@@ -176,7 +176,7 @@ namespace ProyectoBabyCare.pages
 
                     galleryHtml.AppendLine("<section class='gallery-item'>");
                     galleryHtml.AppendLine($"    <a href='#{imageId}'>");
-                    galleryHtml.AppendLine($"        <img src='{imageUrl}' alt='' />");
+                    galleryHtml.AppendLine($"<img class=\"img\" src='{imageUrl}' alt='' />");
                     galleryHtml.AppendLine($"    </a>");
                     galleryHtml.AppendLine("</section>");
                 }
@@ -213,7 +213,7 @@ namespace ProyectoBabyCare.pages
 
                     lightboxHtml.AppendLine("<article class='light-box' id='" + imageId + "'>");
                     lightboxHtml.AppendLine($"    <a href='#{prevImageId}' class='next'><i class='fa-solid fa-arrow-left'></i></a>");
-                    lightboxHtml.AppendLine($"    <img src='{imageUrl}' alt='' />");
+                    lightboxHtml.AppendLine($"    <img class=\"img\" src='{imageUrl}' alt='' />");
                     lightboxHtml.AppendLine($"    <a href='#{nextImageId}' class='next'><i class='fa-solid fa-arrow-right'></i></a>");
                     lightboxHtml.AppendLine($"    <a href='#' class='close'>X</a>");
                     lightboxHtml.AppendLine("</article>");

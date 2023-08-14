@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminUsuarios.aspx.cs" Inherits="ProyectoBabyCare.pages.AdminUsuarios" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="logoutAdmin.aspx.cs" Inherits="ProyectoBabyCare.pages.GestorBebes.logoutAdmin" %>
 
 <!DOCTYPE html>
 

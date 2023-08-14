@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoBabyCare.pages
+namespace ProyectoBabyCare.pages.GestorBebes
 {
 
 
-    public partial class AdminUsuarios
+    public partial class logoutAdmin
     {
 
         /// <summary>

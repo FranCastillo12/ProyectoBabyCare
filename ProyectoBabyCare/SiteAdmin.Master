@@ -38,21 +38,29 @@
               <li class="nav-item">
             <a class="nav-link mx-2 active"href="#">Usuarios</a>
           </li>
+               <li class="nav-item">
+            <a class="nav-link mx-2 active"href="GestionBebes.aspx">Bebés</a>
+          </li>
                       <li class="nav-item dropdown">
             <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Gestiones
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="#">Gesti&oacute;n Expediente</a></li>
+
               <li><a class="dropdown-item" href="#">Gesti&oacute;n Desarrollo</a></li>
                 <li><a class="dropdown-item" href="#">Gesti&oacute;n Dietas</a></li>
+
+              <li><a class="dropdown-item" href="GestionEtapasDesarrollo.aspx">Gesti&oacute;n Desarrollo</a></li>
+
             </ul>
           </li>
                   <li class="nav-item">
-            <a class="nav-link mx-2 active"href="#">Estadisticas</a>
+            <a class="nav-link mx-2 active"href="IndicadoresInformacion.aspx">Estadisticas</a>
           </li>
             <li class="nav-item">
-            <a class="nav-link mx-2 active"href="logout.aspx">Salir</a>
+
+            <a class="nav-link mx-2 active"href="logoutAdmin.aspx">Salir</a>
           </li>
         </ul>
       </div>

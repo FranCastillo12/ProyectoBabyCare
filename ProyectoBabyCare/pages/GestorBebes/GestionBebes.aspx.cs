@@ -71,8 +71,7 @@ namespace ProyectoBabyCare.pages.GestorBebes
             Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
 
             iBebes.CambiarEstado(Convert.ToInt32(parts[1]), 1);
-            string redirectScript = "<meta http-equiv='refresh' content='0.1'>";
-            Response.Write(redirectScript);
+            Response.Redirect("GestionBebes.aspx");
         }
 
         protected void hiddenBtnInactivar_Click(object sender, EventArgs e)
@@ -83,8 +82,7 @@ namespace ProyectoBabyCare.pages.GestorBebes
             Negocios.Neg_bebes iBebes = new Negocios.Neg_bebes();
 
             iBebes.CambiarEstado(Convert.ToInt32(parts[1]), 0);
-            string redirectScript = "<meta http-equiv='refresh' content='0'>";
-            Response.Write(redirectScript);
+            Response.Redirect("GestionBebes.aspx");
         }
     }
 }
