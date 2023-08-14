@@ -15,12 +15,29 @@ namespace ProyectoBabyCare.pages
         {
             if (!IsPostBack)
             {
+
+                Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
+
+                if (credenciales == null)
+                {
+                    Response.Redirect("../Login.aspx");
+                }
+                if(credenciales.Rol == "Padre" || credenciales.Rol == "Madre")
+                {
+                    btnmodal.Visible = true;
+                }
+                else
+                {
+                    btnmodal.Visible = false;
+                }
                 //Cargar los cards en la pantalla
 
                 Negocios.Neg_Ultrasonidos iUltrasonidos = new Negocios.Neg_Ultrasonidos();
 
-                //Falta llamar el id del bebe
-                DataTable dtEtapas = iUltrasonidos.Obtener_Ultrasonidos("35");
+                //iddelbebe
+                string idbebe = credenciales.IdenBebe;
+
+                DataTable dtEtapas = iUltrasonidos.Obtener_Ultrasonidos(idbebe);
 
                 System.Text.StringBuilder strListaProductos = new System.Text.StringBuilder();
 
@@ -60,7 +77,7 @@ namespace ProyectoBabyCare.pages
             //Obtener la imagen del ultrasonido
             int tamanio = file.PostedFile.ContentLength;
 
-
+            string extension = System.IO.Path.GetExtension(file.FileName);
             //Inicio de validaciones
 
             if (fecha == "")
@@ -87,57 +104,72 @@ namespace ProyectoBabyCare.pages
                         "toastr.error('Debe de escoger una imagen');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
-            else
+            else if (extension.ToLower() != ".jpg" || extension.ToLower() != ".png")
             {
+
                 Entidades.En_Usuarios credenciales = (Entidades.En_Usuarios)Session["Credenciales"];
 
                 Negocios.Neg_Ultrasonidos iUltrasonidos = new Negocios.Neg_Ultrasonidos();
 
                 //Id del bebe que esta en la sesion
-                //string idbebe = credenciales.IdenBebe;
+                int idbebe = Convert.ToInt32(credenciales.IdenBebe);
 
-                int cantidad = iUltrasonidos.Canidad_Ultrasonidos(35);
+                DataTable cantidad = iUltrasonidos.Canidad_Ultrasonidos(idbebe);
 
-                if (cantidad >= 4)
+                if (cantidad.Rows.Count > 0)
                 {
-                    script =
-                 "toastr.options.closeButton = true;" +
-                 "toastr.options.positionClass = 'toast-bottom-right';" +
-                 "toastr.warning('Ya supero la cantidad de ultrasonidos que se puede subir');";
-                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-                }
-                else {
-                    byte[] ImagenOriginal = new byte[tamanio];
+                    DataRow row = cantidad.Rows[0];
+                    int cantidadUltra = Convert.ToInt32(row[0]); // Primer columna
 
-                    file.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
-                    Bitmap ImagenOriginalBinaria = new Bitmap(file.PostedFile.InputStream);
+                    int cantidadTotalUltra = Convert.ToInt32(row[1]); // Primer columna
 
-                    //Id del bebe que esta en la sesion
 
-                    //string idbebe = credenciales.IdenBebe;
-
-                    //Falta llamar la variable del bebe
-                    iUltrasonidos.IngresarUltrasonidos("35", ImagenOriginal, fecha, descip);
-
-                    //Vaciar los campos
-                    txtdescrip.Text = "";
-                    txtdia.Text = "";
-                    // Clear the data-img attribute
-                    imgArea.Attributes["data-img"] = "";
-
-                    // Remove any existing image elements inside the img-area
-                    var imageElementt = imgArea.FindControl("imgElement") as System.Web.UI.HtmlControls.HtmlImage;
-                    if (imageElementt != null)
+                    if (cantidadUltra >= cantidadTotalUltra)
                     {
-                        imgArea.Controls.Remove(imageElementt);
+                        script =
+                     "toastr.options.closeButton = true;" +
+                     "toastr.options.positionClass = 'toast-bottom-right';" +
+                     "toastr.warning('Ya supero la cantidad de ultrasonidos que se puede subir');";
+                        ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                     }
+                    else
+                    {
+                        byte[] ImagenOriginal = new byte[tamanio];
 
-                    string redirectScript = "<meta http-equiv='refresh' content='0.5'>";
-                    Response.Write(redirectScript);
+                        file.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
+                        Bitmap ImagenOriginalBinaria = new Bitmap(file.PostedFile.InputStream);
+
+                        //Id del bebe que esta en la sesion
+
+                        //string idbebe = credenciales.IdenBebe;
+
+                        //Falta llamar la variable del bebe
+                        iUltrasonidos.IngresarUltrasonidos(idbebe, ImagenOriginal, fecha, descip);
+
+                        //Vaciar los campos
+                        txtdescrip.Text = "";
+                        txtdia.Text = "";
+                        // Clear the data-img attribute
+                        imgArea.Attributes["data-img"] = "";
+
+                        // Remove any existing image elements inside the img-area
+                        var imageElementt = imgArea.FindControl("imgElement") as System.Web.UI.HtmlControls.HtmlImage;
+                        if (imageElementt != null)
+                        {
+                            imgArea.Controls.Remove(imageElementt);
+                        }
+
+                        Response.Redirect("Ultrasonidos.aspx");
+                    }
                 }
-
-                
-
+            }
+            else
+            {
+                script =
+                  "toastr.options.closeButton = true;" +
+                  "toastr.options.positionClass = 'toast-bottom-right';" +
+                  "toastr.error('Solo puede subir archivos jpg o png');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
             //Vaciar los campos
             txtdescrip.Text = "";

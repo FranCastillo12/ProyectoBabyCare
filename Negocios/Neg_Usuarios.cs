@@ -192,6 +192,33 @@ namespace Negocios
                 throw ex;
             }
         }
+
+
+        public DataTable CantidadFam(string idbebe, string idrol)
+        {
+            try
+            {
+                string SpName = "SP_ObtenerCantidadFami";
+                var lstParametros = new List<SqlParameter>()
+                {
+                    new SqlParameter("@idbebe", idbebe),
+                    new SqlParameter("@idrol", idrol),
+
+                };
+                Datos.ConexionSQL Iconexion = new Datos.ConexionSQL();
+                return Iconexion.ExecuteSPWithDT(SpName, lstParametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+
+
+
         #region "admin"
 
         public DataTable VerificarCredencialesAdmin(string user, string pass)

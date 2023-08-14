@@ -10,7 +10,7 @@ namespace Negocios
 {
     public class Neg_Ultrasonidos
     {
-        public void IngresarUltrasonidos(string idbebe, byte[] imagen, string fecha, string des)
+        public void IngresarUltrasonidos(int idbebe, byte[] imagen, string fecha, string des)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace Negocios
                 throw ex;
             }
         }
-        public int Canidad_Ultrasonidos(int idbebe)
+        public DataTable Canidad_Ultrasonidos(int idbebe)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace Negocios
                 new SqlParameter("@idbebe", idbebe)
             };
                 Datos.ConexionSQL iConexion = new Datos.ConexionSQL();
-                return iConexion.ExecuteSPWithScalar(spName, lstParametros);
+                return iConexion.ExecuteSPWithDT(spName, lstParametros);
             }
             catch (Exception ex)
             {
