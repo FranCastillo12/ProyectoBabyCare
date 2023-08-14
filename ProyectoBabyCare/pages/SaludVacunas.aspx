@@ -54,12 +54,12 @@
             <div class="cuadroVacuna">
                 <div class="tituloVacuna">
                     <div class="textoTituloVacuna">                        
-                        <asp:TextBox CssClass="textbox" ID="txtTitulo" runat="server"> Vacuna X</asp:TextBox>
+                        <asp:TextBox CssClass="textbox" ID="txtTitulo" runat="server" MaxLength="200"> Vacuna X</asp:TextBox>
                     </div>
                 </div>
                 <div class="descripcionVacuna">
                     <div class="textoDescripcionVacuna">                        
-                        <asp:TextBox TextMode="MultiLine" Rows="10" CssClass="textboxDescripcion" ID="txtDescripcion" runat="server">Descripcion x</asp:TextBox>
+                        <asp:TextBox TextMode="MultiLine" Rows="10" CssClass="textboxDescripcion" ID="txtDescripcion" runat="server" MaxLength="500">Descripcion x</asp:TextBox>
                     </div>
                 </div>              
                 <div class="fechaVacuna">

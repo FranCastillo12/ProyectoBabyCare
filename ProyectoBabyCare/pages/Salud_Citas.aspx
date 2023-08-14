@@ -107,7 +107,7 @@
                             <asp:Label ID="lblLugar" runat="server" Text="Lugar"></asp:Label>
                         </div>
                         <div class="cd1TextBox">
-                            <asp:TextBox ID="txtLugar" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtLugar" runat="server" MaxLength="50"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                             <asp:Label ID="lblTitulo" runat="server" Text="Titulo"></asp:Label>
                         </div>
                         <div class="cd1TextBox">
-                            <asp:TextBox ID="txtTitulo" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtTitulo" runat="server"  MaxLength="50"></asp:TextBox>
                         </div>
                     </div>
                 </div>

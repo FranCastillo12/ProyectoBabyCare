@@ -53,7 +53,7 @@
                             </div>
                             <div id="Formulario" style="width: 50%">
                                 <div style="text-align: center; padding-left: 10%; padding-right: 10%; padding-bottom: 2%; padding-top: 2%">
-                                    <asp:TextBox runat="server" ID="txtDescripcionAlerta" TextMode="MultiLine" Rows="5" Columns="15" Style="width: 100%; resize: none;" />
+                                    <asp:TextBox runat="server" ID="txtDescripcionAlerta" TextMode="MultiLine" Rows="5" Columns="15" Style="width: 100%; resize: none;" MaxLength="100" />
                                 </div>
                                 <div>
                                     <asp:TextBox ID="txthora" type="time" runat="server"></asp:TextBox>

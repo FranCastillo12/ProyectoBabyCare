@@ -65,7 +65,7 @@
                         </div>
                         <div class="mb-3 mt-3">
                             <label class="form_label" for="Fecha">Descripcion</label>
-                            <asp:TextBox runat="server" TextMode="MultiLine" Rows="4" ID="message" type="text" placeholder="" name="message" class="form-control input-box rm-border" Style="resize: none;"></asp:TextBox>
+                            <asp:TextBox runat="server" TextMode="MultiLine" Rows="4" ID="message" type="text" placeholder="" name="message" class="form-control input-box rm-border" Style="resize: none;" MaxLength="500"></asp:TextBox>
 
                         </div>
 
@@ -79,7 +79,7 @@
 
                         <div class="mb-3 mt-3">
                             <label class="form_label" for="Descripcion">Link</label>
-                            <asp:TextBox runat="server" TextMode="MultiLine" Rows="2" ID="txtlink" type="text" placeholder="" name="message" class="form-control input-box rm-border" Style="resize: none;"></asp:TextBox>
+                            <asp:TextBox runat="server" TextMode="MultiLine" Rows="2" ID="txtlink" type="text" placeholder="" name="message" class="form-control input-box rm-border" Style="resize: none;" MaxLength="200"></asp:TextBox>
                         </div>
                     </div>
 
