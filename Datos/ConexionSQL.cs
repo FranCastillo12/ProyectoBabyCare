@@ -981,6 +981,45 @@ namespace Datos
             return configuraciones;
         }
 
+        public void ModificarConfiguracionesFamiliares(int padres,int madres,int abuelos,int babysisters,int tios,int tias,int invitadps) {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("ModificarConfiguracionesGrupoFamiliar", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@padres", padres);
+                command.Parameters.AddWithValue("@madres", madres);
+                command.Parameters.AddWithValue("@Tios", tios);
+                command.Parameters.AddWithValue("@tias", tias);
+                command.Parameters.AddWithValue("@abuelos", abuelos);
+                command.Parameters.AddWithValue("@Babysisters", babysisters);
+                command.Parameters.AddWithValue("@invitados", invitadps);
+
+
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+        }
+        public void ModificarConfiguracionesSistema(int alertas, int Fotos, int Videos, int Ultrasonidos)
+        {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("ModificarConfiguracionesSistema", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CantidadAlertas", alertas);
+                command.Parameters.AddWithValue("@Cantidadfotos", Fotos);
+                command.Parameters.AddWithValue("@Cantidadvideos", Videos);
+                command.Parameters.AddWithValue("@CantidadUltrasonidos", Ultrasonidos);
+
+                command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+        }
         #endregion
 
         #endregion

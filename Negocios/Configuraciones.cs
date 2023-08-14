@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,9 @@ namespace Negocios
             return config;
         }
         //----Modificaciones de parametros
-        public void ModificarConfiguracionesSistema() {
+        public void ModificarConfiguracionesSistema(int alertas,int Fotos,int Videos,int Ultrasonidos) {
             ConexionSQL conexion = new ConexionSQL();
+            conexion.ModificarConfiguracionesSistema(alertas, Fotos, Videos, Ultrasonidos);
 
         }
         //Configuraciones Grupo familiar
@@ -29,9 +31,10 @@ namespace Negocios
             return config;
         }
         //----Modificaciones de parametros
-        public void ModificarConfiguracionesGrupoFamiliar()
+        public void ModificarConfiguracionesGrupoFamiliar(int padres,int  madres,int  abuelos,int babysisters,int tios,int tias,int invitadps)
         {
             ConexionSQL conexion = new ConexionSQL();
+            conexion.ModificarConfiguracionesFamiliares(padres, madres, abuelos, babysisters, tios, tias, invitadps);
 
         }
     }
