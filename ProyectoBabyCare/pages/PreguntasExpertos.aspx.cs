@@ -12,13 +12,32 @@ namespace ProyectoBabyCare.pages
 {
     public partial class PreguntasExpertos : System.Web.UI.Page
     {
+        int idBebe = 0;
         public static string _EndPoint = "https://api.openai.com/";
         public static string _URI = "v1/chat/completions";
         //Falta la llave
         public static string _APIKey = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Llama al metodo para activar las alertas y mostrar mensaje
+            Negocios.AlertasUsuario alert = new Negocios.AlertasUsuario();
+            DateTime horaActual = DateTime.Now;
+            alert.ActivateAlertas(horaActual, idBebe);
+            List<Entidades.Alerta> alertas = alert.TraerAlertas(idBebe);
 
+            string scriptalerta = null;
+            foreach (Entidades.Alerta alrt in alertas)
+            {
+                if (alrt.HoraDeAlerta.TimeOfDay <= horaActual.TimeOfDay && alrt.Estado == true)
+                {
+                    scriptalerta =
+                "toastr.options.closeButton = true;" +
+                 "toastr.options.positionClass = 'toast-bottom-right';" +
+                $"toastr.warning('Hay una alerta pendiente en estos momentos! ({alrt.HoraDeAlerta.ToString("hh:mm tt")})');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrWarning", scriptalerta, true);
+                }
+            }
+            // Final del metodo de mostrar alertas
         }
 
         protected void btnPreguntar_Click(object sender, EventArgs e)

@@ -13,6 +13,7 @@ namespace ProyectoBabyCare.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
 
@@ -63,6 +64,28 @@ namespace ProyectoBabyCare.pages
 
                 //Agrega el código HTML a la página web para mostrar las cartas
                 this.lstfrmMantenimiento.InnerHtml = strListaProductos.ToString();
+                int idbebee = 0;
+                idbebee = Convert.ToInt32(credenciales.IdenBebe);
+                //Llama al metodo para activar las alertas y mostrar mensaje
+                Negocios.AlertasUsuario alert = new Negocios.AlertasUsuario();
+                DateTime horaActual = DateTime.Now;
+                alert.ActivateAlertas(horaActual, idbebee);
+                List<Entidades.Alerta> alertas = alert.TraerAlertas(idbebee);
+
+                string scriptalerta = null;
+                foreach (Entidades.Alerta alrt in alertas)
+                {
+                    if (alrt.HoraDeAlerta.TimeOfDay <= horaActual.TimeOfDay && alrt.Estado == true)
+                    {
+                        scriptalerta =
+                    "toastr.options.closeButton = true;" +
+                     "toastr.options.positionClass = 'toast-bottom-right';" +
+                    $"toastr.warning('Hay una alerta pendiente en estos momentos! ({alrt.HoraDeAlerta.ToString("hh:mm tt")})');";
+                        ScriptManager.RegisterStartupScript(this, GetType(), "ToastrWarning", scriptalerta, true);
+                    }
+                }
+                // Final del metodo de mostrar alertas
+
             }
         }
 
