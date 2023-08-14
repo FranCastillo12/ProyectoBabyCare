@@ -215,6 +215,7 @@
     <Compile Include="En_Usuarios.cs" />
     <Compile Include="Expediente.cs" />
     <Compile Include="Generos.cs" />
+    <Compile Include="HorariosComida.cs" />
     <Compile Include="NombresBebes.cs" />
     <Compile Include="NombresSignificados.cs" />
     <Compile Include="Padecimientos.cs" />
@@ -223,6 +224,7 @@
     <Compile Include="RangoEdadDietas.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="Seguimientos.cs" />
+    <Compile Include="TiposComida.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="UsuariosBebes.cs" />
     <Compile Include="UsuariosSistema.cs" />

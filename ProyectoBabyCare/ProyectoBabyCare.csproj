@@ -221,6 +221,7 @@
     <Content Include="pages\ControlPanel2.aspx" />
     <Content Include="pages\GestorBebes\ActualizarUsuario.aspx" />
     <Content Include="pages\eliminarultrasonido.aspx" />
+    <Content Include="pages\GestorBebes\Creaciondedietas.aspx" />
     <Content Include="pages\GestorBebes\GestionBebes.aspx" />
     <Content Include="pages\GestorBebes\GestionEtapasDesarrollo.aspx" />
     <Content Include="pages\GestorBebes\logoutAdmin.aspx" />
@@ -248,7 +249,7 @@
     <Content Include="pages\Salud_Citas.aspx" />
     <Content Include="pages\SegundoFactorAuten.aspx" />
     <Content Include="pages\Ultrasonidos.aspx" />
-    <Content Include="pages\Configuraciones.aspx" />
+    <Content Include="pages\GestorBebes\Configuraciones.aspx" />
     <Content Include="styles\generales\CartasDietas.css" />
     <Content Include="pages\SeguimientoActividades.aspx" />
     <Content Include="pages\RegistrarExpediente.aspx" />
@@ -317,6 +318,13 @@
     </Compile>
     <Compile Include="pages\eliminarultrasonido.aspx.designer.cs">
       <DependentUpon>eliminarultrasonido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\GestorBebes\Creaciondedietas.aspx.cs">
+      <DependentUpon>Creaciondedietas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\GestorBebes\Creaciondedietas.aspx.designer.cs">
+      <DependentUpon>Creaciondedietas.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\GestorBebes\GestionBebes.aspx.cs">
       <DependentUpon>GestionBebes.aspx</DependentUpon>
@@ -514,11 +522,11 @@
     <Compile Include="pages\Ultrasonidos.aspx.designer.cs">
       <DependentUpon>Ultrasonidos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Configuraciones.aspx.cs">
+    <Compile Include="pages\GestorBebes\Configuraciones.aspx.cs">
       <DependentUpon>Configuraciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Configuraciones.aspx.designer.cs">
+    <Compile Include="pages\GestorBebes\Configuraciones.aspx.designer.cs">
       <DependentUpon>Configuraciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

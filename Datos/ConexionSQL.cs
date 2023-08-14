@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using Entidades;
+using System.Dynamic;
 
 namespace Datos
 {
@@ -1015,6 +1016,110 @@ namespace Datos
                 sqlConn.Close();
             }
             catch (Exception e) { }
+        }
+        #endregion
+
+        #region CreacionDietas
+        public List<Entidades.TiposComida> TraerTiposComida() {
+            List<Entidades.TiposComida> lst=new List<TiposComida> ();
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("TraerTiposdecomida", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                       // configuraciones.Fotos = Convert.ToInt32(reader["Cantidad_Fotos"].ToString());
+                       Entidades.TiposComida ent=new Entidades.TiposComida();
+                        ent.IdTipoComida= Convert.ToInt32(reader["idTipoComida"].ToString());
+                        ent.Nombre1 = reader["NombreTipoComida"].ToString();
+                        lst.Add(ent);
+                    }
+                }
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+            return lst;
+
+        }
+        public List<Entidades.HorariosDieta> TraerHorariosDieta()
+        {
+            List<Entidades.HorariosDieta> lst = new List<Entidades.HorariosDieta>();
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("TraerHorariosDietas", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // configuraciones.Fotos = Convert.ToInt32(reader["Cantidad_Fotos"].ToString());
+                        Entidades.HorariosDieta ent = new Entidades.HorariosDieta();
+                        ent.IdHorario = Convert.ToInt32(reader["idHorarioDieta"].ToString());
+                        ent.Nombre = reader["NombreHorarioDieta"].ToString();
+                        lst.Add(ent);
+                    }
+                }
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+            return lst;
+        }
+
+        public List<Entidades.RangoEdadDietas> TraerRangosDietas()
+        {
+            List<Entidades.RangoEdadDietas> lst = new List<Entidades.RangoEdadDietas>();
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("VerRangoDietas", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Entidades.RangoEdadDietas ent = new Entidades.RangoEdadDietas();
+                        ent.IdRangoDietas=Convert.ToInt32(reader["idRangoedadDieta"].ToString());
+                        ent.EdadInicio= Convert.ToInt32(reader["EdadInicio"].ToString());
+                        ent.EdadFinal= Convert.ToInt32(reader["edadFinal"].ToString());
+                        lst.Add(ent);
+                    }
+                }
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+            return lst;
+        }
+        //CrearDieta
+        public void CrearDieta(int rango,int tipo,int horario,string comida) {
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("CrearDieta", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@rango", rango);
+                command.Parameters.AddWithValue("@horario", horario);
+                command.Parameters.AddWithValue("@tipo", tipo);
+                command.Parameters.AddWithValue("@comida", comida);
+
+                int c = command.ExecuteNonQuery();
+
+                sqlConn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+
         }
         #endregion
 
