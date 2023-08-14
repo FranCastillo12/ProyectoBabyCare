@@ -29,26 +29,21 @@ namespace ProyectoBabyCare.pages
                 txtMadres.Text = configgrupo.Madres.ToString();
                 txtAbuelos.Text = configgrupo.Abuelos.ToString();
                 txtBabysisters.Text = configgrupo.Babysisters.ToString();
-                txtTios.Text = configgrupo.Tios.ToString();
-                txtTias.Text = configgrupo.Tias.ToString();
                 txtInvitados.Text = configgrupo.Invitados.ToString();
             }
         }
 
         protected void btnModificarGrupoFamiliar_Click(object sender, EventArgs e)
         {
-            if (!txtPadres.Text.Trim().Equals("") && !txtMadres.Text.Trim().Equals("") && !txtTios.Text.Trim().Equals("") && !txtTias.Text.Trim().Equals("")
-                && !txtAbuelos.Text.Trim().Equals("") && !txtBabysisters.Text.Trim().Equals("") && !txtInvitados.Text.Trim().Equals("")) {
+            if (!txtPadres.Text.Trim().Equals("") && !txtMadres.Text.Trim().Equals("") && !txtAbuelos.Text.Trim().Equals("") && !txtBabysisters.Text.Trim().Equals("") && !txtInvitados.Text.Trim().Equals("")) {
 
                 int padres = Convert.ToInt32(txtPadres.Text);
                 int madres = Convert.ToInt32(txtMadres.Text);
                 int abuelos = Convert.ToInt32(txtAbuelos.Text);
                 int babysisters = Convert.ToInt32(txtBabysisters.Text);
-                int tios = Convert.ToInt32(txtTios.Text);
-                int tias = Convert.ToInt32(txtTias.Text);
                 int invitadps = Convert.ToInt32(txtInvitados.Text);
                 Negocios.Configuraciones config = new Negocios.Configuraciones();
-                config.ModificarConfiguracionesGrupoFamiliar(padres, madres, abuelos, babysisters, tios, tias, invitadps);
+                config.ModificarConfiguracionesGrupoFamiliar(padres, madres, abuelos, babysisters, invitadps);
 
                 Response.Redirect("Configuraciones.aspx");
 

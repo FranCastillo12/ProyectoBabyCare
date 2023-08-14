@@ -31,10 +31,10 @@ namespace Negocios
             return config;
         }
         //----Modificaciones de parametros
-        public void ModificarConfiguracionesGrupoFamiliar(int padres,int  madres,int  abuelos,int babysisters,int tios,int tias,int invitadps)
+        public void ModificarConfiguracionesGrupoFamiliar(int padres,int  madres,int  abuelos,int babysisters,int invitadps)
         {
             ConexionSQL conexion = new ConexionSQL();
-            conexion.ModificarConfiguracionesFamiliares(padres, madres, abuelos, babysisters, tios, tias, invitadps);
+            conexion.ModificarConfiguracionesFamiliares(padres, madres, abuelos, babysisters, invitadps);
 
         }
     }

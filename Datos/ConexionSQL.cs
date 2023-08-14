@@ -967,8 +967,6 @@ namespace Datos
                     {
                         configuraciones.Padres = Convert.ToInt32(reader["Cantidad_Padres"].ToString());
                         configuraciones.Madres = Convert.ToInt32(reader["Cantidad_Madres"].ToString());
-                        configuraciones.Tios = Convert.ToInt32(reader["Cantidad_Tios"].ToString());
-                        configuraciones.Tias = Convert.ToInt32(reader["Cantidad_Tias"].ToString());
                         configuraciones.Abuelos = Convert.ToInt32(reader["Cantidad_Abuelos"].ToString());
                         configuraciones.Babysisters = Convert.ToInt32(reader["Cantidad_Babysisters"].ToString());
                         configuraciones.Invitados = Convert.ToInt32(reader["Cantidad_Invitados"].ToString());
@@ -981,7 +979,7 @@ namespace Datos
             return configuraciones;
         }
 
-        public void ModificarConfiguracionesFamiliares(int padres,int madres,int abuelos,int babysisters,int tios,int tias,int invitadps) {
+        public void ModificarConfiguracionesFamiliares(int padres,int madres,int abuelos,int babysisters,int invitadps) {
             try
             {
                 sqlConn.Open();
@@ -989,8 +987,6 @@ namespace Datos
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@padres", padres);
                 command.Parameters.AddWithValue("@madres", madres);
-                command.Parameters.AddWithValue("@Tios", tios);
-                command.Parameters.AddWithValue("@tias", tias);
                 command.Parameters.AddWithValue("@abuelos", abuelos);
                 command.Parameters.AddWithValue("@Babysisters", babysisters);
                 command.Parameters.AddWithValue("@invitados", invitadps);

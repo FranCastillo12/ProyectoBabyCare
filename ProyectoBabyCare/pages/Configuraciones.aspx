@@ -26,21 +26,6 @@
                     </div>
                     <div class="row" style="margin-left: 15%">
                         <div style="width: 40%;">
-                            <div>
-                                <asp:Label ID="Label3" runat="server" Text="Cantidad de tios"></asp:Label>
-                            </div>
-
-                            <asp:TextBox ID="txtTios" runat="server" onkeypress="return soloNumeros(event)" Style="width: 70px" MaxLength="2"></asp:TextBox>
-                        </div>
-                        <div style="width: 40%; margin-left: 5%">
-                            <div>
-                                <asp:Label ID="Label4" runat="server" Text="Cantidad de tias"></asp:Label>
-                            </div>
-                            <asp:TextBox ID="txtTias" runat="server" onkeypress="return soloNumeros(event)" Style="width: 70px" MaxLength="2"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-left: 15%">
-                        <div style="width: 40%;">
                             <asp:Label ID="Label5" runat="server" Text="Cantidad de abuelos"></asp:Label>
                             <asp:TextBox ID="txtAbuelos" runat="server" onkeypress="return soloNumeros(event)" Style="width: 70px" MaxLength="2"></asp:TextBox>
                         </div>
