@@ -16,7 +16,7 @@ namespace ProyectoBabyCare.pages
         public static string _EndPoint = "https://api.openai.com/";
         public static string _URI = "v1/chat/completions";
         //Falta la llave
-        public static string _APIKey = "";
+        public static string _APIKey = "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";
         protected void Page_Load(object sender, EventArgs e)
         {
             //Llama al metodo para activar las alertas y mostrar mensaje
