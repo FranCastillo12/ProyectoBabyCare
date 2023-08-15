@@ -22,8 +22,8 @@
                 <label for="btn-modal2" class="btn btn-success" style="width: 100px; height: 9%; margin-top: 1%; margin-bottom: 1%; font-size: 15px;">
                     + Alerta
                 </label>
-                <div style="width: 40%">
-                    <asp:DropDownList ID="dropCategorias1" runat="server"></asp:DropDownList>
+                <div style="width: 40%;">
+                    <asp:DropDownList ID="dropCategorias1" runat="server" style="text-align:center;"></asp:DropDownList>
                 </div>
                 <div class="botonesSeguimiento">
                     <asp:Button ID="btnFiltrar" class="btn profile-button" runat="server" OnClick="btnFiltrar_Click" Text="Filtrar" />
@@ -36,24 +36,20 @@
             <input type="checkbox" id="btn-modal2">
             <div class="container-modal2">
                 <div class="content-modal2">
-                    <div style="text-align: center;">
-                        <%--<h2 style="color: mediumblue">Agregar actividad</h2>--%>
-                    </div>
-
                     <%-- Inicio Body --%>
-                    <div style="text-align: center;">
+                    <div style="text-align: center;font-family: 'Baloo 2', sans-serif;color: mediumblue">
                         <div>
-                            <h3 style="color: mediumblue">Categoría</h3>
+                            <h3 style="">Categoría</h3>
                         </div>
                         <div style="width: 40%; margin-left: 30%;">
                             <asp:DropDownList ID="dropcategorias" AutoPostBack="false" CssClass="form-controlddl" runat="server" Style="text-align: center;"></asp:DropDownList>
                         </div>
                         <div class="row">
-                            <div style="width: 40%; margin-left: 5%; background-image: url(../images/relojes1.png); background-size: cover; border-radius: 10%">
+                            <div style="width: 35%; margin-left: 5%; background-image: url(../images/relojes1.png); background-size: cover; border-radius: 10%">
                             </div>
-                            <div id="Formulario" style="width: 50%">
-                                <div style="text-align: center; padding-left: 10%; padding-right: 10%; padding-bottom: 2%; padding-top: 2%">
-                                    <asp:TextBox runat="server" ID="txtDescripcionAlerta" TextMode="MultiLine" Rows="5" Columns="15" Style="width: 100%; resize: none;" />
+                            <div id="Formulario" style="width: 60%">
+                                <div class="DivDescripcionAlerta">
+                                    <asp:TextBox runat="server" ID="txtDescripcionAlerta" TextMode="MultiLine" Rows="5" Columns="15" class="DescripcionAlertas" />
                                 </div>
                                 <div>
                                     <asp:TextBox ID="txthora" type="time" runat="server"></asp:TextBox>
