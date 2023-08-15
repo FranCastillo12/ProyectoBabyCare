@@ -222,7 +222,7 @@ namespace ProyectoBabyCare.pages
                 idBebe = Convert.ToInt32(USER.IdenBebe);
             }
             List<Entidades.Alerta> alertas = alert.TraerAlertas(idBebe);
-            if (alertas.Count <= sis.Alertas)
+            if (alertas.Count < sis.Alertas)
             {
                 string selected = dropcategorias.SelectedValue;
                 string descripcion = txtDescripcionAlerta.Text;

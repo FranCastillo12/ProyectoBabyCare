@@ -124,9 +124,8 @@ namespace ProyectoBabyCare
                         string cedula = txtCedula.Text;
                         float peso = float.Parse(txtpeso.Text);
                         float estatura = float.Parse(txtestatura.Text);
-                        DateTime fecha = DateTime.Parse(txtfecha.Text);
                         string tiposangre = txtTiposangre.Text;
-                        ex.IngresarExpediente(Convert.ToInt32(usu.IdenBebe), cedula, genero, peso, estatura, tiposangre, fecha);
+                        ex.IngresarExpediente(Convert.ToInt32(usu.IdenBebe), cedula, genero, peso, estatura, tiposangre);
                         Response.Redirect("Expediente.aspx");
                     }   
                 }
