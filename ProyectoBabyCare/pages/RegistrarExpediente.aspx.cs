@@ -84,17 +84,6 @@ namespace ProyectoBabyCare
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    else if (string.IsNullOrEmpty(txtfecha.Text))
-                    {
-                        script =
-                            "toastr.options.closeButton = true;" +
-                            "toastr.options.positionClass = 'toast-bottom-right';" +
-                            "toastr.error('La fecha de nacimiento no puede ir vacia');";
-                        ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-
-                        //warningss += "El correo es necesario <br>";
-                        entrar = true;
-                    }
                     if (R1.Checked)
                     {
                         genero = 1;
