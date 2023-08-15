@@ -279,6 +279,7 @@
     height: 60px;
     position: fixed;
     bottom: 0;
+    z-index:-5;
 }
 
 
