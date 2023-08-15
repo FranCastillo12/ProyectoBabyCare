@@ -35,7 +35,7 @@ namespace ProyectoBabyCare
                         script =
                             "toastr.options.closeButton = true;" +
                              "toastr.options.positionClass = 'toast-bottom-right';" +
-                            "toastr.error('La cédula no puede quedar en blanco');";
+                            "toastr.error('Revisar los datos ingresandos en la cédula');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         //warningss += "El correo es necesario <br>";
@@ -45,7 +45,7 @@ namespace ProyectoBabyCare
                     {  script =
                             "toastr.options.closeButton = true;" +
                             "toastr.options.positionClass = 'toast-bottom-right';" +
-                            "toastr.error('El peso no puede quedar en blanco');";
+                            "toastr.error('Revisar los datos ingresandos en el peso');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         //warningss += "El correo es necesario <br>";
@@ -67,7 +67,7 @@ namespace ProyectoBabyCare
                         script =
                             "toastr.options.closeButton = true;" +
                              "toastr.options.positionClass = 'toast-bottom-right';" +
-                            "toastr.error('La estatura no puede quedar en blanco');";
+                            "toastr.error('Revisar los datos ingresandos en la estatura');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                         //warningss += "El correo es necesario <br>";

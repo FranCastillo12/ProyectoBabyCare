@@ -225,6 +225,9 @@ namespace ProyectoBabyCare.pages.GestorBebes
             //Poner la opcion de agregar como default
             lblopcion.Text = "1";
             lblmodal.Text = "Ingresar Etapa";
+            txtlink.Text = "";
+            message.Text = "";
+            urlimagen.Text = "";
         }
 
         protected void btncerrar_Click(object sender, EventArgs e)
