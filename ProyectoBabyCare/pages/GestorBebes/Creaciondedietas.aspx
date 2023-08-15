@@ -37,7 +37,7 @@
             <div>
                 <asp:Label ID="Label4" runat="server" Text="Nombre de la comida"></asp:Label>
                 <div>
-                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtNombre" runat="server" MaxLength="100"></asp:TextBox>
                 </div>
             </div>
             <asp:Button ID="btnIngresar" class="btn btn-success mt-3 mb-3" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
