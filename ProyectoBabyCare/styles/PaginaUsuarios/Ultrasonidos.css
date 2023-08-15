@@ -1,6 +1,8 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 @import url('https://fonts.googleapis.com/css?family=Baloo+2');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
 
 
 html, body {
@@ -62,6 +64,9 @@ body {
     justify-content: center;
     margin: 40px auto;
 }
+h5 {
+    color: #009688;
+}
 
     .contenedor .card {
         width: 330px;
@@ -92,9 +97,10 @@ body {
         }
 
         .contenedor .card p {
+            font-family: 'Poppins', sans-serif;
             padding: 0 1rem;
-            font-size: 16px;
             font-weight: 300;
+            font-size: 20px;
         }
 
         .contenedor .card a {

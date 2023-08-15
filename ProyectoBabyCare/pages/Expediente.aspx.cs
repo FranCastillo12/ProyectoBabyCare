@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -101,7 +102,7 @@ namespace ProyectoBabyCare.pages
                         Session["idExpedienteBebe"] = expediente.Idexpediente;
                         txtnombre.Text = expediente.Nombrebebe;
                         txtPeso.Text = Convert.ToString(expediente.Peso);
-                        txtSangre.Text = expediente.Tiposangre;
+                        txtSangre.Text = expediente.Tiposangre.Trim();
                         txtpapa.Text = expediente.NombrePadre;
                         txtmama.Text = expediente.NombreMadre;
                         txtestatura.Text = Convert.ToString(expediente.Estatura);
@@ -293,55 +294,76 @@ namespace ProyectoBabyCare.pages
         {
             string script = null;
             bool entrar = false;
+            string regexNumeroFloat = @"^\d+(,\d*)?$";
             if (Session["Credenciales"] != null ) {
                 string genero = dopgenero.SelectedValue;
 
-                if (txtcedula.Text == "")
+                if (!string.IsNullOrEmpty(txtcedula.Text) && txtcedula.Text.Contains(" "))
                 {
                     script =
                         "toastr.options.closeButton = true;" +
                          "toastr.options.positionClass = 'toast-bottom-right';" +
-                        "toastr.error('La cédula no puede quedar en blanco');";
+                        "toastr.error('Revisar los datos ingresandos en la cédula');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                     //warningss += "El correo es necesario <br>";
                     entrar = true;
                 }
-                if (string.IsNullOrEmpty(txtestatura.Text))
+                if (!string.IsNullOrEmpty(txtestatura.Text) && txtcedula.Text.Contains(" "))
                 {
                     script =
                         "toastr.options.closeButton = true;" +
                         "toastr.options.positionClass = 'toast-bottom-right';" +
-                        "toastr.error('La estatura no puede quedar en blanco');";
+                        "toastr.error('Revisar los datos ingresandos en la estatura');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                     //warningss += "El correo es necesario <br>";
                     entrar = true;
                 }
-                if (string.IsNullOrEmpty(txtPeso.Text))
+                if (!string.IsNullOrEmpty(txtPeso.Text) && txtcedula.Text.Contains(" "))
                 {
                     script =
                         "toastr.options.closeButton = true;" +
                          "toastr.options.positionClass = 'toast-bottom-right';" +
-                        "toastr.error('El peso no puede quedar en blanco');";
+                        "toastr.error('Revisar los datos ingresandos en el peso');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                     //warningss += "El correo es necesario <br>";
                     entrar = true;
                 }
-                if (txtSangre.Text == "")
+                if (!string.IsNullOrEmpty(txtSangre.Text) && txtcedula.Text.Contains(" "))
                 {
                     script =
                         "toastr.options.closeButton = true;" +
                          "toastr.options.positionClass = 'toast-bottom-right';" +
-                        "toastr.error('El tipo de sangre no puede quedar en blanco');";
+                        "toastr.error('Revisar los datos ingresandos en el tipo de sangre');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
                     //warningss += "El correo es necesario <br>";
                     entrar = true;
                 }
-       
+                if (!Regex.IsMatch(txtPeso.Text, regexNumeroFloat))
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
+                        "toastr.error('El peso solo puede tener numeros');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
+                if (!Regex.IsMatch(txtestatura.Text, regexNumeroFloat))
+                {
+                    script =
+                        "toastr.options.closeButton = true;" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
+                        "toastr.error('La estatura solo puede tener numeros');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+
+                    //warningss += "El correo es necesario <br>";
+                    entrar = true;
+                }
                 int idGenero = 0;
                 if (genero.Equals("Hombre"))
                 {
