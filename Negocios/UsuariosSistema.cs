@@ -14,8 +14,8 @@ namespace Negocios
         public static DataTable ListaUsuariosSistema()
         {
             try
-            {                
-                string spName = "VerUsuariosSistema";              
+            {
+                string spName = "VerUsuariosSistema";
 
                 ConexionSQL iConexion = new Datos.ConexionSQL();
                 DataTable lista = iConexion.ExecuteSPWithDT(spName, null);
@@ -24,6 +24,44 @@ namespace Negocios
             catch (Exception exc)
             {
                 throw new Exception("No se pudieron cargar los usuarios del sistema");
+            }
+        }
+        public static void EliminarUsuario(int idUsuario)
+        {
+            try
+            {
+                string spName = "EliminarUsuario";
+                var lstParametros = new List<SqlParameter>()
+                {
+                    new SqlParameter("@idUser", idUsuario)
+                };
+                ConexionSQL iConexion = new Datos.ConexionSQL();
+                iConexion.ExecuteSP(spName, lstParametros);
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudo eliminar el usuario");
+            }
+        }
+        public static void EditarUsuario(int idUsuario, string nombre, string apellido, string correo, string contra)
+        {
+            try
+            {
+                string spName = "ActualizarUsuario";
+                var lstParametros = new List<SqlParameter>()
+                {
+                    new SqlParameter("@idUser", idUsuario),
+                    new SqlParameter("@name", nombre),
+                    new SqlParameter("@lastname", apellido),
+                    new SqlParameter("@email", correo),
+                    new SqlParameter("@password", contra)
+                };
+                ConexionSQL iConexion = new Datos.ConexionSQL();
+                iConexion.ExecuteSP(spName, lstParametros);
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudo el usuario la vacuna");
             }
         }
     }

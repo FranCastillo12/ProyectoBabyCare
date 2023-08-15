@@ -36,7 +36,7 @@
             <a class="nav-link mx-2 active"href="Configuraciones.aspx">Configuraci&oacute;n</a>
           </li>
               <li class="nav-item">
-            <a class="nav-link mx-2 active"href="#">Usuarios</a>
+            <a class="nav-link mx-2 active"href="PerfilesSistema.aspx">Usuarios</a>
           </li>
                <li class="nav-item">
             <a class="nav-link mx-2 active"href="GestionBebes.aspx">Bebés</a>
