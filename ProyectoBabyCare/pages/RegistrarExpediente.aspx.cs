@@ -30,7 +30,7 @@ namespace ProyectoBabyCare
                     bool entrar = false;
                     
                     int genero = 0;
-                    if (txtCedula.Text == "")
+                    if (!string.IsNullOrEmpty(txtCedula.Text) && txtCedula.Text.Contains(" "))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
@@ -41,7 +41,7 @@ namespace ProyectoBabyCare
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    else if (txtpeso.Text == "")
+                    else if (!string.IsNullOrEmpty(txtpeso.Text) && txtpeso.Text.Contains(" "))
                     {  script =
                             "toastr.options.closeButton = true;" +
                             "toastr.options.positionClass = 'toast-bottom-right';" +
@@ -62,7 +62,7 @@ namespace ProyectoBabyCare
                         //warningss += "El correo es necesario <br>";
                         entrar = true;
                     }
-                    else if (txtestatura.Text == "")
+                    else if (!string.IsNullOrEmpty(txtestatura.Text) && txtestatura.Text.Contains(" "))
                     {
                         script =
                             "toastr.options.closeButton = true;" +
