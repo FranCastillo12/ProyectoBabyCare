@@ -27,11 +27,11 @@
 </div>
             <div class="p-3 py-5" id="divContenedor" runat="server">
               
-                                              <div class="image-containerleft">
+ <%--                                             <div class="image-containerleft">
   <div class="image-wrapperleft">
     <img src="/images/imgAdminfami.png" alt="Imagen adicional">
   </div>
-</div>
+</div>--%>
                 
 
                 <div class="row mt-3">
