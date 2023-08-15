@@ -83,6 +83,17 @@ body {
     color: #0088CC;
     text-transform: uppercase; /* Convierte el texto en mayúsculas */
 }
+    .profile-button:focus {
+        background: #682773;
+        box-shadow: none
+    }
+
+    .profile-button:active {
+        background: #682773;
+        box-shadow: none
+    }
+
+
 .profile-button1 {
     font-weight: 600; /* Semibold */
     font-size: 115%;
@@ -99,15 +110,7 @@ body {
     text-transform: uppercase; /* Convierte el texto en mayúsculas */
 }
 
-    .profile-button:focus {
-        background: #682773;
-        box-shadow: none
-    }
 
-    .profile-button:active {
-        background: #682773;
-        box-shadow: none
-    }
 
 .image-container3 {
     width: 100%; /* Ajusta el ancho según tus necesidades */

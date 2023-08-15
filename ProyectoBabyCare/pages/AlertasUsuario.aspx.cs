@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Negocios;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -212,64 +213,89 @@ namespace ProyectoBabyCare.pages
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            string selected=dropcategorias.SelectedValue;
-            string descripcion=txtDescripcionAlerta.Text;
-            string[] D=selected.Split('-');
-            string hora=txthora.Text;
-            if (!selected.Equals("Seleccione una categoria"))
+            Negocios.Configuraciones config=new Negocios.Configuraciones();
+            Negocios.AlertasUsuario alert = new Negocios.AlertasUsuario();
+            Entidades.ConfiguracionesSistema sis=config.TraerConfiguraciones();
+            if (Session["Credenciales"] != null)
             {
-                if (!txthora.Text.Equals(""))
+                Entidades.En_Usuarios USER = (Entidades.En_Usuarios)Session["Credenciales"];
+                idBebe = Convert.ToInt32(USER.IdenBebe);
+            }
+            List<Entidades.Alerta> alertas = alert.TraerAlertas(idBebe);
+            if (alertas.Count <= sis.Alertas)
+            {
+                string selected = dropcategorias.SelectedValue;
+                string descripcion = txtDescripcionAlerta.Text;
+                string[] D = selected.Split('-');
+                string hora = txthora.Text;
+                if (!selected.Equals("Seleccione una categoria"))
                 {
-                    if (!descripcion.Equals(""))
+                    if (!txthora.Text.Equals(""))
                     {
-                        DateTime Hoseleccionada;
-                        if (DateTime.TryParseExact(hora, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out Hoseleccionada))
+                        if (!descripcion.Equals(""))
                         {
-                            Negocios.AlertasUsuario Al = new Negocios.AlertasUsuario();
-                            Entidades.En_Usuarios usuario = new En_Usuarios();
-                            if (Session["Credenciales"] != null)
+                            DateTime Hoseleccionada;
+                            if (DateTime.TryParseExact(hora, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out Hoseleccionada))
                             {
-                                usuario = (Entidades.En_Usuarios)Session["Credenciales"];
-                                Al.AgregarAlerta(Convert.ToInt32(usuario.IdenBebe), Convert.ToInt32(D[0]), descripcion, Hoseleccionada);
-                                Response.Redirect("AlertasUsuario.aspx");
-                            }
-                            else
-                            {
-                                string mensaje =
-                                 "toastr.options.closeButton = true;" +
-                                     "toastr.options.positionClass = 'toast-bottom-right';" +
-                                    $"toastr.error('No se puede registrar la alerta porque no hay un usuario autentificado');";
-                                ScriptManager.RegisterStartupScript(this, GetType(), "Toastrerror", mensaje, true);
+                                Negocios.AlertasUsuario Al = new Negocios.AlertasUsuario();
+                                Entidades.En_Usuarios usuario = new En_Usuarios();
+                                if (Session["Credenciales"] != null)
+                                {
+                                    usuario = (Entidades.En_Usuarios)Session["Credenciales"];
+                                    Al.AgregarAlerta(Convert.ToInt32(usuario.IdenBebe), Convert.ToInt32(D[0]), descripcion, Hoseleccionada);
+                                    Response.Redirect("AlertasUsuario.aspx");
+                                }
+                                else
+                                {
+                                    string mensaje =
+                                     "toastr.options.closeButton = true;" +
+                                         "toastr.options.positionClass = 'toast-bottom-right';" +
+                                        $"toastr.error('No se puede registrar la alerta porque no hay un usuario autentificado');";
+                                    ScriptManager.RegisterStartupScript(this, GetType(), "Toastrerror", mensaje, true);
 
+                                }
                             }
+                        }
+                        else
+                        {
+                            string mensaje =
+                                "toastr.options.closeButton = true;" +
+                                 "toastr.options.positionClass = 'toast-bottom-right';" +
+                                $"toastr.error('La descripcion de la alerta no puede ir vacia.');";
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Toastrerror", mensaje, true);
+
                         }
                     }
                     else
                     {
                         string mensaje =
-                            "toastr.options.closeButton = true;" +
-                             "toastr.options.positionClass = 'toast-bottom-right';" +
-                            $"toastr.error('La descripcion de la alerta no puede ir vacia.');";
+                                "toastr.options.closeButton = true;" +
+                                 "toastr.options.positionClass = 'toast-bottom-right';" +
+                                $"toastr.error('Debe seleccionar una hora para poder registrar la alerta.');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "Toastrerror", mensaje, true);
-
                     }
                 }
                 else
                 {
                     string mensaje =
-                            "toastr.options.closeButton = true;" +
-                             "toastr.options.positionClass = 'toast-bottom-right';" +
-                            $"toastr.error('Debe seleccionar una hora para poder registrar la alerta.');";
+                    "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
+                    $"toastr.error('Debe seleccionar una categoria antes de agregar la alerta.');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "Toastrerror", mensaje, true);
                 }
+
             }
             else {
                 string mensaje =
-                "toastr.options.closeButton = true;" +
-                    "toastr.options.positionClass = 'toast-bottom-right';" +
-                $"toastr.error('Debe seleccionar una categoria antes de agregar la alerta.');";
+                    "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
+                    $"toastr.error('El sistema no permite el ingreso de mas de {sis.Alertas} alertas');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "Toastrerror", mensaje, true);
+
             }
+
+
+            
         }
     }
 }

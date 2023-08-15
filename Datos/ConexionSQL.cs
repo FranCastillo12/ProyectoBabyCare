@@ -1123,6 +1123,73 @@ namespace Datos
         }
         #endregion
 
+        #region AlbumFotos
+        public List<Entidades.FotosBebe> TraerFotosBebe(int idbebe) {
+            List<Entidades.FotosBebe> lst = new List<Entidades.FotosBebe>();
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("TraerFotosBebe", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idBebe", idbebe);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Entidades.FotosBebe fotos=new FotosBebe();
+
+                        fotos.Url = reader["URL"].ToString();
+                        fotos.Fecha = DateTime.Parse(reader["Fecha"].ToString());
+
+                        lst.Add(fotos);
+                    }
+                }
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+
+            return lst;
+        }
+
+        //FiltrarFotosBebe
+        public List<Entidades.FotosBebe> FiltrarFotosBebe(int idbebe,DateTime fecha1,DateTime fecha2)
+        {
+            List<Entidades.FotosBebe> lst = new List<Entidades.FotosBebe>();
+            try
+            {
+                sqlConn.Open();
+                SqlCommand command = new SqlCommand("FiltrarFotosBebe", sqlConn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idBebe", idbebe);
+                command.Parameters.AddWithValue("@Fecha1", fecha1);
+                command.Parameters.AddWithValue("@Fecha2", fecha2);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Entidades.FotosBebe fotos = new FotosBebe();
+
+                        fotos.Url = reader["URL"].ToString();
+                        fotos.Fecha = DateTime.Parse(reader["Fecha"].ToString());
+
+                        lst.Add(fotos);
+                    }
+                }
+
+                sqlConn.Close();
+            }
+            catch (Exception e) { }
+
+            return lst;
+        }
+
+
+        #endregion
+
+
         #endregion
 
     }

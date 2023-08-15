@@ -209,6 +209,7 @@
     <Compile Include="Bebe.cs" />
     <Compile Include="Categorias.cs" />
     <Compile Include="Citas.cs" />
+    <Compile Include="FotosBebe.cs" />
     <Compile Include="ConfiguracionesGrupoFamiliar.cs" />
     <Compile Include="ConfiguracionesSistema.cs" />
     <Compile Include="Consejos.cs" />
