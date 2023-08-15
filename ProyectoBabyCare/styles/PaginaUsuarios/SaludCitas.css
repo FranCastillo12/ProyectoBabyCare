@@ -276,7 +276,7 @@
 
 .piePagina {
     width: 100%;
-    height: 100px;
+    height: 60px;
     position: fixed;
     bottom: 0;
 }
@@ -333,8 +333,8 @@
     .tituloPrincipal {
         background-color: white;
         margin-top: 5px;
-
     }
+
     .textoTituloPrincipal {
         width: 75%;
     }

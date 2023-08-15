@@ -4,13 +4,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <link href="../styles/PaginaUsuarios/SaludCitas.css" rel="stylesheet" />
+   <link href="../styles/PaginaUsuarios/SaludCitas.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>                 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -158,9 +156,9 @@
             </div>           
         </div>
         <%--<asp:Label CssClass="btnNuevaCita" ID="lblMensaje" runat="server" Text=""></asp:Label>--%>
-        <div class="piePagina">
+        <%--<div class="piePagina">
             <img style="width:100%; height:100%" alt="" src="../images/Footer.png" />
-        </div>
+        </div>--%>
     </div>
 </form>    
 </asp:Content>
