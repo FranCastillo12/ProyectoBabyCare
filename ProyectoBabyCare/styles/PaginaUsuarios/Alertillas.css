@@ -16,6 +16,18 @@
 #btn-modal2 {
     display: none;
 }
+.DivDescripcionAlerta {
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 2%;
+    padding-top: 2%
+}
+.DescripcionAlertas {
+    width: 100%;
+    resize: none;
+    font-size:25px;
+}
 
 .container-modal2 {
     width: 100%;
