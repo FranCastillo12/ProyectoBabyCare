@@ -38,20 +38,20 @@
                         <div style="width: 50%;">
                             <asp:Label ID="Label5" runat="server" Text="Tipo de sangre"></asp:Label>
                             <div>
-                                <asp:TextBox ID="txtSangre" runat="server" CssClass="txt2 form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtSangre" runat="server" CssClass="txt2 form-control"MaxLength="5"></asp:TextBox>
                             </div>
                         </div>
                         <div>
                             <asp:Label ID="Label6" runat="server" Text="Nombre de papito"></asp:Label>
                         </div>
                         <div style="width: 50%; margin-left: 20%;">
-                            <asp:TextBox ID="txtpapa" ReadOnly="true" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtpapa" ReadOnly="true" runat="server" CssClass="form-control" MaxLength="200"></asp:TextBox>
                         </div>
                         <div>
                             <asp:Label ID="Label7" runat="server" Text="Nombre de mamita"></asp:Label>
                         </div>
                         <div style="width: 50%; margin-left: 20%;">
-                            <asp:TextBox ID="txtmama" ReadOnly="true" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtmama" ReadOnly="true" runat="server" CssClass="form-control" MaxLength="200"></asp:TextBox>
                         </div>
                         <div style="width: 25%; text-align: center; margin-left: 20%">
                             <asp:Label ID="Label9" runat="server" Text="Estatura"></asp:Label>
@@ -68,7 +68,7 @@
                         <div style="width: 40%; margin-left: 20%">
                             <asp:Label ID="Label8" runat="server" Text="Cédula"></asp:Label>
                             <div style="text-align: center">
-                                <asp:TextBox ID="txtcedula" runat="server" CssClass="form-control" Style="width: 95%"></asp:TextBox>
+                                <asp:TextBox ID="txtcedula" runat="server" CssClass="form-control" Style="width: 95%" MaxLength="20"></asp:TextBox>
                             </div>
                         </div>
                         <div style="width: 35%;">

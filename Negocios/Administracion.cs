@@ -110,7 +110,7 @@ namespace Negocios
                             NombreBebe = fila[4].ToString(),
                             IdRol = Convert.ToInt32(fila[5].ToString()),
                             Rol = fila[6].ToString(),
-                            Encargado = Convert.ToInt32(fila[7].ToString())
+                            Encargado = Convert.ToBoolean(fila[7].ToString())
                         };
                         lista.Add(u);
                     }
@@ -130,9 +130,9 @@ namespace Negocios
                 string spName = "ActualizarRelacionUsuarioBebe";
                 var lstParametros = new List<SqlParameter>()
                 {
-                    new SqlParameter("@idUser", idUsuario),
+                    new SqlParameter("@idUsuario", idUsuario),
                     new SqlParameter("@idBebe", idBebe),
-                    new SqlParameter("@idRol", idRol)                    
+                    new SqlParameter("@idRol", idRol)
                 };
                 ConexionSQL iConexion = new Datos.ConexionSQL();
                 iConexion.ExecuteSP(spName, lstParametros);

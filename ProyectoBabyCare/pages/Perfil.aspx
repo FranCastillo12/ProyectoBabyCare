@@ -38,7 +38,7 @@
 
                             <div class="mb-3 mt-3">
                                 <label class="form_label" style="color: #3399CC" for="Nombre">Nombre</label>
-                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" placeholder=""></asp:TextBox>
+                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" placeholder="" MaxLength="50"></asp:TextBox>
 
 
 
@@ -47,7 +47,7 @@
 
                             <div class="mb-3 mt-3">
                                 <label class="form_label" style="color: #3399CC" for="Apellidos">Apellidos</label>
-                                <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control" placeholder=""></asp:TextBox>
+                                <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control" placeholder="" MaxLength="50"></asp:TextBox>
 
 
                             </div>
@@ -55,7 +55,7 @@
 
                             <div class="mb-3 mt-3">
                                 <label class="form_label" style="color: #3399CC" for="Correo">Correo</label>
-                                <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder=""></asp:TextBox>
+                                <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="" MaxLength="60"></asp:TextBox>
 
                             </div>
 

@@ -55,7 +55,7 @@
 
                             <div class="mb-3 mt-3">
                                 <label class="form_label" for="Descripcion">Descripcion</label>
-                                <asp:TextBox ID="txtdescrip" runat="server" CssClass="form-control" placeholder=""></asp:TextBox>
+                                <asp:TextBox ID="txtdescrip" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" Columns="15" placeholder="" MaxLength="200"></asp:TextBox>
                             </div>
                             <div class="container">
 

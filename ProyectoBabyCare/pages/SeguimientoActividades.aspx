@@ -42,7 +42,7 @@
 
                 </div>
                 <div style="text-align: center; padding-left: 10%; padding-right: 10%; padding-bottom: 4%">
-                    <asp:TextBox runat="server" ID="txtdescripcionseguimiento" TextMode="MultiLine" Rows="5" Columns="15" CssClass="textareaNombress"/>
+                    <asp:TextBox runat="server" ID="txtdescripcionseguimiento" TextMode="MultiLine" Rows="5" Columns="15" CssClass="textareaNombress" MaxLength="200"/>
                 </div>
                 <div class="row">
                     <div class="divBoton1">

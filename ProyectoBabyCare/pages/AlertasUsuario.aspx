@@ -47,9 +47,11 @@
                         <div class="row">
                             <div style="width: 35%; margin-left: 5%; background-image: url(../images/relojes1.png); background-size: cover; border-radius: 10%">
                             </div>
+
                             <div id="Formulario" style="width: 60%">
                                 <div class="DivDescripcionAlerta">
                                     <asp:TextBox runat="server" ID="txtDescripcionAlerta" TextMode="MultiLine" Rows="5" Columns="15" class="DescripcionAlertas" />
+
                                 </div>
                                 <div>
                                     <asp:TextBox ID="txthora" type="time" runat="server"></asp:TextBox>
