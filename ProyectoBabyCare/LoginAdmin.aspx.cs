@@ -83,7 +83,7 @@ namespace ProyectoBabyCare
                             string correo = resultTable.Rows[0][0].ToString();
                             Session["Correo"] = correo;
                             //Falta cambiar pantalla
-                            Response.Redirect("pages/GestorBebes/index.aspx");
+                            Response.Redirect("pages/GestorBebes/IndicadoresInformacion.aspx");
                         }
                         else
                         {
