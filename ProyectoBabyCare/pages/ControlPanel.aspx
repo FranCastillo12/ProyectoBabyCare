@@ -29,34 +29,29 @@
             <div class="contenedor2">
                 <div class="recuadroBebe">
                     <img class="imagenBebe" id="imagenBebe" alt="" src="../images/bebe1.jpg" />
+                    <%--<asp:Image CssClass="imagenBebe" ID="fotoBebes" runat="server" />--%>
                 </div>
-                <script type="text/javascript">
-                      // Arreglo con las URLs de las imágenes a mostrar
-                    const imagenes = [
-                          "../images/bebe1.jpg",
-                          "../images/bebe2.jpg",                                                                              
-                          "../images/bebe6.png",
-                          "../images/bebe7.jpg",                                                    
-                      ];
+                <script>                                                            
+                    var imageUrls = <%= ImageUrlsArray %>;
+                    let indiceImagen = 0;
+                    const intervaloTiempo = 7000; //7 segundos para cambiar
 
-                      let indiceImagen = 0;
-                      const intervaloTiempo = 7000; //7 segundos para cambiar
+                    // Función para cambiar la imagen
+                    function cambiarImagen() {
+                        console.log("Cambiando imagen...");
+                        const imagenBebe = document.getElementById("imagenBebe");
+                        imagenBebe.src = imageUrls[indiceImagen];
 
-                      // Función para cambiar la imagen
-                      function cambiarImagen() {
-                          const imagenBebe = document.getElementById("imagenBebe");
-                          imagenBebe.src = imagenes[indiceImagen];
+                        // Incrementa el índice para mostrar la siguiente imagen
+                        indiceImagen = (indiceImagen + 1) % imageUrls.length;
+                    }
 
-                          // Incrementa el índice para mostrar la siguiente imagen
-                          indiceImagen = (indiceImagen + 1) % imagenes.length;
-                      }
-
-                      // Iniciar el intervalo cuando la página se carga
-                      window.onload = function () {
-                          cambiarImagen(); // Mostrar la primera imagen inmediatamente
-                          setInterval(cambiarImagen, intervaloTiempo);
-                      };
-                </script>
+                    // Iniciar el intervalo cuando la página se carga
+                    window.onload = function () {
+                        cambiarImagen(); // Mostrar la primera imagen inmediatamente
+                        setInterval(cambiarImagen, intervaloTiempo);
+                    };
+                </script>                
                 <div class="recuadroDatosBebe">
                     <asp:Label ID="lblNombre" runat="server" Text="Josias Madriz Calderón"></asp:Label>
                     <br />

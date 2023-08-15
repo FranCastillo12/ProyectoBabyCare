@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
@@ -11,6 +12,7 @@ namespace ProyectoBabyCare.pages
 {
     public partial class ControlPanel : System.Web.UI.Page
     {
+        protected string ImageUrlsArray { get; set; }
         string correo = "";
         string idbebe = "27";
         string rol = "Padre";
@@ -33,11 +35,32 @@ namespace ProyectoBabyCare.pages
                 }
                 else
                 {
+
+                    //Llama al metodo para activar las alertas y mostrar mensaje
+                    Negocios.AlertasUsuario alert = new Negocios.AlertasUsuario();
+                    DateTime horaActual = DateTime.Now;
+                    alert.ActivateAlertas(horaActual, Convert.ToInt32(credenciales.IdenBebe));
+                    List<Entidades.Alerta> alertas = alert.TraerAlertas(Convert.ToInt32(credenciales.IdenBebe));
+
+                    string scriptalerta = null;
+                    foreach (Entidades.Alerta alrt in alertas)
+                    {
+                        if (alrt.HoraDeAlerta.TimeOfDay <= horaActual.TimeOfDay && alrt.Estado == true)
+                        {
+                            scriptalerta =
+                        "toastr.options.closeButton = true;" +
+                            "toastr.options.positionClass = 'toast-bottom-right';" +
+                        $"toastr.warning('Hay una alerta pendiente en estos momentos! ({alrt.HoraDeAlerta.ToString("hh:mm tt")})');";
+                            ScriptManager.RegisterStartupScript(this, GetType(), "ToastrWarning", scriptalerta, true);
+                        }
+                    }
+
                     idbebe = credenciales.IdenBebe;
                     GuardarDatosBebe(credenciales);
                     CargarRegistros();
                     BuscarRol();
                     GenerarConsejo(); //Generamos un consejo siempre que se carga la pagina
+                    CargarFotos(credenciales);
                 }
             }
             catch (Exception exc)
@@ -304,7 +327,36 @@ namespace ProyectoBabyCare.pages
                 ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
             }
         }
+        private void CargarFotos(En_Usuarios credenciales)
+        {
+            List<Entidades.Archivos> ListaArchivos = Negocios.Archivos.ListaArchivosBebe(Convert.ToInt32(credenciales.IdenBebe));
+            List<string> urlImagenes = new List<string>();
+            if (ListaArchivos != null && ListaArchivos.Count > 0)
+            {
+                foreach (var archivo in ListaArchivos)
+                {
+                    if (archivo.RutaArchivo.EndsWith("image"))
+                    {
+                        //fotoPerfi.ImageUrl = archivo.RutaArchivo;
+                        urlImagenes.Add(archivo.RutaArchivo);
+                        //    fotoBebes.ImageUrl = archivo.RutaArchivo;
+                    }
+                }
+            }
+            else
+            {
+                urlImagenes.Add("../images/bebe1.jpg");
+                urlImagenes.Add("../images/bebe2.jpg");
+                urlImagenes.Add("../images/bebe3.jpg");
+                urlImagenes.Add("../images/bebe4.png");
+                urlImagenes.Add("../images/bebe5.jpg");
+                urlImagenes.Add("../images/bebe6.png");
+            }
+            // Convierte el arreglo de URLs en una cadena JSON
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            ImageUrlsArray = serializer.Serialize(urlImagenes);
 
+        }
         private void SinNotificaciones1() //Usuarios padre y madre
         {
             lblNotificacion1.Text = "No se tiene registrada la ultima vacuna de " + nombreBebe;
