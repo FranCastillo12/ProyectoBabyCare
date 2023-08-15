@@ -22,7 +22,9 @@
     <div class="container-fluid">
     
            <div class="logo">
+               <a href="IndicadoresInformacion.aspx">
             <img src="..\..\Images\logo.png" class="logoo" alt="Logo de la marca">
+                   </a>
        </div>
 
 
@@ -32,9 +34,7 @@
     
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto ">
-          <li class="nav-item">
-            <a class="nav-link mx-2 active"href="Configuraciones.aspx">Configuraci&oacute;n</a>
-          </li>
+       
               <li class="nav-item">
             <a class="nav-link mx-2 active"href="PerfilesSistema.aspx">Usuarios</a>
           </li>
@@ -46,17 +46,19 @@
               Gestiones
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Gesti&oacute;n Expediente</a></li>
-
+             
                 <li><a class="dropdown-item" href="Creaciondedietas.aspx">Creaci&oacute;n Dietas</a></li>
 
               <li><a class="dropdown-item" href="GestionEtapasDesarrollo.aspx">Gesti&oacute;n Desarrollo</a></li>
-
+                <li><a class="dropdown-item" href="#">Gesti&oacute;n Expediente</a></li>
             </ul>
           </li>
-                  <li class="nav-item">
-            <a class="nav-link mx-2 active"href="IndicadoresInformacion.aspx">Estadisticas</a>
+               <li class="nav-item">
+            <a class="nav-link mx-2 active"href="Configuraciones.aspx">Configuraci&oacute;n</a>
           </li>
+        <%--          <li class="nav-item">
+            <a class="nav-link mx-2 active"href="IndicadoresInformacion.aspx">Estadisticas</a>
+          </li>--%>
             <li class="nav-item">
 
             <a class="nav-link mx-2 active"href="logoutAdmin.aspx">Salir</a>
