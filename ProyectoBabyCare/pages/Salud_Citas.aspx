@@ -156,9 +156,9 @@
             </div>           
         </div>
         <%--<asp:Label CssClass="btnNuevaCita" ID="lblMensaje" runat="server" Text=""></asp:Label>--%>
-        <%--<div class="piePagina">
+        <div class="piePagina">
             <img style="width:100%; height:100%" alt="" src="../images/Footer.png" />
-        </div>--%>
+        </div>
     </div>
 </form>    
 </asp:Content>
