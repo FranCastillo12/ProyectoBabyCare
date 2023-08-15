@@ -13,9 +13,9 @@ namespace Negocios
             ConexionSQL conexion = new ConexionSQL();
             conexion.ModificarExpediente(idexpediente, peso, estatura, tiposangre, cedula, genero);
         }
-        public void IngresarExpediente(int idbebe, string cedula, int genero, float peso, float estatura, string tiposangre, DateTime fechanac) { 
+        public void IngresarExpediente(int idbebe, string cedula, int genero, float peso, float estatura, string tiposangre) { 
             ConexionSQL con=new ConexionSQL();
-            con.IngresarDatosBasicosExpediente(idbebe,cedula,genero,peso,estatura,tiposangre,fechanac);
+            con.IngresarDatosBasicosExpediente(idbebe,cedula,genero,peso,estatura,tiposangre);
         }
         public void IngresarDetalleExpediente(int idbebe, string descripcion, DateTime fecha)
         {

@@ -77,16 +77,6 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div style="text-align: center">
-                        <asp:Label ID="Label5" runat="server" Text="Fecha de Nacimiento"></asp:Label>
-                    </div>
-                    <div style="align-items: center; text-align: center;">
-                        <div style="">
-                            <asp:TextBox ID="txtfecha" type="date" CssClass="TEXTO" runat="server"></asp:TextBox>
-                        </div>
-                    </div>
-                </div>
                 <%-- BOTON DE REGISTRAR --%>
                 <div style="align-items: center; text-align: center; margin-top: 4%">
                     <div style="width:50%">

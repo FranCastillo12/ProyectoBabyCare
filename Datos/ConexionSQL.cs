@@ -420,7 +420,7 @@ namespace Datos
             return respuesta;
         }
 
-        public void IngresarDatosBasicosExpediente(int idbebe,string cedula,int genero,float peso,float estatura,string tiposangre,DateTime fechanac) {
+        public void IngresarDatosBasicosExpediente(int idbebe,string cedula,int genero,float peso,float estatura,string tiposangre) {
             try 
             {
                 sqlConn.Open();
@@ -432,7 +432,6 @@ namespace Datos
                 command.Parameters.AddWithValue("@peso", peso);
                 command.Parameters.AddWithValue("@estatura", estatura);
                 command.Parameters.AddWithValue("@tiposangre", tiposangre);
-                command.Parameters.AddWithValue("@fecha", fechanac);
                 command.ExecuteNonQuery();
 
                 sqlConn.Close();
