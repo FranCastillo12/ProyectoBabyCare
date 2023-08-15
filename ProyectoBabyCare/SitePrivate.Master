@@ -76,6 +76,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="CargaFotosVideos.aspx">Fotos</a></li>
+                <li><a class="dropdown-item" href="AlbumFotos.aspx">Album de fotos</a></li>
               <li><a class="dropdown-item" href="Ultrasonidos.aspx">Ultrasonidos</a></li>
             </ul>
           </li>

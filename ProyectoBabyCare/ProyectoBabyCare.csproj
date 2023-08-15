@@ -220,6 +220,7 @@
     <Content Include="images\Vacuna.png" />
     <Content Include="images\Vacunacion.png" />
     <Content Include="images\tabla.png" />
+    <Content Include="pages\AlbumFotos.aspx" />
     <Content Include="pages\CargaFotosVideos.aspx" />
     <Content Include="pages\AlertasUsuario.aspx" />
     <Content Include="pages\ControlPanel2.aspx" />
@@ -267,6 +268,7 @@
     <Content Include="styles\PaginasAdmin\PerfilesSistema.css" />
     <Content Include="styles\PaginaUsuarios\AdminFamiliares.css" />
     <Content Include="styles\PaginaUsuarios\AdminUsuarios.css" />
+    <Content Include="styles\PaginaUsuarios\AlbumFotos.css" />
     <Content Include="styles\PaginaUsuarios\CargaFotosVideos.css" />
     <Content Include="styles\PaginaUsuarios\ControlPanel.css" />
     <Content Include="styles\PaginaUsuarios\ControlPanel2.css" />
@@ -288,6 +290,13 @@
     <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pages\AlbumFotos.aspx.cs">
+      <DependentUpon>AlbumFotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AlbumFotos.aspx.designer.cs">
+      <DependentUpon>AlbumFotos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\AlertasUsuario.aspx.cs">
       <DependentUpon>AlertasUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

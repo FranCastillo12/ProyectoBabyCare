@@ -20,6 +20,27 @@ namespace ProyectoBabyCare.pages
                 if (Session["Credenciales"] != null) {
                     Entidades.En_Usuarios usu=new Entidades.En_Usuarios();
                     usu = (Entidades.En_Usuarios)Session["Credenciales"];
+
+                    //Llama al metodo para activar las alertas y mostrar mensaje
+                    Negocios.AlertasUsuario alert = new Negocios.AlertasUsuario();
+                    DateTime horaActual = DateTime.Now;
+                    alert.ActivateAlertas(horaActual, Convert.ToInt32(usu.IdenBebe));
+                    List<Entidades.Alerta> alertas = alert.TraerAlertas(Convert.ToInt32(usu.IdenBebe));
+
+                    string scriptalerta = null;
+                    foreach (Entidades.Alerta alrt in alertas)
+                    {
+                        if (alrt.HoraDeAlerta.TimeOfDay <= horaActual.TimeOfDay && alrt.Estado == true)
+                        {
+                            scriptalerta =
+                        "toastr.options.closeButton = true;" +
+                         "toastr.options.positionClass = 'toast-bottom-right';" +
+                        $"toastr.warning('Hay una alerta pendiente en estos momentos! ({alrt.HoraDeAlerta.ToString("hh:mm tt")})');";
+                            ScriptManager.RegisterStartupScript(this, GetType(), "ToastrWarning", scriptalerta, true);
+                        }
+                    }
+                    // Final del metodo de mostrar alertas
+
                     if (!usu.IdenBebe.Equals(""))
                     {
                         lstseguimientos = seg.TraerSeguimientos(Convert.ToInt32(usu.IdenBebe), 0, DateTime.Now.Date, DateTime.Now.Date);
