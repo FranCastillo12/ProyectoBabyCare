@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="PerfilesSistema.aspx.cs" Inherits="ProyectoBabyCare.pages.GestorBebes.PerfilesSistema" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="RelacionesUsuario.aspx.cs" Inherits="ProyectoBabyCare.pages.GestorBebes.RelacionesUsuario" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
 </asp:Content>
@@ -14,18 +15,19 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container" style="margin-top:60px">
-         <h3 style="color:#A020F0">Lista de usuarios</h3>      
+         <h3 style="color:#A020F0">Relaciones del usuario</h3>      
 	     <hr />
          <form runat="server" >           
             <asp:Table ID="tablaUsuarios" runat="server" CssClass="table table-bordered text-center">
                 <asp:TableHeaderRow CssClass="table" style="background:RGBA(170, 32, 240, 0.7)">
                     <asp:TableHeaderCell>IdUsuario</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Nombre</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Apellidos</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Fecha Registro</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Correo</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Contraseña</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Bebes asociados</asp:TableHeaderCell>            
+                    <asp:TableHeaderCell>Nombre Usuario</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Apellidos Usuario</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>IdBebe</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Nombre Bebé</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>IdRol</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Rol</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Estado Encargado</asp:TableHeaderCell>            
                     <asp:TableHeaderCell>Acciones</asp:TableHeaderCell>
                 </asp:TableHeaderRow>
                 <asp:TableFooterRow>

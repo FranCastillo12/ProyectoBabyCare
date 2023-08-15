@@ -28,6 +28,26 @@ namespace ProyectoBabyCare.pages
             //No tiene bebes registrados
             if (credenciales.IdenBebe == null || credenciales.IdenBebe == "" || credenciales.Rol == "Abuelo" || credenciales.Rol == "BabySister" || credenciales.Rol == "Invitado")
             {
+                //Alertas
+                Negocios.AlertasUsuario alert = new Negocios.AlertasUsuario();
+                DateTime horaActual = DateTime.Now;
+                alert.ActivateAlertas(horaActual, Convert.ToInt32(credenciales.IdenBebe));
+                List<Entidades.Alerta> alertas = alert.TraerAlertas(Convert.ToInt32(credenciales.IdenBebe));
+
+                string scriptalerta = null;
+                foreach (Entidades.Alerta alrt in alertas)
+                {
+                    if (alrt.HoraDeAlerta.TimeOfDay <= horaActual.TimeOfDay && alrt.Estado == true)
+                    {
+                        scriptalerta =
+                    "toastr.options.closeButton = true;" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
+                    $"toastr.warning('Hay una alerta pendiente en estos momentos! ({alrt.HoraDeAlerta.ToString("hh:mm tt")})');";
+                        ScriptManager.RegisterStartupScript(this, GetType(), "ToastrWarning", scriptalerta, true);
+                    }
+                }
+                //Fin alertas
+
                 //Mostrar mensaje de que debe registrar un bebe para poder utilizar esta pantalla
                 deshabilitarControles();
                 string mensaje;

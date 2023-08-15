@@ -15,7 +15,7 @@ namespace Entidades
         string nombreBebe;
         int idRol;
         string rol;
-        int encargado;
+        bool encargado;
 
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string Nombre { get => nombre; set => nombre = value; }
@@ -24,6 +24,6 @@ namespace Entidades
         public string NombreBebe { get => nombreBebe; set => nombreBebe = value; }
         public int IdRol { get => idRol; set => idRol = value; }
         public string Rol { get => rol; set => rol = value; }
-        public int Encargado { get => encargado; set => encargado = value; }
+        public bool Encargado { get => encargado; set => encargado = value; }
     }
 }

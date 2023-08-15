@@ -28,6 +28,26 @@ namespace ProyectoBabyCare.pages
                 }
                 if (credenciales.IdenBebe != null && credenciales.IdenBebe != "")
                 {
+                    //Alertas
+                    Negocios.AlertasUsuario alert = new Negocios.AlertasUsuario();
+                    DateTime horaActual = DateTime.Now;
+                    alert.ActivateAlertas(horaActual, Convert.ToInt32(credenciales.IdenBebe));
+                    List<Entidades.Alerta> alertas = alert.TraerAlertas(Convert.ToInt32(credenciales.IdenBebe));
+
+                    string scriptalerta = null;
+                    foreach (Entidades.Alerta alrt in alertas)
+                    {
+                        if (alrt.HoraDeAlerta.TimeOfDay <= horaActual.TimeOfDay && alrt.Estado == true)
+                        {
+                            scriptalerta =
+                        "toastr.options.closeButton = true;" +
+                            "toastr.options.positionClass = 'toast-bottom-right';" +
+                        $"toastr.warning('Hay una alerta pendiente en estos momentos! ({alrt.HoraDeAlerta.ToString("hh:mm tt")})');";
+                            ScriptManager.RegisterStartupScript(this, GetType(), "ToastrWarning", scriptalerta, true);
+                        }
+                    }
+                    //Fin alertas
+
                     //Cargamos los datos del bebé
                     Entidades.Bebe bebe = Negocios.Bebe.bebe(credenciales.IdenBebe);
                     //Cargamos informacion del bebé
@@ -83,7 +103,8 @@ namespace ProyectoBabyCare.pages
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string script = null;
+            string script = null;           
+
             if (FileUpload1.HasFile)
             {
                 if (System.IO.Path.GetExtension(FileUpload1.FileName) != ".jpg"
@@ -108,16 +129,76 @@ namespace ProyectoBabyCare.pages
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
                     //lblMensaje.Text = "El archivo es demasiado grande. El tamaño máximo permitido es 10 MB.";
                 }
-                else
+                else //Todo es valido
                 {
-                    GuardarArchivo();
-                    script =
-                   "toastr.options.closeButton = true;" +
-                   "toastr.options.positionClass = 'toast-bottom-right';" +
-                   "toastr.error('Archivo guardado con exito');";
-                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
-                    //lblMensaje.Text = "Archivo guardado con exito";
-                    Response.Redirect("CargaFotosVideos.aspx");
+                    bool LimiteArchivosAlcanzado = false;
+
+                    if (ListaArchivos != null)
+                    {
+                        //Calculamos la cantidad de videos y fotos que tiene el usuario
+                        int countImages = 0;
+                        int countVideos = 0;
+                        foreach (var archivo in ListaArchivos)
+                        {
+                            if (archivo.IdTipoArchivo == 1)
+                            {
+                                countImages += 1;
+                            }
+                            else
+                            {
+                                countVideos += 1;
+                            }
+                        }
+                        try
+                        {
+                            Negocios.Configuraciones config = new Negocios.Configuraciones();
+                            Entidades.ConfiguracionesSistema configSistema = config.TraerConfiguraciones();
+
+                            //Haciemos las validaciones con los configuracion del sistema
+                            if (Path.GetExtension(FileUpload1.FileName) == ".mp4") //es video
+                            {
+                                if (countVideos >= configSistema.Videos)
+                                {
+                                    LimiteArchivosAlcanzado = true;
+                                    script =
+                                      "toastr.options.closeButton = true;" +
+                                      "toastr.options.positionClass = 'toast-bottom-right';" +
+                                      "toastr.error('Limite de carga de videos alcanzado');";
+                                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                                }
+                            }
+                            else //es foto
+                            {
+                                if (countImages >= configSistema.Fotos)
+                                {
+                                    LimiteArchivosAlcanzado = true;
+                                    script =
+                                      "toastr.options.closeButton = true;" +
+                                      "toastr.options.positionClass = 'toast-bottom-right';" +
+                                      "toastr.error('Limite de carga de fotos alcanzado');";
+                                    ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                                }
+                            }
+                        } catch (Exception)
+                        {
+                            script =
+                          "toastr.options.closeButton = true;" +
+                          "toastr.options.positionClass = 'toast-bottom-right';" +
+                          "toastr.error('Error en la carga de las confiraciones del sistema');";
+                            ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                        }                                                                       
+                    }
+                    if (!LimiteArchivosAlcanzado)
+                    {
+                        GuardarArchivo();
+                        script =
+                       "toastr.options.closeButton = true;" +
+                       "toastr.options.positionClass = 'toast-bottom-right';" +
+                       "toastr.error('Archivo guardado con exito');";
+                        ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
+                        //lblMensaje.Text = "Archivo guardado con exito";
+                        Response.Redirect("CargaFotosVideos.aspx");
+                    }                   
                 }
             }
             else

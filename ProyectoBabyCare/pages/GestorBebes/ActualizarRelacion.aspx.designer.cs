@@ -11,7 +11,7 @@ namespace ProyectoBabyCare.pages.GestorBebes
 {
 
 
-    public partial class ActualizarUsuario
+    public partial class ActualizarRelacion
     {
 
         /// <summary>
@@ -69,76 +69,76 @@ namespace ProyectoBabyCare.pages.GestorBebes
         protected global::System.Web.UI.WebControls.TextBox txtApellidos;
 
         /// <summary>
-        /// Control lblFecha.
+        /// Control lblIdBebe.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFecha;
+        protected global::System.Web.UI.WebControls.Label lblIdBebe;
 
         /// <summary>
-        /// Control txtFecha.
+        /// Control txtIdBebe.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFecha;
+        protected global::System.Web.UI.WebControls.TextBox txtIdBebe;
 
         /// <summary>
-        /// Control lblEmail.
+        /// Control lblNombreBebe.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
+        protected global::System.Web.UI.WebControls.Label lblNombreBebe;
 
         /// <summary>
-        /// Control txtEmail.
+        /// Control txtNombreBebe.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreBebe;
 
         /// <summary>
-        /// Control lblPass.
+        /// Control lblRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPass;
+        protected global::System.Web.UI.WebControls.Label lblRol;
 
         /// <summary>
-        /// Control txtPass.
+        /// Control drpRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPass;
+        protected global::System.Web.UI.WebControls.DropDownList drpRol;
 
         /// <summary>
-        /// Control lblBebes.
+        /// Control lblEncargado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBebes;
+        protected global::System.Web.UI.WebControls.Label lblEncargado;
 
         /// <summary>
-        /// Control txtBebes.
+        /// Control txtEncargado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBebes;
+        protected global::System.Web.UI.WebControls.TextBox txtEncargado;
 
         /// <summary>
         /// Control btnGuardar.

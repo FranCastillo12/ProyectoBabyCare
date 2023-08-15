@@ -43,14 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
-
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
@@ -218,20 +216,20 @@
     <Content Include="images\Vacuna.png" />
     <Content Include="images\Vacunacion.png" />
     <Content Include="images\tabla.png" />
-
     <Content Include="pages\CargaFotosVideos.aspx" />
     <Content Include="pages\AlertasUsuario.aspx" />
     <Content Include="pages\ControlPanel2.aspx" />
+    <Content Include="pages\GestorBebes\ActualizarRelacion.aspx" />
     <Content Include="pages\GestorBebes\ActualizarUsuario.aspx" />
     <Content Include="pages\eliminarultrasonido.aspx" />
     <Content Include="pages\GestorBebes\GestionBebes.aspx" />
     <Content Include="pages\GestorBebes\GestionEtapasDesarrollo.aspx" />
     <Content Include="pages\GestorBebes\PerfilesSistema.aspx" />
+    <Content Include="pages\GestorBebes\RelacionesUsuario.aspx" />
     <Content Include="pages\Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LoginAdmin.aspx" />
     <Content Include="pages\AdminFamiliares.aspx" />
-    <Content Include="pages\GestorBebes\AdminUsuarios.aspx" />
     <Content Include="pages\Consejos.aspx" />
     <Content Include="pages\ControlPanel.aspx" />
     <Content Include="pages\DietasPrivate.aspx" />
@@ -284,20 +282,19 @@
     <Content Include="WebFormPublic.aspx" />
   </ItemGroup>
   <ItemGroup>
-      <Compile Include="pages\AlertasUsuario.aspx.cs">
+    <Compile Include="pages\AlertasUsuario.aspx.cs">
       <DependentUpon>AlertasUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\AlertasUsuario.aspx.designer.cs">
       <DependentUpon>AlertasUsuario.aspx</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="pages\CargaFotosVideos.aspx.cs">
       <DependentUpon>CargaFotosVideos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\CargaFotosVideos.aspx.designer.cs">
       <DependentUpon>CargaFotosVideos.aspx</DependentUpon>
-
     </Compile>
     <Compile Include="pages\ControlPanel2.aspx.cs">
       <DependentUpon>ControlPanel2.aspx</DependentUpon>
@@ -306,12 +303,20 @@
     <Compile Include="pages\ControlPanel2.aspx.designer.cs">
       <DependentUpon>ControlPanel2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\GestorBebes\ActualizarRelacion.aspx.cs">
+      <DependentUpon>ActualizarRelacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\GestorBebes\ActualizarRelacion.aspx.designer.cs">
+      <DependentUpon>ActualizarRelacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\GestorBebes\ActualizarUsuario.aspx.cs">
       <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\GestorBebes\ActualizarUsuario.aspx.designer.cs">
       <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\eliminarultrasonido.aspx.cs">
       <DependentUpon>eliminarultrasonido.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -340,6 +345,13 @@
     <Compile Include="pages\GestorBebes\PerfilesSistema.aspx.designer.cs">
       <DependentUpon>PerfilesSistema.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\GestorBebes\RelacionesUsuario.aspx.cs">
+      <DependentUpon>RelacionesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\GestorBebes\RelacionesUsuario.aspx.designer.cs">
+      <DependentUpon>RelacionesUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -367,13 +379,6 @@
     </Compile>
     <Compile Include="pages\AdminFamiliares.aspx.designer.cs">
       <DependentUpon>AdminFamiliares.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\GestorBebes\AdminUsuarios.aspx.cs">
-      <DependentUpon>AdminUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\GestorBebes\AdminUsuarios.aspx.designer.cs">
-      <DependentUpon>AdminUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Consejos.aspx.cs">
       <DependentUpon>Consejos.aspx</DependentUpon>

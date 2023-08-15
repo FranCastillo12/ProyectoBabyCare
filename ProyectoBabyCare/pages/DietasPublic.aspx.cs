@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,35 @@ namespace ProyectoBabyCare.pages
         protected void Page_Load(object sender, EventArgs e)
         {
             try
-            {                        
+            {
+                En_Usuarios credenciales = (En_Usuarios)Session["Credenciales"];
+
+                if (credenciales == null)
+                {
+                    Response.Redirect("../Login.aspx");
+                }
+                if (credenciales.IdenBebe != null && credenciales.IdenBebe != "")
+                {
+                    //Alertas
+                    Negocios.AlertasUsuario alert = new Negocios.AlertasUsuario();
+                    DateTime horaActual = DateTime.Now;
+                    alert.ActivateAlertas(horaActual, Convert.ToInt32(credenciales.IdenBebe));
+                    List<Entidades.Alerta> alertas = alert.TraerAlertas(Convert.ToInt32(credenciales.IdenBebe));
+
+                    string scriptalerta = null;
+                    foreach (Entidades.Alerta alrt in alertas)
+                    {
+                        if (alrt.HoraDeAlerta.TimeOfDay <= horaActual.TimeOfDay && alrt.Estado == true)
+                        {
+                            scriptalerta =
+                        "toastr.options.closeButton = true;" +
+                            "toastr.options.positionClass = 'toast-bottom-right';" +
+                        $"toastr.warning('Hay una alerta pendiente en estos momentos! ({alrt.HoraDeAlerta.ToString("hh:mm tt")})');";
+                            ScriptManager.RegisterStartupScript(this, GetType(), "ToastrWarning", scriptalerta, true);
+                        }
+                    }
+                    //Fin alertas
+                }
                 List<Entidades.RangoEdadDietas> listaRangos = new List<Entidades.RangoEdadDietas>();
                 listaRangos = Negocios.Dietas.listaRangoDietas();
                 foreach (var r in listaRangos)

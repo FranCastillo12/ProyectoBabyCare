@@ -11,7 +11,7 @@ namespace ProyectoBabyCare.pages.GestorBebes
 {
 
 
-    public partial class PerfilesSistema
+    public partial class RelacionesUsuario
     {
 
         /// <summary>
