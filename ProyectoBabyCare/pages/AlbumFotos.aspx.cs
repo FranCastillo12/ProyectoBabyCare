@@ -44,7 +44,7 @@ namespace ProyectoBabyCare.pages
                     // Final del metodo de mostrar alertas
 
 
-                    List<Entidades.FotosBebe> lst = album.TraerFotosBebe(39);
+                    List<Entidades.FotosBebe> lst = album.TraerFotosBebe(idBebe);
                     PintarImagenes(lst);
                 }
                 else {

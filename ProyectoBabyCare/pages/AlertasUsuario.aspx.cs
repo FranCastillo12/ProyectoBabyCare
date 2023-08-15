@@ -28,6 +28,9 @@ namespace ProyectoBabyCare.pages
                 if (Session["Credenciales"] != null)
                 {
                     Entidades.En_Usuarios usu = (Entidades.En_Usuarios)Session["Credenciales"];
+                    if (usu.IdenBebe == null || usu.IdenBebe.Equals("")) {
+                        Response.Redirect("ControlPanel.aspx");
+                    }
                     idBebe = Convert.ToInt32(usu.IdenBebe);
 
                     //Llama al metodo para activar las alertas y mostrar mensaje

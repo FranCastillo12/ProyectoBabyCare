@@ -38,7 +38,8 @@
                         <div style="width: 50%;">
                             <asp:Label ID="Label5" runat="server" Text="Tipo de sangre"></asp:Label>
                             <div>
-                                <asp:TextBox ID="txtSangre" runat="server" CssClass="txt2 form-control" MaxLength="5" OnTextChanged="txtSangre_TextChanged"></asp:TextBox>
+                                <asp:TextBox ID="txtSangre" runat="server" CssClass="txt2 form-control" MaxLength="5"></asp:TextBox>
+
                             </div>
                         </div>
                         <div>

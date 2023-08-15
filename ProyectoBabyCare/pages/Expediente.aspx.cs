@@ -101,7 +101,7 @@ namespace ProyectoBabyCare.pages
                         Session["idExpedienteBebe"] = expediente.Idexpediente;
                         txtnombre.Text = expediente.Nombrebebe;
                         txtPeso.Text = Convert.ToString(expediente.Peso);
-                        txtSangre.Text = expediente.Tiposangre.Trim();
+                        txtSangre.Text = expediente.Tiposangre;
                         txtpapa.Text = expediente.NombrePadre;
                         txtmama.Text = expediente.NombreMadre;
                         txtestatura.Text = Convert.ToString(expediente.Estatura);
