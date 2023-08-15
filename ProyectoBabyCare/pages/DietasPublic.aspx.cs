@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,69 +13,97 @@ namespace ProyectoBabyCare.pages
         protected void Page_Load(object sender, EventArgs e)
         {
             try
-            {                        
+            {
+                En_Usuarios credenciales = (En_Usuarios)Session["Credenciales"];
 
-                List<Entidades.RangoEdadDietas> listaRangos = new List<Entidades.RangoEdadDietas>();
-                listaRangos = Negocios.Dietas.listaRangoDietas();
-                foreach (var r in listaRangos)
+                if (credenciales == null)
                 {
-                    string fila = r.EdadInicio + " a " + r.EdadFinal + " meses";
-
-                    if (r.EdadInicio == 12)
-                    {
-                        fila = "1 a 2 años";
-                    }
-                    else if (r.EdadInicio == 24)
-                    {
-                        fila = "2 a 5 años";
-                    }
-
-                    drpRangos.Items.Add(new ListItem(fila, r.IdRangoDietas.ToString()));
-                }                
-                
-                int idRango = 1;
-                if (Session["idRango"] != null)
-                {
-                    idRango = (int)Session["idRango"];
+                    Response.Redirect("../Login.aspx");
                 }
-
-                string drpRangosTexto;
-                ListItem ls = drpRangos.Items[idRango-1];
-                drpRangosTexto = ls.Text;
-                lblMensajeFlotante.Text = "Estas buscando dietas para niños " + drpRangosTexto;
-
-                //drpRangos.SelectedIndex = idRango-1;
-
-                List<Entidades.Dietas> listaDietas = new List<Entidades.Dietas>();                
-                listaDietas = Negocios.Dietas.listaDietasEdad(idRango);              
-
-                if (listaDietas.Count == 6)
+                else
                 {
-                    string cadena;
-                    var dieta = listaDietas[0];
-                    cadena = "Un buen desayuno para tu bebé es " + dieta.NombreComida;
-                    lblComida1.Text = cadena;
-                    dieta = listaDietas[1];
-                    cadena = "La merienda en la mañana es necesaria para tu bebé, puedes darle " + dieta.NombreComida;
-                    lblComida2.Text = cadena;
-                    dieta = listaDietas[2];
-                    cadena = "La comida de medio día es importa para tu bebé, puedes darle " + dieta.NombreComida;
-                    lblComida3.Text = cadena;
-                    dieta = listaDietas[3];
-                    cadena = "Una saludable merienda en la tarde para tu bebé es " + dieta.NombreComida;
-                    lblComida4.Text = cadena;
-                    dieta = listaDietas[4];
-                    cadena = "Para la cena, puedes darle a tu bebé " + dieta.NombreComida;
-                    lblComida5.Text = cadena;
-                    dieta = listaDietas[5];
-                    cadena = "Antes de dormir  puedes darle a tu bebé " + dieta.NombreComida;
-                    lblComida6.Text = cadena;
+                    if (credenciales.IdenBebe != null && credenciales.IdenBebe!="")
+                    {
+                        //Llama al metodo para activar las alertas y mostrar mensaje
+                        Negocios.AlertasUsuario alert = new Negocios.AlertasUsuario();
+                        DateTime horaActual = DateTime.Now;
+                        alert.ActivateAlertas(horaActual, Convert.ToInt32(credenciales.IdenBebe));
+                        List<Entidades.Alerta> alertas = alert.TraerAlertas(Convert.ToInt32(credenciales.IdenBebe));
+
+                        string scriptalerta = null;
+                        foreach (Entidades.Alerta alrt in alertas)
+                        {
+                            if (alrt.HoraDeAlerta.TimeOfDay <= horaActual.TimeOfDay && alrt.Estado == true)
+                            {
+                                scriptalerta =
+                            "toastr.options.closeButton = true;" +
+                                "toastr.options.positionClass = 'toast-bottom-right';" +
+                            $"toastr.warning('Hay una alerta pendiente en estos momentos! ({alrt.HoraDeAlerta.ToString("hh:mm tt")})');";
+                                ScriptManager.RegisterStartupScript(this, GetType(), "ToastrWarning", scriptalerta, true);
+                            }
+                        }
+                    }                    
+
+                    List<Entidades.RangoEdadDietas> listaRangos = Negocios.Dietas.listaRangoDietas();
+
+                    Dictionary<int, string> rangoMapeo = new Dictionary<int, string>
+                    {
+                        { 12, "1 a 2 años" },
+                        { 24, "2 a 5 años" }
+                    };
+
+                    foreach (var r in listaRangos)
+                    {
+                        string fila = r.EdadInicio == 12 ? rangoMapeo[12] : r.EdadInicio == 24 ? rangoMapeo[24] : r.EdadInicio + " a " + r.EdadFinal + " meses";
+                        drpRangos.Items.Add(new ListItem(fila, r.IdRangoDietas.ToString()));
+                    }
+
+                    int idRango = Session["idRango"] != null ? (int)Session["idRango"] : 1;
+
+                    if (drpRangos.Items.Count >= idRango)
+                    {
+                        string drpRangosTexto = drpRangos.Items[idRango - 1].Text;
+                        lblMensajeFlotante.Text = "Estás buscando dietas para niños " + drpRangosTexto;
+                    }
+                    // drpRangos.SelectedValue = idRango.ToString();
+
+                    List<Entidades.Dietas> listaDietas = Negocios.Dietas.listaDietasEdad(idRango);
+                    Random random = new Random();
+                    string[] horarios = { "Desayuno", "Merienda Mañana", "Medio Dia", "Merienda Tarde", "Cena", "Noche" };
+
+                    foreach (string horario in horarios)
+                    {
+                        var dietas = listaDietas.Where(d => d.NombreDietaHorarioDieta == horario);
+
+                        if (dietas.Any())
+                        {
+                            int cantidad = dietas.Count();
+                            int numeroRandom = random.Next(0, cantidad);
+                            var dieta = dietas.ElementAt(numeroRandom);
+                            string cadena = ObtenerCadena(horario, dieta.NombreComida);
+
+                            if (horario == "Noche")
+                            {
+                                lblComida6.Text = cadena;
+                            }
+                            else if (horario == "Cena")
+                            {
+                                lblComida5.Text = cadena;
+                            }
+                            else
+                            {
+                                AsignarTextoEtiqueta(horario, cadena);
+                            }
+                        }
+                    }
                 }
-            } catch (Exception exc)
+            }
+            catch (Exception exc)
             {
                 lblComida1.Text = exc.Message;
             }
-            
+
+
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -87,8 +116,51 @@ namespace ProyectoBabyCare.pages
         protected void btnAplicar_Click(object sender, EventArgs e)
         {
             int seleccionado = drpRangos.SelectedIndex;
-            Session["idRango"] = seleccionado+1;
+            Session["idRango"] = seleccionado + 1;
             Response.Redirect("DietasPublic.aspx");
+        }
+
+        private string ObtenerCadena(string horario, string nombreComida)
+        {
+            if (horario == "Merienda Mañana")
+            {
+                return "La merienda en la mañana es necesaria para tu bebé, puedes darle " + nombreComida;
+            }
+            else if (horario == "Medio Dia")
+            {
+                return "La comida de medio día es importante para tu bebé, puedes darle " + nombreComida;
+            }
+            else if (horario == "Merienda Tarde")
+            {
+                return "Una saludable merienda en la tarde para tu bebé es " + nombreComida;
+            }
+            else if (horario == "Cena" || horario == "Noche")
+            {
+                return "Para la cena, puedes darle a tu bebé " + nombreComida;
+            }
+            else
+            {
+                return "Un buen " + horario.ToLower() + " para tu bebé es " + nombreComida;
+            }
+        }
+        private void AsignarTextoEtiqueta(string horario, string cadena)
+        {
+            if (horario == "Desayuno")
+            {
+                lblComida1.Text = cadena;
+            }
+            else if (horario == "Merienda Mañana")
+            {
+                lblComida2.Text = cadena;
+            }
+            else if (horario == "Medio Dia")
+            {
+                lblComida3.Text = cadena;
+            }
+            else if (horario == "Merienda Tarde")
+            {
+                lblComida4.Text = cadena;
+            }
         }
 
         protected void drpRangos_SelectedIndexChanged(object sender, EventArgs e)

@@ -393,5 +393,10 @@ namespace ProyectoBabyCare.pages
             }
 
         }
+
+        protected void txtSangre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
