@@ -12,14 +12,14 @@
     <div style="background-color: #F6E0ED";>
         <form runat="server">
             <div id="filtro" class="row" style="color: mediumblue;font-family: 'Baloo 2', sans-serif">
-                <div style="width: 15%;margin-left:20%;text-align:center;margin-top:10px;">
+                <div style="width: 20%;margin-left:20%;text-align:center;margin-top:10px;">
                     <div>
                         <asp:Label ID="Label1" runat="server" Text="Fecha 1"></asp:Label>
                     </div>
 
                     <asp:TextBox ID="txtfecha1" type="date" runat="server" style="width:100%"></asp:TextBox>
                 </div>
-                <div style="width: 15%;margin-left:5%;text-align:center;margin-top:10px;">
+                <div style="width: 20%;margin-left:5%;text-align:center;margin-top:10px;">
                     <div>
                         <asp:Label ID="Label2" runat="server" Text="Fecha 2"></asp:Label>
                     </div>
