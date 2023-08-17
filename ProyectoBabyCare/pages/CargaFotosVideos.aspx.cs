@@ -269,7 +269,7 @@ namespace ProyectoBabyCare.pages
 
                     galleryHtml.AppendLine("<section class='gallery-item'>");
                     galleryHtml.AppendLine($"    <a href='#{videoId}'>");
-                    galleryHtml.AppendLine($"        <video controls>");  // Cambia img por video
+                    galleryHtml.AppendLine($"    <video controls style=\"width: 400px;\">");// Cambia img por video
                     galleryHtml.AppendLine($"            <source src='{videoUrl}' type='video/mp4'>");  // Cambia src y tipo de archivo
                     galleryHtml.AppendLine($"            Your browser does not support the video tag.");  // Mensaje de respaldo
                     galleryHtml.AppendLine($"        </video>");
@@ -309,7 +309,7 @@ namespace ProyectoBabyCare.pages
 
                     lightboxHtml.AppendLine("<article class='light-box' id='" + videoId + "'>");
                     lightboxHtml.AppendLine($"    <a href='#{prevVideoId}' class='next'><i class='fa-solid fa-arrow-left'></i></a>");
-                    lightboxHtml.AppendLine($"    <video controls>");
+                    lightboxHtml.AppendLine($"    <video controls style=\"width: 400px;\">");
                     lightboxHtml.AppendLine($"        <source src='{videoUrl}' type='video/mp4'>");
                     lightboxHtml.AppendLine($"        Your browser does not support the video tag.");
                     lightboxHtml.AppendLine($"    </video>");

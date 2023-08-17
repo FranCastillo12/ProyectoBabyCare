@@ -405,7 +405,7 @@ namespace ProyectoBabyCare.pages
                     script =
                         "toastr.options.closeButton = true;" +
                          "toastr.options.positionClass = 'toast-bottom-right';" +
-                        "toastr.error('Datos modificados');";
+                        "toastr.sucess('Datos modificados');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
 

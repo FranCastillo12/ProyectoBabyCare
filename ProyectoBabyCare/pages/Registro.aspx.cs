@@ -36,7 +36,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('El nombre es requerido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -47,7 +47,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                       "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('El nombre solo puede tener letras');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -58,7 +58,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Los apellidos solo pueden tener letras');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -69,7 +69,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Los apellidos es requerido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -80,7 +80,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('El correo es requerido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -92,7 +92,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                     "toastr.options.closeButton = true;" +
-                    "toastr.options.positionClass = 'toast-top-full-width';" +
+                    "toastr.options.positionClass = 'toast-bottom-right';" +
                     "toastr.error('El email no es valido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -103,7 +103,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                        "toastr.options.positionClass = 'toast-top-full-width';" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('La contraseña es requerido');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 
@@ -123,7 +123,7 @@ namespace ProyectoBabyCare.pages
                     {
                         script =
                        "toastr.options.closeButton = true;" +
-                       "toastr.options.positionClass = 'toast-top-full-width';" +
+                      "toastr.options.positionClass = 'toast-bottom-right';" +
                        "toastr.error('El correo ingresado ya existe');";
                         ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 

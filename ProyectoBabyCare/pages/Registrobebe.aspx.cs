@@ -134,7 +134,7 @@ namespace ProyectoBabyCare.pages
                 {
                     script =
                         "toastr.options.closeButton = true;" +
-                         "toastr.options.positionClass = 'toast-bottom-right';" +
+                        "toastr.options.positionClass = 'toast-bottom-right';" +
                         "toastr.error('Debe de ingresar un código');";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ToastrNotification", script, true);
 

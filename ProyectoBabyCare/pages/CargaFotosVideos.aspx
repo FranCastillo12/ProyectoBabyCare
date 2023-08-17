@@ -25,7 +25,7 @@
                 <div class="contenedorSuperiorDerecha">
                     <div class="btnContent">
                         <br />
-                        <asp:FileUpload ID="FileUpload1" runat="server" />                     
+                        <asp:FileUpload ID="FileUpload1" runat="server" requiered />                     
                         <br />
                         <asp:Button class="btn btn-success cargar" ID="Button1" runat="server" Text="Cargar archivo" OnClick="Button1_Click" />                        
                     </div>

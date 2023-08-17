@@ -63,14 +63,16 @@ namespace ProyectoBabyCare.pages
             }
         }
         public void PintarImagenes(List<Entidades.FotosBebe> lst) {
+            StringBuilder HTML = new StringBuilder();
             if (lst.Count > 0) {
-                StringBuilder HTML = new StringBuilder();
+              
                 //parametros de impresion
                 DateTime FechaFoto = lst[0].Fecha;//Agarra la fecha de la primera foto de la lista;
                                                   //metodos
                 int contador = 0;
                 while (contador < lst.Count - 1)
                 {
+
                     //HTML.Append("");
                     if (lst[contador].Fecha.Year == FechaFoto.Year)
                     {
@@ -98,9 +100,16 @@ namespace ProyectoBabyCare.pages
                         HTML.Append("</div>");
                     }
                 }
-                ContenedorAlbum.InnerHtml = HTML.ToString();
+                if (lst.Count == 1)
+                {
+                    HTML.Append("<div class='row mt-3'>");
+                    HTML.Append($"<h1 style='background-color: #F6E0ED; color: mediumblue; text-align: center;'>{FechaFoto.Year}</h1>");
+                    HTML.Append($"<img src = '{lst[0].Url}' class='Imagen' runat='server'/>");
+                    HTML.Append("</div>");
+                }
             }
-            
+            ContenedorAlbum.InnerHtml = HTML.ToString();
+
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
